@@ -1,0 +1,398 @@
+.website nav{
+  background: #ffae00;
+  margin: 0 auto;
+}
+.website nav .menu-btn{
+  display: none;
+}
+.website nav .navbar-nav li{
+  padding: 0 1em;
+}
+.website .nav li a{
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff !important;
+    font-weight: bold;
+    outline: none;
+    text-align: center !important;
+}
+.website .profile-caption .social-media a .fa{
+    font-size: 24px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 10px 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.website .profile-caption .social-media a:hover .fa{
+    border-radius:0 10px;
+}
+.website .profile-caption .social-media a .fa-facebook:hover{
+    background: #305891
+}
+.website .profile-caption .social-media a .fa-twitter:hover {
+    background: #2ca8d2;
+}
+.website .profile-caption .social-media a .fa-google-plus:hover {
+    background: #e04a3b
+}
+.website .profile-caption .social-media a .fa-dribbble:hover {
+    background: #ec4e8b
+}
+.website .profile-caption .social-media a .fa-behance:hover {
+    background: #00a6ff
+}
+.website .profile-caption .social-media a .fa-linkedin:hover {
+    background: #0282b3
+}
+.website .profile-caption h2{
+    color: #000
+}
+
+.website .profile-caption .social-media a .fa{
+    color: #000;
+    border: 1px solid #000;
+}
+.website .profile-caption .social-media a:hover .fa{
+    color: #fff;
+    border: 1px solid #000;
+}
+.website .profile-image{
+    border-bottom: 1px solid #fff;
+}
+.website .profile-item{
+    margin-top: 16%;
+}
+.website .profile-caption h2 span{
+    text-transform: uppercase;
+    color: #ffae00;
+}
+.website .profile-caption{
+  padding: 0 1em;
+}
+.website .section-title{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin: 74px 0 52px;
+}
+
+.website .section-title h2{
+    color:#ffae00;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin:0 auto;
+    padding: 20px 0;
+}
+.website .section-title h2:before{
+    content: "";
+    display: block;
+    position: relative;
+    width: 50%;
+    height: 2px;
+    background: #ffae00;
+    margin: 0 auto;
+    text-align: center;
+    bottom: -69px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.website .section-title h2:hover:before{
+    /*width: 100%;*/
+    /*bottom: -60px;*/
+}
+.website .about-me-box h2{
+    color: #ffae00;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 50px;
+}
+.website .about-me-box h2:before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 10%;
+    bottom: 0;
+    position: absolute;
+    background:#ffae00;
+}
+.website .about-me-box p{
+    font-size: 14px;
+    color:#232323;
+    line-height: 24px;
+    font-weight: 300;
+    padding-right: 7%;
+}
+
+.website .about-me-box a{
+    padding: 0 15px 0 0;
+    color: #fff;
+    background:#ffae00;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 45px;
+    display: inline-block;
+}
+.website .skill-box h2{
+    color: #ffae00;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 50px;
+}
+.website .skill-box h2:before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 10%;
+    bottom: 0;
+    position: absolute;
+    background:#ffae00;
+}
+
+.website .skill-box p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin: 20px 0 15px;
+}
+.website .fa-cloud-download{
+    position: relative;
+    padding: 13px 16px;
+    margin-right: 15px;
+}
+.website .mobile-design{
+    float: left;
+    width: 64%;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+    border-right: none;
+}
+.website .mobile{
+    float: right;
+}
+.website .work-section{
+    padding-bottom: 108px;
+    background: #fff;
+}
+.website .work-section .col-lg-6{
+    padding: 0;
+    margin-top: -1px;
+}
+.website .work-section .work-box .fa{
+    font-size: 35px;
+    text-align: center;
+    width: 81px;
+    height: 81px;
+    color:#ffae00;
+    border: 1px solid #dadada;
+    padding-top: 6%;
+    border-radius: 10px 0;
+}
+.website .work-box{
+    padding: 60px 15px;
+    width: 100% !important;
+    /*border-right:1px solid #f4f4f4;*/
+    -webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+    z-index: 99;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.website .work-section .work-box h3{
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #1c2d33;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Raleway', Arial,sans-serif;
+    margin-top: 30px;
+}
+
+.website .work-section .work-box p{
+    font-size: 14px;
+    font-weight: 300;
+    color: #1c2d33;
+}
+
+.website .work-box:hover{
+    background: #ffae00;
+}
+.website .work-section .work-box:hover i{
+    background: #fff ;
+    border: none;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.website .work-box:hover:hover i{
+    border-radius: 0 10px;
+}
+
+.website .work-section .work-box:hover h3{
+    color: #fff
+}
+.website .work-section .work-box:hover p{
+    color: #fff
+}
+.website  .template{
+    float: right;
+}
+.website  .template-design{
+    float: right;
+    width: 64%;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+}
+.website  .mobile{
+    float: right;
+}
+.website  .mobile-design{
+    float: left;
+    width: 64%;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+    border-right: none;
+}
+
+.website  .work-center-box{
+    position: relative;
+}
+.website  .main-center-item{
+    height: 86px;
+    width: 86px;
+    border-radius: 50%;
+    border: 3px solid rgba(204, 204, 204, 0.9);
+    text-align: center;
+    margin: 0 auto;
+    left: 44.7%;
+    position: absolute;
+    top:-44px;
+    background: #fff;
+    z-index: 9999;
+}
+.website .main-center-item .dot{
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #ffae00;
+    margin-top: 43%;
+}
+
+.website .ui-design{
+    float: right;
+    width: 64%;
+    text-align: center;
+    border-right: 1px solid #f4f4f4
+}
+.website .landing-page{
+    float: left;
+    width: 64%;
+    text-align: center;
+    border-right:none;
+}
+.website .smoth{
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+}
+.website .contact-section{
+    background: url(../img/contact-bg.jpg)  no-repeat fixed;
+    background-position: center;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+.website .form-area
+{
+  width: 100%;
+  padding: 10px 40px 60px;
+  margin: 0 auto;
+}
+.website .form-control{
+    height: 60px;
+    border: 1px solid #fff !important;
+    border-radius:0px !important;
+    background: transparent !important;
+    border-left: none !important;
+    color: #fff;
+}
+.website .input-group-addon{
+    height:60px;
+    width: 60px;
+    text-align: center;
+    background: #ffae00;
+    border: none !important;
+    border-radius: 0px !important;
+    color: #fff;
+}
+.website .input-group-addon i{
+    font-size: 24px
+}
+.website .input-group{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.website .form-submit{
+    border: none;
+    background: #ffae00;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+}
+#message{
+    border: 1px solid #fff !important;
+    padding: 2.6% 3%;
+    height: 150px;
+}
+.website .footer-section{
+    background: #000;
+    text-align: center;
+    padding: 50px 0;
+    width: 100%;
+}
+.website .footer-section p{
+    color: #bcbbbb;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.website  .footer-section p a{
+    color: #ffae00;
+}
+.website .border-right{
+  border-right:1px solid #f4f4f4;
+}

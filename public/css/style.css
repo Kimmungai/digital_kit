@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -9994,9 +9994,386 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
+.sidenav {
+  height: 100%;
+  width: 250px;
+  /*position: fixed;*/
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: "";
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f00;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ribbon {
+  height: 2px;
+  background-color: "";
+  overflow: hidden;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 60%;
+  height: auto;
+  padding-top: 60%;
+  background: url("/img/profile.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: 0 auto;
+}
+
+.profile h2 {
+  text-align: center;
+}
+
+.profile h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile ul {
+  padding-right: 0;
+  padding-left: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.working-area {
+  overflow: hidden;
+}
+
+.working-area h1 {
+  text-align: center;
+}
+
+.card {
+  width: 70%;
+  margin: 0 auto;
+  /*margin-bottom: 10%;*/
+  border-radius: 0;
+  background: #000;
+}
+
+.card h2 {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  color: #fff;
+  font-size: 2em;
+  padding-right: 0.4em;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  color: #fff;
+  font-size: 0.8em;
+  padding-right: 1em;
+  text-transform: uppercase;
+}
+
+.qr {
+  width: 90%;
+  height: 4em;
   background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin: 1em auto 0 auto;
+  background: url("/img/qr.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.bar1 {
+  height: 1.2em;
+  background-color: #fff;
+  margin: 2.3em 0 0 0;
+}
+
+.bar2 {
+  height: 1.2em;
+  margin: 2.3em 0 0 0;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.card-info ul {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  list-style: none;
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+.working-area .controls {
+  text-align: center;
+  margin: 2% 0;
+}
+
+/*.desk {
+  background: #ccc;
+  height: 300px;
+  background: url('/img/desk_wooden.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: .5s;
+}
+.desk h2{
+  text-align: center;
+  color: #fff;
+}
+.desk ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.desk ul li{
+    list-style: none;
+    margin: 0 40px;
+}
+.desk ul li a .fa{
+    font-size: 40px;
+    color: #262626;
+    line-height: 80px;
+    transition: .5s;
+}
+.desk ul li a{
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  text-align: center;
+  transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0,0);
+  transition: .5s;
+  box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+}
+.desk ul li a:before{
+  content: 'cv';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #b1b1b1;
+  transition: .5s;
+  transform:  rotate(0deg) skewY(-45deg);
+}
+.desk ul li a:after{
+  content: 'web';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #b1b1b1;
+  transition: .5s;
+  transform:  rotate(0deg) skewX(-45deg);
+}
+.desk ul li a:hover{
+  transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+}
+
+.desk ul li:nth-child(1) a{
+  background-color: #3b5999;
+}
+.desk ul li:nth-child(1):before a{
+  background-color: #2e4a86;
+}*/
+
+.desk {
+  width: 90%;
+  background: #ccc;
+  background: url("/img/desk_wooden.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: relative;
+  margin: 0 auto;
+}
+
+.desk:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #333;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(0deg) skewY(-45deg);
+          transform: rotate(0deg) skewY(-45deg);
+  color: #fff;
+  text-align: center;
+}
+
+.desk:after {
+  content: 'office table';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #000;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(0deg) skewX(-45deg);
+          transform: rotate(0deg) skewX(-45deg);
+  color: #fff;
+  text-align: center;
+}
+
+.desk h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.desk ul {
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2em !important;
+}
+
+.desk ul li {
+  list-style: none;
+  margin: 0 40px;
+}
+
+.desk ul li a .fa {
+  font-size: 40px;
+  color: #262626;
+  line-height: 60px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.desk ul li a {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  text-align: center;
+  -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0, 0);
+          transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0, 0);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.desk ul li a:before {
+  content: 'cv';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #b1b1b1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(0deg) skewY(-45deg);
+          transform: rotate(0deg) skewY(-45deg);
+}
+
+.desk ul li a:after {
+  content: 'web';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #b1b1b1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(0deg) skewX(-45deg);
+          transform: rotate(0deg) skewX(-45deg);
+}
+
+.desk ul li a:hover {
+  -webkit-transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+          transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+  -webkit-box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.desk ul li:nth-child(1) a {
+  background-color: #3b5999;
+}
+
+.desk ul li:nth-child(1):before a {
+  background-color: #2e4a86;
+}
+
+.mb-3 {
+  margin-bottom: 3em !important;
+}
+
+/*shelves*/
+
+.shelf {
+  border-top-left-radius: 5px;
+  background: url("/img/drawer_wooden.jpg");
+  margin: 0.5em auto;
+}
+
+.shelf:hover {
+  -webkit-transform: perspective(1000px) rotate(0deg) skew(0deg) translate(2px, 2px);
+          transform: perspective(1000px) rotate(0deg) skew(0deg) translate(2px, 2px);
+  cursor: pointer;
+}
+
+.shelf h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+  line-height: 2em;
 }
 
