@@ -20,7 +20,7 @@ header .navbar-nav{
 }
 aside{
   background-color: #f2f2ea;
-  min-height: 520px;
+  min-height: 670px;
   overflow: hidden;
 }
 aside ul{
@@ -166,7 +166,7 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 520px;
+  min-height: 670px;
   overflow: hidden;
 }
 main h1{
@@ -333,7 +333,7 @@ main .website header ul{
 }
 main iframe{
   width: 100%;
-  min-height: 500px;
+  min-height: 660px;
   border: 0;
 }
 footer{
