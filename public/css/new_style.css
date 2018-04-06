@@ -20,7 +20,7 @@ header .navbar-nav{
 }
 aside{
   background-color: #f2f2ea;
-  min-height: 450px;
+  min-height: 520px;
   overflow: hidden;
 }
 aside ul{
@@ -70,7 +70,10 @@ aside .panel{
 aside .tools li{
   display: inline;
   text-transform: capitalize;
-  padding: 0.5em;
+  padding: 0.2em;
+}
+aside .tools ul{
+  text-align: center;
 }
  /*.desk {
   width: 80%;
@@ -144,7 +147,6 @@ aside .tools li{
   transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
   box-shadow: -50px 50px 50px rgba(0,0,0,.5);
 }
-
  /*.desk ul li:nth-child(1) a{
   background-color: #3b5999;
 }
@@ -164,7 +166,7 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 450px;
+  min-height: 520px;
   overflow: hidden;
 }
 main h1{
@@ -328,6 +330,34 @@ main .website .smooth{
     -webkit-transition: all 0.5s ease-out;
 }
 main .website header ul{
+}
+main iframe{
+  width: 100%;
+  min-height: 500px;
+  border: 0;
+}
+footer{
+  background-color: #373737;
+}
+footer h2{
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+}
+footer ul{
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+}
+footer li{
+  display: inline;
+  padding-right: 5px;
+}
+footer li a{
+  color: inherit;
+}
+footer li a:hover{
+  color: inherit;
 }
 .edit-pane{
   width: 100%;

@@ -11,20 +11,24 @@
     <script src="/js/angular.min.js"></script>
   </head>
   <body>
-    <header class="bg-dark" ng-cloak><!--start of header section-->
+    <div class="container">
       <div class="row">
-        <div class="col-sm-8">
-          <h1 class="text-warning"><a href="/">BiznessKit</a></h1>
-        </div>
-        <div class="col-sm-4">
-            <ul class="list-inline account-nav">
-              <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> @{{cards[0].first_name}} @{{cards[0].second_name}}</a></li>
-              <li class="list-inline-item"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
-            </ul>
-        </div>
+        <header  ng-cloak><!--start of header section-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8">
+                <h1 class="text-warning"><a href="/">BiznessKit</a></h1>
+              </div>
+              <div class="col-sm-4">
+                  <ul class="list-inline account-nav">
+                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> @{{cards[0].first_name}} @{{cards[0].second_name}}</a></li>
+                    <li class="list-inline-item"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </header><!--end of header section-->
       </div>
-    </header><!--end of header section-->
-    <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 no-padding">
           <aside ng-cloak>
@@ -43,7 +47,7 @@
             <div class="panel">
               <section class="tools">
                 <ul>
-                  <li><input type="checkbox" ng-model="tool_A"/> Website</li>
+                  <li><input type="checkbox"  ng-model="tool_A"  /> Website</li>
                   <li><input type="checkbox" ng-model="tool_B"/> Card</li>
                   <li><input type="checkbox" ng-model="tool_C"/> Cv</li>
                   <li><input type="checkbox" ng-model="tool_D"/> Letter</li>
@@ -75,11 +79,32 @@
           </aside>
         </div>
         <div class="col-md-9 no-padding">
-          <main>
-          </main>
+          @yield('main')
         </div>
       </div>
-    </div>
+      <div class="row">
+        <footer class="bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h2>&copy;{{date('Y')}} All rights reserved</h2>
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+                <h2>Lets stay connected</h2>
+                <ul>
+                  <li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter-square"></span></a></li>
+                  <li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div><!--end app container-->
     @extends('templates.angular-variables')
   </body>
 </html>

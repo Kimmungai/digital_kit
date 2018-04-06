@@ -71,9 +71,9 @@ var app = angular.module('App', []);
     //new variables
     $scope.active_tool=1;
     $scope.my_tools=1;
-    $scope.tool_A=1;
-    $scope.tool_B=0;
-    $scope.tool_C=0;
-    $scope.tool_D=0;
+    $scope.tool_A=true;
+    $scope.tool_B=false;
+    $scope.tool_C=false;
+    $scope.tool_D=false;
   });
 </script>
