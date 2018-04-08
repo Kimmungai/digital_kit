@@ -21,7 +21,7 @@
               </div>
               <div class="col-sm-4">
                   <ul class="list-inline account-nav">
-                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> @{{cards[0].first_name}} @{{cards[0].second_name}}</a></li>
+                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> @{{client.first_name}} @{{client.last_name}}</a></li>
                     <li class="list-inline-item"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
                   </ul>
               </div>
@@ -63,7 +63,7 @@
             <hr>
             <div class="panel">
               <section class="desk" ng-show="my_tools==1">
-              <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools <span class="close" ng-click="my_tools=0;"><i class="fa fa-close" aria-hidden="true"></i></span></h2>
+              <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">
                 <li ng-show="tool_A==1" ng-class="active_tool==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1" class="A">
                   <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>

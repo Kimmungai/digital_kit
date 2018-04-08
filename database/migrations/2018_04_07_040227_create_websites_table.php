@@ -16,6 +16,8 @@ class CreateWebsitesTable extends Migration
         Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
             $table->string('theme');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('tag_line_1');
             $table->string('tag_line_2');
             $table->string('facebook_link');

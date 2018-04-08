@@ -20,7 +20,7 @@ header .navbar-nav{
 }
 aside{
   background-color: #f2f2ea;
-  min-height: 670px;
+  min-height: 780px;
   overflow: hidden;
 }
 aside ul{
@@ -166,7 +166,7 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 670px;
+  min-height: 780px;
   overflow: hidden;
 }
 main h1{
@@ -334,7 +334,15 @@ main .website header ul{
 main iframe{
   width: 100%;
   min-height: 660px;
-  border: 0;
+
+}
+main li{
+  padding-left: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+main li:hover{
+  opacity: 1;
 }
 footer{
   background-color: #373737;
@@ -360,9 +368,8 @@ footer li a:hover{
   color: inherit;
 }
 .edit-pane{
-  width: 100%;
   overflow: hidden;
-  /* background-color: #ff0000;*/
+  background: red;
   position: fixed; /* or absolute */
   top: 6%;
 }
@@ -382,7 +389,7 @@ footer li a:hover{
   background: #fff;
   border: 1px solid #46C1FD;
   border-radius: 5px;
-  max-height: 800px;
+  max-height: 780px;
   overflow-y: auto;
 }
 .edit-form-sec h2{
