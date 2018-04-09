@@ -13,3 +13,4 @@
 
 Route::get('/', 'main@index');
 Route::get('/client', 'main@show');
+Route::post('/client-update', 'main@update');

@@ -21,7 +21,7 @@
               </div>
               <div class="col-sm-4">
                   <ul class="list-inline account-nav">
-                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> @{{client.first_name}} @{{client.last_name}}</a></li>
+                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
                     <li class="list-inline-item"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
                   </ul>
               </div>

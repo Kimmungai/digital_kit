@@ -12,9 +12,10 @@ class main extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id=1)
     {
-        return view('home');
+        $data = Website::where('id','=',$user_id)->first();
+        return view('home',compact('data'));
     }
 
     /**
@@ -68,9 +69,13 @@ class main extends Controller
      * @param  \App\Website  $website
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Website $website)
+    public function update(Request $request, $user_id=1)
     {
-        //
+        if(Website::where('id','=',$user_id)->update([
+          'first_name'=>$request->first_name,
+        ])){
+        return 1;
+      }
     }
 
     /**

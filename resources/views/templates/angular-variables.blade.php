@@ -1,9 +1,13 @@
 <script>
 var app = angular.module('App', []);
-  app.controller('Ctrl', function($scope, $http) {
-    $http.get("/client").then(function(response){
-      $scope.client = response.data;
-    });
+
+app.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('<%');
+  $interpolateProvider.endSymbol('%>');
+});
+app.controller('Ctrl', function($scope, $http) {
+  
+    $scope.client = <?php echo $data; ?>
 
     //variables
     $scope.active_tool=1;
