@@ -6,7 +6,7 @@ app.config(function($interpolateProvider) {
   $interpolateProvider.endSymbol('%>');
 });
 app.controller('Ctrl', function($scope, $http) {
-  
+
     $scope.client = <?php echo $data; ?>
 
     //variables
@@ -19,7 +19,35 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.edit_details=0;
   });
 </script>
+<script>
+  //jquery ajax
+  function update_val(field,value)
+  {
+    $.post("/client-update",
+      {
+        field:field,
+        value:value,
+        "_token": "{{ csrf_token() }}",
+      },
+      function(data,status){
 
+    });
+    $("#website-preview").attr("src", 'http://localhost/');//reload iframe
+  }
+</script>
+<script>
+  $(document).ready(function(){
+      $(document).ajaxStart(function(){
+          $("#wait").css("display", "block");
+      });
+      $(document).ajaxComplete(function(){
+          $("#wait").css("display", "none");
+      });
+      $("button").click(function(){
+          $("#txt").load("demo_ajax_load.asp");
+      });
+  });
+</script>
   <div class="container" ng-cloak ng-show="edit_details==1"><!--edit card panel starts-->
     <div class="row">
       <div class="col-md-3  edit-pane edit-form-sec">
@@ -28,19 +56,19 @@ app.controller('Ctrl', function($scope, $http) {
         <form>
           <div class="form-group">
             <label for="first_name">First name</label>
-            <input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="client.first_name">
+            <input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="client.first_name" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
             <label for="last_name">Last name</label>
-            <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="client.last_name">
+            <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="client.last_name" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="title">Profession</label>
-            <input type="text" class="form-control" id="title" placeholder="E.g. Engineer" ng-model="title">
+            <label for="title">Tagline 1</label>
+            <input type="text" class="form-control" id="tag_line_1" placeholder="E.g. Engineer" ng-model="client.tag_line_1" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="bar_code_url">Bar code url</label>
-            <input type="text" class="form-control" id="bar_code_url" placeholder="" ng-model="bar_code_url">
+            <label for="bar_code_url">Tagline 2</label>
+            <input type="text" class="form-control" id="tag_line_2" placeholder="" ng-model="client.tag_line_2" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
             <label for="telephone">Phone</label>

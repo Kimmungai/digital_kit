@@ -71,10 +71,14 @@ class main extends Controller
      */
     public function update(Request $request, $user_id=1)
     {
-        if(Website::where('id','=',$user_id)->update([
-          'first_name'=>$request->first_name,
-        ])){
-        return 1;
+      $field = $request['field']; $value = $request['value'];
+      if(Website::where('id','=',$user_id)->update([
+        $field => $value
+      ])){
+        return true;
+      }
+      else {
+        return false;
       }
     }
 
