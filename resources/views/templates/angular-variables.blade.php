@@ -17,6 +17,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_C=false;
     $scope.tool_D=false;
     $scope.edit_details=0;
+    $scope.website_src='http://localhost/personal/';
   });
 </script>
 <script>
@@ -30,22 +31,21 @@ app.controller('Ctrl', function($scope, $http) {
         "_token": "{{ csrf_token() }}",
       },
       function(data,status){
-
+        //document.getElementById('website-preview').contentDocument.location.reload(true);//reload iframe
+        //$('#website-preview').attr('src', $('#website-preview').attr('src'));
+        //document.getElementById('id').src += '';
     });
-    $("#website-preview").attr("src", 'http://localhost/');//reload iframe
   }
 </script>
 <script>
   $(document).ready(function(){
-      $(document).ajaxStart(function(){
-          $("#wait").css("display", "block");
-      });
-      $(document).ajaxComplete(function(){
-          $("#wait").css("display", "none");
-      });
-      $("button").click(function(){
-          $("#txt").load("demo_ajax_load.asp");
-      });
+    $(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+      $("#wait").css("display", "none");
+      $("#website-preview").attr("src", 'http://localhost/personal/index.php');
+    });
   });
 </script>
   <div class="container" ng-cloak ng-show="edit_details==1"><!--edit card panel starts-->
