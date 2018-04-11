@@ -17,7 +17,6 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_C=false;
     $scope.tool_D=false;
     $scope.edit_details=0;
-    $scope.website_src='http://localhost/personal/';
   });
 </script>
 <script>
@@ -48,6 +47,7 @@ app.controller('Ctrl', function($scope, $http) {
     });
   });
 </script>
+<script>$("#website-preview").attr("src", 'http://localhost/personal/index.php');</script>
   <div class="container" ng-cloak ng-show="edit_details==1"><!--edit card panel starts-->
     <div class="row">
       <div class="col-md-3  edit-pane edit-form-sec">
@@ -71,20 +71,183 @@ app.controller('Ctrl', function($scope, $http) {
             <input type="text" class="form-control" id="tag_line_2" placeholder="" ng-model="client.tag_line_2" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="telephone">Phone</label>
-            <input type="text" class="form-control" id="telephone" placeholder="E.g. 08031568951" ng-model="telephone">
+            <label for="telephone">Facebook profile</label>
+            <input type="text" class="form-control" id="facebook_link" placeholder="E.g. 08031568951" ng-model="client.facebook_link" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="E.g. psmith@gmail.com" ng-model="email">
+            <label for="email">Twitter link</label>
+            <input type="text" class="form-control" id="twitter_link" placeholder="E.g. psmith@gmail.com" ng-model="client.twitter_link" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="" ng-model="address">
+            <label for="address">Goole plus link</label>
+            <input type="text" class="form-control" id="google_plus_link" placeholder="" ng-model="client.google_plus_link" onblur="update_val(this.id,this.value)">
           </div>
           <div class="form-group">
-            <label for="website">Website</label>
-            <input type="text" class="form-control" id="website" placeholder="" ng-model="website">
+            <label for="website">Linkedin link</label>
+            <input type="text" class="form-control" id="linkedin_link" placeholder="" ng-model="client.linkedin_link" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <label for="website">About me title</label>
+            <input type="text" class="form-control" id="about_title" placeholder="" ng-model="client.about_title" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <label for="website">About me subtitle</label>
+            <input type="text" class="form-control" id="about_story_title" placeholder="" ng-model="client.about_story_title" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <label for="website">About me</label>
+            <textarea  class="form-control" id="about_story" placeholder="" ng-model="client.about_story" onblur="update_val(this.id,this.value)" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="website">Attach resume</label>
+            <select   id="resume_downloadable" class="form-control" ng-model="client.resume_downloadable" onchange="update_val(this.id,this.value)">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="website">Resume download link</label>
+            <input type="text" class="form-control" id="resume_download_link" placeholder="" ng-model="client.resume_download_link" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <label for="website">Skills Section title</label>
+            <input type="text"  class="form-control" id="skill_title" placeholder="" ng-model="client.skill_title" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Skill 1</label>
+                <input type="text"  class="form-control" id="skill_1" placeholder="" ng-model="client.skill_1" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">level (%)</label>
+                <input type="text" class="form-control" id="skill_1_level" placeholder="" ng-model="client.skill_1_level" onblur="update_val(this.id,this.value)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Skill 2</label>
+                <input type="text"  class="form-control" id="skill_2" placeholder="" ng-model="client.skill_2" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">level (%)</label>
+                <input type="text" class="form-control" id="skill_2_level" placeholder="" ng-model="client.skill_2_level" onblur="update_val(this.id,this.value)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Skill 3</label>
+                <input type="text"  class="form-control" id="skill_1" placeholder="" ng-model="client.skill_3" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">level (%)</label>
+                <input type="text" class="form-control" id="skill_3_level" placeholder="" ng-model="client.skill_3_level" onblur="update_val(this.id,this.value)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Skill 4</label>
+                <input type="text"  class="form-control" id="skill_1" placeholder="" ng-model="client.skill_1" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">level (%)</label>
+                <input type="text" class="form-control" id="skill_4_level" placeholder="" ng-model="client.skill_4_level" onblur="update_val(this.id,this.value)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website">Speciality Section title</label>
+            <input type="text"  class="form-control" id="speciality_title" placeholder="" ng-model="client.speciality_title" onblur="update_val(this.id,this.value)">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Speciality 1</label>
+                <input type="text"  class="form-control" id="speciality_1" placeholder="" ng-model="client.speciality_1" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">icon</label>
+                <select  class="form-control" id="speciality_1_icon" placeholder="" ng-model="client.speciality_1_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <label for="website">Speciality sentence</label>
+            <textarea  class="form-control" id="speciality_1_text" placeholder="" ng-model="client.speciality_1_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Speciality 2</label>
+                <input type="text"  class="form-control" id="speciality_2" placeholder="" ng-model="client.speciality_2" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">icon</label>
+                <select  class="form-control" id="speciality_2_icon" placeholder="" ng-model="client.speciality_2_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <label for="website">Speciality sentence</label>
+            <textarea  class="form-control" id="speciality_2_text" placeholder="" ng-model="client.speciality_2_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Speciality 3</label>
+                <input type="text"  class="form-control" id="speciality_3" placeholder="" ng-model="client.speciality_3" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">icon</label>
+                <select  class="form-control" id="speciality_3_icon" placeholder="" ng-model="client.speciality_3_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <label for="website">Speciality sentence</label>
+            <textarea  class="form-control" id="speciality_3_text" placeholder="" ng-model="client.speciality_3_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="website">Speciality 4</label>
+                <input type="text"  class="form-control" id="speciality_4" placeholder="" ng-model="client.speciality_4" onblur="update_val(this.id,this.value)">
+              </div>
+              <div class="col-sm-6">
+                <label for="website">icon</label>
+                <select  class="form-control" id="speciality_4_icon" placeholder="" ng-model="client.speciality_4_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <label for="website">Speciality sentence</label>
+            <textarea  class="form-control" id="speciality_4_text" placeholder="" ng-model="client.speciality_4_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
           </div>
           <div class="form-group">
             <a class="" href="#" ng-click="edit_card=0"><span class="fa fa-thumbs-up"></span> Done</a>

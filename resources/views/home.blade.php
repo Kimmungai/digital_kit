@@ -6,7 +6,7 @@
       <li class="list-inline-item" ng-click="edit_details=1"><span class="fa fa-edit"></span> Edit</li>
       <li class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
-    <iframe id="website-preview" ng-src="website_src">
+    <iframe id="website-preview">
       <p>Your browser does not support iframes.</p>
     </iframe>
     <ul class="list-inline text-center mt-2">
