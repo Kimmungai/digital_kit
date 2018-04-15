@@ -55,8 +55,8 @@
                 <ul>
                   <li><input type="checkbox"  ng-model="tool_A"  ng-click="active_shelf=1;active_tool=1" /> Website</li>
                   <li><input type="checkbox" ng-model="tool_B" ng-click="active_shelf=3;active_tool=2" /> Card</li>
-                  <li><input type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3"/> Cv</li>
-                  <li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>
+                  <!--<li><input type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3"/> Cv</li>
+                  <li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>-->
                 </ul>
               </section>
             </div>
@@ -65,6 +65,10 @@
                 <section  class="desk edit-panel">
                   <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
                   <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
+                  <dl>
+                    <div class="field-title">Image</div>
+                    <input type="file" class="form-control" id="main_image" placeholder="E.g. Peter" ng-model="client.main_image" onchange="update_val(this.id,this.value)">
+                  </dl>
                   <dl>
                     <div class="field-title">Name</div>
                     <dt><input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="client.first_name" onblur="update_val(this.id,this.value)"></dt>
@@ -164,7 +168,360 @@
                       <input type="text" class="form-control" id="skill_4_level" placeholder="" ng-model="client.skill_4_level" onblur="update_val(this.id,this.value)">
                     </dd>
                   </dl>
+                  <dl>
+                    <div class="field-title">Vision statement</div>
+                    <input type="text"  class="form-control" id="vision_statement" placeholder="Vision statement" ng-model="client.vision_statement" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Services - title</div>
+                    <input type="text"  class="form-control" id="speciality_title" placeholder="Speciality title" ng-model="client.speciality_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl><!--Speciality-->
+                    <div class="field-title">Service 1</div>
+                    <dt>
+                      Service
+                    </dt>
+                    <dt>
+                      Icon
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="speciality_1" placeholder="" ng-model="client.speciality_1" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <select  class="form-control" id="speciality_1_icon" placeholder="" ng-model="client.speciality_1_icon" onchange="update_val(this.id,this.value)">
+                        <option value="fa-facebook">Book</option>
+                        <option value="fa-user">Person</option>
+                        <option value="fa-globe">Globe</option>
+                        <option value="fa-desktop">Computer</option>
+                        <option value="fa-mobile">Mobile</option>
+                        <option value="fa-home">Home</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="speciality_1_text" placeholder="" ng-model="client.speciality_1_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--end Speciality-->
+                  <dl><!--Speciality-->
+                    <div class="field-title">Service 2</div>
+                    <dt>
+                      Service
+                    </dt>
+                    <dt>
+                      Icon
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="speciality_2" placeholder="" ng-model="client.speciality_2" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <select  class="form-control" id="speciality_2_icon" placeholder="" ng-model="client.speciality_2_icon" onchange="update_val(this.id,this.value)">
+                        <option value="fa-facebook">Book</option>
+                        <option value="fa-user">Person</option>
+                        <option value="fa-globe">Globe</option>
+                        <option value="fa-desktop">Computer</option>
+                        <option value="fa-mobile">Mobile</option>
+                        <option value="fa-home">Home</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="speciality_2_text" placeholder="" ng-model="client.speciality_2_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--end Speciality-->
+                  <dl><!--Speciality-->
+                    <div class="field-title">Service 3</div>
+                    <dt>
+                      Service
+                    </dt>
+                    <dt>
+                      Icon
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="speciality_3" placeholder="" ng-model="client.speciality_3" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <select  class="form-control" id="speciality_3_icon" placeholder="" ng-model="client.speciality_3_icon" onchange="update_val(this.id,this.value)">
+                        <option value="fa-facebook">Book</option>
+                        <option value="fa-user">Person</option>
+                        <option value="fa-globe">Globe</option>
+                        <option value="fa-desktop">Computer</option>
+                        <option value="fa-mobile">Mobile</option>
+                        <option value="fa-home">Home</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="speciality_3_text" placeholder="" ng-model="client.speciality_3_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--end Speciality-->
+                  <dl><!--Speciality-->
+                    <div class="field-title">Service 4</div>
+                    <dt>
+                      Service
+                    </dt>
+                    <dt>
+                      Icon
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="speciality_4" placeholder="" ng-model="client.speciality_4" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <select  class="form-control" id="speciality_4_icon" placeholder="" ng-model="client.speciality_4_icon" onchange="update_val(this.id,this.value)">
+                        <option value="fa-facebook">Book</option>
+                        <option value="fa-user">Person</option>
+                        <option value="fa-globe">Globe</option>
+                        <option value="fa-desktop">Computer</option>
+                        <option value="fa-mobile">Mobile</option>
+                        <option value="fa-home">Home</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="speciality_4_text" placeholder="" ng-model="client.speciality_4_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--end Speciality-->
+                  <dl>
+                    <div class="field-title">Mission statement</div>
+                    <input type="text"  class="form-control" id="mission_statement" placeholder="Mission statement" ng-model="client.mission_statement" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Portfolio - title</div>
+                    <input type="text"  class="form-control" id="portfolio_title" placeholder="" ng-model="client.portfolio_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Portfolio - subtitle</div>
+                    <input type="text"  class="form-control" id="portfolio_sub_title" placeholder="" ng-model="client.portfolio_sub_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Portfolio - categories</div>
+                    <dt>Category 1</dt>
+                    <dt><input type="text"  class="form-control" id="portfolio_category_1" placeholder="" ng-model="client.portfolio_category_1" onblur="update_val(this.id,this.value)"></dt>
+                  </dl>
+                  <dl>
+                    <dt>Category 2</dt>
+                    <dt><input type="text"  class="form-control" id="portfolio_category_2" placeholder="" ng-model="client.portfolio_category_2" onblur="update_val(this.id,this.value)"></dt>
+                  </dl>
+                  <dl>
+                    <dt>Category 3</dt>
+                    <dt><input type="text"  class="form-control" id="portfolio_category_3" placeholder="" ng-model="client.portfolio_category_3" onblur="update_val(this.id,this.value)"></dt>
+                  </dl>
+                  <dl>
+                    <dt>Category 4</dt>
+                    <dt><input type="text"  class="form-control" id="portfolio_category_4" placeholder="" ng-model="client.portfolio_category_4" onblur="update_val(this.id,this.value)"></dt>
+                  </dl>
+                  <dl><!--portfolio-->
+                    <div class="field-title">1st Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_1" placeholder="" ng-model="client.work_1" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_1_image" placeholder="" ng-model="client.work_1_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_1_category" ng-model="client.work_1_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_1_text" placeholder="" ng-model="client.work_1_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl><!--portfolio-->
+                    <div class="field-title">2nd Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_2" placeholder="" ng-model="client.work_2" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_2_image" placeholder="" ng-model="client.work_2_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_2_category" ng-model="client.work_2_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_2_text" placeholder="" ng-model="client.work_2_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl><!--portfolio-->
+                    <div class="field-title">3rd Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_3" placeholder="" ng-model="client.work_3" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_3_image" placeholder="" ng-model="client.work_3_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_3_category" ng-model="client.work_3_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_3_text" placeholder="" ng-model="client.work_3_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl><!--portfolio-->
+                    <div class="field-title">4th Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_4" placeholder="" ng-model="client.work_4" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_4_image" placeholder="" ng-model="client.work_4_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_4_category" ng-model="client.work_4_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_4_text" placeholder="" ng-model="client.work_4_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl><!--portfolio-->
+                    <div class="field-title">5th Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_5" placeholder="" ng-model="client.work_5" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_5_image" placeholder="" ng-model="client.work_5_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_5_category" ng-model="client.work_5_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_5_text" placeholder="" ng-model="client.work_5_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl><!--portfolio-->
+                    <div class="field-title">6th Portfolio</div>
+                    <dt>
+                      Name
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_6" placeholder="" ng-model="client.work_6" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Image
+                    </dt>
+                    <dt>
+                      <input type="text"  class="form-control" id="work_6_image" placeholder="" ng-model="client.work_6_image" onblur="update_val(this.id,this.value)">
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      Category
+                    </dt>
+                    <dt>
+                      <select class="form-control" id="work_6_category" ng-model="client.work_6_category" onchange="update_val(this.id,this.value)">
+                        <option><% client.portfolio_category_1 %></option>
+                        <option><% client.portfolio_category_2 %></option>
+                        <option><% client.portfolio_category_3 %></option>
+                        <option><% client.portfolio_category_4 %></option>
+                      </select>
+                    </dt>
+                  </dl>
+                  <dl>
+                    <textarea  class="form-control" id="work_6_text" placeholder="" ng-model="client.work_6_text" onblur="update_val(this.id,this.value)" rows="7"></textarea>
+                  </dl><!--portfolio end-->
+                  <dl>
+                    <div class="field-title">Contact - title</div>
+                    <input type="text"  class="form-control" id="contact_section_title" placeholder="" ng-model="client.contact_section_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl class="mb-2">
+                    <div class="field-title">Send enquiries to</div>
+                    <input type="text"  class="form-control" id="contact_receiving_email" placeholder="" ng-model="client.contact_receiving_email" onblur="update_val(this.id,this.value)">
+                  </dl>
                 </section>
+
+                <button ng-show="edit_details==1" ng-click="edit_details=0"  class="btn btn-sm mt-1 ml-1"><span class="fa fa-thumbs-up"></span> Done editing</button>
                 <hr>
               </div><!--edit panel ends here-->
             <div class="panel">

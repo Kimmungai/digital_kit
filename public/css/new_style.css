@@ -20,7 +20,7 @@ header .navbar-nav{
 }
 aside{
   background-color: #f2f2ea;
-  min-height: 780px;
+  min-height: 840px;
   overflow: hidden;
 }
 aside ul{
@@ -79,8 +79,11 @@ aside hr{
   margin-bottom: 0.5em;
 }
 aside .edit-panel{
-  max-height: 200px;
+  width: 99%;
+  max-height: 250px;
   overflow-y: scroll;
+  background: #fff;
+  margin: 0 auto;
 }
 aside .edit-panel dl{
   margin: 0;
@@ -201,7 +204,7 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 780px;
+  min-height: 840px;
   overflow: hidden;
 }
 main h1{
