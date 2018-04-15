@@ -16,7 +16,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_B=false;
     $scope.tool_C=false;
     $scope.tool_D=false;
-    $scope.edit_details=0;
+    $scope.edit_details=1;
   });
 </script>
 <script>

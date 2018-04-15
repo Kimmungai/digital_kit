@@ -75,6 +75,40 @@ aside .tools li{
 aside .tools ul{
   text-align: center;
 }
+aside hr{
+  margin-bottom: 0.5em;
+}
+aside .edit-panel{
+  max-height: 200px;
+  overflow-y: scroll;
+}
+aside .edit-panel dl{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+aside .edit-panel dl .field-title{
+  padding:0.5em;
+}
+aside .edit-panel dt{
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  line-height: 35px;
+}
+aside .edit-panel dd{
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+aside .edit-panel h2{
+  margin-bottom: 1em;
+}
  /*.desk {
   width: 80%;
   background: #ccc;
@@ -88,7 +122,8 @@ aside .tools ul{
 }*/
  .desk h2{
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  font-size: 1.2em;
 }
  .desk ul{
     top: 50%;

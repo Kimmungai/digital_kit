@@ -61,6 +61,112 @@
               </section>
             </div>
             <hr>
+              <div class="panel" ng-cloak ng-show="edit_details==1"><!--edit panel starts here-->
+                <section  class="desk edit-panel">
+                  <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
+                  <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
+                  <dl>
+                    <div class="field-title">Name</div>
+                    <dt><input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="client.first_name" onblur="update_val(this.id,this.value)"></dt>
+                    <dd><input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="client.last_name" onblur="update_val(this.id,this.value)"></dd>
+                  </dl>
+                  <dl>
+                    <div class="field-title">Tagline 1</div>
+                    <input type="text" class="form-control" id="tag_line_1" placeholder="E.g. Engineer" ng-model="client.tag_line_1" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Tagline 2</div>
+                    <input type="text" class="form-control" id="tag_line_2" placeholder="" ng-model="client.tag_line_2" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">Social Accounts</div>
+                    <dt><span class="fa fa-facebook"></span></dt>
+                    <dd><input type="text" class="form-control" id="facebook_link" placeholder="Facebook" ng-model="client.facebook_link" onblur="update_val(this.id,this.value)"></dd>
+                    <dt><span class="fa fa-twitter"></span></dt>
+                    <dd><input type="text" class="form-control" id="twitter_link" placeholder="Twitter" ng-model="client.twitter_link" onblur="update_val(this.id,this.value)"></dd>
+                    <dt><span class="fa fa-google-plus"></span></dt>
+                    <dd><input type="text" class="form-control" id="google_plus_link" placeholder="Google plus" ng-model="client.google_plus_link" onblur="update_val(this.id,this.value)"></dd>
+                    <dt><span class="fa fa-linkedin"></span></dt>
+                    <dd><input type="text" class="form-control" id="linkedin_link" placeholder="linked in" ng-model="client.linkedin_link" onblur="update_val(this.id,this.value)"></dd>
+                    <dt><span class="fa fa-instagram"></span></dt>
+                    <dd><input type="text" class="form-control" id="instagram_link" placeholder="Instagram" ng-model="client.instagram_link" onblur="update_val(this.id,this.value)"></dd>
+                  </dl>
+                  <dl>
+                    <div class="field-title">About - title</div>
+                    <input type="text" class="form-control" id="about_title" placeholder="" ng-model="client.about_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">About - subtitle</div>
+                    <input type="text" class="form-control" id="about_story_title" placeholder="" ng-model="client.about_story_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <div class="field-title">About</div>
+                    <textarea  class="form-control" id="about_story" placeholder="" ng-model="client.about_story" onblur="update_val(this.id,this.value)" rows="5"></textarea>
+                  </dl>
+                  <dl>
+                    <div class="field-title"></div>
+                    <dt>Attach cv?</dt>
+                    <dd>
+                      <select   id="resume_downloadable" class="form-control" ng-model="client.resume_downloadable" onchange="update_val(this.id,this.value)">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <div class="field-title"></div>
+                    <dt>CV download link</dt>
+                    <dd>
+                      <input type="text" class="form-control" id="resume_download_link" placeholder="" ng-model="client.resume_download_link" onblur="update_val(this.id,this.value)">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <div class="field-title">Skills - title</div>
+                    <input type="text"  class="form-control" id="skill_title" placeholder="Skills title" ng-model="client.skill_title" onblur="update_val(this.id,this.value)">
+                  </dl>
+                  <dl>
+                    <dt>
+                      Skill
+                    </dt>
+                    <dt>
+                      level (%)
+                    </dt>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="skill_1" placeholder="Skill 1" ng-model="client.skill_1" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <input type="text" class="form-control" id="skill_1_level" placeholder="" ng-model="client.skill_1_level" onblur="update_val(this.id,this.value)">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="skill_2" placeholder="" ng-model="client.skill_2" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <input type="text" class="form-control" id="skill_2_level" placeholder="" ng-model="client.skill_2_level" onblur="update_val(this.id,this.value)">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="skill_3" placeholder="" ng-model="client.skill_3" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <input type="text" class="form-control" id="skill_3_level" placeholder="" ng-model="client.skill_3_level" onblur="update_val(this.id,this.value)">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>
+                      <input type="text"  class="form-control" id="skill_4" placeholder="" ng-model="client.skill_4" onblur="update_val(this.id,this.value)">
+                    </dt>
+                    <dd>
+                      <input type="text" class="form-control" id="skill_4_level" placeholder="" ng-model="client.skill_4_level" onblur="update_val(this.id,this.value)">
+                    </dd>
+                  </dl>
+                </section>
+                <hr>
+              </div><!--edit panel ends here-->
             <div class="panel">
               <section class="desk" ng-show="my_tools==1">
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
