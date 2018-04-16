@@ -146,7 +146,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <input type="text"  class="form-control" id="skill_2" placeholder="" ng-model="client.skill_2" onblur="update_val(this.id,this.value)">
+                      <input type="text"  class="form-control" id="skill_2" placeholder="Skill 2" ng-model="client.skill_2" onblur="update_val(this.id,this.value)">
                     </dt>
                     <dd>
                       <input type="text" class="form-control" id="skill_2_level" placeholder="" ng-model="client.skill_2_level" onblur="update_val(this.id,this.value)">
@@ -154,7 +154,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <input type="text"  class="form-control" id="skill_3" placeholder="" ng-model="client.skill_3" onblur="update_val(this.id,this.value)">
+                      <input type="text"  class="form-control" id="skill_3" placeholder="Skill 3" ng-model="client.skill_3" onblur="update_val(this.id,this.value)">
                     </dt>
                     <dd>
                       <input type="text" class="form-control" id="skill_3_level" placeholder="" ng-model="client.skill_3_level" onblur="update_val(this.id,this.value)">
@@ -162,7 +162,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <input type="text"  class="form-control" id="skill_4" placeholder="" ng-model="client.skill_4" onblur="update_val(this.id,this.value)">
+                      <input type="text"  class="form-control" id="skill_4" placeholder="Skill 4" ng-model="client.skill_4" onblur="update_val(this.id,this.value)">
                     </dt>
                     <dd>
                       <input type="text" class="form-control" id="skill_4_level" placeholder="" ng-model="client.skill_4_level" onblur="update_val(this.id,this.value)">
@@ -174,7 +174,7 @@
                   </dl>
                   <dl>
                     <div class="field-title">Services - title</div>
-                    <input type="text"  class="form-control" id="speciality_title" placeholder="Speciality title" ng-model="client.speciality_title" onblur="update_val(this.id,this.value)">
+                    <input type="text"  class="form-control" id="speciality_title" placeholder="Services title" ng-model="client.speciality_title" onblur="update_val(this.id,this.value)">
                   </dl>
                   <dl><!--Speciality-->
                     <div class="field-title">Service 1</div>

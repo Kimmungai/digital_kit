@@ -54,7 +54,7 @@ class CreateWebsitesTable extends Migration
             $table->string('speciality_4');
             $table->string('speciality_4_icon');
             $table->text('speciality_4_text');
-            $table->string('missio_statement');
+            $table->string('mission_statement');
             $table->string('portfolio_title');
             $table->string('portfolio_sub_title');
             $table->string('portfolio_category_1');
