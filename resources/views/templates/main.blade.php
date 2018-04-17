@@ -10,10 +10,10 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
   </head>
-  <body>
+  <body ng-cloak>
     <div class="container">
       <div class="row">
-        <header  ng-cloak><!--start of header section-->
+        <header  ><!--start of header section-->
           <div class="container">
             <div class="row">
               <div class="col-sm-8">
@@ -31,7 +31,7 @@
       </div>
       <div class="row">
         <div class="col-md-3 no-padding">
-          <aside ng-cloak>
+          <aside >
             <div class="panel">
                <ul class="shelf-icons">
                   <li ng-class="active_shelf==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#"><i class="fa fa-globe"></i></a></li>
@@ -61,7 +61,7 @@
               </section>
             </div>
             <hr>
-            <div class="panel" ng-cloak ng-show="edit_details==2"><!--edit card panel starts here-->
+            <div class="panel"  ng-show="edit_details==2"><!--edit card panel starts here-->
               <section  class="desk edit-panel">
                 <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
                 <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
@@ -96,7 +96,7 @@
                </dl>
               </section><!--end edit card panel starts here-->
             </div>
-              <div class="panel" ng-cloak ng-show="edit_details==1"><!--edit panel starts here-->
+              <div class="panel"  ng-show="edit_details==1"><!--edit panel starts here-->
                 <section  class="desk edit-panel">
                   <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
                   <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
@@ -566,7 +566,7 @@
               <button ng-show="edit_details > 0" ng-click="edit_details=0"  class="btn btn-sm mt-1 ml-1"><span class="fa fa-thumbs-up"></span> Done editing</button>
               <hr ng-show="edit_details > 0">
             <div class="panel">
-              <section class="desk" ng-show="my_tools==1">
+              <section class="desk" ng-show="my_tools==1" >
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">
                 <li ng-show="tool_A==1" ng-class="active_tool==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">

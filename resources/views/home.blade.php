@@ -3,7 +3,7 @@
   <main ng-show="active_tool==0">
     <h2>No active tool</h2>
   </main>
-  <main ng-show="active_tool==1">
+  <main ng-show="active_tool==1 && tool_A==true">
     <h1><i class="icn fa fa-globe"></i> Website <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
@@ -19,7 +19,7 @@
       <li ng-click="active_tool=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
   </main>
-  <main ng-show="active_tool==2">
+  <main ng-show="active_tool==2 && tool_B==true">
     <h1><i class="icn fa fa-book"></i> Business Card <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
