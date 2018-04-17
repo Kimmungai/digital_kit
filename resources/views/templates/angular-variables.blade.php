@@ -7,10 +7,12 @@ app.config(function($interpolateProvider) {
 });
 app.controller('Ctrl', function($scope, $http) {
 
-    $scope.client = <?php echo $data; ?>
+    $scope.client = <?php echo $website; ?>;
+    $scope.card = <?php echo $card; ?>;
 
     //variables
     $scope.active_tool=1;
+    $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A=true;
     $scope.tool_B=false;
@@ -21,18 +23,20 @@ app.controller('Ctrl', function($scope, $http) {
 </script>
 <script>
   //jquery ajax
-  function update_val(field,value)
+  function update_val(field,value,model='Website')
   {
     $.post("/client-update",
       {
         field:field,
         value:value,
+        model:model,
         "_token": "{{ csrf_token() }}",
       },
       function(data,status){
         //document.getElementById('website-preview').contentDocument.location.reload(true);//reload iframe
         //$('#website-preview').attr('src', $('#website-preview').attr('src'));
         //document.getElementById('id').src += '';
+        alert(data)
     });
   }
 </script>

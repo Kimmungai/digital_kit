@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Website;
+use App\Card;
 use Illuminate\Http\Request;
 
 class main extends Controller
@@ -14,8 +15,9 @@ class main extends Controller
      */
     public function index($user_id=1)
     {
-        $data = Website::where('id','=',$user_id)->first();
-        return view('home',compact('data'));
+        $website= Website::where('id','=',$user_id)->first();
+        $card = Card::where('id','=',$user_id)->first();
+        return view('home',compact('website','card'));
     }
 
     /**
@@ -72,13 +74,28 @@ class main extends Controller
     public function update(Request $request, $user_id=1)
     {
       $field = $request['field']; $value = $request['value'];
-      if(Website::where('id','=',$user_id)->update([
-        $field => $value
-      ])){
-        return true;
+      $model = $request['model'];
+      if($model=='Website')
+      {
+        if(Website::where('id','=',$user_id)->update([
+          $field => $value
+        ])){
+          return true;
+        }
+        else {
+          return false;
+        }
       }
-      else {
-        return false;
+      else if($model=='Card')
+      {
+        if(Card::where('id','=',$user_id)->update([
+          $field => $value
+        ])){
+          return true;
+        }
+        else {
+          return false;
+        }
       }
     }
 
