@@ -36,7 +36,6 @@ app.controller('Ctrl', function($scope, $http) {
         //document.getElementById('website-preview').contentDocument.location.reload(true);//reload iframe
         //$('#website-preview').attr('src', $('#website-preview').attr('src'));
         //document.getElementById('id').src += '';
-        alert(data)
     });
   }
 </script>
@@ -47,8 +46,8 @@ app.controller('Ctrl', function($scope, $http) {
     });
     $(document).ajaxComplete(function(){
       $("#wait").css("display", "none");
-      $("#website-preview").attr("src", 'http://localhost/personal/index.php');
+      $("#website-preview").attr("src", 'http://localhost/personal/'+$('#design').val()+'/'+$('#theme').val()+'');
     });
   });
 </script>
-<script>$("#website-preview").attr("src", 'http://localhost/personal/index.php');</script>
+<script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>

@@ -18,9 +18,13 @@ header h1 a:hover{
 header .navbar-nav{
   padding-left: 0.2em;
 }
+@media screen and (min-width: 992px) {
+  aside{
+    min-height: 840px;
+  }
+}
 aside{
   background-color: #f2f2ea;
-  min-height: 840px;
   overflow: hidden;
 }
 aside ul{
@@ -78,9 +82,18 @@ aside .tools ul{
 aside hr{
   margin-bottom: 0.5em;
 }
+@media screen and (min-width: 992px) {
+  aside .edit-panel{
+    max-height: 350px;
+  }
+}
+@media screen and (max-width: 992px) {
+  aside .edit-panel{
+    max-height: 250px;
+  }
+}
 aside .edit-panel{
   width: 99%;
-  max-height: 250px;
   overflow-y: scroll;
   background: #fff;
   margin: 0 auto;
@@ -211,6 +224,7 @@ main h1{
   background-color: #f7f6f2;
   border-bottom: 1px solid #d4d5d0;
   line-height: 1.5em;
+  font-size: 1.6em;
 }
 main h1 .icn{
   margin-left: 1em;
@@ -226,7 +240,6 @@ main .biz-card{
   width: 560px !important;
   margin: 0 auto;
   border-radius: 0;
-  background: #000;
 }
 main .biz-card h2{
   margin: 0;
@@ -270,6 +283,10 @@ main .card-details ul{
   color: #fff;
   list-style: none;
   margin-bottom: 0.2em;
+}
+main .card-details li{
+  opacity: 1;
+  cursor: default;
 }
 main .controls{
   width: 65%;
@@ -540,4 +557,10 @@ footer li a:hover{
 }
 .desk .F a:before{
  content: 'F';
+}
+.dark-bg{
+  background: #212121;
+}
+.light-bg{
+  background: #424242;
 }

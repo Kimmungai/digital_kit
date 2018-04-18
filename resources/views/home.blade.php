@@ -22,11 +22,11 @@
   <main ng-show="active_tool==2 && tool_B==true">
     <h1><i class="icn fa fa-book"></i> Business Card <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
+      <li class="list-inline-item"><span class="fa fa-download"></span> Download</li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
-    <article class="container biz-card">
+    <article class="container biz-card" ng-class="client.design==1 ? 'dark-bg' : 'light-bg'">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
       <h3><% card.designation%></h3>
       <div class="row">
@@ -44,7 +44,7 @@
         </div>
     </article>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
+      <li class="list-inline-item"><span class="fa fa-download"></span> Dowload</li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>

@@ -43,7 +43,7 @@
                </ul>
                 <ul class="shelves">
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
-                  <li ng-click="active_shelf=2">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option>expo</option><option>Magic</option></select></li>
+                  <li ng-click="active_shelf=2">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option></select></li>
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
@@ -61,6 +61,28 @@
               </section>
             </div>
             <hr>
+            <div class="panel">
+              <section class="desk" ng-show="my_tools==1" >
+              <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
+              <ul class="mb3">
+                <li ng-show="tool_A==1" ng-class="active_tool==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
+                  <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                </li>
+                <li ng-show="tool_B==1"  ng-class="active_tool==2 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">
+                  <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+              <ul class="mb3">
+                <li ng-show="tool_C==1"  ng-class="active_tool==3 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
+                  <a href="#"><i class="fa fa-file" aria-hidden="true"></i></a>
+                </li>
+                <li ng-show="tool_D==1"  ng-class="active_tool==4 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
+                  <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </section><!--end cards shelf items-->
+            </div>
+            <hr ng-show="edit_details > 0">
             <div class="panel"  ng-show="edit_details==2"><!--edit card panel starts here-->
               <section  class="desk edit-panel">
                 <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
@@ -88,7 +110,7 @@
                </dl>
                <dl>
                  <div class="field-title">Website</div>
-                 <input type="url" class="form-control" id="website" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="text" class="form-control" id="website" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'Card')">
                </dl>
                <dl class="mb-2">
                  <div class="field-title">QR url</div>
@@ -107,8 +129,8 @@
                   <dl>
                     <div class="field-title">Theme</div>
                     <select class="form-control" id="theme"  ng-model="client.theme" onchange="update_val(this.id,this.value)">
-                      <option>Light</option>
-                      <option>Dark</option>
+                      <option value="index.php">Dark</option>
+                      <option value="index-2.php">Light</option>
                     </select>
                   </dl>
                   <dl>
@@ -564,28 +586,6 @@
                 </section>
               </div><!--edit panel ends here-->
               <button ng-show="edit_details > 0" ng-click="edit_details=0"  class="btn btn-sm mt-1 ml-1"><span class="fa fa-thumbs-up"></span> Done editing</button>
-              <hr ng-show="edit_details > 0">
-            <div class="panel">
-              <section class="desk" ng-show="my_tools==1" >
-              <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
-              <ul class="mb3">
-                <li ng-show="tool_A==1" ng-class="active_tool==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
-                  <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
-                </li>
-                <li ng-show="tool_B==1"  ng-class="active_tool==2 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">
-                  <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-              <ul class="mb3">
-                <li ng-show="tool_C==1"  ng-class="active_tool==3 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
-                  <a href="#"><i class="fa fa-file" aria-hidden="true"></i></a>
-                </li>
-                <li ng-show="tool_D==1"  ng-class="active_tool==4 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
-                  <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-            </section><!--end cards shelf items-->
-            </div>
           </aside>
         </div>
         <div class="col-md-9 no-padding">
