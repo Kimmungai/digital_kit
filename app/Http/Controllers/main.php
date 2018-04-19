@@ -73,8 +73,19 @@ class main extends Controller
      */
     public function update(Request $request, $user_id=1)
     {
-      $field = $request['field']; $value = $request['value'];
-      $model = $request['model'];
+      if(isset($_FILES['main_image']))
+      {
+        $img=Image::make($_FILES['main_image']['tmp_name']);
+        $img->save('img/bar.jpg');
+        $field = 'main_image';
+        $value='img/bar.jpg';
+        $model = 'Website';
+      }
+      else
+      {
+        $field = $request['field']; $value = $request['value'];
+        $model = $request['model'];
+      }
       if($model=='Website')
       {
         if(Website::where('id','=',$user_id)->update([
