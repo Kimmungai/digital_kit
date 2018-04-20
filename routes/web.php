@@ -13,7 +13,7 @@
 Route::get('/', 'main@index');
 Route::get('/client', 'main@show');
 Route::post('/client-update', 'main@update');
-Route::get('/upload-image', 'main@update');
+Route::post('/upload-image', 'main@save_image');
 /*Route::get('/', function()
 {
     $img = Image::make('img/test.PNG')->crop(494, 668)->save('img/croped.jpg')->gamma(1.6);

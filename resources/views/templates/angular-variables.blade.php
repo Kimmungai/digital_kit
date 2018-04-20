@@ -51,3 +51,6 @@ app.controller('Ctrl', function($scope, $http) {
   });
 </script>
 <script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>
+<script>
+  $('#main_image').ssi_uploader({url: 'http://localhost:8000/upload-image'});
+</script>

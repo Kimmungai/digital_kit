@@ -109,7 +109,20 @@ class main extends Controller
         }
       }
     }
-
+    public function save_image($user_id=1,$field='main_image')
+    {
+      $img = Image::make($_FILES['profile_image']['tmp_name']);
+      $value='img/njega.jpg';
+      $img->save($value);
+      if(Website::where('id','=',$user_id)->update([
+        $field => $value
+      ])){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
     /**
      * Remove the specified resource from storage.
      *

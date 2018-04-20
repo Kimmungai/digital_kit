@@ -5,10 +5,12 @@
     <link  href="/css/font-awesome.min.css" rel="stylesheet">
     <link  href="/css/new_style.css" rel="stylesheet">
     <link  href="/css/website.css" rel="stylesheet">
+    <link href="/css/ssi-uploader.min.css" rel="stylesheet"/>
     <title>Digital Kit</title>
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
+    <script src="/js/ssi-uploader.min.js"></script>
   </head>
   <body ng-cloak>
     <div class="container">
@@ -123,8 +125,8 @@
                   <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
                   <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
                   <dl>
-                    <div class="field-title">Image</div>
-                    <input type="file" class="form-control" id="main_image" placeholder="" ng-model="client.main_image" onchange="update_val(this.id,this.value)">
+                    <div class="field-title">Profile image</div>
+                    <input type="file" class="form-control" multiple id="main_image" name="profile_image" placeholder="" >
                   </dl>
                   <dl>
                     <div class="field-title">Theme</div>
