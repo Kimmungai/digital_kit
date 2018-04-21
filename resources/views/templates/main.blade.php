@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="App" ng-controller="Ctrl">
   <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link  href="/css/bootstrap.min.css" rel="stylesheet">
     <link  href="/css/font-awesome.min.css" rel="stylesheet">
     <link  href="/css/new_style.css" rel="stylesheet">
@@ -126,10 +127,8 @@
                   <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
                   <dl>
                     <div class="field-title">Profile image</div>
-                    <form id="main_image_form" action="/client-update" method="post" enctype="multipart/form-data">
-                      {{csrf_field()}}
-                      <input type="file" class="form-control"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
-                    </form>
+                      <button class="btn btn-sm btn-primary file-button" onclick="$('#main_image').click()">Choose file</button>
+                      <input type="file" class="no-display"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
                   </dl>
                   <dl>
                     <div class="field-title">Theme</div>
@@ -396,7 +395,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_1_image" placeholder="" ng-model="client.work_1_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_1_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_1_image" name="work_1_image" placeholder="" ng-model="client.work_1_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_1_image')">
                     </dt>
                   </dl>
                   <dl>
@@ -429,7 +429,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_2_image" placeholder="" ng-model="client.work_2_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_2_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_2_image" name="work_2_image" placeholder="" ng-model="client.work_2_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_2_image')">
                     </dt>
                   </dl>
                   <dl>
@@ -462,7 +463,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_3_image" placeholder="" ng-model="client.work_3_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_3_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_3_image" name="work_3_image" placeholder="" ng-model="client.work_3_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_3_image')">
                     </dt>
                   </dl>
                   <dl>
@@ -495,7 +497,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_4_image" placeholder="" ng-model="client.work_4_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_4_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_4_image" name="work_4_image" placeholder="" ng-model="client.work_4_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_4_image')">
                     </dt>
                   </dl>
                   <dl>
@@ -528,7 +531,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_5_image" placeholder="" ng-model="client.work_5_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_5_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_5_image" name="work_5_image" placeholder="" ng-model="client.work_5_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_5_image')">
                     </dt>
                   </dl>
                   <dl>
@@ -561,7 +565,8 @@
                       Image
                     </dt>
                     <dt>
-                      <input type="text"  class="form-control" id="work_6_image" placeholder="" ng-model="client.work_6_image" onchange="update_val(this.id,this.value)">
+                      <button class="btn btn-sm btn-primary" onclick="$('#work_6_image').click()">Choose file</button>
+                      <input type="file"  class="no-display" id="work_6_image" name="work_6_image" placeholder="" ng-model="client.work_6_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_6_image')">
                     </dt>
                   </dl>
                   <dl>

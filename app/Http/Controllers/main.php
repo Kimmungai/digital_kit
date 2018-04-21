@@ -18,7 +18,7 @@ class main extends Controller
     {
         $website= Website::where('id','=',$user_id)->first();
         $card = Card::where('id','=',$user_id)->first();
-        return view('home',compact('website','card'));
+        return view('main',compact('website','card'));
     }
 
     /**
@@ -73,12 +73,16 @@ class main extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $user_id=1)
-    {
-      if($request->hasFile('main_image'))
-      {
-        $img=Image::make($request->main_image)->crop(494, 668);
-        $value='img/bar.jpg';
-        $img->save($value);
+    {//return $_POST['length'].$_POST['width'];
+      if($request->hasFile($request['field']))
+      {//return 'img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'.jpg';
+        $img=Image::make($request->file($_POST['fname']));
+        $img->save('img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'_original.jpg');
+        $value='img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'.jpg';
+        if($_POST['length'] && $_POST['width'])
+        {
+          $img->crop($_POST['length'], $_POST['width'])->save($value);
+        }
         $field = 'main_image';
         $model = 'Website';
       }
@@ -93,10 +97,10 @@ class main extends Controller
         if(Website::where('id','=',$user_id)->update([
           $field => $value
         ])){
-          //return true;
+          return true;
         }
         else {
-          //return false;
+          return false;
         }
       }
       else if($model=='Card')
@@ -104,13 +108,12 @@ class main extends Controller
         if(Card::where('id','=',$user_id)->update([
           $field => $value
         ])){
-          //return true;
+          return true;
         }
         else {
-          //return false;
+          return false;
         }
       }
-      return back();
     }
     /**
      * Remove the specified resource from storage.

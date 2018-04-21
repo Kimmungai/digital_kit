@@ -34,5 +34,35 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => 609833096030484,
+        'client_secret' => 'purityWANGARI@1',
+        'redirect' => 'http://localhost:8000',
+    ],
+    'twitter' => [
+        'client_id' => '7b895edca3ee18e312cd',
+        'client_secret' => '007ae0fb407059d34962b99d523a29b02728ae25',
+        'redirect' => 'http://localhost:8000',
+    ],
+    'linkedin' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://your-callback-url',
+    ],
+    'google' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://your-callback-url',
+    ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://your-callback-url',
+    ],
+    'bitbucket' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://your-callback-url',
+    ],
 
 ];

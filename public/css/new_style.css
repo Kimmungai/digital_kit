@@ -106,6 +106,10 @@ aside .edit-panel dl{
 aside .edit-panel dl .field-title{
   padding:0.5em;
 }
+aside .edit-panel dl .file-button{
+  width: 50%;
+  margin: 0 25%;
+}
 aside .edit-panel dt{
   margin: 0;
   padding: 0;
@@ -482,6 +486,9 @@ footer li a:hover{
 }
 .no-border{
   border: 0!important;
+}
+.no-display{
+  display: none !important;
 }
 .pl1{
   padding-left: 1em !important;
