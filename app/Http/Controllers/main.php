@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Website;
 use App\Card;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class main extends Controller
 {
@@ -73,28 +74,29 @@ class main extends Controller
      */
     public function update(Request $request, $user_id=1)
     {
-      if(isset($_FILES['main_image']))
+      if($request->hasFile('main_image'))
       {
-        $img=Image::make($_FILES['main_image']['tmp_name']);
-        $img->save('img/bar.jpg');
-        $field = 'main_image';
+        $img=Image::make($request->main_image)->crop(494, 668);
         $value='img/bar.jpg';
+        $img->save($value);
+        $field = 'main_image';
         $model = 'Website';
       }
       else
       {
-        $field = $request['field']; $value = $request['value'];
-        $model = $request['model'];
+         $field = $request['field'];
+         $model = $request['model'];
+         $value = $request['value'];
       }
       if($model=='Website')
       {
         if(Website::where('id','=',$user_id)->update([
           $field => $value
         ])){
-          return true;
+          //return true;
         }
         else {
-          return false;
+          //return false;
         }
       }
       else if($model=='Card')
@@ -102,26 +104,13 @@ class main extends Controller
         if(Card::where('id','=',$user_id)->update([
           $field => $value
         ])){
-          return true;
+          //return true;
         }
         else {
-          return false;
+          //return false;
         }
       }
-    }
-    public function save_image($user_id=1,$field='main_image')
-    {
-      $img = Image::make($_FILES['profile_image']['tmp_name']);
-      $value='img/njega.jpg';
-      $img->save($value);
-      if(Website::where('id','=',$user_id)->update([
-        $field => $value
-      ])){
-        return true;
-      }
-      else {
-        return false;
-      }
+      return back();
     }
     /**
      * Remove the specified resource from storage.

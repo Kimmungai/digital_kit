@@ -25,6 +25,12 @@ app.controller('Ctrl', function($scope, $http) {
   //jquery ajax
   function update_val(field,value,model='Website')
   {
+    if(field === 'main_image')
+    {
+      value = $('#'+field+'_form').submit();
+      return 0;
+      //alert('#'+field+'_form')
+    }
     $.post("/client-update",
       {
         field:field,
@@ -33,9 +39,7 @@ app.controller('Ctrl', function($scope, $http) {
         "_token": "{{ csrf_token() }}",
       },
       function(data,status){
-        //document.getElementById('website-preview').contentDocument.location.reload(true);//reload iframe
-        //$('#website-preview').attr('src', $('#website-preview').attr('src'));
-        //document.getElementById('id').src += '';
+
     });
   }
 </script>
@@ -51,6 +55,3 @@ app.controller('Ctrl', function($scope, $http) {
   });
 </script>
 <script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>
-<script>
-  $('#main_image').ssi_uploader({url: 'http://localhost:8000/upload-image'});
-</script>

@@ -126,7 +126,10 @@
                   <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
                   <dl>
                     <div class="field-title">Profile image</div>
-                    <input type="file" class="form-control" multiple id="main_image" name="profile_image" placeholder="" >
+                    <form id="main_image_form" action="/client-update" method="post" enctype="multipart/form-data">
+                      {{csrf_field()}}
+                      <input type="file" class="form-control"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
+                    </form>
                   </dl>
                   <dl>
                     <div class="field-title">Theme</div>
