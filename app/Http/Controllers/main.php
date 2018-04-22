@@ -83,6 +83,7 @@ class main extends Controller
         {
           $img->crop($_POST['length'], $_POST['width'])->save($value);
         }
+        $value=url($value);
         $field = 'main_image';
         $model = 'Website';
       }

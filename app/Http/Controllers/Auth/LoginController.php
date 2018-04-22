@@ -7,6 +7,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use Auth;
 use App\User;
+use App\Card;
+use App\Website;
+use File;
+use Intervention\Image\Facades\Image;
 class LoginController extends Controller
 {
     /*
@@ -82,13 +86,16 @@ class LoginController extends Controller
     {
         $github_user = Socialite::driver('github')->user();
         // $user->token;
+        //print_r($github_user);die();
         $user=$this->userFindOrCreate($github_user);
         Auth::login($user,true);
+        $this->cardFindOrCreate($github_user,Auth::id());
+        $this->websiteFindOrCreate($github_user,Auth::id());
         return redirect($this->redirectTo);
     }
-    public function userFindOrCreate($user)
+    public function userFindOrCreate($user_object)
     {
-        $checkUser = User::where('provider_id',$user->id)->first();
+        $checkUser = User::where('provider_id',$user_object->id)->first();
         if($checkUser)
         {
           return $checkUser;
@@ -96,11 +103,58 @@ class LoginController extends Controller
         else
         {
           $new_user = new User;
-          $new_user->name = $user->getName();
-          $new_user->email = $user->getEmail();
-          $new_user->provider_id = $user->getId();
+          $new_user->name = $user_object->getName();
+          $new_user->email = $user_object->getEmail();
+          $new_user->provider_id = $user_object->getId();
           $new_user->save();
           return $new_user;
+        }
+    }
+    public function cardFindOrCreate($user_object,$user_id)
+    {
+        $checkCard = Card::where('id',$user_id)->first();
+        if($checkCard)
+        {
+          return $checkCard;
+        }
+        else
+        {
+          $new_card = new card;
+          $new_card->first_name = $user_object->getName();
+          $new_card->last_name = $user_object->getNickname();
+          $new_card->designation = 'Administrator';
+          $new_card->email = $user_object->getEmail();
+          $new_card->address = $user_object['location'];
+          $new_card->website = $user_object['url'];
+          $new_card->qr_url = $user_object['url'];
+          $new_card->save();
+          return $new_card;
+        }
+    }
+    public function websiteFindOrCreate($user_object,$user_id)
+    {
+        $checkWebsite = Website::where('id',$user_id)->first();
+        if($checkWebsite)
+        {
+          return $checkWebsite;
+        }
+        else
+        {
+          $avatar = file_get_contents($user_object->getAvatar());
+          if (!file_exists('img/'.$user_id.'/profile')) {
+              mkdir('img/'.$user_id.'/profile', 0777, true);
+          }
+          File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
+          $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+          $new_website = new Website;
+          $new_website->main_image = url('/img/'.$user_id.'/profile/main_image.jpg');
+          $new_website->first_name = $user_object->getNickname();
+          $new_website->last_name = $user_object->getName();
+          $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
+          $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
+          $new_website->contact_receiving_email = $user_object->getEmail();
+          $new_website->save();
+          return $new_website;
         }
     }
 }

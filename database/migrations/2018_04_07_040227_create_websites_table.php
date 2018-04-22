@@ -15,10 +15,10 @@ class CreateWebsitesTable extends Migration
     {
         Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('main_image')->nullable();
-            $table->string('design')->nullable();
-            $table->string('theme')->nullable();
-            $table->string('first_name');
+            $table->string('main_image');
+            $table->string('design')->default('1');
+            $table->string('theme')->default('index.php');
+            $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('tag_line_1')->nullable();
             $table->string('tag_line_2')->nullable();
@@ -27,8 +27,8 @@ class CreateWebsitesTable extends Migration
             $table->string('google_plus_link')->nullable();
             $table->string('linkedin_link')->nullable();
             $table->string('instagram_link')->nullable();
-            $table->string('about_title')->nullable();
-            $table->string('about_story_title')->nullable();
+            $table->string('about_title')->default('About Me');
+            $table->string('about_story_title')->default('A little about how I started');
             $table->text('about_story')->nullable();
             $table->tinyInteger('resume_downloadable')->default(1);
             $table->string('resume_download_link')->nullable();
