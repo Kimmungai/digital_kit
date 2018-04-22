@@ -37,32 +37,32 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACE_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000',
+        'redirect' => 'http://localhost:8000/login/facebook/callback',
     ],
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000',
+        'redirect' => 'http://localhost:8000/login/twitter/callback',
     ],
     'linkedin' => [
         'client_id' => env('LINKEDIN_CLIENT_ID'),
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+        'redirect' => 'http://localhost:8000/login/linkedin/callback',
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+        'redirect' => 'http://localhost:8000/login/google/callback',
     ],
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+        'redirect' => 'http://localhost:8000/login/github/callback',
     ],
     'bitbucket' => [
         'client_id' => env('BITBUCKET_CLIENT_ID'),
         'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+        'redirect' => 'http://localhost:8000/',
     ],
 
 ];

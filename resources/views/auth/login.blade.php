@@ -60,6 +60,7 @@
                                 </a>
                             </div>
                         </div>
+                        <a class="btn btn-primary" href="/login/github">Login wit git hub</a>
                     </form>
                 </div>
             </div>
