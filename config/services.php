@@ -35,23 +35,23 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook' => [
-        'client_id' => 609833096030484,
-        'client_secret' => 'purityWANGARI@1',
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACE_CLIENT_SECRET'),
         'redirect' => 'http://localhost:8000',
     ],
     'twitter' => [
-        'client_id' => '7b895edca3ee18e312cd',
-        'client_secret' => '007ae0fb407059d34962b99d523a29b02728ae25',
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' => 'http://localhost:8000',
     ],
     'linkedin' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'client_id' => env('LINKEDIN_CLIENT_ID'),
+        'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
         'redirect' => 'http://your-callback-url',
     ],
     'google' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => 'http://your-callback-url',
     ],
     'github' => [
@@ -60,8 +60,8 @@ return [
         'redirect' => 'http://your-callback-url',
     ],
     'bitbucket' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'client_id' => env('BITBUCKET_CLIENT_ID'),
+        'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
         'redirect' => 'http://your-callback-url',
     ],
 
