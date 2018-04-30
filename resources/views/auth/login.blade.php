@@ -61,6 +61,7 @@
                             </div>
                         </div>
                         <a class="btn btn-primary" href="/login/github">Login wit git hub</a>
+                        <a class="btn btn-primary" href="/login/linkedin">Login with linkedin</a>
                     </form>
                 </div>
             </div>

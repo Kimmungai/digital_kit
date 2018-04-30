@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'main@index');
+Route::get('/', 'main@index')->middleware('auth');
 Route::get('/client', 'main@show');
 Route::post('/client-update', 'main@update');
 /*Route::get('/', function()

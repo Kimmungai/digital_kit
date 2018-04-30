@@ -6,6 +6,7 @@ use App\Website;
 use App\Card;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Auth;
 
 class main extends Controller
 {
@@ -14,10 +15,10 @@ class main extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id=1)
+    public function index()
     {
-        $website= Website::where('id','=',$user_id)->first();
-        $card = Card::where('id','=',$user_id)->first();
+        $website= Website::where('id','=',Auth::id())->first();
+        $card = Card::where('id','=',Auth::id())->first();
         return view('main',compact('website','card'));
     }
 
