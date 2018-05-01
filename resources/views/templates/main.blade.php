@@ -71,7 +71,7 @@
               <section class="desk" ng-show="my_tools==1" >
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">
-                <li ng-show="tool_A==1" ng-class="active_tool==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
+                <li ng-show="tool_A==1" ng-class="active_tool==1 || active_tool==5 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
                   <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 </li>
                 <li ng-show="tool_B==1"  ng-class="active_tool==2 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">

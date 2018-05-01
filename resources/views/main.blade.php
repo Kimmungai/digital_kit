@@ -6,7 +6,7 @@
   <main ng-show="active_tool==1 && tool_A==true">
     <h1><i class="icn fa fa-globe"></i> Website <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
+      <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><span class="fa fa-globe"></span> Publish</li>
       <li class="list-inline-item" ng-click="edit_details=1"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
@@ -54,6 +54,10 @@
   </main>
   <main ng-show="active_tool==4">
     <h2>letters</h2>
+  </main>
+  <main ng-show="active_tool==5">
+    <h2>Publish</h2>
+    
   </main>
   <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/img/loading.gif' width="64" height="64" /><br>Loading..</div>
 @endsection

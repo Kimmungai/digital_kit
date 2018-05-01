@@ -57,8 +57,13 @@ class LoginController extends Controller
     }
     public function handleTwitterCallback()
     {
-        $user = Socialite::driver('twitter')->user();
-        return redirect('home');
+        $twitter_user = Socialite::driver('twitter')->user();
+        $user=$this->userFindOrCreate($twitter_user);
+        //print_r($twitter_user);die();
+        Auth::login($user,true);
+        $this->cardFindOrCreate($twitter_user,Auth::id(),'twitter');
+        $this->websiteFindOrCreate($twitter_user,Auth::id(),'twitter');
+        return redirect($this->redirectTo);
     }
     public function redirectToLinkedin()
     {
@@ -68,7 +73,7 @@ class LoginController extends Controller
     {
         $linkedin_user = Socialite::driver('linkedin')->user();
         // $user->token;
-        //print($linkedin_user['firstName']);die();
+        //print_r($linkedin_user['pictureUrls']['values'][0]);die();
         $user=$this->userFindOrCreate($linkedin_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($linkedin_user,Auth::id(),'linkedin');
@@ -82,6 +87,7 @@ class LoginController extends Controller
     public function handleGoogleCallback()
     {
         $user = Socialite::driver('google')->user();
+        print_r($user);die();
         // $user->token;
     }
     public function redirectToGithub()
@@ -101,7 +107,7 @@ class LoginController extends Controller
     }
     public function userFindOrCreate($user_object)
     {
-        $checkUser = User::where('email',$user_object->getEmail())->first();
+        $checkUser = User::where('provider_id',$user_object->getId())->first();
         if($checkUser)
         {
           return $checkUser;
@@ -145,9 +151,22 @@ class LoginController extends Controller
             $new_card->last_name = $user_object['lastName'];
             $new_card->designation = $user_object['headline'];
             $new_card->email = $user_object->getEmail();
-            //$new_card->address = $user_object['user']['location']['country']['name'];
-            //$new_card->website = $user_object['user']['publicProfileUrl'];
-            //$new_card->qr_url = $user_object['user']['publicProfileUrl'];
+            $new_card->address = $user_object['location']['name'];
+            $new_card->website = $user_object['publicProfileUrl'];
+            $new_card->qr_url = $user_object['publicProfileUrl'];
+            $new_card->save();
+            return $new_card;
+          }
+          elseif($provider === 'twitter')
+          {
+            $new_card = new card;
+            $new_card->first_name = $user_object->getName();
+            $new_card->last_name = $user_object->getNickname();
+            $new_card->designation = 'Administrator';
+            $new_card->email = $user_object->getEmail();
+            $new_card->address = $user_object['location'];
+            $new_card->website = $user_object['url'];
+            $new_card->qr_url = $user_object['url'];
             $new_card->save();
             return $new_card;
           }
@@ -182,7 +201,7 @@ class LoginController extends Controller
           }
           elseif($provider === 'linkedin')
           {
-            $avatar = file_get_contents($user_object->getAvatar());
+            $avatar = file_get_contents($user_object['pictureUrls']['values'][0]);
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
@@ -193,7 +212,25 @@ class LoginController extends Controller
             $new_website->first_name = $user_object['firstName'];
             $new_website->last_name = $user_object['lastName'];
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object['firstName'].' '.$user_object['lastName'].'</span>';
-            //$new_website->tag_line_2 = $user_object['user']['headline'].' based in <span>'.$user_object['user']['location']['country']['name'].'</span>';
+            $new_website->tag_line_2 = $user_object['headline'].' based in <span>'.$user_object['location']['name'].'</span>';
+            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->save();
+            return $new_website;
+          }
+          elseif($provider === 'twitter')
+          {
+            $avatar = file_get_contents($user_object->getAvatar());
+            if (!file_exists('img/'.$user_id.'/profile')) {
+                mkdir('img/'.$user_id.'/profile', 0777, true);
+            }
+            File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
+            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website = new Website;
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->first_name = $user_object->getNickname();
+            $new_website->last_name = $user_object->getName();
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
+            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
             $new_website->contact_receiving_email = $user_object->getEmail();
             $new_website->save();
             return $new_website;

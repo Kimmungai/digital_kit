@@ -62,6 +62,9 @@
                         </div>
                         <a class="btn btn-primary" href="/login/github">Login wit git hub</a>
                         <a class="btn btn-primary" href="/login/linkedin">Login with linkedin</a>
+                        <a class="btn btn-primary" href="/login/google">Login Google</a>
+                        <a class="btn btn-primary" href="/login/facebook">Login facebook</a>
+                        <a class="btn btn-primary" href="/login/twitter">Login twitter</a>
                     </form>
                 </div>
             </div>
