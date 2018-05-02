@@ -19,6 +19,12 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_C=false;
     $scope.tool_D=false;
     $scope.edit_details=0;
+    $scope.publish_url='https://'+$scope.client.first_name+$scope.client.last_name+'.com';
+    $scope.edit_publish_url=1;
+    $scope.publish_period='1 year';
+    $scope.publish_cost ='$99';
+    $scope.acc_bal ='$0';
+    $scope.publish_notes =1;
   });
 </script>
 <script>
@@ -78,10 +84,11 @@ app.controller('Ctrl', function($scope, $http) {
     $(document).ajaxComplete(function(){
       $("#wait").css("display", "none");
       $("#website-preview").attr("src", 'http://localhost/personal/'+$('#design').val()+'/'+$('#theme').val()+'');
+      $(".prev-link").attr("href", 'http://localhost/personal/'+$('#design').val()+'/'+$('#theme').val()+'');
     });
   });
 </script>
-<script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>
+<script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');$(".prev-link").attr("href", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>
 <script>
   $(document).ready(function(){
     $.ajaxSetup({
