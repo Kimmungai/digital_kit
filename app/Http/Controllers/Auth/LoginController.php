@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use Auth;
 use App\User;
+use App\publishing_details;
+use App\payment_details;
 use App\Card;
 use App\Website;
 use File;
@@ -119,6 +121,16 @@ class LoginController extends Controller
           $new_user->email = $user_object->getEmail();
           $new_user->provider_id = $user_object->getId();
           $new_user->save();
+          $pub_details = new publishing_details;
+          $pub_details->website_url = url('/');
+          $pub_details->publishing_period = '1 year';
+          $pub_details->publishing_cost = '$99';
+          $pub_details->user_id = $new_user->id;
+          $pub_details->save();
+          $pay_details = new payment_details;
+          $pay_details->acc_bal = '$0';
+          $pay_details->user_id = $new_user->id;
+          $pay_details->save();
           return $new_user;
         }
     }
@@ -135,7 +147,7 @@ class LoginController extends Controller
           {
             $new_card = new card;
             $new_card->first_name = $user_object->getName();
-            $new_card->last_name = $user_object->getNickname();
+            //$new_card->last_name = $user_object->getNickname();
             $new_card->designation = 'Administrator';
             $new_card->email = $user_object->getEmail();
             $new_card->address = $user_object['location'];
@@ -161,7 +173,7 @@ class LoginController extends Controller
           {
             $new_card = new card;
             $new_card->first_name = $user_object->getName();
-            $new_card->last_name = $user_object->getNickname();
+            //$new_card->last_name = $user_object->getNickname();
             $new_card->designation = 'Administrator';
             $new_card->email = $user_object->getEmail();
             $new_card->address = $user_object['location'];
@@ -192,7 +204,7 @@ class LoginController extends Controller
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_object->getNickname();
-            $new_website->last_name = $user_object->getName();
+            //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
             $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
             $new_website->contact_receiving_email = $user_object->getEmail();
@@ -228,7 +240,7 @@ class LoginController extends Controller
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_object->getNickname();
-            $new_website->last_name = $user_object->getName();
+            //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
             $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
             $new_website->contact_receiving_email = $user_object->getEmail();

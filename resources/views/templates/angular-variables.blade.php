@@ -9,6 +9,7 @@ app.controller('Ctrl', function($scope, $http) {
 
     $scope.client = <?php echo $website; ?>;
     $scope.card = <?php echo $card; ?>;
+    $scope.user_details = <?php echo $user; ?>;
 
     //variables
     $scope.active_tool=1;
@@ -19,11 +20,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_C=false;
     $scope.tool_D=false;
     $scope.edit_details=0;
-    $scope.publish_url='https://'+$scope.client.first_name+$scope.client.last_name+'.com';
     $scope.edit_publish_url=1;
-    $scope.publish_period='1 year';
-    $scope.publish_cost ='$99';
-    $scope.acc_bal ='$0';
     $scope.publish_notes =1;
   });
 </script>
@@ -71,7 +68,6 @@ app.controller('Ctrl', function($scope, $http) {
           "_token": "{{ csrf_token() }}",
         },
         function(data,status){
-
       });
     }
   }

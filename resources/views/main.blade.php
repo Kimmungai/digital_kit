@@ -59,6 +59,9 @@
   </main>
   <main ng-show="active_tool==5">
     <h1><i class="icn fa fa-globe"></i> Publish Website <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+    <ul class="list-inline text-center mt-2">
+      <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< Back</li>
+    </ul>
     <div class="container">
       <div class="card text-center">
         <div class="card-header">
@@ -101,13 +104,13 @@
           <table class="table table-hover table-bordered">
             <tbody>
               <tr>
-                <th>Website Url</th><td class="text-lower"><span ng-show="edit_publish_url==1"><% publish_url %></span><input class="form-control" type="text" ng-show="edit_publish_url==2" ng-model="publish_url" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
+                <th>Website Url</th><td class="text-lower"><span ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></span><input id="website_url" class="form-control" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
               </tr>
               <tr>
-                <th>Period</th><td><span><% publish_period %></span></td><td><select ng-model="publish_period"><option>1 year</option><option>3 years</option><option>5 years</option></select></td>
+                <th>Period</th><td><span><% user_details.publishing_details.publishing_period %></span></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>1 year</option><option>3 years</option><option>5 years</option></select></td>
               </tr>
               <tr>
-                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td><% publish_cost %></td>
+                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td><% user_details.publishing_details.publishing_cost %></td>
               </tr>
             </tbody>
           </table>
@@ -122,7 +125,7 @@
                 <th>Account</th><td><span><% client.first_name %> <% client.last_name %></span></td>
               </tr>
               <tr>
-                <th>Balance</th><td><span><% acc_bal %></span></td>
+                <th>Balance</th><td><span><% user_details.payment_details.acc_bal %></span></td>
               </tr>
               <tr>
                 <th>Top up</th><td><a href="#" class="btn btn-sm btn-primary"><span class="fa fa-paypal"></span> Pay</a></td>

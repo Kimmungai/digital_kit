@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Website;
 use App\Card;
+use App\User;
+use App\payment_details;
+use App\publishing_details;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Auth;
@@ -19,7 +22,8 @@ class main extends Controller
     {
         $website= Website::where('id','=',Auth::id())->first();
         $card = Card::where('id','=',Auth::id())->first();
-        return view('main',compact('website','card'));
+        $user = User::with('publishing_details','payment_details')->where('id','=',Auth::id())->first();
+        return view('main',compact('website','card','user'));
     }
 
     /**
@@ -73,8 +77,9 @@ class main extends Controller
      * @param  \App\Website  $website
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $user_id=1)
-    {//return $_POST['length'].$_POST['width'];
+    public function update(Request $request)
+    {
+      $user_id=Auth::id();
       if($request->hasFile($request['field']))
       {//return 'img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'.jpg';
         $img=Image::make($request->file($_POST['fname']));
@@ -94,7 +99,7 @@ class main extends Controller
          $model = $request['model'];
          $value = $request['value'];
       }
-      if($model=='Website')
+      if($model === 'Website')
       {
         if(Website::where('id','=',$user_id)->update([
           $field => $value
@@ -105,9 +110,20 @@ class main extends Controller
           return false;
         }
       }
-      else if($model=='Card')
+      else if($model === 'Card')
       {
         if(Card::where('id','=',$user_id)->update([
+          $field => $value
+        ])){
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+      else if($model === 'publishing_details')
+      {
+        if(publishing_details::where('id','=',$user_id)->update([
           $field => $value
         ])){
           return true;

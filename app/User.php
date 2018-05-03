@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function publishing_details()
+    {
+      return $this->hasOne('App\publishing_details');
+    }
+    public function payment_details()
+    {
+      return $this->hasOne('App\payment_details');
+    }
 }

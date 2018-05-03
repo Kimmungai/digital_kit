@@ -96,31 +96,31 @@
                 <dl>
                   <div class="field-title">Name</div>
                   <dt>
-                    <input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="card.first_name" onchange="update_val(this.id,this.value,'Card')">
+                    <input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
                   </dt>
                   <dd>
-                    <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="card.last_name" onchange="update_val(this.id,this.value,'Card')">
+                    <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
                   </dd>
                 </dl>
                <dl>
                  <div class="field-title">Telephone</div>
-                 <input type="text" class="form-control" id="phone" placeholder="E.g. (+81)3156-8951" ng-model="card.phone" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="text" class="form-control" id="phone" placeholder="E.g. (+81)3156-8951" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
                </dl>
                <dl>
                  <div class="field-title">Email</div>
-                 <input type="email" class="form-control" id="email" placeholder="peter@domain.com" ng-model="card.email" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="email" class="form-control" id="email" placeholder="peter@domain.com" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
                </dl>
                <dl>
                  <div class="field-title">Address</div>
-                 <input type="text" class="form-control" id="address" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="text" class="form-control" id="address" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
                </dl>
                <dl>
                  <div class="field-title">Website</div>
-                 <input type="text" class="form-control" id="website" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="text" class="form-control" id="website" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
                </dl>
                <dl class="mb-2">
                  <div class="field-title">QR url</div>
-                 <input type="text" class="form-control" id="qr_url" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'Card')">
+                 <input type="text" class="form-control" id="qr_url" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
                </dl>
               </section><!--end edit card panel starts here-->
             </div>
