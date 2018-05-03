@@ -122,7 +122,7 @@ class LoginController extends Controller
           $new_user->provider_id = $user_object->getId();
           $new_user->save();
           $pub_details = new publishing_details;
-          $pub_details->website_url = url('/');
+          $pub_details->website_url = url('/website/1/index.php?id='.$new_user->id.'');
           $pub_details->publishing_period = '1 year';
           $pub_details->publishing_cost = '$99';
           $pub_details->user_id = $new_user->id;

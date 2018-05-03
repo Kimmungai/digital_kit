@@ -79,12 +79,12 @@ app.controller('Ctrl', function($scope, $http) {
     });
     $(document).ajaxComplete(function(){
       $("#wait").css("display", "none");
-      $("#website-preview").attr("src", 'http://localhost/personal/'+$('#design').val()+'/'+$('#theme').val()+'');
-      $(".prev-link").attr("href", 'http://localhost/personal/'+$('#design').val()+'/'+$('#theme').val()+'');
+      $("#website-preview").attr("src", 'http://localhost:8000/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
+      $(".prev-link").attr("href", 'http://localhost:8000/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
     });
   });
 </script>
-<script>$("#website-preview").attr("src", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');$(".prev-link").attr("href", 'http://localhost/personal/{{$website["design"]}}/{{$website["theme"]}}');</script>
+<script>$("#website-preview").attr("src", '{{$user->publishing_details->website_url}}');$(".prev-link").attr("href", '{{$user->publishing_details->website_url}}');</script>
 <script>
   $(document).ready(function(){
     $.ajaxSetup({
