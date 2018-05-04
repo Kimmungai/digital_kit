@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <title>Baktigoto - Responsive Resume & Portfolio HTML5 Template</title><!-- site title name -->
+        <title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title><!-- site title name -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon -->
@@ -24,15 +24,13 @@
     <body class="body-box">
         <!-- preloader -->
         <div id="preloader">
-           <span>B</span>
-           <span>A</span>
-           <span>K</span>
-           <span>T</span>
-           <span>I</span>
-           <span>G</span>
-           <span>O</span>
-           <span>T</span>
-           <span>O</span>
+          <span>w</span>
+          <span>e</span>
+          <span>l</span>
+          <span>c</span>
+          <span>o</span>
+          <span>m</span>
+          <span>e</span>
         </div><!-- end of /.pre loader -->
 
         <div class="wrapper" id="boxscroll">
@@ -55,28 +53,28 @@
                                     <button class="menu-btn show-btn"></button>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li><a href="#home"  class="active">Home</a></li>
-                                        <li><a href="#about">About Me</a></li>
-                                        <li><a href="#service">My services</a></li>
-                                        <li><a href="#portfolio">Portfolio</a></li>
-                                        <li><a id="link" href="#contact">Contact</a></li>
+                                        <li><a href="#about"><?php echo $saved_data['about_title']; ?></a></li>
+                                        <li><a href="#service"><?php echo $saved_data['speciality_title']; ?></a></li>
+                                        <li><a href="#portfolio"><?php echo $saved_data['portfolio_title']; ?></a></li>
+                                        <li><a id="link" href="#contact"><?php echo $saved_data['contact_section_title']; ?></a></li>
                                     </ul><!-- end of /.ul -->
                                 </div><!-- end of /.navbar-collapse -->
 
                             </div><!-- end of /.container-fluid -->
                         </nav><!-- end of /. nav section -->
                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 profile-image wow bounceInUp center animated">
-                            <img  class="img-responsive" src="images/profile.png" alt="" />
+                            <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
                         </div><!-- end of /.column-->
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 profile-item wow flipInX center animated">
                             <article class="profile-caption">
-                                <h2>Hello, I'm <span><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></span></h2>
-                                <h2>A <span>UI</span>  & <span>UX</span> Designer Based in <span>BANGLADESH</span></h2>
+                                <h2><?php echo $saved_data['tag_line_1']; ?></h2>
+                                <h2><?php echo $saved_data['tag_line_2']; ?></h2>
                                 <div class="social-media">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                  <a href="<?php echo $saved_data['facebook_link']; ?>"><i class="fa fa-facebook"></i></a>
+                                  <a href="<?php echo $saved_data['twitter_link']; ?>"><i class="fa fa-twitter"></i></a>
+                                  <a href="<?php echo $saved_data['google_plus_link']; ?>"><i class="fa fa-google-plus"></i></a>
+                                  <a href="<?php echo $saved_data['linked_link']; ?>"><i class="fa fa-linkedin"></i></a>
+                                  <a href="<?php echo $saved_data['instagram_link']; ?>"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </article>
                         </div> <!-- end of /.columns -->
@@ -88,45 +86,40 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title wow bounceInUp center animated">
-                            <h2>About Me</h2><!-- section title -->
+                            <h2><?php echo $saved_data['about_title']; ?></h2><!-- section title -->
                         </div>
                         <div class="col-lg-6">
                             <article class="about-me-box">
-                                <h2>A little brif ABOUT Me</h2>
-                                <p>Ultricies nisi voluptatem, illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo tempor dignissim at. e vitae dicta sunt explicabo nemo enim ipsam voluptatem. ipsum dolor sit amet, consectetur adipisicing elit.<br><br>
-                                 sed do eiusmod temporincididunt ut labore et dolore magna aliqua. ab illo tempor dignissim at. e vitae dicta sunt explicabo nemo enim ipsam voluptatem.</p>
-                                <a href="#"><i class="fa fa-cloud-download"></i>Download Resume</a>
+                                <h2><?php echo $saved_data['about_story_title']; ?></h2>
+                                <p><?php echo $saved_data['about_story']; ?></p>
+                                <?php if($saved_data['resume_downloadable']){?>
+                                <a href="<?php echo $saved_data['resume_download_link']; ?>"><i class="fa fa-cloud-download"></i>Download Resume</a>
+                                <?php }?>
                             </article>
                         </div>
                         <div class="col-lg-6">
                             <div class="skill-box wow bounceInRight center animated">
-                                <h2>SKILLS</h2>
-                                <p>Adobe Photoshop</p>
-                                <div class="progressbar" data-perc="90">
+                                <h2><?php echo $saved_data['skill_title']; ?></h2>
+                                <p><?php echo $saved_data['skill_1']; ?></p>
+                                <div class="progressbar" data-perc="<?php echo $saved_data['skill_1_level']; ?>">
                                 	<div class="bar"><span></span></div>
                                 	<div class="label wow bounceInLeft center animated"></div>
                                 </div>
-                                <p>Adobe Illastrator</p>
-                                <div class="progressbar" data-perc="80">
+                                <p><?php echo $saved_data['skill_2']; ?></p>
+                                <div class="progressbar" data-perc="<?php echo $saved_data['skill_2_level']; ?>">
                                 	<div class="bar color2"><span></span></div>
                                 	<div class="label wow bounceInLeft center animated"></div>
                                 </div>
-                                <p>Html & Css</p>
-                                <div class="progressbar" data-perc="89">
+                                <p><?php echo $saved_data['skill_3']; ?></p>
+                                <div class="progressbar" data-perc="<?php echo $saved_data['skill_3_level']; ?>">
                                 	<div class="bar color3"><span></span></div>
                                 	<div class="label wow bounceInLeft center animated"></div>
                                 </div>
-                                <p>Web Design</p>
-                                <div class="progressbar" data-perc="87">
+                                <p><?php echo $saved_data['skill_4']; ?></p>
+                                <div class="progressbar" data-perc="<?php echo $saved_data['skill_4_level']; ?>">
                                 	<div class="bar color4"><span></span></div>
                                 	<div class="label wow bounceInLeft center animated"></div>
                                 </div>
-                                <p>UI/UX Design</p>
-                                <div class="progressbar" data-perc="95">
-                                	<div class="bar color4"><span></span></div>
-                                	<div class="label wow bounceInLeft center animated"></div>
-                                </div>
-
                             </div><!-- end of /.skill bx -->
                         </div><!-- end of /.columns -->
                     </div><!-- end of /.row -->
@@ -135,29 +128,7 @@
 
             <section class="design-cover smoth">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 design-box wow flipInX center animated">
-                            <figure class="pixel-item">
-                                <i class="fa fa-angellist"></i><!-- icon -->
-                                <h3>PIEXEL Perfect</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
-                            </figure><!-- end of pixel perfect box -->
-                        </div><!-- end of /.columns 1 -->
-                        <div class="col-lg-4 col-md-4  design-box wow flipInX center animated">
-                            <figure class="clean-design">
-                                <i class="fa fa-desktop"></i><!-- icon -->
-                                <h3>CLEAN DESIGN</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
-                            </figure><!-- end of clien design  box -->
-                        </div><!-- end of /.columns 2 -->
-                        <div class="col-lg-4 col-md-4  design-box wow flipInX center animated">
-                            <figure class="pixel-item">
-                                <i class="fa fa-paper-plane-o"></i><!-- icon -->
-                                <h3>BEST ANALYICs</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
-                            </figure><!-- end of pixel perfect box -->
-                        </div><!-- end of /.columns 3 -->
-                    </div><!-- end of /.row -->
+                    <h2 class="text-center" style="color:#fff;"><?php echo $saved_data['vision_statement']; ?></h2>
                 </div><!-- end of /.cotainer -->
             </section><!-- end of design cover /.section -->
 
@@ -165,22 +136,22 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title wow bounceInUp center animated">
-                            <h2>MY WORKING AREA</h2><!-- section title -->
+                            <h2><?php echo $saved_data['speciality_title']; ?></h2><!-- section title -->
                         </div>
                         <div class="col-lg-6 mobile">
                             <article class="mobile-design work-box wow bounceInDown center animated">
-                                <i class="fa fa-mobile"></i><!-- icon -->
-                                <h3>Mobile app design</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
+                                <i class="fa <?php echo $saved_data['speciality_1_icon']; ?>"></i><!-- icon -->
+                                <h3><?php echo $saved_data['speciality_1']; ?></h3><!-- title -->
+                                <p><?php echo $saved_data['speciality_1_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
                             </article>
 
                         </div><!-- end of /.columns 1 -->
                         <div class="col-lg-6 template ">
                             <article class="template-design work-box wow bounceInDown center animated">
-                                <i class="fa fa-laptop"></i><!-- icon -->
-                                <h3>Web Template Design</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
+                                <i class="fa <?php echo $saved_data['speciality_2_icon']; ?>"></i><!-- icon -->
+                                <h3><?php echo $saved_data['speciality_2']; ?></h3><!-- title -->
+                                <p><?php echo $saved_data['speciality_2_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
                             </article>
 
@@ -193,18 +164,18 @@
                         </div><!--end of main center columns-->
                         <div class="col-lg-6 ui">
                             <article class="ui-design work-box wow bounceInUp center animated">
-                                <i class="fa fa-ils"></i><!-- icon -->
-                                <h3>Ui Design</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
+                                <i class="fa <?php echo $saved_data['speciality_3_icon']; ?>"></i><!-- icon -->
+                                <h3><?php echo $saved_data['speciality_3']; ?></h3><!-- title -->
+                                <p><?php echo $saved_data['speciality_3_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
                             </article><!-- end of /.design box -->
 
                         </div><!-- end columns 1 -->
                         <div class="col-lg-6 landing wow bounceInUp center animated">
                             <article class="landing-page work-box">
-                                <i class="fa fa-clipboard dh-container"></i><!-- icon -->
-                                <h3>Landing page</h3><!-- title -->
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p><!-- caption -->
+                                <i class="fa <?php echo $saved_data['speciality_4_icon']; ?> dh-container"></i><!-- icon -->
+                                <h3><?php echo $saved_data['speciality_4']; ?></h3><!-- title -->
+                                <p><?php echo $saved_data['speciality_4_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
                             </article><!-- end of /.design box -->
 
@@ -215,28 +186,7 @@
 
             <section class="working-prosess">
                 <div class="container">
-                    <div class="row">
-                        <div class="working-item wow swing center animated">
-                            <i class="fa fa-github-alt"></i>
-                            <h2>Plan</h2>
-                        </div><!-- end of /.working item 1 -->
-                        <div class="working-item wow swing center animated">
-                            <i class="fa fa-ioxhost"></i>
-                            <h2>Idea</h2>
-                        </div><!-- end of /.working item 2 -->
-                        <div class="working-item wow swing center animated">
-                            <i class="fa fa-pencil-square-o"></i>
-                            <h2>Sketch  </h2>
-                        </div><!-- end of /.working item 3 -->
-                        <div class="working-item wow swing center animated">
-                            <i class="fa fa-desktop"></i>
-                            <h2>Design</h2>
-                        </div><!-- end of /.working item 4 -->
-                        <div class="working-item wow swing center animated">
-                            <i class="fa fa-check"></i>
-                            <h2>Launch</h2>
-                        </div><!-- end of /.working item 5 -->
-                    </div><!-- end of /.row -->
+                    <h2 class="text-center" style="color:#fff;"><?php echo $saved_data['mission_statement']; ?></h2>
                 </div><!-- end of /.container -->
             </section><!-- end of working prosess /.section -->
 
@@ -244,63 +194,63 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title portfolio-title wow bounceInUp center animated">
-                            <h2>MY PORTFOLIO</h2>
-                            <p>Lets check most recent project I've worked on </p>
+                            <h2><?php echo $saved_data['portfolio_title']; ?></h2>
+                            <p><?php echo $saved_data['portfolio_sub_title']; ?></p>
                         </div>
                         <div class="big-demo go-wide" data-js-module="filtering-demo">
                             <div class="portfolio-menu">
                                 <div class="filter-button-group button-group js-radio-button-group menu-list">
                                     <ul class="filter_menu">
                                         <li class="active" data-filter="*">All</li>
-                                        <li data-filter=".web">Web Design</li>
-                                        <li data-filter=".mobile">Mobile App</li>
-                                        <li data-filter=".landing">Landing page</li>
-                                        <li data-filter=".ecommarce">Ecommarce</li>
+                                        <li data-filter=".<?php echo $saved_data['portfolio_category_1']; ?>"><?php echo $saved_data['portfolio_category_1']; ?></li>
+                                        <li data-filter=".<?php echo $saved_data['portfolio_category_2']; ?>"><?php echo $saved_data['portfolio_category_2']; ?></li>
+                                        <li data-filter=".<?php echo $saved_data['portfolio_category_3']; ?>"><?php echo $saved_data['portfolio_category_3']; ?></li>
+                                        <li data-filter=".<?php echo $saved_data['portfolio_category_4']; ?>"><?php echo $saved_data['portfolio_category_4']; ?></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="portfolio-item gallery">
-                                <div class="single-portfolio web mobile col-md-4 col-sm-6 col-xs-12" data-category="transition">
+                                <div class="single-portfolio <?php echo $saved_data['work_1_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-1.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-1.jpg" width="360" height="307" alt="portfolio image 1">
+                                        <a href="<?php echo $saved_data['work_1_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_1_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_1']; ?>">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="single-portfolio mobile landing col-md-4 col-sm-6 col-xs-12" data-category="metalloid">
+                                <div class="single-portfolio <?php echo $saved_data['work_2_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="metalloid">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-2.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-2.jpg" width="360" height="307" alt="Portfolio image 2">
+                                        <a href="<?php echo $saved_data['work_2_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_2_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_2']; ?>">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="single-portfolio mobile col-md-4 col-sm-6 col-xs-12" data-category="transition">
+                                <div class="single-portfolio <?php echo $saved_data['work_3_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-3.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-3.jpg" width="360" height="307" alt="Portfolio Image 3">
+                                        <a href="<?php echo $saved_data['work_3_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_3_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_3']; ?>">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="single-portfolio web ecommarce landing col-md-4 col-sm-6 col-xs-12" data-category="transition">
+                                <div class="single-portfolio <?php echo $saved_data['work_4_category']; ?>  col-md-4 col-sm-6 col-xs-12" data-category="transition">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-4.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-4.jpg" width="360" height="307" alt="Portfolio Image 4">
+                                        <a href="<?php echo $saved_data['work_4_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_4_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_4']; ?>">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="single-portfolio landing ecommarce col-md-4 col-sm-6 col-xs-12" data-category="transition">
+                                <div class="single-portfolio <?php echo $saved_data['work_5_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-5.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-5.jpg" width="360" height="307" alt=" Portfolio Image 5">
+                                        <a href="<?php echo $saved_data['work_5_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_5_image']; ?>" width="360" height="307" alt=" <?php echo $saved_data['work_5']; ?>">
                                         </a>
                                     </div>
 
                                 </div>
-                                <div class="single-portfolio web ecommarce col-md-4 col-sm-6 col-xs-12" data-category="transition">
+                                <div class="single-portfolio <?php echo $saved_data['work_6_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
                                     <div class="portfolio-single-item">
-                                        <a href="images/work-6.jpg" data-gal="prettyPhoto[gallery1]">
-                                            <img src="images/work-6.jpg" width="360" height="307" alt="Portfolio Image 6">
+                                        <a href="<?php echo $saved_data['work_6_image']; ?>" data-gal="prettyPhoto[gallery1]">
+                                            <img src="<?php echo $saved_data['work_6_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_6']; ?>">
                                         </a>
                                     </div>
                                 </div>
@@ -311,122 +261,11 @@
                 </div><!-- end of /.container -->
             </section><!-- end of /.portfolio section -->
 
-            <section class="social-share-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h3>Interested in more details? find me on Behance, Dribble</h3>
-                            <a href="#">
-                                <i class="fa fa-behance"></i>&nbsp; Behance
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-dribbble"></i>&nbsp; Dribbble
-                            </a>
-                        </div><!-- end of /. column -->
-                    </div><!-- end of /.row -->
-                </div><!-- end of /.container -->
-            </section><!-- end of /.social share -->
-
-            <section class="fun-facts-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="milestone-counter wow swing center animated">
-                                <i class="fa fa-check-square-o"></i>
-                                <h3 class="stat-count highlight"><b>192</b></h3>
-                                <div class="milestone-details">project complate</div>
-                            </div>
-                        </div><!-- end of /.columns 1 -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="milestone-counter wow swing center animated">
-                                <i class="fa fa-users"></i>
-                                <h3 class="stat-count highlight"><b>198</b></h3>
-                                <div class="milestone-details">HAPPY CLIENTS </div>
-                            </div>
-                        </div><!-- end of /.columns 2 -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="milestone-counter wow swing center animated">
-                                <i class="fa fa-coffee"></i>
-                                <h3 class="stat-count highlight"><b>950</b></h3>
-                                <div class="milestone-details">CUPS OF COFFEE</div>
-                            </div>
-                        </div><!-- end of /.columns 3 -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="milestone-counter wow swing center animated">
-                                <i class="fa fa-clock-o"></i>
-                                <h3 class="stat-count highlight"><b>650</b></h3>
-                                <div class="milestone-details">HOURS OF WORK</div>
-                            </div>
-                        </div><!-- end of /.columns 4 -->
-                    </div><!-- end of /.row -->
-                </div><!-- end of /.container  -->
-            </section><!-- end of /.fun facts section -->
-
-            <section class="client-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title wow bounceInUp center animated">
-                            <h2>clients feedback</h2><!-- title -->
-                        </div>
-                        <div id="client-carousel" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="client-box">
-                                    <img src="images/client-1.jpg" width="125" height="140" alt=""><!-- client profile -->
-                                    <p>"Marcus is a full time Internet Marketing Analyst and Strategist. Her brain is an ocean of ideas and creativeness, and she loves expressing and sharing those ideas on her writings and artworks. Good service provider."</p>
-                                    <span>
-                                        <b>Raihind krowt </b><br>
-                                        c.e.o,  Highown Tech. Ltd
-                                    </span>
-                                </div>
-                            </div><!-- end of /.client item -->
-                            <div class="item">
-                                <div class="client-box">
-                                    <img src="images/client-2.jpg" width="125" height="140" alt=""><!-- clien profile image -->
-                                    <p>"Marcus is a full time Internet Marketing Analyst and Strategist. Her brain is an ocean of ideas and creativeness, and she loves expressing and sharing those ideas on her writings and artworks. Good service provider."</p>
-                                    <span>
-                                        <b>Porots Emmarn</b> <br>
-                                        c.e.o Nahina Studio ltd
-                                    </span>
-                                </div>
-                            </div><!-- end of /.client item -->
-                            <div class="item">
-                                <div class="client-box">
-                                    <img src="images/client-1.jpg" width="125" height="140" alt=""><!-- client profile -->
-                                    <p>"Marcus is a full time Internet Marketing Analyst and Strategist. Her brain is an ocean of ideas and creativeness, and she loves expressing and sharing those ideas on her writings and artworks. Good service provider."</p>
-                                    <span>
-                                        <b>Raihind krowt </b><br>
-                                        c.e.o,  Highown Tech. Ltd
-                                    </span>
-                                </div>
-                            </div><!-- end of /.client item -->
-                            <div class="item">
-                                <div class="client-box">
-                                    <img src="images/client-2.jpg" width="125" height="140" alt=""><!-- clien profile image -->
-                                    <p>"Marcus is a full time Internet Marketing Analyst and Strategist. Her brain is an ocean of ideas and creativeness, and she loves expressing and sharing those ideas on her writings and artworks. Good service provider."</p>
-                                    <span>
-                                        <b>Porots Emmarn</b><br>
-                                        c.e.o Nahina Studio ltd
-                                    </span>
-                                </div>
-                            </div><!-- end of /.client item -->
-                        </div><!-- end of /.client carousel -->
-                        <div class="customNavigation">
-                            <a class="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div><!-- end of /.slider navigation -->
-                    </div><!-- end /.row -->
-                </div><!-- end of /.container -->
-            </section><!-- end of /.client section -->
-
             <section class="contact-section" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-title wow bounceInUp center animated">
-                            <h2>GET IN TOUCH</h2>
+                            <h2><?php echo $saved_data['contact_section_title']; ?></h2>
                         </div><!-- contact title -->
                         <form>
                             <div class="form-group col-lg-6 wow bounceInUp center animated">
@@ -460,7 +299,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>Copyright 2015   | All Rights Reserved |  Design & Develop by  <a href="http://themencoder.com/">ThemeNcoder</a> </p>
+                            <p>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </p>
                         </div><!-- coloumn -->
                     </div><!-- end of row -->
                 </div><!-- end of /. container -->
