@@ -109,15 +109,21 @@
               <tr>
                 <th>Period</th><td><span><% user_details.publishing_details.publishing_period %></span></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>1 year</option><option>3 years</option><option>5 years</option></select></td>
               </tr>
-              <tr>
-                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td><% user_details.publishing_details.publishing_cost %></td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='1 year'">
+                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td>$99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='3 years'">
+                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td>$179</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='5 years'">
+                <th>Cost</th><td><span>Hosting fees, support and service charge</span></td><td>$249</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="card mt-3">
-        <h5 class="card-header dark-bg text-warning">Payment details</h5>
+        <h5 class="card-header dark-bg text-warning">Payment details <% publishing_cost %></h5>
         <div class="card-body">
           <table class="table table-hover table-bordered">
             <tbody>
@@ -125,10 +131,16 @@
                 <th>Account</th><td><span><% client.first_name %> <% client.last_name %></span></td>
               </tr>
               <tr>
-                <th>Balance</th><td><span><% user_details.payment_details.acc_bal %></span></td>
+                <th>Balance</th><td><span>$<% user_details.payment_details.acc_bal %></span></td>
               </tr>
               <tr>
-                <th>Top up</th><td><a href="#" class="btn btn-sm btn-primary"><span class="fa fa-paypal"></span> Pay</a></td>
+                <th>Top up</th>
+                <td>
+                  $<input id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='1 year'" type="text" value="99" />
+                  <input id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='3 years'" type="text" value="179" />
+                  <input id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='5 years'" type="text" value="249" />
+                  <div id="pay-btn"></div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -136,6 +148,50 @@
       </div>
       <a href="#" class="btn btn-danger pull-right mt-3 btn-lg"><span class="fa fa-globe"></span> Publish</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script>
+    paypal.Button.render({
+
+        env: 'production', // Or 'sandbox'
+
+        client: {
+            sandbox:    'AVmtFmCtIYmW-wowsvx_G77friO7Y0kD8sHa3j1wpw-2BinKjbq1tFqUgSnPCOzp6K_h-lj8t4_DbYUe',
+            production: 'AVmHEmP0XXrZ6g39PR8jQLCtkU6z3sI7g_8dAHE7Zieeh8OMO_Gam1F-IF9H51GnieOMPQxUZE_K0qxw'
+        },
+
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: $("#pub_cost").val(), currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+                //call_after_paypal_payment();
+                //alert('suc')
+            });
+        },
+        onCancel: function(data, actions) {
+            // Show a cancel page or return to cart
+            //alert('cancel')
+        }
+
+
+    }, '#pay-btn');
+    </script>
   </main>
   <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/img/loading.gif' width="64" height="64" /><br>Loading..</div>
 @endsection

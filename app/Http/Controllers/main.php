@@ -126,6 +126,21 @@ class main extends Controller
         if(publishing_details::where('id','=',$user_id)->update([
           $field => $value
         ])){
+          if($field==='publishing_period')
+          {
+            if($value==='1 year')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'99']);
+            }
+            elseif($value==='3 years')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'179']);
+            }
+            elseif($value==='5 years')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'249']);
+            }
+          }
           return true;
         }
         else {
@@ -143,4 +158,5 @@ class main extends Controller
     {
         //
     }
+    
 }

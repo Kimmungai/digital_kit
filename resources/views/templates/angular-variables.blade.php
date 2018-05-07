@@ -22,6 +22,9 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.edit_details=0;
     $scope.edit_publish_url=1;
     $scope.publish_notes =1;
+    //if($scope.user_details.publishing_details.publishing_period==='1 years'){$scope.publishing_cost='99';}
+    //if($scope.user_details.publishing_details.publishing_period==='2 years'){$scope.publishing_cost='179';}
+    //if($scope.user_details.publishing_details.publishing_period==='3 years'){$scope.publishing_cost='249';}
   });
 </script>
 <script>
