@@ -61,7 +61,6 @@ class LoginController extends Controller
     {
         $twitter_user = Socialite::driver('twitter')->user();
         $user=$this->userFindOrCreate($twitter_user);
-        //print_r($twitter_user);die();
         Auth::login($user,true);
         $this->cardFindOrCreate($twitter_user,Auth::id(),'twitter');
         $this->websiteFindOrCreate($twitter_user,Auth::id(),'twitter');
@@ -202,7 +201,7 @@ class LoginController extends Controller
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_object->getNickname();
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
@@ -220,7 +219,7 @@ class LoginController extends Controller
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_object['firstName'];
             $new_website->last_name = $user_object['lastName'];
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object['firstName'].' '.$user_object['lastName'].'</span>';
@@ -231,14 +230,14 @@ class LoginController extends Controller
           }
           elseif($provider === 'twitter')
           {
-            $avatar = file_get_contents($user_object->getAvatar());
+            $avatar = file_get_contents(str_replace('_normal','',$user_object->getAvatar()));
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_object->getNickname();
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';

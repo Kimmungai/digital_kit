@@ -69,9 +69,9 @@
             <li class="nav-item">
               <a  ng-click="publish_notes=1" class="nav-link" ng-class="publish_notes==1 ? 'active' : 'inactive'" href="#">Notes</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a ng-click="publish_notes=2" class="nav-link" ng-class="publish_notes==2 ? 'active' : 'inactive'" href="#">Link</a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a  ng-click="publish_notes=3" class="nav-link" ng-class="publish_notes==3 ? 'active' : 'inactive'" href="#">FAQs</a>
             </li>
@@ -81,10 +81,10 @@
           <h5 class="card-title">Important things to Note</h5>
           <p class="card-text text-left padding2">After clicking publish, it takes about <strong>24 hours</strong> before your site goes live. You will receive a confirmation email once your site goes live.</p>
         </div>
-        <div ng-show="publish_notes==2" class="card-body max-height-150">
+        <!--<div ng-show="publish_notes==2" class="card-body max-height-150">
           <h5 class="card-title">Important things to Note</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        </div>
+        </div>-->
         <div ng-show="publish_notes==3" class="card-body max-height-150">
           <h5 class="card-title">1. When will my website be live?</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

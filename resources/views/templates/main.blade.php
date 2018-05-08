@@ -59,15 +59,15 @@
             <div class="panel">
               <section class="tools">
                 <ul>
-                  <li><input type="checkbox"  ng-model="tool_A"  ng-click="active_shelf=1;active_tool=1;edit_details=0" /> Website</li>
-                  <li><input type="checkbox" ng-model="tool_B" ng-click="active_shelf=3;active_tool=2;edit_details=0" /> Card</li>
+                  <li><input id="tool_A"  type="checkbox"  ng-model="tool_A"  ng-click="active_shelf=1;active_tool=1;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Website</li>
+                  <li><input id="tool_B"  type="checkbox" ng-model="tool_B" ng-click="active_shelf=3;active_tool=2;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Card</li>
                   <!--<li><input type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3"/> Cv</li>
                   <li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>-->
                 </ul>
               </section>
             </div>
             <hr>
-            <div class="panel">
+            <div class="panel" ng-cloak>
               <section class="desk" ng-show="my_tools==1" >
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">

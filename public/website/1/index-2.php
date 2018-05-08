@@ -62,8 +62,10 @@
 
                             </div><!-- end of /.container-fluid -->
                         </nav><!-- end of /. nav section -->
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 profile-image wow bounceInUp center animated">
-                            <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12  column wow bounceInUp center animated">
+                            <div class="shadow">
+                              <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
+                            </div>
                         </div><!-- end of /.column-->
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 profile-item wow flipInX center animated">
                             <article class="profile-caption">

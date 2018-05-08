@@ -83,13 +83,13 @@ class main extends Controller
       if($request->hasFile($request['field']))
       {//return 'img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'.jpg';
         $img=Image::make($request->file($_POST['fname']));
-        $img->save('img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'_original.jpg');
+        $value_original=$img->save('img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'_original.jpg');
         $value='img/'.$user_id.'/'.$_POST['dir'].'/'.$_POST['fname'].'.jpg';
         if($_POST['length'] && $_POST['width'])
         {
           $img->crop($_POST['length'], $_POST['width'])->save($value);
         }
-        $value=url($value);
+        $value=url($value_original);
         $field = 'main_image';
         $model = 'Website';
       }
@@ -113,6 +113,17 @@ class main extends Controller
       else if($model === 'Card')
       {
         if(Card::where('id','=',$user_id)->update([
+          $field => $value
+        ])){
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+      else if($model === 'User')
+      {
+        if(User::where('id','=',$user_id)->update([
           $field => $value
         ])){
           return true;
@@ -158,5 +169,5 @@ class main extends Controller
     {
         //
     }
-    
+
 }

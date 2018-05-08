@@ -16,7 +16,6 @@
         <!-- start style -->
         <link rel="stylesheet" href="css/style.css">
 
-
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
@@ -63,8 +62,10 @@
 
                             </div><!-- end of /.container-fluid -->
                         </nav><!-- end of /. nav section -->
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 profile-image wow bounceInUp center animated">
-                            <img  class="img-responsive img-circle" src="<?php echo $saved_data['main_image']; ?>" alt="" />
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 column wow bounceInUp center animated">
+                          <div class="shadow">
+                            <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
+                          </div>
                         </div><!-- end of /.column-->
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 profile-item wow flipInX center animated">
                             <section class="profile-caption">

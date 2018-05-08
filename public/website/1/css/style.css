@@ -1660,8 +1660,42 @@ textarea {
     }
 
 }
+/* apply a natural box layout model to all elements */
+  *, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 
+  .shadow {
+    display: inline-block;
+    position: relative;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+    box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .shadow:hover {
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  }
+  .shadow img {
+    max-width: 100%;
+    position: relative;
+    z-index: -1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
 
-
-
-
+  .column {
+    float: left;
+    width: 35%;
+    padding: 0 15px;
+  }

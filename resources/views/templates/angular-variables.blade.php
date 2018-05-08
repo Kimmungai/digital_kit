@@ -15,10 +15,10 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.active_tool=1;
     $scope.active_shelf=1;
     $scope.my_tools=1;
-    $scope.tool_A=true;
-    $scope.tool_B=false;
-    $scope.tool_C=false;
-    $scope.tool_D=false;
+    $scope.tool_A={{Auth::user()->tool_A}};
+    $scope.tool_B={{Auth::user()->tool_B}};
+    $scope.tool_C={{Auth::user()->tool_C}};
+    $scope.tool_D={{Auth::user()->tool_D}};
     $scope.edit_details=0;
     $scope.edit_publish_url=1;
     $scope.publish_notes =1;
@@ -63,6 +63,7 @@ app.controller('Ctrl', function($scope, $http) {
     }
     else
     {
+      if($('#'+field).attr('type') === 'checkbox'){if($('#' + field).is(":checked")){value='true';}else{value='false';}}
       $.post("/client-update",
         {
           field:field,
@@ -87,7 +88,7 @@ app.controller('Ctrl', function($scope, $http) {
     });
   });
 </script>
-<script>$("#website-preview").attr("src", '{{$user->publishing_details->website_url}}');$(".prev-link").attr("href", '{{$user->publishing_details->website_url}}');</script>
+<script>$("#website-preview").attr("src", 'http://localhost:8000/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');$(".prev-link").attr("href", 'http://localhost:8000/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');</script>
 <script>
   $(document).ready(function(){
     $.ajaxSetup({

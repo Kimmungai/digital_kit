@@ -15,9 +15,9 @@ Route::get('/client', 'main@show');
 Route::post('/client-update', 'main@update');
 /*Route::get('/', function()
 {
-    $img = Image::make('img/test.PNG')->crop(494, 668)->save('img/croped.jpg')->gamma(1.6);
-    $img->sharpen(15);
-    return $img->response('jpg');
+  $pdf = App::make('dompdf.wrapper');
+$pdf->loadHTML('<h1>Your HTML Here</h1>');
+return $pdf->stream();
 });*/
 
 Auth::routes();
