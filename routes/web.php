@@ -13,6 +13,7 @@
 Route::get('/', 'main@index')->middleware('auth');
 Route::get('/client', 'main@show');
 Route::post('/client-update', 'main@update');
+Route::get('/download-card', 'downloads@card');
 /*Route::get('/', function()
 {
   $pdf = App::make('dompdf.wrapper');

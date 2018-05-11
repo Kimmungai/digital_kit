@@ -123,11 +123,11 @@ class LoginController extends Controller
           $pub_details = new publishing_details;
           $pub_details->website_url = url('/website/1/index.php?id='.$new_user->id.'');
           $pub_details->publishing_period = '1 year';
-          $pub_details->publishing_cost = '$99';
+          $pub_details->publishing_cost = '99';
           $pub_details->user_id = $new_user->id;
           $pub_details->save();
           $pay_details = new payment_details;
-          $pay_details->acc_bal = '$0';
+          $pay_details->acc_bal = '0';
           $pay_details->user_id = $new_user->id;
           $pay_details->save();
           return $new_user;
