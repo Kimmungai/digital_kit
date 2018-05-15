@@ -31,17 +31,17 @@
     <article class="container biz-card" ng-class="client.design==1 ? 'dark-bg' : 'light-bg'">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
       <h3><% card.designation%></h3>
-      <div class="row">
+      <div class="row no-padding">
           <div class="bar2 bg-danger"></div>
           <div class="qr"></div>
           <div class="bar1"></div>
       </div>
         <div class="card-details">
           <ul>
-            <li><span class="fa fa-phone-square"> <% card.phone%></span></li>
-            <li><span class="fa fa-envelope"> <% card.email%></span></li>
-            <li><span class="fa fa-map-marker"> <% card.address%></span></li>
-            <li><span class="fa fa-globe"> <% card.website%></span></li>
+            <li>Phone: <% card.phone%></span></li>
+            <li>Email: <% card.email%></span></li>
+            <li>Address: <% card.address%></span></li>
+            <li>Website: <% card.website%></span></li>
           </ul>
         </div>
     </article>

@@ -67,7 +67,7 @@
               </section>
             </div>
             <hr>
-            <div class="panel" ng-cloak>
+            <div class="panel">
               <section class="desk" ng-show="my_tools==1" >
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">
@@ -102,6 +102,10 @@
                     <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
                   </dd>
                 </dl>
+               <dl>
+                 <div class="field-title">Designation</div>
+                 <input type="text" class="form-control" id="designation" placeholder="E.g. Aministrator" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
+               </dl>
                <dl>
                  <div class="field-title">Telephone</div>
                  <input type="text" class="form-control" id="phone" placeholder="E.g. (+81)3156-8951" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">

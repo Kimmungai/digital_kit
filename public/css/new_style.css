@@ -250,7 +250,6 @@ main .biz-card h2{
   padding: 0;
   color: #fff;
   font-size: 2em;
-
   text-transform: uppercase;
 }
 main .biz-card h3{
@@ -291,6 +290,7 @@ main .card-details ul{
 main .card-details li{
   opacity: 1;
   cursor: default;
+  padding: 0;
 }
 main .controls{
   width: 65%;
