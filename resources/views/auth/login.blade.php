@@ -60,11 +60,11 @@
                                 </a>
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="/login/github">Login wit git hub</a>
-                        <a class="btn btn-primary" href="/login/linkedin">Login with linkedin</a>
-                        <a class="btn btn-primary" href="/login/google">Login Google</a>
-                        <a class="btn btn-primary" href="/login/facebook">Login facebook</a>
-                        <a class="btn btn-primary" href="/login/twitter">Login twitter</a>
+                        <a class="btn btn-primary" href="{{url('/login/github')}}">Login wit git hub</a>
+                        <a class="btn btn-primary" href="{{url('/login/linkedin')}}">Login with linkedin</a>
+                        <a class="btn btn-primary" href="{{url('/login/google')}}">Login Google</a>
+                        <a class="btn btn-primary" href="{{url('/login/facebook')}}">Login facebook</a>
+                        <a class="btn btn-primary" href="{{url('/login/twitter')}}">Login twitter</a>
                     </form>
                 </div>
             </div>

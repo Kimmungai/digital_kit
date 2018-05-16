@@ -83,12 +83,12 @@ app.controller('Ctrl', function($scope, $http) {
     });
     $(document).ajaxComplete(function(){
       $("#wait").css("display", "none");
-      $("#website-preview").attr("src", 'http://localhost:8000/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
-      $(".prev-link").attr("href", 'http://localhost:8000/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
+      $("#website-preview").attr("src", '{{url("/")}}/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
+      $(".prev-link").attr("href", '{{url("/")}}/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
     });
   });
 </script>
-<script>$("#website-preview").attr("src", 'http://localhost:8000/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');$(".prev-link").attr("href", 'http://localhost:8000/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');</script>
+<script>$("#website-preview").attr("src", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');$(".prev-link").attr("href", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');</script>
 <script>
   $(document).ready(function(){
     $.ajaxSetup({

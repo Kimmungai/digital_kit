@@ -2,16 +2,17 @@
 <html lang="en" dir="ltr" ng-app="App" ng-controller="Ctrl">
   <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link  href="/css/bootstrap.min.css" rel="stylesheet">
-    <link  href="/css/font-awesome.min.css" rel="stylesheet">
-    <link  href="/css/new_style.css" rel="stylesheet">
-    <link  href="/css/website.css" rel="stylesheet">
-    <link href="/css/ssi-uploader.min.css" rel="stylesheet"/>
+    <link  href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link  href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">
+    <link  href="{{url('/css/website.css')}}" rel="stylesheet">
+    <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
     <title>Digital Kit</title>
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/angular.min.js"></script>
-    <script src="/js/ssi-uploader.min.js"></script>
+    <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url('/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('/js/angular.min.js')}}"></script>
+    <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </head>
   <body ng-cloak>
     <div class="container">
