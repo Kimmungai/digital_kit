@@ -1,4 +1,4 @@
-md<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="App" ng-controller="Ctrl">
   <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
