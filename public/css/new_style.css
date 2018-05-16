@@ -1,5 +1,6 @@
 header{
   background-color: #373737;
+  width: 100%;
 }
 header h1{
   margin: 0;
@@ -20,12 +21,12 @@ header .navbar-nav{
 }
 @media screen and (min-width: 992px) {
   aside{
-    min-height: 840px;
+    min-height: 766px;
   }
 }
 aside{
   background-color: #f2f2ea;
-  overflow: hidden;
+  min-height: 766px;
 }
 aside ul{
   float: left;
@@ -221,7 +222,7 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 840px;
+  min-height: 764px;
   overflow: hidden;
 }
 main h1{
@@ -392,8 +393,7 @@ main .website header ul{
 }
 main iframe{
   width: 100%;
-  min-height: 660px;
-
+  height: 618px;
 }
 main li{
   padding-left: 10px;
@@ -404,6 +404,7 @@ main li:hover{
   opacity: 1;
 }
 footer{
+  width: 100%;
   background-color: #373737;
 }
 footer h2{

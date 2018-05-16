@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+md<!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="App" ng-controller="Ctrl">
   <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,15 +15,15 @@
     <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </head>
   <body ng-cloak>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <header  ><!--start of header section-->
+        <header><!--start of header section-->
           <div class="container">
             <div class="row">
-              <div class="col-sm-8">
-                <h1 class="text-warning"><a href="/">BiznessKit</a></h1>
+              <div class="col-md-8">
+                <h1 class="text-warning"><a href="{{url('/')}}">BiznessKit</a></h1>
               </div>
-              <div class="col-sm-4">
+              <div class="col-md-4">
                   <ul class="list-inline account-nav">
                     <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
                     <li class="list-inline-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
