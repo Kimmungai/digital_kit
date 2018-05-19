@@ -4,7 +4,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link  href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link  href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">
     <link  href="{{url('/css/website.css')}}" rel="stylesheet">
     <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
@@ -18,19 +17,21 @@
     <div class="container-fluid">
       <div class="row">
         <header><!--start of header section-->
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <h1 class="text-warning"><a href="{{url('/')}}">BiznessKit</a></h1>
-              </div>
-              <div class="col-md-4">
-                  <ul class="list-inline account-nav">
-                    <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
-                    <li class="list-inline-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                  </ul>
+          <div class="col-md-12">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <h1 class="text-warning"><a href="{{url('/')}}">BiznessKit</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline account-nav">
+                      <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
+                      <li class="list-inline-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                    </ul>
+                </div>
               </div>
             </div>
           </div>

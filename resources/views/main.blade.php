@@ -11,9 +11,11 @@
       <li class="list-inline-item" ng-click="edit_details=1"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
-    <iframe id="website-preview">
-      <p>Your browser does not support iframes.</p>
-    </iframe>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe id="website-preview">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="prev-link" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item"><span class="fa fa-globe"></span> Publish</li>
