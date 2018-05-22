@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr" ng-app="App" ng-controller="Ctrl">
   <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link  href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link  href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet">
     <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">

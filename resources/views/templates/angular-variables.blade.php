@@ -19,7 +19,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_B={{Auth::user()->tool_B}};
     $scope.tool_C={{Auth::user()->tool_C}};
     $scope.tool_D={{Auth::user()->tool_D}};
-    $scope.edit_details=1;
+    $scope.edit_details=0;
     $scope.edit_publish_url=1;
     $scope.publish_notes =1;
     //if($scope.user_details.publishing_details.publishing_period==='1 years'){$scope.publishing_cost='99';}
@@ -88,7 +88,12 @@ app.controller('Ctrl', function($scope, $http) {
     });
   });
 </script>
-<script>$("#website-preview").attr("src", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');$(".prev-link").attr("href", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');</script>
+<script>
+$(document).ready(function(){
+  $('#website-preview').css('height',window.innerHeight +'px');
+  $("#website-preview").attr("src", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');$(".prev-link").attr("href", '{{url("/")}}/website/'+'{{$website->design}}/{{$website->theme}}?id={{Auth::id()}}');
+});
+</script>
 <script>
   $(document).ready(function(){
     $.ajaxSetup({

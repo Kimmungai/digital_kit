@@ -21,12 +21,10 @@ header .navbar-nav{
 }
 @media screen and (min-width: 992px) {
   aside{
-    min-height: 500px;
   }
 }
 aside{
   background-color: #f2f2ea;
-  min-height: 500px;
 }
 aside ul{
   float: left;
@@ -222,7 +220,6 @@ main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
   border-left: 1px solid #d4d5d0;
-  min-height: 500px;
   overflow: hidden;
 }
 main h1{
@@ -392,7 +389,8 @@ main .website .smooth{
 main .website header ul{
 }
 main iframe{
-  width: 100%;
+  width:100%;
+  height:100%;
 }
 main li{
   padding-left: 10px;
