@@ -21,6 +21,7 @@ header .navbar-nav{
 }
 @media screen and (min-width: 992px) {
   aside{
+    height: 1100px;
   }
 }
 aside{
@@ -215,6 +216,11 @@ aside .edit-panel h2{
 .tools h2{
  text-align: center;
  margin-bottom: 1em;
+}
+@media screen and (min-width: 992px) {
+  main{
+    height: 1100px;
+  }
 }
 main{
   background-color: #f2f2f0;
@@ -595,6 +601,6 @@ footer li a:hover{
   text-decoration: none;
   color: inherit;
 }
-#pay-btn{
-  float: right;
+.pub-table td{
+  word-break: break-all;
 }

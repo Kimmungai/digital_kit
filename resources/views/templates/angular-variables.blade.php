@@ -12,7 +12,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.user_details = <?php echo $user; ?>;
 
     //variables
-    $scope.active_tool=1;
+    $scope.active_tool=6;
     $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A={{Auth::user()->tool_A}};
@@ -46,7 +46,7 @@ app.controller('Ctrl', function($scope, $http) {
       formData.append('width', width);
       if($('#'+field)[0].files[0].size > 1000000){alert('The file is too big. Max 1MB');return 0;}
       $.ajax({
-        	url: "/client-update",
+        	url: "{{url('/client-update')}}",
     			type: "POST",
     			data:  formData,
     			contentType: false,
