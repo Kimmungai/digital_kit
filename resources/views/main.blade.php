@@ -203,12 +203,35 @@
 
     }, '#pay-btn');
     </script>
+    <ul class="list-inline text-center mt-2">
+      <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< Back</li>
+    </ul>
   </main>
   <main ng-show="active_tool==6">
     <h1><i class="icn fa fa-globe"></i> Publish Request sent! <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
-    <div class="container">
-      
+    <ul class="list-inline text-center mt-2">
+      <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< home</li>
+      <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
+    </ul>
+  <div class="card text-center">
+    <div class="card-header">
+      Success!
     </div>
+    <div class="card-body">
+      <h5 class="card-title">Publishing in progress</h5>
+      <p class="card-text">Thank you for publishing your personal website.</p>
+      <p class="card-text">The website will be published on: <span class="text-success"><% user_details.publishing_details.website_url %></span></p>
+      <p class="card-text">An email will be sent to: <strong><% card.email %></strong> once the process is complete.</p>
+      <a href="#" ng-click="active_tool=1;edit_details=0" class="btn btn-success mb-1"><span class="fa fa-thumbs-up"></span> Done</a>
+    </div>
+    <div class="card-footer text-muted">
+        publishing takes a maximum of 2 business days
+    </div>
+  </div>
+  <ul class="list-inline text-center mt-2">
+    <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< home</li>
+    <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
+  </ul>
   </main>
   <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/img/loading.gif' width="64" height="64" /><br>Loading..</div>
 @endsection
