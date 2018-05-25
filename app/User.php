@@ -32,6 +32,6 @@ class User extends Authenticatable
     }
     public function payment_details()
     {
-      return $this->hasOne('App\payment_details');
+      return $this->hasMany('App\payment_details');
     }
 }

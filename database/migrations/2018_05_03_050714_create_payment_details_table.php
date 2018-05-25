@@ -16,6 +16,7 @@ class CreatePaymentDetailsTable extends Migration
         Schema::create('payment_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
+            $table->string('Payment_amount')->nullable();
             $table->string('acc_bal')->nullable();
             $table->string('Payment_id')->nullable();
             $table->string('payment_provider')->nullable();

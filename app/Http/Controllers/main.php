@@ -22,7 +22,9 @@ class main extends Controller
     {
         $website= Website::where('id','=',Auth::id())->first();
         $card = Card::where('id','=',Auth::id())->first();
-        $user = User::with('publishing_details','payment_details')->where('id','=',Auth::id())->first();
+        $user = User::with(['publishing_details','payment_details'=>function($query){
+          $query->orderBy('id','Desc');
+        }])->where('id','=',Auth::id())->first();
         return view('main',compact('website','card','user'));
     }
 

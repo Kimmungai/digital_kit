@@ -133,7 +133,7 @@
                 <th>Account</th><td><p><% client.first_name %> <% client.last_name %></p></td>
               </tr>
               <tr>
-                <th>Balance ($)</th><td><p><% user_details.payment_details.acc_bal %></p></td>
+                <th>Balance ($)</th><td><p id="dynamic_acc_bal"><% user_details.payment_details[0].acc_bal %></p></td>
               </tr>
               <tr>
                 <th>Top up ($)</th>
@@ -152,7 +152,7 @@
           </table>
         </div>
       </div>
-      <a href="#" class="btn btn-danger pull-right mt-3 mb-3" ng-click="active_tool=6;edit_details=0"><span class="fa fa-globe"></span> Publish</a>
+      <a href="#" class="btn btn-danger pull-right mt-3 mb-3" ng-click="active_tool=6;edit_details=0" onclick="publish()"><span class="fa fa-globe"></span> Publish</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
@@ -198,10 +198,44 @@
         onCancel: function(data, actions) {
             // Show a cancel page or return to cart
             //alert('cancel')
+            record_payment(12,$('#pub_cost').val(),'paypal',$('#dynamic_acc_bal').html());
+            update_payment_details_value(12,'acc_bal');
         }
 
 
     }, '#pay-btn');
+    function update_payment_details_value(paymentID,value){
+      $.get("/payment-values-update",
+        {
+          paymentID:paymentID,
+          value:value
+        },
+        function(data,status){
+          $('#dynamic_acc_bal').html(data);
+      });
+    }
+    function record_payment(paymentID,paymentAmt,paymentProvider,prev_acc_bal){
+      $.post("/record-payment",
+        {
+          paymentID:paymentID,
+          paymentAmt:paymentAmt,
+          paymentProvider:paymentProvider,
+          prev_acc_bal:prev_acc_bal,
+          "_token": "{{ csrf_token() }}",
+        },
+        function(data,status){
+          $('#dynamic_acc_bal').html(data);
+      });
+    }
+    function publish() {
+      $.post("/publish",
+        {
+          "_token": "{{ csrf_token() }}",
+        },
+        function(data,status){
+          //alert(data)
+      });
+    }
     </script>
     <ul class="list-inline text-center mt-2">
       <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< Back</li>

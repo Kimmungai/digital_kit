@@ -14,6 +14,9 @@ Route::get('/', 'main@index')->middleware('auth');
 Route::get('/client', 'main@show');
 Route::post('/client-update', 'main@update');
 Route::get('/download-card', 'downloads@card');
+Route::get('/payment-values-update', 'helpers@pluck_payment_details_value');
+Route::post('/record-payment', 'helpers@record_payment');
+Route::post('/publish', 'helpers@publish');
 /*Route::get('/', function()
 {
   $pdf = App::make('dompdf.wrapper');
