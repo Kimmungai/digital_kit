@@ -11,12 +11,12 @@
 |
 */
 Route::get('/', 'main@index')->middleware('auth');
-Route::get('/client', 'main@show');
-Route::post('/client-update', 'main@update');
-Route::get('/download-card', 'downloads@card');
-Route::get('/payment-values-update', 'helpers@pluck_payment_details_value');
-Route::post('/record-payment', 'helpers@record_payment');
-Route::post('/publish', 'helpers@publish');
+Route::get('/client', 'main@show')->middleware('auth');
+Route::post('/client-update', 'main@update')->middleware('auth');
+Route::get('/download-card', 'downloads@card')->middleware('auth');
+Route::get('/payment-values-update', 'helpers@pluck_payment_details_value')->middleware('auth');
+Route::post('/record-payment', 'helpers@record_payment')->middleware('auth');
+Route::post('/publish', 'helpers@publish')->middleware('auth');
 /*Route::get('/', function()
 {
   $pdf = App::make('dompdf.wrapper');

@@ -7,12 +7,17 @@ header h1{
   padding: 0.2em;
 }
 header h1 a{
-  color: inherit;
+  color: inherit !important;
+  text-decoration: none;
+  opacity: 0.78;
+}
+header h1 a:link{
+  color: inherit !important;
   text-decoration: none;
   opacity: 0.78;
 }
 header h1 a:hover{
-  color: inherit;
+  color: inherit !important;
   text-decoration: none;
   opacity: 1;
 }

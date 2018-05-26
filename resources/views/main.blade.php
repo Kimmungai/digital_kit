@@ -133,7 +133,7 @@
                 <th>Account</th><td><p><% client.first_name %> <% client.last_name %></p></td>
               </tr>
               <tr>
-                <th>Balance ($)</th><td><p id="dynamic_acc_bal"><% user_details.payment_details[0].acc_bal %></p></td>
+                <th>Balance ($)</th><td><p><span id="dynamic_acc_bal"><% user_details.payment_details[0].acc_bal %></span> <span id="sucess-top-up-badge" class="badge  badge-success no-display">Top Up Success</span></p></td>
               </tr>
               <tr>
                 <th>Top up ($)</th>
@@ -193,13 +193,13 @@
                 // You can now show a confirmation message to the customer
                 //call_after_paypal_payment();
                 //alert('suc')
+                record_payment(data.paymentID,$('#pub_cost').val(),'paypal',$('#dynamic_acc_bal').html());
+                update_payment_details_value(data.paymentID,'acc_bal');
             });
         },
         onCancel: function(data, actions) {
             // Show a cancel page or return to cart
             //alert('cancel')
-            record_payment(12,$('#pub_cost').val(),'paypal',$('#dynamic_acc_bal').html());
-            update_payment_details_value(12,'acc_bal');
         }
 
 
@@ -212,6 +212,7 @@
         },
         function(data,status){
           $('#dynamic_acc_bal').html(data);
+          $('#sucess-top-up-badge').removeClass('no-display');
       });
     }
     function record_payment(paymentID,paymentAmt,paymentProvider,prev_acc_bal){
@@ -224,7 +225,7 @@
           "_token": "{{ csrf_token() }}",
         },
         function(data,status){
-          $('#dynamic_acc_bal').html(data);
+          //$('#dynamic_acc_bal').html(data);
       });
     }
     function publish() {

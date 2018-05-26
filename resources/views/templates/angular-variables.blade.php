@@ -12,7 +12,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.user_details = <?php echo $user; ?>;
 
     //variables
-    $scope.active_tool=5;
+    $scope.active_tool=1;
     $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A={{Auth::user()->tool_A}};
