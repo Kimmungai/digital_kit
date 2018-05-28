@@ -50,8 +50,13 @@ class LoginController extends Controller
     }
     public function handleFacebookCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-        // $user->token;
+        $facebook_user = Socialite::driver('facebook')->user();
+        //print_r($facebook_user);die();
+        $user=$this->userFindOrCreate($facebook_user);
+        Auth::login($user,true);
+        $this->cardFindOrCreate($facebook_user,Auth::id(),'facebook');
+        $this->websiteFindOrCreate($facebook_user,Auth::id(),'facebook');
+        return redirect($this->redirectTo);
     }
     public function redirectToTwitter()
     {
@@ -87,7 +92,7 @@ class LoginController extends Controller
     }
     public function handleGoogleCallback()
     {
-        $user = Socialite::driver('google')->user();
+        $facebook_user = Socialite::driver('google')->user();
         print_r($user);die();
         // $user->token;
     }
@@ -181,6 +186,19 @@ class LoginController extends Controller
             $new_card->save();
             return $new_card;
           }
+          elseif($provider === 'facebook')
+          {
+            $new_card = new card;
+            $new_card->first_name = $user_object->getName();
+            $new_card->last_name = $user_object->getNickname();
+            $new_card->designation = 'Administrator';
+            $new_card->email = $user_object->getEmail();
+            //$new_card->address = $user_object['location'];
+            //$new_card->website = $user_object['profileUrl'];
+            //$new_card->qr_url = $user_object['profileUrl'];
+            $new_card->save();
+            return $new_card;
+          }
         }
     }
     public function websiteFindOrCreate($user_object,$user_id,$provider)
@@ -242,6 +260,24 @@ class LoginController extends Controller
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
             $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
+            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->save();
+            return $new_website;
+          }
+          elseif($provider === 'facebook')
+          {
+            $avatar = file_get_contents(str_replace('type=normal','width=1920',$user_object->getAvatar()));
+            if (!file_exists('img/'.$user_id.'/profile')) {
+                mkdir('img/'.$user_id.'/profile', 0777, true);
+            }
+            File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
+            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website = new Website;
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
+            $new_website->first_name = $user_object->getNickname();
+            //$new_website->last_name = $user_object->getName();
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
+            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object->getNickname().'</span>';
             $new_website->contact_receiving_email = $user_object->getEmail();
             $new_website->save();
             return $new_website;
