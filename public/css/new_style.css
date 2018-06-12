@@ -272,11 +272,7 @@ main .biz-card h3{
 main .qr{
   width: 89px;
   height: 90px;
-  background-color: #fff;
   margin: 0 auto 0 auto;
-  background: url('/img/qr.png') no-repeat center;
-  background-size: cover;
-  background-position: 50% 50%;
 }
 main .bar1{
   width: 50px;
