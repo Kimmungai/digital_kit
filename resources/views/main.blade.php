@@ -35,7 +35,7 @@
       <h3><% card.designation%></h3>
       <div class="row no-padding">
           <div class="bar2 bg-danger"></div>
-          <div class="qr"></div>
+          <img class="qr card-qr" />
           <div class="bar1"></div>
       </div>
         <div class="card-details">
@@ -43,7 +43,7 @@
             <li>Phone: <% card.phone%></span></li>
             <li>Email: <% card.email%></span></li>
             <li>Address: <% card.address%></span></li>
-            <li>Website: <% card.website%></span></li>
+            <li>Website: <% card.website %></span></li>
           </ul>
         </div>
     </article>

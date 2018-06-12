@@ -10108,11 +10108,7 @@ body {
 .qr {
   width: 90%;
   height: 4em;
-  background-color: #fff;
   margin: 1em auto 0 auto;
-  background: url("/img/qr.png");
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 .bar1 {
@@ -10376,4 +10372,3 @@ body {
   color: #fff;
   line-height: 2em;
 }
-
