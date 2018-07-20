@@ -106,7 +106,7 @@
           <table class="table table-hover table-bordered pub-table">
             <tbody>
               <tr>
-                <th>Website Url</th><td class="text-lower"><p ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></p><input id="website_url" class="form-control" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
+                <th>Website Url</th><td class="text-lower"><p ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></p><input id="website_url" class="form-control text-lower" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
               </tr>
               <tr>
                 <th>Period</th><td><p><% user_details.publishing_details.publishing_period %></p></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>1 year</option><option>3 years</option><option>5 years</option></select></td>
@@ -205,7 +205,7 @@
 
     }, '#pay-btn');
     function update_payment_details_value(paymentID,value){
-      $.get("/payment-values-update",
+      $.get("{{url('/payment-values-update')}}",
         {
           paymentID:paymentID,
           value:value
@@ -216,7 +216,7 @@
       });
     }
     function record_payment(paymentID,paymentAmt,paymentProvider,prev_acc_bal){
-      $.post("/record-payment",
+      $.post("{{url('/record-payment')}}",
         {
           paymentID:paymentID,
           paymentAmt:paymentAmt,
@@ -229,7 +229,7 @@
       });
     }
     function publish() {
-      $.post("/publish",
+      $.post("{{url('/publish')}}",
         {
           "_token": "{{ csrf_token() }}",
         },
@@ -268,5 +268,5 @@
     <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
   </ul>
   </main>
-  <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/img/loading.gif' width="64" height="64" /><br>Loading..</div>
+  <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='{{url("/img/loading.gif")}}' width="64" height="64" /><br>Loading..</div>
 @endsection

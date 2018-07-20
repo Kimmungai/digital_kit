@@ -9,7 +9,8 @@ use App\publishing_details;
 use Intervention\Image\Facades\Image;
 use Auth;
 use Illuminate\Http\Request;
-use App\Mail\publish;
+use App\Mail\Published;
+use Illuminate\Support\Facades\Mail;
 
 class helpers extends Controller
 {
@@ -39,7 +40,7 @@ class helpers extends Controller
      $user = User::with(['publishing_details','payment_details'=>function($query){
         $query->orderBy('id','Desc');
       }])->where('id','=',Auth::id())->first();
-      Mail::to($user->email)->cc('kimpita9@gmail.com')->queue(new published($user));
+      Mail::to($user->email)->send(new Published($user));
       return;
     }
 }

@@ -65,7 +65,7 @@ app.controller('Ctrl', function($scope, $http) {
     {
       if($('#'+field).attr('type') === 'checkbox'){if($('#' + field).is(":checked")){value='true';}else{value='false';}}
       if(field==='qr_url'){$(".card-qr").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data="{{$card->qr_url}}"');}// change to the typed url
-      $.post("/client-update",
+      $.post("{{url('/client-update')}}",
         {
           field:field,
           value:value,

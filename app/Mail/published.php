@@ -31,6 +31,6 @@ class published extends Mailable
      */
     public function build()
     {
-        return $this->view('view.email.publish')->with('user');
+        return $this->view('email.publish')->with(['user'=>$this->user]);
     }
 }

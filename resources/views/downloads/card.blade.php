@@ -48,7 +48,7 @@
     height: 59px;
     background-color: #fff;
     margin: 0  5px;
-    background: url('/img/qr.png') no-repeat center;
+    background: url({{url('/img/qr.png')}}) no-repeat center;
     background-size: cover;
     background-position: 50% 50%;
     float: left;
