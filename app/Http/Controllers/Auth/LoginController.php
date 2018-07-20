@@ -120,9 +120,13 @@ class LoginController extends Controller
         }
         else
         {
+          ##start variables##
+          $user_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+          $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+          ##end variables####
           $new_user = new User;
-          $new_user->name = $user_object->getName();
-          $new_user->email = $user_object->getEmail();
+          $new_user->name = $user_name;
+          $new_user->email = $user_email;
           $new_user->provider_id = $user_object->getId();
           $new_user->save();
           $pub_details = new publishing_details;
@@ -147,52 +151,89 @@ class LoginController extends Controller
         }
         else
         {
+
           if($provider === 'github')
           {
+            ##start variables##
+            $user_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_location=$user_object['location']!= null ? $user_object['location']  : '';
+            $user_url=$user_object['url']!= null ? $user_object['url']  : '';
+            ##end variables####
+
             $new_card = new card;
-            $new_card->first_name = $user_object->getName();
+            $new_card->first_name = $user_name;
             //$new_card->last_name = $user_object->getNickname();
             $new_card->designation = 'Administrator';
-            $new_card->email = $user_object->getEmail();
-            $new_card->address = $user_object['location'];
-            $new_card->website = $user_object['url'];
-            $new_card->qr_url = $user_object['url'];
+            $new_card->email = $user_email;
+            $new_card->address = $user_location;
+            $new_card->website = $user_url;
+            $new_card->qr_url = $user_url;
             $new_card->save();
             return $new_card;
           }
           elseif($provider === 'linkedin')
           {
+            ##start variables##
+            $user_first_name=$user_object['firstName']!= null ? $user_object['firstName']  : '';
+            $user_last_name=$user_object['lastName']!= null ? $user_object['lastName'] : '';
+            $user_designation=$user_object['headline']!= null ? $user_object['headline']  : '';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_address=$user_object['location']['name']!= null ? $user_object['location']['name']  : '';
+            $user_website=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
+            $user_qr_url=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
+            ##end variables####
+
             $new_card = new card;
-            $new_card->first_name = $user_object['firstName'];
-            $new_card->last_name = $user_object['lastName'];
-            $new_card->designation = $user_object['headline'];
-            $new_card->email = $user_object->getEmail();
-            $new_card->address = $user_object['location']['name'];
-            $new_card->website = $user_object['publicProfileUrl'];
-            $new_card->qr_url = $user_object['publicProfileUrl'];
+            $new_card->first_name = $user_first_name;
+            $new_card->last_name = $user_last_name;
+            $new_card->designation = $user_designation;
+            $new_card->email = $user_email;
+            $new_card->address = $user_address;
+            $new_card->website = $user_website;
+            $new_card->qr_url = $user_qr_url;
             $new_card->save();
             return $new_card;
           }
           elseif($provider === 'twitter')
           {
+            ##start variables##
+            $user_first_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_last_name=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $user_designation='Administrator';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_address=$user_object['location']!= null ? $user_object['location'] : '';
+            $user_website=$user_object['url']!= null ? $user_object['url']  : '';
+            $user_qr_url=$user_object['url']!= null ? $user_object['url']  : '';
+            ##end variables####
+
             $new_card = new card;
-            $new_card->first_name = $user_object->getName();
-            //$new_card->last_name = $user_object->getNickname();
-            $new_card->designation = 'Administrator';
-            $new_card->email = $user_object->getEmail();
-            $new_card->address = $user_object['location'];
-            $new_card->website = $user_object['url'];
-            $new_card->qr_url = $user_object['url'];
+            $new_card->first_name = $user_first_name;
+            $new_card->last_name = $user_last_name;
+            $new_card->designation = $user_designation;
+            $new_card->email = $user_email;
+            $new_card->address = $user_address;
+            $new_card->website = $user_website;
+            $new_card->qr_url = $user_qr_url;
             $new_card->save();
             return $new_card;
           }
           elseif($provider === 'facebook')
           {
+            ##start variables##
+            $user_first_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_last_name=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $user_designation='Administrator';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            /*$user_address=$user_object['location'] ? $user_object['location'] != null : '';
+            $user_website=$user_object['url'] ? $user_object['url'] != null : '';
+            $user_qr_url=$user_object['url'] ? $user_object['url'] != null : '';*/
+            ##end variables####
             $new_card = new card;
-            $new_card->first_name = $user_object->getName();
-            $new_card->last_name = $user_object->getNickname();
-            $new_card->designation = 'Administrator';
-            $new_card->email = $user_object->getEmail();
+            $new_card->first_name = $user_first_name;
+            $new_card->last_name =$user_last_name;
+            $new_card->designation = $user_designation;
+            $new_card->email = $user_email;
             //$new_card->address = $user_object['location'];
             //$new_card->website = $user_object['profileUrl'];
             //$new_card->qr_url = $user_object['profileUrl'];
@@ -212,7 +253,16 @@ class LoginController extends Controller
         {
           if($provider === 'github')
           {
+            ##start variables##
+            //$avatar = file_get_contents($user_object->getAvatar()) ? $user_object->getAvatar() != null : url('img/default_avata.PNG');
+            $user_first_name= $user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $user_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail() : '';
+            $user_location=$user_object['location']!= null ? $user_object['location']  : '';
+            $user_url=$user_object['url']!= null ? $user_object['url'] : '';
+            ##end variables####
             $avatar = file_get_contents($user_object->getAvatar());
+
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
@@ -220,17 +270,28 @@ class LoginController extends Controller
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
-            $new_website->first_name = $user_object->getNickname();
+            $new_website->first_name = $user_first_name;
             //$new_website->last_name = $user_object->getName();
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
-            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
-            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_name.'</span>';
+            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_location.'</span>';
+            $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
           }
           elseif($provider === 'linkedin')
           {
+            ##start variables##
+            //$avatar = file_get_contents($user_object['pictureUrls']['values'][0]) ? $user_object['pictureUrls']['values'][0] != null : url('img/default_avata.PNG');
+            $user_first_name=$user_object['firstName']!= null ? $user_object['firstName']  : '';
+            $user_last_name=$user_object['lastName']!= null ? $user_object['lastName']  : '';
+            $user_designation=$user_object['headline']!= null ? $user_object['headline']  : '';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_address=$user_object['location']['name']!= null ? $user_object['location']['name']  : '';
+            $user_website=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
+            $user_qr_url=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
+            ##end variables####
             $avatar = file_get_contents($user_object['pictureUrls']['values'][0]);
+
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
@@ -238,17 +299,28 @@ class LoginController extends Controller
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
-            $new_website->first_name = $user_object['firstName'];
-            $new_website->last_name = $user_object['lastName'];
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object['firstName'].' '.$user_object['lastName'].'</span>';
-            $new_website->tag_line_2 = $user_object['headline'].' based in <span>'.$user_object['location']['name'].'</span>';
-            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->first_name = $user_first_name;
+            $new_website->last_name = $user_last_name;
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.' '.$user_last_name.'</span>';
+            $new_website->tag_line_2 = $user_object['headline'].' based in <span>'.$user_address.'</span>';
+            $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
           }
           elseif($provider === 'twitter')
           {
+            ##start variables##
+            //$avatar = file_get_contents(str_replace('_normal','',$user_object->getAvatar())) ? $user_object->getAvatar() != null : url('img/default_avata.PNG');
+            $user_first_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_last_name=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $user_designation='Administrator';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_address=$user_object['location']!= null ? $user_object['location']  : '';
+            $user_website=$user_object['url']!= null ? $user_object['url']  : '';
+            $user_qr_url=$user_object['url']!= null ? $user_object['url']  : '';
+            ##end variables####
             $avatar = file_get_contents(str_replace('_normal','',$user_object->getAvatar()));
+
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
@@ -256,17 +328,28 @@ class LoginController extends Controller
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
-            $new_website->first_name = $user_object->getNickname();
-            //$new_website->last_name = $user_object->getName();
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
-            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object['location'].'</span>';
-            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->first_name = $user_first_name;
+            $new_website->last_name = $user_last_name;
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.'</span>';
+            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_address.'</span>';
+            $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
           }
           elseif($provider === 'facebook')
           {
+            ##start variables##
+            //$avatar = file_get_contents(str_replace('type=normal','width=1920',$user_object->getAvatar())) ? $user_object->getAvatar() != null : url('img/default_avata.PNG');
+            $user_first_name=$user_object->getName()!= null ? $user_object->getName()  : '';
+            $user_last_name=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $user_designation='Administrator';
+            $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            /*$user_address=$user_object['location'] ? $user_object['location'] != null : '';
+            $user_website=$user_object['url'] ? $user_object['url'] != null : '';
+            $user_qr_url=$user_object['url'] ? $user_object['url'] != null : '';*/
+            ##end variables####
             $avatar = file_get_contents(str_replace('type=normal','width=1920',$user_object->getAvatar()));
+
             if (!file_exists('img/'.$user_id.'/profile')) {
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
@@ -274,11 +357,11 @@ class LoginController extends Controller
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
-            $new_website->first_name = $user_object->getNickname();
-            //$new_website->last_name = $user_object->getName();
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_object->getName().'</span>';
-            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_object->getNickname().'</span>';
-            $new_website->contact_receiving_email = $user_object->getEmail();
+            $new_website->first_name = $user_first_name;
+            $new_website->last_name = $user_last_name;
+            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.'</span>';
+            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_first_name.'</span>';
+            $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
           }
