@@ -37,17 +37,17 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => url('/login/facebook/callback'),
+        'redirect' => '/login/facebook/callback',
     ],
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => url('/login/twitter/callback'),
+        'redirect' => '/login/twitter/callback',
     ],
     'linkedin' => [
         'client_id' => env('LINKEDIN_CLIENT_ID'),
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
-        'redirect' => url('/login/linkedin/callback'),
+        'redirect' => '/login/linkedin/callback',
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
@@ -57,7 +57,7 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => url('/login/github/callback'),
+        'redirect' => '/login/github/callback',
     ],
     'bitbucket' => [
         'client_id' => env('BITBUCKET_CLIENT_ID'),
