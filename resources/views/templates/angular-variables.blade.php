@@ -105,3 +105,10 @@ $(document).ready(function(){
     });
   });
 </script>
+<script>
+  function unblur_bg()
+  {
+    $('#passwordEmailPrompt').fadeOut('slow');
+    $('#site-panel').removeClass('blur-bg');
+  }
+</script>

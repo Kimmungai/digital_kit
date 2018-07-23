@@ -9,6 +9,7 @@ use App\payment_details;
 use App\publishing_details;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class main extends Controller
@@ -125,6 +126,7 @@ class main extends Controller
       }
       else if($model === 'User')
       {
+        if($field==='password'){$value=Hash::make($value);}
         if(User::where('id','=',$user_id)->update([
           $field => $value
         ])){

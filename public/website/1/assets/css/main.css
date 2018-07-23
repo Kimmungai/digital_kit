@@ -2278,7 +2278,7 @@ input, select, textarea {
 /* Icons */
 
 	ul.icons {
-		cursor: default;
+		cursor: pointer;
 		list-style: none;
 		padding-left: 0;
 	}
@@ -2286,6 +2286,9 @@ input, select, textarea {
 		ul.icons li {
 			display: inline-block;
 			padding: 0 1em 0 0;
+		}
+		ul.icons li a{
+			text-decoration: none !important;
 		}
 
 			ul.icons li:last-child {

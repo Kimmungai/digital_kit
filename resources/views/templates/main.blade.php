@@ -15,7 +15,7 @@
     <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </head>
   <body ng-cloak>
-    <div class="container-fluid">
+    <div id="site-panel" class="container-fluid <?php if(is_null($user->password) || is_null($user->email)){echo 'blur-bg';} ?>">
       <div class="row">
         <header><!--start of header section-->
           <div class="col-md-12">
@@ -636,5 +636,31 @@
       </div>
     </div><!--end app container-->
     @extends('templates.angular-variables')
+    <?php if(is_null($user->password) || is_null($user->email)) {?>
+      <div class="passwordEmailPrompt" id="passwordEmailPrompt">
+        <form>
+          <div class="card">
+            <div class="card-header text-white bg-info">
+              <strong>PLEASE CHOOSE A PASSWORD</strong>
+            </div>
+            <div class="card-body">
+              <?php if(is_null($user->email)) {?>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+            <?php }elseif(is_null($user->password)) {?>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" onchange="update_val(this.id,this.value,'','','User')">
+              </div>
+            <?php }?>
+              <button type="submit" class="btn btn-primary" onclick="unblur_bg('passwordEmailPrompt')">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    <?php }?>
   </body>
 </html>

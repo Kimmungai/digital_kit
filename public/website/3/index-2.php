@@ -3,12 +3,12 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <title>Baktigoto - Responsive Resume & Portfolio HTML5 Template</title><!-- site title name -->
+        <title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title><!-- site title name -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon -->
@@ -22,19 +22,19 @@
         <![endif]-->
     </head>
     <body class="body-box">
-       <!-- Preloader -->
+        <!-- preloader -->
         <div id="preloader">
-           <span>w</span>
-           <span>e</span>
-           <span>l</span>
-           <span>c</span>
-           <span>o</span>
-           <span>m</span>
-           <span>e</span>
+          <span>w</span>
+          <span>e</span>
+          <span>l</span>
+          <span>c</span>
+          <span>o</span>
+          <span>m</span>
+          <span>e</span>
         </div><!-- end of /.pre loader -->
 
         <div class="wrapper" id="boxscroll">
-            <div class="cover-section smoth" id="home">
+            <div class="cover-section smoth light-cover" id="home">
                 <div class="container">
                     <div class="row">
                         <nav class="navbar navbar-default">
@@ -62,29 +62,29 @@
 
                             </div><!-- end of /.container-fluid -->
                         </nav><!-- end of /. nav section -->
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 column wow bounceInUp center animated">
-                          <div class="shadow">
-                            <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
-                          </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12  column wow bounceInUp center animated">
+                            <div class="shadow">
+                              <img  class="img-responsive" src="<?php echo $saved_data['main_image']; ?>" alt="" />
+                            </div>
                         </div><!-- end of /.column-->
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 profile-item wow flipInX center animated">
-                            <section class="profile-caption">
-                                <h2><?php echo $saved_data['tag_line_1']; ?> </h2>
+                            <article class="profile-caption">
+                                <h2><?php echo $saved_data['tag_line_1']; ?></h2>
                                 <h2><?php echo $saved_data['tag_line_2']; ?></h2>
                                 <div class="social-media">
-                                    <a href="<?php echo $saved_data['facebook_link']; ?>"><i class="fa fa-facebook"></i></a>
-                                    <a href="<?php echo $saved_data['twitter_link']; ?>"><i class="fa fa-twitter"></i></a>
-                                    <a href="<?php echo $saved_data['google_plus_link']; ?>"><i class="fa fa-google-plus"></i></a>
-                                    <a href="<?php echo $saved_data['linkedin_link']; ?>"><i class="fa fa-linkedin"></i></a>
-                                    <a href="<?php echo $saved_data['instagram_link']; ?>"><i class="fa fa-instagram"></i></a>
+                                  <a href="<?php echo $saved_data['facebook_link']; ?>"><i class="fa fa-facebook"></i></a>
+                                  <a href="<?php echo $saved_data['twitter_link']; ?>"><i class="fa fa-twitter"></i></a>
+                                  <a href="<?php echo $saved_data['google_plus_link']; ?>"><i class="fa fa-google-plus"></i></a>
+                                  <a href="<?php echo $saved_data['linkedin_link']; ?>"><i class="fa fa-linkedin"></i></a>
+                                  <a href="<?php echo $saved_data['instagram_link']; ?>"><i class="fa fa-instagram"></i></a>
                                 </div>
-                            </section>
+                            </article>
                         </div> <!-- end of /.columns -->
                     </div><!-- end of /. row  -->
                 </div><!-- end of /. cover container  -->
             </div><!-- end of /.profile-cover section -->
 
-            <section class="about-section smoth" id="about">
+            <section class="about-section smoth light-about" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-title wow bounceInUp center animated">
@@ -95,7 +95,7 @@
                                 <h2><?php echo $saved_data['about_story_title']; ?></h2>
                                 <p><?php echo $saved_data['about_story']; ?></p>
                                 <?php if($saved_data['resume_downloadable']){?>
-                                <a href="#"><i class="fa fa-cloud-download"></i>Download Resume</a>
+                                <a href="<?php echo $saved_data['resume_download_link']; ?>"><i class="fa fa-cloud-download"></i>Download Resume</a>
                                 <?php }?>
                             </article>
                         </div>
@@ -122,7 +122,6 @@
                                 	<div class="bar color4"><span></span></div>
                                 	<div class="label wow bounceInLeft center animated"></div>
                                 </div>
-
                             </div><!-- end of /.skill bx -->
                         </div><!-- end of /.columns -->
                     </div><!-- end of /.row -->
@@ -263,6 +262,7 @@
                     </div><!-- end of /.row -->
                 </div><!-- end of /.container -->
             </section><!-- end of /.portfolio section -->
+
             <section class="contact-section" id="contact">
                 <div class="container">
                     <div class="row">
