@@ -8,7 +8,7 @@
     <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">
     <link  href="{{url('/css/website.css')}}" rel="stylesheet">
     <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
-    <title>Digital Kit</title>
+    <title>biznessKit</title>
     <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url('/js/bootstrap.min.js')}}"></script>
     <script src="{{url('/js/angular.min.js')}}"></script>
