@@ -30,7 +30,7 @@
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
-    <article class="container biz-card" ng-class="client.design==1 ? 'dark-bg' : 'light-bg'">
+    <article class="container biz-card dark-bg" ng-show="client.design==1">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
       <h3><% card.designation%></h3>
       <div class="row no-padding">
@@ -46,6 +46,54 @@
             <li>Website: <% card.website %></span></li>
           </ul>
         </div>
+    </article>
+    <article class="container biz-card-design-2" ng-show="client.design==2">
+      <div class="panel">
+        <div class="content">
+          <h2><% card.first_name%> <% card.last_name%></h2>
+          <p><% card.designation%></p>
+          <div class="line"></div>
+          <dl>
+            <dt>
+              <ul>
+                <li><% card.phone%></li>
+                <li><% card.email%></li>
+              </ul>
+            </dt>
+            <dd>
+              <ul>
+                <li><% card.address%></li>
+                <li><% card.website %></li>
+              </ul>
+            </dd>
+          </dl>
+          </dd>
+        </div>
+      </div>
+    </article>
+    <article class="container biz-card-design-3" ng-show="client.design==3">
+      <dl>
+        <dt style="background-image:url('<% client.main_image%>')"></dt>
+        <dd>
+          <h2><% card.first_name%> <% card.last_name%></h2>
+          <dl class="info">
+            <dt>
+              <ul>
+                <li><% card.designation%></li>
+                <li><% card.phone%></li>
+                <li><% card.address%></li>
+              </ul>
+            </dt>
+            <dd>
+              <img class="qr card-qr" />
+            </dd>
+          </dl>
+          <ul class="dark-bg">
+            <li class="pt-2"><% card.email%></li>
+            <li class="pb-2"><% card.website %></li>
+          </ul>
+        </dd>
+      </dl>
     </article>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="{{url('/download-card')}}" target="_blank"><span class="fa fa-download"></span> Dowload</a></li>

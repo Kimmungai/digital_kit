@@ -12,7 +12,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.user_details = <?php echo $user; ?>;
 
     //variables
-    $scope.active_tool=1;
+    $scope.active_tool=2;
     $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A={{Auth::user()->tool_A}};
@@ -64,7 +64,7 @@ app.controller('Ctrl', function($scope, $http) {
     else
     {
       if($('#'+field).attr('type') === 'checkbox'){if($('#' + field).is(":checked")){value='true';}else{value='false';}}
-      if(field==='qr_url'){$(".card-qr").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data="{{$card->qr_url}}"');}// change to the typed url
+      if(field==='qr_url'){$(".card-qr").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data="'+value+'"');}// change to the typed url
       $.post("{{url('/client-update')}}",
         {
           field:field,
