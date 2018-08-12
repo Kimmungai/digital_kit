@@ -19,28 +19,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link  href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-dark" style="border-bottom: 5px solid #df6260;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <h1><a class="text-warning" href="{{ url('/') }}" style="text-decoration:none;">
                     {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                </a></h1>
+                <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button>-->
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <!--<ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    </ul>-->
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <!--<ul class="navbar-nav ml-auto">-->
                         <!-- Authentication Links -->
-                        @guest
+                      <!--  @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
@@ -63,7 +64,7 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+                </div>-->
             </div>
         </nav>
 
