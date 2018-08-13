@@ -19,7 +19,7 @@
       <div class="row">
         <header><!--start of header section-->
           <div class="col-md-12">
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-md-8">
                   <h1 class="text-warning"><a href="{{url('/')}}">BiznessKit</a></h1>
