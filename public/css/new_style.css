@@ -403,7 +403,9 @@ main iframe{
 }
 main li{
   padding-left: 10px;
+  font-weight: bold;
   cursor: pointer;
+  font-size: 20px;
   opacity: 0.8;
 }
 main li:hover{

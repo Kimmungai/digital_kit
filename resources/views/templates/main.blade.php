@@ -9,6 +9,7 @@
     <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>biznessKit</title>
+    <script src="{{url('/js/angular.min.js')}}"></script>
   </head>
   <body ng-cloak>
     <div id="site-panel" class="container-fluid <?php if(is_null($user->password) || is_null($user->email)){echo 'blur-bg';} ?>">
@@ -660,7 +661,6 @@
     <?php }?>
     <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url('/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('/js/angular.min.js')}}"></script>
     <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.user_details = <?php echo $user; ?>;
 
     //variables
-    $scope.active_tool=2;
+    $scope.active_tool=1;
     $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A={{Auth::user()->tool_A}};
@@ -31,7 +31,6 @@ app.controller('Ctrl', function($scope, $http) {
   //jquery ajax
   function update_val(field,value,length=494,width=668,model='Website',dir='profile',fname='main_image')
   {
-    //alert($('#'+field).attr('type'));return 0;
     if($('#'+field).attr('type') === 'file')
     {
       //value = $('#'+field+'_form').submit();
@@ -86,6 +85,11 @@ app.controller('Ctrl', function($scope, $http) {
       $("#wait").css("display", "none");
       $("#website-preview").attr("src", '{{url("/")}}/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
       $(".prev-link").attr("href", '{{url("/")}}/website/'+$('#design').val()+'/'+$('#theme').val()+'?id={{Auth::id()}}');
+      if(parseFloat($('#pub_cost').val()) > {{$user->payment_details[0]->acc_bal}}){
+        $('#publish-btn').addClass('disabled');
+      }else if(parseFloat($('#pub_cost').val()) < {{$user->payment_details[0]->acc_bal}}){
+        $('#publish-btn').removeClass('disabled');
+      }
     });
   });
 </script>

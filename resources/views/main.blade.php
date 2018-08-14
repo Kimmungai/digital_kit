@@ -26,7 +26,7 @@
   <main ng-show="active_tool==2 && tool_B==true">
     <h1><i class="icn fa fa-book"></i> Business Card Ready!<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><a href="{{url('/download-card')}}" target="_blank"><span class="fa fa-download"></span> Download</a></li>
+      <li class="list-inline-item"><a href="{{url('/download-card')}}" target="_blank" style="text-decoration:none;color:inherit;"><span class="fa fa-download"></span> Download</a></li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
@@ -96,7 +96,7 @@
       </dl>
     </article>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><a href="{{url('/download-card')}}" target="_blank"><span class="fa fa-download"></span> Dowload</a></li>
+      <li class="list-inline-item"><a href="{{url('/download-card')}}" style="text-decoration:none;color:inherit;" target="_blank"><span class="fa fa-download"></span> Dowload</a></li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
     </ul>
@@ -128,8 +128,8 @@
           </ul>
         </div>
         <div ng-show="publish_notes==1" class="card-body max-height-150">
-          <h5 class="card-title">Important things to Note</h5>
-          <p class="card-text text-left padding2">After clicking publish, it takes about <strong>24 hours</strong> before your site goes live. You will receive a confirmation email once your site goes live.</p>
+          <h5 class="card-title">Important Notice</h5>
+          <p class="card-text text-left padding2">After clicking publish, it takes about <strong>24 hours</strong> before your site goes live. You will receive a confirmation email once your live.</p>
         </div>
         <!--<div ng-show="publish_notes==2" class="card-body max-height-150">
           <h5 class="card-title">Important things to Note</h5>
@@ -137,15 +137,15 @@
         </div>-->
         <div ng-show="publish_notes==3" class="card-body max-height-150">
           <h5 class="card-title">1. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <h5 class="card-title">2. When will my website be live?</h5>
+          <p class="card-text">It typically takes 24 hours to publish a website after receiving the payment and request to publish.</p>
+          <!--<h5 class="card-title">2. When will my website be live?</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <h5 class="card-title">3. When will my website be live?</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <h5 class="card-title">4. When will my website be live?</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <h5 class="card-title">5. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
         </div>
       </div>
       <div class="card mt-3">
@@ -157,16 +157,25 @@
                 <th>Website Url</th><td class="text-lower"><p ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></p><input id="website_url" class="form-control text-lower" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
               </tr>
               <tr>
-                <th>Period</th><td><p><% user_details.publishing_details.publishing_period %></p></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>1 year</option><option>3 years</option><option>5 years</option></select></td>
+                <th>Billing cycle</th><td><p><% user_details.publishing_details.publishing_period %></p></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Monthly</option><option>Every 3 months</option><option>Every 6 months</option><option>Yearly</option><option>Every 3 years</option><option>Every 5 years</option></select></td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='1 year'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Monthly'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$9.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='3 years'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$179</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 months'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$29.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='5 years'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$249</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 6 months'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$59.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Yearly'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$99.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 years'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$179.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 5 years'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$249.99</td>
               </tr>
             </tbody>
           </table>
@@ -188,9 +197,12 @@
                 <td>
                   <div class="row">
                     <div class="col-sm-2">
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='1 year'" type="text" value="99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='3 years'" type="text" value="179" />
-                      <input class="form-control" type="number"  id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='5 years'" type="text" value="249" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly'" type="text" value="9.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months'" type="text" value="29.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months'" type="text" value="59.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Yearly'" type="text" value="99.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 years'" type="text" value="179.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 5 years'" type="text" value="249.99" />
                     </div>
                     <div class="col-sm-3"><div class="btn" id="pay-btn"></div></div>
                   </div>
@@ -200,7 +212,7 @@
           </table>
         </div>
       </div>
-      <a href="#" class="btn btn-danger pull-right mt-3 mb-3" ng-click="active_tool=6;edit_details=0" onclick="publish()"><span class="fas fa-globe-americas"></span> Publish</a>
+      <a id="publish-btn" href="#" class="btn btn-danger pull-right mt-3 mb-3 <?php if($user->publishing_details->publishing_cost > $user->payment_details[0]->acc_bal){?>disabled<?php }?>" ng-click="active_tool=6;edit_details=0" onclick="publish()"><span class="fas fa-globe-americas"></span> Publish</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
@@ -261,6 +273,7 @@
         function(data,status){
           $('#dynamic_acc_bal').html(data);
           $('#sucess-top-up-badge').removeClass('no-display');
+          if(data > parseFloat($('#pub_cost').val())){$('#publish-btn').removeClass('disabled');}
       });
     }
     function record_payment(paymentID,paymentAmt,paymentProvider,prev_acc_bal){
@@ -293,7 +306,7 @@
   <main ng-show="active_tool==6">
     <h1><i class="icn fas fa-globe-americas"></i> Publish Request sent! <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
-      <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< home</li>
+      <a href="/" style="text-decoration:none;color:inherit;"><< home</a>
       <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
     </ul>
   <div class="card text-center">
@@ -305,14 +318,14 @@
       <p class="card-text">Thank you for publishing your personal website.</p>
       <p class="card-text">The website will be published on: <span class="text-success"><% user_details.publishing_details.website_url %></span></p>
       <p class="card-text">An email will be sent to: <strong><% card.email %></strong> once the process is complete.</p>
-      <a href="#" ng-click="active_tool=1;edit_details=0" class="btn btn-success mb-1"><span class="fa fa-thumbs-up"></span> Done</a>
+      <a href="/"  class="btn btn-success mb-1"><span class="fa fa-thumbs-up"></span> Done</a>
     </div>
     <div class="card-footer text-muted">
         publishing takes a maximum of 2 business days
     </div>
   </div>
   <ul class="list-inline text-center mt-2">
-    <li ng-click="active_tool=1;edit_details=0" class="list-inline-item"><< home</li>
+    <li class="list-inline-item"><a href="/" style="text-decoration:none;color:inherit;"><< home</a></li>
     <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
   </ul>
   </main>

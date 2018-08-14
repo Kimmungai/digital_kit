@@ -143,17 +143,29 @@ class main extends Controller
         ])){
           if($field==='publishing_period')
           {
-            if($value==='1 year')
+            if($value==='Monthly')
             {
-              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'99']);
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'9.99']);
             }
-            elseif($value==='3 years')
+            elseif($value==='Every 3 months')
             {
-              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'179']);
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'29.99']);
             }
-            elseif($value==='5 years')
+            elseif($value==='Every 6 months')
             {
-              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'249']);
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'59.99']);
+            }
+            elseif($value==='Yearly')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'99.99']);
+            }
+            elseif($value==='Every 3 years')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'179.99']);
+            }
+            elseif($value==='Every 5 years')
+            {
+              publishing_details::where('id','=',$user_id)->update(['publishing_cost'=>'249.99']);
             }
           }
           return true;
