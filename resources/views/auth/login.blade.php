@@ -11,10 +11,10 @@
                   <div class="row">
                     <div class="col-md-6 border-right">
                       <p class="text-muted text-center">New user</p>
-                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/github')}}" style="background:#333;font-size:24px;"><span class="fa fa-github"></span></a>
-                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/linkedin')}}" style="background:#0077B5;font-size:24px;"><span class="fa fa-linkedin"></span></a>
-                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/facebook')}}" style="background:#3B5998;font-size:24px;"><span class="fa fa-facebook"></span></a>
-                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/twitter')}}" style="background:#1da1f2;font-size:24px;"><span class="fa fa-twitter"></span></a>
+                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/github')}}" style="background:#333;font-size:24px;"><span class="fab fa-github-square"></span></a>
+                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/linkedin')}}" style="background:#0077B5;font-size:24px;"><span class="fab fa-linkedin-in"></span></a>
+                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/facebook')}}" style="background:#3B5998;font-size:24px;"><span class="fab fa-facebook-f"></span></a>
+                      <a class="btn btn-primary form-control border-0 mb-2" href="{{url('/login/twitter')}}" style="background:#1da1f2;font-size:24px;"><span class="fab fa-twitter"></span></a>
                     </div>
                     <div class="col-md-6 border-left">
                       <p class="text-muted text-center">Already have an account?</p>

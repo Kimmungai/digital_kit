@@ -4,15 +4,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link  href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link  href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet">
     <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">
     <link  href="{{url('/css/website.css')}}" rel="stylesheet">
     <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>biznessKit</title>
-    <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{url('/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('/js/angular.min.js')}}"></script>
-    <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </head>
   <body ng-cloak>
     <div id="site-panel" class="container-fluid <?php if(is_null($user->password) || is_null($user->email)){echo 'blur-bg';} ?>">
@@ -22,7 +18,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8">
-                  <h1 class="text-warning"><a href="{{url('/')}}">BiznessKit</a></h1>
+                  <h1 class="text-warning"><a href="{{url('/')}}">biznessKit</a></h1>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline account-nav">
@@ -43,7 +39,7 @@
           <aside >
             <div class="panel">
                <ul class="shelf-icons">
-                  <li ng-class="active_shelf==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#"><i class="fa fa-globe"></i></a></li>
+                  <li ng-class="active_shelf==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#"><i class="fas fa-globe-americas"></i></a></li>
                   <li ng-class="active_shelf==2 ? 'active' : 'inactive'" ng-click="active_shelf=2"><a href="#"><i class="fa fa-bullseye"></i></a></li>
                   <li ng-class="active_shelf==3 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#"><i class="fa fa-book"></i></a></li>
                   <li ng-class="active_shelf==4 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#"><i class="fa fa-file"></i></a></li>
@@ -75,7 +71,7 @@
               <h2><i class="fa fa-briefcase" aria-hidden="true"></i> My tools</h2>
               <ul class="mb3">
                 <li ng-show="tool_A==1" ng-class="active_tool==1 || active_tool==5 || active_tool==6 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
-                  <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-globe-americas" aria-hidden="true"></i></a>
                 </li>
                 <li ng-show="tool_B==1"  ng-class="active_tool==2 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">
                   <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
@@ -624,10 +620,10 @@
               <div class="col-md-4">
                 <h2>Lets stay connected</h2>
                 <ul>
-                  <li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
-                  <li><a href="#"><span class="fa fa-twitter-square"></span></a></li>
-                  <li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
-                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                  <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                  <li><a href="#"><span class="fab fa-twitter-square"></span></a></li>
+                  <li><a href="#"><span class="fab fa-linkedin-square"></span></a></li>
+                  <li><a href="#"><span class="fab fa-instagram"></span></a></li>
                 </ul>
               </div>
             </div>
@@ -662,5 +658,9 @@
         </form>
       </div>
     <?php }?>
+    <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url('/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('/js/angular.min.js')}}"></script>
+    <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
   </body>
 </html>

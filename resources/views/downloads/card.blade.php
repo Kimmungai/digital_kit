@@ -31,7 +31,7 @@
     margin: 0;
     padding: 0;
     color: #fff;
-    font-size: 0.8em;
+    font-size: 0.5em;
     padding-right: 1em;
     padding-left: 2px;
     text-transform: uppercase;
@@ -44,28 +44,28 @@
     width: 100%;
   }
   .qr{
-    width: 115px;
-    height: 115px;
+    width: 80px;
+    height: 80px;
     background-color: #fff;
     margin: 0  5px;
     float: left;
-    margin-top: -35px;
+    margin-top: -25px;
   }
   .qr img{
     width: 100%;
     height: 100%;
   }
   .bar1{
-    width: 30px;
+    width: 39px;
     height: 18px;
     background-color: #fff;
     margin:0px 1px 0 0;
     float: left;
   }
   .bar2{
-    width: 191px;
+    width: 199px;
     height: 18px;
-    margin: 35px 0 0 1px;
+    margin: 25px 0 0 1px;
     float: left;
     background-color: #d9534f;
   }
@@ -85,34 +85,25 @@
     padding: 0;
     color: #fff;
     padding-left: 2px;
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
   }
-  .fa-phone-square{
-    height: 24px;
-    width: 24px;
-    background: url('/img/image-fonts/phone-square.png') no-repeat center;
-    background-size: cover;
-    background-position: 50% 50%;
-  }
   .biz-card-design-2{
-    width: 322px;
+    width: 338px;
     background: #dbccb9;
-    height: 207px;
     border: 2px solid #dbccb9;
   }
   .biz-card-design-2 .panel{
     width: 315px;
     background: #444540;
-    margin: 3.5px auto;
-    height: 200px;
+    margin: 7px auto;
     border: 2px solid #444540;
   }
   .biz-card-design-2 .content{
     padding: 1%;
     background: #0e1211;
-    height: 180px;
     margin: 10px 0;
+    height: 150px;
     color: #fff;
     font-family: sans-serif;
   }
@@ -139,14 +130,19 @@
   .biz-card-design-2 .content dt{
     margin: 0;
     width: 50%;
-    padding: 0;
+    padding: 0px;
     float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .biz-card-design-2 .content dd{
     margin: 0;
     width: 50%;
     padding: 0;
-    float: right;
+    float: left;
+    background: red;
+    text-align: left;
   }
   .biz-card-design-2 .content dt ul{
     margin: 0;
@@ -155,7 +151,7 @@
   }
   .biz-card-design-2 .content dt li{
     margin: 0;
-    padding: 0;
+    padding: 0 2px;
     list-style-type: none;
     opacity: 1;
     cursor: default;
@@ -173,13 +169,14 @@
   }
   .biz-card-design-3{
     width: 440px;
-    overflow: hidden;
     font-family: sans-serif;
+    background: red;
   }
   .biz-card-design-3 dl{
     margin: 0;
     padding: 0;
     border: 2px solid #fff;
+    overflow: hidden;
   }
   .biz-card-design-3 dt{
     margin: 0;
@@ -306,12 +303,12 @@
                     <li>{{$card->email}}</li>
                   </ul>
                 </dt>
-                <dd>
+                <dt>
                   <ul>
                     <li>{{$card->address}}</li>
                     <li>{{$card->website}}</li>
                   </ul>
-              </dd>
+              </dt>
             </dl>
             </div>
           </div>

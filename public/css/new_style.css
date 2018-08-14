@@ -265,23 +265,23 @@ main .biz-card h3{
   margin: 0;
   padding: 0;
   color: #fff;
-  font-size: 0.8em;
+  font-size: 0.6em;
   padding-right: 1em;
   text-transform: uppercase;
 }
 main .qr{
-  width: 115px;
-  height: 115px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 0 auto;
 }
 main .bar1{
-  width: 50px;
+  width: 64px;
   height: 18px;
   background-color: #fff;
   margin:36px 1px 0 0;
 }
 main .bar2{
-  width: 262px;
+  width: 275px;
   height: 18px;
   margin: 36px 0 0 1px;
 }
@@ -296,7 +296,7 @@ main .card-details li{
   opacity: 1;
   cursor: default;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
   font-family: sans-serif;
 }
 main .controls{
@@ -690,7 +690,6 @@ main .biz-card-design-3{
 main .biz-card-design-3 dl{
   margin: 0;
   padding: 0;
-  border: 2px solid #fff;
 }
 main .biz-card-design-3 dt{
   margin: 0;
@@ -739,8 +738,8 @@ main .biz-card-design-3 .info dt li{
   cursor: default;
 }
 main .biz-card-design-3 .info dd{
-  height: 115px;
-  width:115px;
+  height: 80px;
+  width:80px;
   margin: 0;
   padding: 0;
   float: right;
@@ -754,7 +753,7 @@ main .biz-card-design-3 ul{
   padding: 0;
   list-style-type: none;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   opacity: 1;
   cursor: default;
 }
@@ -762,7 +761,7 @@ main .biz-card-design-3 li{
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-style: italic;
+  font-size: 12px;
 }
 main .biz-card-design-3 ul .dark-bg{
   background: #000;
