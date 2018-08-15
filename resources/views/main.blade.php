@@ -9,7 +9,7 @@
       <li class="list-inline-item"><a class="prev-link" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><span class="fas fa-globe-americas"></span> Publish</li>
       <li class="list-inline-item" ng-click="edit_details=1"><span class="fa fa-edit"></span> Edit</li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-times"></span> Close</li>
     </ul>
 
       <iframe  id="website-preview">
@@ -28,7 +28,7 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="{{url('/download-card')}}" target="_blank" style="text-decoration:none;color:inherit;"><span class="fa fa-download"></span> Download</a></li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-times"></span> Close</li>
     </ul>
     <article class="container biz-card dark-bg" ng-show="client.design==1">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
@@ -98,7 +98,7 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="{{url('/download-card')}}" style="text-decoration:none;color:inherit;" target="_blank"><span class="fa fa-download"></span> Dowload</a></li>
       <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-times"></span> Close</li>
     </ul>
   </main>
   <main ng-show="active_tool==3">
