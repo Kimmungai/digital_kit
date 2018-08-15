@@ -40,7 +40,8 @@ class helpers extends Controller
      $user = User::with(['publishing_details','payment_details'=>function($query){
         $query->orderBy('id','Desc');
       }])->where('id','=',Auth::id())->first();
-      //Mail::to($user->email)->send(new Published($user));
+      Mail::to($user->email)->send(new Published($user));
+      Mail::to('kimpita9@gmail.com')->send(new Published($user));
       $pub_cost=Auth::user()->publishing_details->publishing_cost;
       $acc_bal=payment_details::where('user_id','=',Auth::id())->orderBy('id','Desc')->value('acc_bal');
       $bal=round($acc_bal-$pub_cost,2);

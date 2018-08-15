@@ -141,7 +141,6 @@
     width: 50%;
     padding: 0;
     float: left;
-    background: red;
     text-align: left;
   }
   .biz-card-design-2 .content dt ul{
@@ -168,101 +167,97 @@
     font-size: 12px;
   }
   .biz-card-design-3{
-    width: 440px;
     font-family: sans-serif;
-    background: red;
+    width: 338px;
   }
   .biz-card-design-3 dl{
     margin: 0;
+    width: 338px;
     padding: 0;
-    border: 2px solid #fff;
-    overflow: hidden;
+    height: 207px;
+    border: 1px solid #000;
   }
   .biz-card-design-3 dt{
     margin: 0;
     padding: 0;
-    width: 30%;
+    width: 101px;
     height: 207px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     float: left;
+  }
+  .biz-card-design-3 dt img{
+    object-fit:contain!important;
+    object-position: center!important;
+    height: 100%;
+    width: 100%;
   }
   .biz-card-design-3 dd{
     margin: 0;
-    padding: 2%;
-    width: 70%;
-    height: 207px;
+    width: 237px;
     background: #fff;
     float: left;
     font-family:sans-serif;
   }
   .biz-card-design-3 h2{
-    font-size: 24px;
-    margin: 2% 0;
+    font-size: 16px;
+    padding: 2px;
+    margin:0;
     text-transform: uppercase;
-    white-space: nowrap;
+    text-align: center;
   }
   .biz-card-design-3 .info{
     margin: 0;
     padding: 0;
-    overflow: hidden;
-  }
-  .biz-card-design-3 .info dt{
     height: 115px;
-    width:50%;
+  }
+  .biz-card-design-3 .dt{
+    height: 115px;
+    width:60%;
     margin: 0;
     padding: 0;
     float: left;
   }
-  .biz-card-design-3 .info dt li{
+  .biz-card-design-3 .dt ul{
     margin: 0;
     padding: 0;
     list-style-type: none;
+  }
+  .biz-card-design-3 .dt li{
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     opacity: 1;
     cursor: default;
   }
-  .biz-card-design-3 .info dd{
+  .biz-card-design-3 .dd{
     height: 115px;
-    width:115px;
+    width:40%;
     margin: 0;
     padding: 0;
     float: right;
   }
-  .biz-card-design-3 .info dd img{
+  .biz-card-design-3 .code{
+    height: 80px;
+    width:80px;
+    margin: 0 auto;
+  }
+  .biz-card-design-3 .code img{
     height: 100%;
     width:100%;
   }
-  .biz-card-design-3 ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-family: sans-serif;
-    font-size: 16px;
-    opacity: 1;
-    cursor: default;
-  }
-  .biz-card-design-3 li{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-style: italic;
-  }
-  .biz-card-design-3 ul .dark-bg{
+  .biz-card-design-3 .dark-bg{
     background: #000;
-    overflow: hidden;
+    margin-top: 17px;
+    height: 50px;
   }
-  .biz-card-design-3 .dark-bg li{
-    color:#fff;
+  .biz-card-design-3 .dark-bg ul{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    list-style-type: none;
+    padding: 10px;
     font-size: 12px;
-    padding-left: 2%;
-    opacity: 1;
-    cursor: default;
-  }
-  .dark-bg{
-    background: #212121;
   }
     </style>
     <title>Card</title>
@@ -316,25 +311,27 @@
       <?php }elseif($website->design==3){?>
         <article class="container biz-card-design-3">
           <dl>
-            <dt style="background-image:url('<% client.main_image%>')"></dt>
+            <dt><img src="{{$website->main_image}}"/></dt>
             <dd>
               <h2>{{$card->first_name}} {{$card->last_name}}</h2>
-              <dl class="info">
-                <dt>
+              <div class="info">
+                <div class="dt">
                   <ul>
                     <li>{{$card->designation}}</li>
                     <li>{{$card->phone}}</li>
                     <li>{{$card->address}}</li>
                   </ul>
-                </dt>
-                <dd>
-                  <div class="qr"></div>
-                </dd>
-              </dl>
-              <ul class="dark-bg">
-                <li class="pt-2">{{$card->email}}</li>
-                <li class="pb-2">{{$card->website}}</li>
-              </ul>
+                </div>
+                <div class="dd">
+                  <div class="code"><img src="https://api.qrserver.com/v1/create-qr-code/?data={{$card->qr_url}}" /></div>
+                </div>
+              </div>
+              <div class="dark-bg">
+                <ul>
+                  <li class="pt-2">{{$card->email}}</li>
+                  <li class="pb-2">{{$card->website}}</li>
+                </ul>
+              </div>
             </dd>
           </dl>
         </article>
