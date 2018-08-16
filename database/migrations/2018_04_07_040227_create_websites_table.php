@@ -42,7 +42,7 @@ class CreateWebsitesTable extends Migration
             $table->string('skill_4')->default('organization');
             $table->string('skill_4_level')->default('98');
             $table->string('vision_statement')->default('My mantra is "keep pushing forward" ');
-            $table->string('speciality_title')->default('What I enjoy doing');
+            $table->string('speciality_title')->default('What I do');
             $table->string('speciality_1')->nullable();
             $table->string('speciality_1_icon')->nullable();
             $table->text('speciality_1_text')->nullable();

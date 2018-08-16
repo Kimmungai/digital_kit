@@ -102,7 +102,7 @@
 						<section class="spotlight">
 							<div class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></div><div class="content">
 								<h2><?php echo $saved_data['about_story_title']; ?></h2>
-								<p><?php echo $saved_data['about_story']; ?></p>
+								<p><?php echo $saved_data['mission_statement']; ?></p>
 							</div>
 						</section>
 					</section>
@@ -112,7 +112,7 @@
 						<div class="inner">
 							<header class="major">
 								<h2><?php echo $saved_data['speciality_title']; ?></h2>
-								<p><?php echo $saved_data['mission_statement']; ?></p>
+								<!--<p><?php //echo $saved_data['mission_statement']; ?></p>-->
 							</header>
 							<ul class="features">
 								<li class="icon fa <?php echo $saved_data['speciality_1_icon']; ?>">
@@ -125,11 +125,11 @@
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_3_icon']; ?>">
 									<h3><?php echo $saved_data['speciality_3']; ?></h3>
-									<p><?php echo $saved_data['speciality_3']; ?></p>
+									<p><?php echo $saved_data['speciality_3_text']; ?></p>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_4_icon']; ?>">
 									<h3><?php echo $saved_data['speciality_4']; ?></h3>
-									<p><?php echo $saved_data['speciality_4']; ?></p>
+									<p><?php echo $saved_data['speciality_4_text']; ?></p>
 								</li>
 							</ul>
 						</div>

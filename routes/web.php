@@ -21,7 +21,7 @@ Route::post('/publish', 'helpers@publish')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'main@index')->name('home');
+Route::redirect('/home', '/');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
