@@ -98,13 +98,11 @@ class LoginController extends Controller
     }
     public function redirectToGithub()
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver('github')->setScopes(['read:user', 'public_repo'])->redirect();
     }
     public function handleGithubCallback()
     {
         $github_user = Socialite::driver('github')->user();
-        // $user->token;
-        //print_r($github_user);die();
         $user=$this->userFindOrCreate($github_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($github_user,Auth::id(),'github');
@@ -260,6 +258,21 @@ class LoginController extends Controller
             $user_email=$user_object->getEmail()!= null ? $user_object->getEmail() : '';
             $user_location=$user_object['location']!= null ? $user_object['location']  : '';
             $user_url=$user_object['url']!= null ? $user_object['url'] : '';
+            $user_bio=$user_object['bio']!= null ? $user_object['bio'] : '';
+            $user_company=$user_object['company']!= null ? $user_object['company'] : '';
+            $tag_line_2=$user_company!= null ? 'A member of '.$user_company.' based in <span>'.$user_location.'</span>' : 'Currently based in <span>'.$user_location.'</span>';
+            $repos_url = $user_object['repos_url'];
+            $opts = [
+                'http' => [
+                    'method' => 'GET',
+                    'header' => [
+                            'User-Agent: PHP'
+                    ]
+                ]
+            ];
+            $json = file_get_contents($repos_url, false, stream_context_create($opts));
+            $repos = json_decode($json);
+            $speciality_title=count($repos) ? 'Currently I have contributed to'.count($repos).' public repositories' : 'What I enjoy';
             ##end variables####
             $avatar = file_get_contents($user_object->getAvatar());
 
@@ -273,7 +286,9 @@ class LoginController extends Controller
             $new_website->first_name = $user_first_name;
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_name.'</span>';
-            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_location.'</span>';
+            $new_website->tag_line_2 = $tag_line_2;
+            $new_website->about_story = $user_bio;
+            $new_website->speciality_title = $speciality_title;
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;

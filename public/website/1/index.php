@@ -80,7 +80,7 @@
 						<div class="inner">
 							<header class="major">
 								<h2><?php echo $saved_data['about_title']; ?></h2>
-								<p></p>
+								<p><?php echo $saved_data['about_story']; ?></p>
 							</header>
 							<ul class="icons major">
 								<li onclick="openLink('<?php echo $saved_data['facebook_link']; ?>')"><span class="icon fa-facebook major style1"></span></li>

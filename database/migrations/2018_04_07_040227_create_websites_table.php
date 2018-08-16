@@ -28,9 +28,9 @@ class CreateWebsitesTable extends Migration
             $table->string('linkedin_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('about_title')->default('About Me');
-            $table->string('about_story_title')->default('A little about how I started');
+            $table->string('about_story_title')->default('A little about myself');
             $table->text('about_story')->nullable();
-            $table->tinyInteger('resume_downloadable')->default(0);
+            $table->tinyInteger('resume_downloadable')->default(1);
             $table->string('resume_download_link')->nullable();
             $table->string('skill_title')->default('My skills');
             $table->string('skill_1')->default('public speaking');

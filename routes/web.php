@@ -10,27 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'main@index')->middleware('auth');
+Route::get('/', 'main@index')->middleware('auth')->name('home');
 Route::get('/client', 'main@show')->middleware('auth');
 Route::post('/client-update', 'main@update')->middleware('auth');
 Route::get('/download-card', 'downloads@card')->middleware('auth');
 Route::get('/payment-values-update', 'helpers@pluck_payment_details_value')->middleware('auth');
 Route::post('/record-payment', 'helpers@record_payment')->middleware('auth');
 Route::post('/publish', 'helpers@publish')->middleware('auth');
-/*Route::get('/', function()
-{
-  $pdf = App::make('dompdf.wrapper');
-$pdf->loadHTML('<h1>Your HTML Here</h1>');
-return $pdf->stream();
-});*/
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'main@index')->name('home');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
