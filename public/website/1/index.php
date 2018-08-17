@@ -112,24 +112,24 @@
 						<div class="inner">
 							<header class="major">
 								<h2><?php echo $saved_data['speciality_title']; ?></h2>
-								<!--<p><?php //echo $saved_data['mission_statement']; ?></p>-->
+								<p><?php echo $saved_data['speciality_sub_title']; ?></p>
 							</header>
 							<ul class="features">
 								<li class="icon fa <?php echo $saved_data['speciality_1_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_1']; ?></h3>
-									<p><?php echo $saved_data['speciality_1_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_1']; ?></h3>
+									<p><?php echo $saved_data['speciality_1_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_2_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_2']; ?></h3>
-									<p><?php echo $saved_data['speciality_2_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_2_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_2']; ?></h3>
+									<p><?php echo $saved_data['speciality_2_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_3_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_3']; ?></h3>
-									<p><?php echo $saved_data['speciality_3_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_3_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_3']; ?></h3>
+									<p><?php echo $saved_data['speciality_3_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_4_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_4']; ?></h3>
-									<p><?php echo $saved_data['speciality_4_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_4']; ?></h3>
+									<p><?php echo $saved_data['speciality_4_text']; ?></p></a>
 								</li>
 							</ul>
 						</div>

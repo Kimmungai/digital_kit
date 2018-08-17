@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Spectral by HTML5 UP</title>
+		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -36,14 +36,14 @@
 		}
 		</style>
 	</head>
-	<body class="landing is-preload">
+	<body class="landing is-preload" style="opacity:0.8">
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="index.html"><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -80,7 +80,7 @@
 						<div class="inner">
 							<header class="major">
 								<h2><?php echo $saved_data['about_title']; ?></h2>
-								<p></p>
+								<p><?php echo $saved_data['about_story']; ?></p>
 							</header>
 							<ul class="icons major">
 								<li onclick="openLink('<?php echo $saved_data['facebook_link']; ?>')"><span class="icon fa-facebook major style1"></span></li>
@@ -102,7 +102,7 @@
 						<section class="spotlight">
 							<div class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></div><div class="content">
 								<h2><?php echo $saved_data['about_story_title']; ?></h2>
-								<p><?php echo $saved_data['about_story']; ?></p>
+								<p><?php echo $saved_data['mission_statement']; ?></p>
 							</div>
 						</section>
 					</section>
@@ -112,24 +112,24 @@
 						<div class="inner">
 							<header class="major">
 								<h2><?php echo $saved_data['speciality_title']; ?></h2>
-								<p><?php echo $saved_data['mission_statement']; ?></p>
+								<p><?php echo $saved_data['speciality_sub_title']; ?></p>
 							</header>
 							<ul class="features">
 								<li class="icon fa <?php echo $saved_data['speciality_1_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_1']; ?></h3>
-									<p><?php echo $saved_data['speciality_1_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_1']; ?></h3>
+									<p><?php echo $saved_data['speciality_1_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_2_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_2']; ?></h3>
-									<p><?php echo $saved_data['speciality_2_text']; ?></p>
+									<a href="<?php echo $saved_data['speciality_2_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_2']; ?></h3>
+									<p><?php echo $saved_data['speciality_2_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_3_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_3']; ?></h3>
-									<p><?php echo $saved_data['speciality_3']; ?></p>
+									<a href="<?php echo $saved_data['speciality_3_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_3']; ?></h3>
+									<p><?php echo $saved_data['speciality_3_text']; ?></p></a>
 								</li>
 								<li class="icon fa <?php echo $saved_data['speciality_4_icon']; ?>">
-									<h3><?php echo $saved_data['speciality_4']; ?></h3>
-									<p><?php echo $saved_data['speciality_4']; ?></p>
+									<a href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank"><h3><?php echo $saved_data['speciality_4']; ?></h3>
+									<p><?php echo $saved_data['speciality_4_text']; ?></p></a>
 								</li>
 							</ul>
 						</div>

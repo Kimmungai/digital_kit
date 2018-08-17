@@ -139,23 +139,24 @@
                     <div class="row">
                         <div class="section-title wow bounceInUp center animated">
                             <h2><?php echo $saved_data['speciality_title']; ?></h2><!-- section title -->
+                            <p><?php echo $saved_data['speciality_sub_title']; ?></p>
                         </div>
                         <div class="col-lg-6 mobile">
-                            <article class="mobile-design work-box wow bounceInDown center animated">
+                            <a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><article class="mobile-design work-box wow bounceInDown center animated">
                                 <i class="fa <?php echo $saved_data['speciality_1_icon']; ?>"></i><!-- icon -->
                                 <h3><?php echo $saved_data['speciality_1']; ?></h3><!-- title -->
                                 <p><?php echo $saved_data['speciality_1_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
-                            </article>
+                            </article></a>
 
                         </div><!-- end of /.columns 1 -->
                         <div class="col-lg-6 template ">
-                            <article class="template-design work-box wow bounceInDown center animated">
+                            <a href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank"><article class="template-design work-box wow bounceInDown center animated">
                                 <i class="fa <?php echo $saved_data['speciality_2_icon']; ?>"></i><!-- icon -->
                                 <h3><?php echo $saved_data['speciality_2']; ?></h3><!-- title -->
                                 <p><?php echo $saved_data['speciality_2_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
-                            </article>
+                            </article></a>
 
                         </div><!-- end of /.columns 1 -->
 
@@ -165,21 +166,21 @@
                             </div>
                         </div><!--end of main center columns-->
                         <div class="col-lg-6 ui">
-                            <article class="ui-design work-box wow bounceInUp center animated">
+                            <a href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank"><article class="ui-design work-box wow bounceInUp center animated">
                                 <i class="fa <?php echo $saved_data['speciality_3_icon']; ?>"></i><!-- icon -->
                                 <h3><?php echo $saved_data['speciality_3']; ?></h3><!-- title -->
                                 <p><?php echo $saved_data['speciality_3_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
-                            </article><!-- end of /.design box -->
+                            </article></a><!-- end of /.design box -->
 
                         </div><!-- end columns 1 -->
                         <div class="col-lg-6 landing wow bounceInUp center animated">
-                            <article class="landing-page work-box">
+                            <a href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank"><article class="landing-page work-box">
                                 <i class="fa <?php echo $saved_data['speciality_4_icon']; ?> dh-container"></i><!-- icon -->
                                 <h3><?php echo $saved_data['speciality_4']; ?></h3><!-- title -->
                                 <p><?php echo $saved_data['speciality_4_text']; ?></p><!-- caption -->
                                 <div class="dh-overlay"></div>
-                            </article><!-- end of /.design box -->
+                            </article></a><!-- end of /.design box -->
 
                         </div><!-- end columns 1 -->
                     </div><!-- end of /.row -->

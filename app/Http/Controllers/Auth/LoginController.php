@@ -103,7 +103,6 @@ class LoginController extends Controller
     public function handleGithubCallback()
     {
         $github_user = Socialite::driver('github')->user();
-      //echo $github_user['hireable'];die();
         $user=$this->userFindOrCreate($github_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($github_user,Auth::id(),'github');
@@ -276,22 +275,27 @@ class LoginController extends Controller
             $mission_statement=count($repos) ? 'As of now I have contributed to <strong>'.count($repos).'</strong> public repositories.' : 'Professionalism in my work is self evident.';
             $vision_statement=$user_first_name!= null ? 'You can also call me '.$user_first_name : 'My Mantra is to keep moving forward';
             $hireable=$user_object['hireable'] ? ' I am currently open to job offers.' : '';
+            $speciality_sub_title="Some of my Public Repositories";
             $speciality_1=$repos[0]->name!= null ? $repos[0]->name : '';
             $speciality_1_text=$repos[0]->description!= null ? $repos[0]->description : '';
             $language_1=$repos[0]->language!= null ? ' developed in '.$repos[0]->language : '';
             $icon_1=$repos[0]->language!= null ? 'fa-code' : '';
+            $speciality_1_url=$repos[0]->html_url!= null ? $repos[0]->html_url : '';
             $speciality_2=$repos[1]->name!= null ? $repos[1]->name : '';
             $speciality_2_text=$repos[1]->description!= null ? $repos[1]->description : '';
             $language_2=$repos[1]->language!= null ? ' developed in '.$repos[1]->language : '';
             $icon_2=$repos[1]->language!= null ? 'fa-code' : '';
+            $speciality_2_url=$repos[1]->html_url!= null ? $repos[1]->html_url : '';
             $speciality_3=$repos[2]->name!= null ? $repos[2]->name : '';
             $speciality_3_text=$repos[2]->description!= null ? $repos[2]->description : '';
             $language_3=$repos[2]->language!= null ? ' developed in '.$repos[2]->language : '';
             $icon_3=$repos[2]->language!= null ? 'fa-code' : '';
+            $speciality_3_url=$repos[2]->html_url!= null ? $repos[2]->html_url : '';
             $speciality_4=$repos[3]->name!= null ? $repos[3]->name : '';
             $speciality_4_text=$repos[3]->description!= null ? $repos[3]->description : '';
             $language_4=$repos[3]->language!= null ? ' developed in '.$repos[3]->language : '';
             $icon_4=$repos[3]->language!= null ? 'fa-code' : '';
+            $speciality_4_url=$repos[3]->html_url!= null ? $repos[3]->html_url : '';
             ##end variables####
             $avatar = file_get_contents($user_object->getAvatar());
 
@@ -312,15 +316,20 @@ class LoginController extends Controller
             $new_website->speciality_1 = $speciality_1.$language_1;
             $new_website->speciality_1_icon = $icon_1;
             $new_website->speciality_1_text = $speciality_1_text;
+            $new_website->speciality_1_url = $speciality_1_url;
             $new_website->speciality_2 = $speciality_2.$language_2;
             $new_website->speciality_2_icon = $icon_2;
             $new_website->speciality_2_text = $speciality_2_text;
+            $new_website->speciality_2_url = $speciality_2_url;
             $new_website->speciality_3 = $speciality_3.$language_3;
             $new_website->speciality_3_icon = $icon_3;
             $new_website->speciality_3_text = $speciality_3_text;
+            $new_website->speciality_3_url = $speciality_3_url;
             $new_website->speciality_4 = $speciality_4.$language_4;
             $new_website->speciality_4_icon = $icon_4;
             $new_website->speciality_4_text = $speciality_4_text;
+            $new_website->speciality_4_url = $speciality_4_url;
+            $new_website->speciality_sub_title = $speciality_sub_title;
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
