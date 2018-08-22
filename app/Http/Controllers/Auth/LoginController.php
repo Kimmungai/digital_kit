@@ -79,7 +79,8 @@ class LoginController extends Controller
     {
         $linkedin_user = Socialite::driver('linkedin')->user();
         // $user->token;
-        //print_r($linkedin_user['pictureUrls']['values'][0]);die();
+        //print_r($linkedin_user);
+        //echo $linkedin_user['publicProfileUrl'];die();
         $user=$this->userFindOrCreate($linkedin_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($linkedin_user,Auth::id(),'linkedin');
@@ -276,26 +277,31 @@ class LoginController extends Controller
             $vision_statement=$user_first_name!= null ? 'You can also call me '.$user_first_name : 'My Mantra is to keep moving forward';
             $hireable=$user_object['hireable'] ? ' I am currently open to job offers.' : '';
             $speciality_sub_title="Some of my Public Repositories";
-            $speciality_1=$repos[0]->name!= null ? $repos[0]->name : '';
-            $speciality_1_text=$repos[0]->description!= null ? $repos[0]->description : '';
-            $language_1=$repos[0]->language!= null ? ' developed in '.$repos[0]->language : '';
-            $icon_1=$repos[0]->language!= null ? 'fa-code' : '';
-            $speciality_1_url=$repos[0]->html_url!= null ? $repos[0]->html_url : '';
-            $speciality_2=$repos[1]->name!= null ? $repos[1]->name : '';
-            $speciality_2_text=$repos[1]->description!= null ? $repos[1]->description : '';
-            $language_2=$repos[1]->language!= null ? ' developed in '.$repos[1]->language : '';
-            $icon_2=$repos[1]->language!= null ? 'fa-code' : '';
-            $speciality_2_url=$repos[1]->html_url!= null ? $repos[1]->html_url : '';
-            $speciality_3=$repos[2]->name!= null ? $repos[2]->name : '';
-            $speciality_3_text=$repos[2]->description!= null ? $repos[2]->description : '';
-            $language_3=$repos[2]->language!= null ? ' developed in '.$repos[2]->language : '';
-            $icon_3=$repos[2]->language!= null ? 'fa-code' : '';
-            $speciality_3_url=$repos[2]->html_url!= null ? $repos[2]->html_url : '';
-            $speciality_4=$repos[3]->name!= null ? $repos[3]->name : '';
-            $speciality_4_text=$repos[3]->description!= null ? $repos[3]->description : '';
-            $language_4=$repos[3]->language!= null ? ' developed in '.$repos[3]->language : '';
-            $icon_4=$repos[3]->language!= null ? 'fa-code' : '';
-            $speciality_4_url=$repos[3]->html_url!= null ? $repos[3]->html_url : '';
+            if(isset($repos[0])){
+              $speciality_1=$repos[0]->name!= null ? $repos[0]->name : '';
+              $speciality_1_text=$repos[0]->description!= null ? $repos[0]->description : '';
+              $language_1=$repos[0]->language!= null ? ' developed in '.$repos[0]->language : '';
+              $icon_1=$repos[0]->language!= null ? 'fa-code' : '';
+              $speciality_1_url=$repos[0]->html_url!= null ? $repos[0]->html_url : '';
+            }if(isset($repos[1])){
+              $speciality_2=$repos[1]->name!= null ? $repos[1]->name : '';
+              $speciality_2_text=$repos[1]->description!= null ? $repos[1]->description : '';
+              $language_2=$repos[1]->language!= null ? ' developed in '.$repos[1]->language : '';
+              $icon_2=$repos[1]->language!= null ? 'fa-code' : '';
+              $speciality_2_url=$repos[1]->html_url!= null ? $repos[1]->html_url : '';
+            }if(isset($repos[2])){
+              $speciality_3=$repos[2]->name!= null ? $repos[2]->name : '';
+              $speciality_3_text=$repos[2]->description!= null ? $repos[2]->description : '';
+              $language_3=$repos[2]->language!= null ? ' developed in '.$repos[2]->language : '';
+              $icon_3=$repos[2]->language!= null ? 'fa-code' : '';
+              $speciality_3_url=$repos[2]->html_url!= null ? $repos[2]->html_url : '';
+            }if(isset($repos[3])){
+              $speciality_4=$repos[3]->name!= null ? $repos[3]->name : '';
+              $speciality_4_text=$repos[3]->description!= null ? $repos[3]->description : '';
+              $language_4=$repos[3]->language!= null ? ' developed in '.$repos[3]->language : '';
+              $icon_4=$repos[3]->language!= null ? 'fa-code' : '';
+              $speciality_4_url=$repos[3]->html_url!= null ? $repos[3]->html_url : '';
+            }
             ##end variables####
             $avatar = file_get_contents($user_object->getAvatar());
 
@@ -313,22 +319,22 @@ class LoginController extends Controller
             $new_website->about_story = $user_bio;
             $new_website->mission_statement = $mission_statement;
             $new_website->vision_statement = $vision_statement.$hireable;
-            $new_website->speciality_1 = $speciality_1.$language_1;
-            $new_website->speciality_1_icon = $icon_1;
-            $new_website->speciality_1_text = $speciality_1_text;
-            $new_website->speciality_1_url = $speciality_1_url;
-            $new_website->speciality_2 = $speciality_2.$language_2;
-            $new_website->speciality_2_icon = $icon_2;
-            $new_website->speciality_2_text = $speciality_2_text;
-            $new_website->speciality_2_url = $speciality_2_url;
-            $new_website->speciality_3 = $speciality_3.$language_3;
-            $new_website->speciality_3_icon = $icon_3;
-            $new_website->speciality_3_text = $speciality_3_text;
-            $new_website->speciality_3_url = $speciality_3_url;
-            $new_website->speciality_4 = $speciality_4.$language_4;
-            $new_website->speciality_4_icon = $icon_4;
-            $new_website->speciality_4_text = $speciality_4_text;
-            $new_website->speciality_4_url = $speciality_4_url;
+            $new_website->speciality_1 = isset($speciality_1) ? $speciality_1.$language_1 : '';
+            $new_website->speciality_1_icon = isset($icon_1) ? $icon_1: '';
+            $new_website->speciality_1_text = isset($speciality_1_text) ? $speciality_1_text: '';
+            $new_website->speciality_1_url = isset($speciality_1_url) ? $speciality_1_url: '';
+            $new_website->speciality_2 = isset($speciality_2) ? $speciality_2.$language_2: '';
+            $new_website->speciality_2_icon = isset($icon_2) ? $icon_2: '';
+            $new_website->speciality_2_text = isset($speciality_2_text) ? $speciality_2_text: '';
+            $new_website->speciality_2_url = isset($speciality_2_url) ? $speciality_2_url: '';
+            $new_website->speciality_3 = isset($speciality_3) ? $speciality_3.$language_3: '';
+            $new_website->speciality_3_icon = isset($icon_3) ? $icon_3: '';
+            $new_website->speciality_3_text = isset($speciality_3_text) ? $speciality_3_text: '';
+            $new_website->speciality_3_url = isset($speciality_3_url) ? $speciality_3_url: '';
+            $new_website->speciality_4 = isset($speciality_4) ? $speciality_4.$language_4: '';
+            $new_website->speciality_4_icon = isset($icon_4) ? $icon_4: '';
+            $new_website->speciality_4_text = isset($speciality_4_text) ? $speciality_4_text: '';
+            $new_website->speciality_4_url = isset($speciality_4_url) ? $speciality_4_url: '';
             $new_website->speciality_sub_title = $speciality_sub_title;
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
@@ -341,10 +347,15 @@ class LoginController extends Controller
             $user_first_name=$user_object['firstName']!= null ? $user_object['firstName']  : '';
             $user_last_name=$user_object['lastName']!= null ? $user_object['lastName']  : '';
             $user_designation=$user_object['headline']!= null ? $user_object['headline']  : '';
+            $tag_line_2=$user_designation != null && $user_address !=null ? $user_designation.' based in <span>'.$user_address.'</span>': 'Welcome to my website';
             $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
             $user_address=$user_object['location']['name']!= null ? $user_object['location']['name']  : '';
             $user_website=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
             $user_qr_url=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
+            $user_bio=$user_object['industry']!= null ? 'I am in the '.$user_object['industry'].' industry'   : 'You can also find me in the following platforms.';
+            $nickName=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
+            $vision_statement=$nickName != null ? 'You can also call me '.$nickName:' I am an action oriented and ready to take on challenges!';
+            $linkedin_link=$user_object['publicProfileUrl'] != null ? $user_object['publicProfileUrl']: '#';
             ##end variables####
             $avatar = file_get_contents($user_object['pictureUrls']['values'][0]);
 
@@ -358,8 +369,11 @@ class LoginController extends Controller
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.' '.$user_last_name.'</span>';
-            $new_website->tag_line_2 = $user_object['headline'].' based in <span>'.$user_address.'</span>';
+            $new_website->tag_line_2 = $tag_line_2;
             $new_website->contact_receiving_email = $user_email;
+            $new_website->about_story = $user_bio;
+            $new_website->vision_statement = $vision_statement;
+            $new_website->linkedin_link = $linkedin_link;
             $new_website->save();
             return $new_website;
           }
