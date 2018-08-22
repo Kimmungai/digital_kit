@@ -65,6 +65,7 @@ class LoginController extends Controller
     public function handleTwitterCallback()
     {
         $twitter_user = Socialite::driver('twitter')->user();
+        print_r($twitter_user);die();
         $user=$this->userFindOrCreate($twitter_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($twitter_user,Auth::id(),'twitter');
