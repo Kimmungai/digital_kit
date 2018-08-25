@@ -1,871 +1,464 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Cooking School Free html template</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <!--Google fonts Link-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i" rel="stylesheet">
-        
-        
-        <link rel="stylesheet" href="assets/css/skills/progressbar.css">
-        <link rel="stylesheet" href="assets/css/skills/style.css">
-        <link rel="stylesheet" href="assets/css/fonticons.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-
-        <!--For Plugins external css-->
-        <link rel="stylesheet" href="assets/css/teamslide.css" />
-        <link rel="stylesheet" href="assets/css/plugins.css" />
-
-        <!--Theme custom css -->
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!--Theme Responsive css-->
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body data-spy="scroll" data-target=".navbar-collapse">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <header id="main_menu" class="header navbar-fixed-top">            
-            <div class="main_menu_bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="nave_menu">
-                            <nav class="navbar navbar-default" id="navmenu">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <a class="navbar-brand" href="#home">
-                                            <img src="assets/images/logo.png"/>
-                                        </a>
-                                    </div>
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-
-
-
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li><a href="#home">Home</a></li>
-                                            <li><a href="#service">Recipes</a></li>
-                                            <li><a href="#about"> About us</a></li>
-                                            <li><a href="#team">Blog</a></li>
-                                            <li><a href="#gellary">Gallery</a></li>
-                                            <li><a href="#contact">Contact</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </nav>
-                        </div>	
-                    </div>
-
-                </div>
-
-            </div>
-        </header> <!--End of header -->
-
-
-
-
-
-        <section id="home" class="home">
-            <div class="overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 ">
-                            <div class="main_home_slider">
-                                <div class="single_home_slider">
-                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>COOKING SCHOOL FREE PSD TEMPLATE</h1>
-                                        <p class="subtitle">graphicsdrawer.com</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-primary">LEARN MORE</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="single_home_slider">
-                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>COOKING SCHOOL FREE PSD TEMPLATE</h1>
-                                        <p class="subtitle">graphicsdrawer.com</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-primary">LEARN MORE</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="single_home_slider">
-                                    <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                        <h1>COOKING SCHOOL FREE PSD TEMPLATE</h1>
-                                        <p class="subtitle">graphicsdrawer.com</p>
-
-                                        <div class="home_btn">
-                                            <a href="" class="btn btn-primary">LEARN MORE</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-        <section id="service" class="service">
-            <div class="container">
-                <div class="row">
-                    <div class="service_border_raund text-center"></div>
-                    <div class="main_service_area sections text-center">
-                        <div class="head_title text-center">
-                            <h2>what we do?</h2>
-                            <div class="separator"></div>
-
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single_service">
-                                <div class="single_service_icon">
-                                    <img src="assets/images/service.png" alt="" />
-                                </div>
-
-                                <h3>HAMBURGERS</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, at ullamcorper turpis gravida nec. 
-                                    Praesent eu ultrices nunc.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single_service">
-                                <div class="single_service_icon">
-                                     <img src="assets/images/service2.png" alt="" />
-                                </div>
-
-                                <h3>muffins</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, at ullamcorper turpis gravida nec. 
-                                    Praesent eu ultrices nunc.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single_service">
-                                <div class="single_service_icon">
-                                    <img src="assets/images/service3.png" alt="" />
-                                </div>
-
-                                <h3>salt and pepper</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, at ullamcorper turpis gravida nec. 
-                                    Praesent eu ultrices nunc.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="video" class="video">
-            <div class="home-overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_video_area sections text-center">
-                            <div class="head_title">  
-                                <i class="fa fa-film"></i>
-                                <h4>CHECK OUR VIDEO TUTORIALS</h4>
-                            </div>
-                            <div class="main_video_content">
-                                <div class="col-sm-4">
-                                    <div class="single_video">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_l6CQRHIGyg"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="single_video">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_l6CQRHIGyg"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="single_video">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_l6CQRHIGyg"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio_btn_area">
-                                <a href="" class="btn btn-larg">CHECK OUR CHANNEL</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-        <section id="about" class="about">
-            <div class="container">
-                <div class="row">
-                    <div class="main_about sections">
-
-                        <div class="main_about_content_area">
-                            <div class="single_about_left_img">
-                                <img src="assets/images/ab.jpg" alt="" />
-                            </div> 
-
-
-                            <!-- bar 1 -->
-                            <div class="col-sm-8 col-sm-offset-4">
-                                <div class="single_about_right_content">
-                                    <div class="demo4">
-                                        <div class="right_single_about_skill">
-                                            <div class="right_about_top_cotent">
-                                                <div class="right_about_top_img">
-                                                    <img src="assets/images/s_ab1.png" alt="" />
-                                                </div>
-                                                <div class="right_about_top_content">
-                                                    <h3>COOKCING BOOK</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, 
-                                                        at ullamcorper turpis gravida nec. Praesent eu ultrices nunc.</p>
-                                                </div>
-                                            </div>
-                                            <div class="right_about_bottom_cotent">
-                                                <!-- bar 1 -->
-                                                <div class="progress-bar4" data-percentage="76%">
-                                                    <h4 class="progress-title-holder">
-                                                        <span class="progress-number-wrapper">
-                                                            <span class="progress-number-mark">
-                                                                <span class="percent"></span>
-                                                                <span class="down-arrow"></span>
-                                                            </span>
-                                                        </span>
-                                                    </h4>
-                                                    <div class="progress-content-outter">
-                                                        <div class="progress-content"></div>
-                                                    </div>
-                                                </div> 
-
-                                            </div>
-                                        </div>
-
-                                        <div class="right_single_about_skill">
-                                            <div class="right_about_top_cotent">
-                                                <div class="right_about_top_img">
-                                                    <img src="assets/images/s_ab2.png" alt="" />
-                                                </div>
-                                                <div class="right_about_top_content">
-                                                    <h3>COOKCING BOOK</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, 
-                                                        at ullamcorper turpis gravida nec. Praesent eu ultrices nunc.</p>
-                                                </div>
-                                            </div>
-                                            <div class="right_about_bottom_cotent">
-                                                <!-- bar 2 -->
-                                                <div class="progress-bar4" data-percentage="43%">
-                                                    <h4 class="progress-title-holder">
-                                                        <span class="progress-number-wrapper">
-                                                            <span class="progress-number-mark">
-                                                                <span class="percent"></span>
-                                                                <span class="down-arrow"></span>
-                                                            </span>
-                                                        </span>
-                                                    </h4>
-                                                    <div class="progress-content-outter">
-                                                        <div class="progress-content"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="right_single_about_skill">
-                                            <div class="right_about_top_cotent">
-                                                <div class="right_about_top_img">
-                                                    <img src="assets/images/s_ab3.png" alt="" />
-                                                </div>
-                                                <div class="right_about_top_content">
-                                                    <h3>COOKCING BOOK</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur convallis nunc, 
-                                                        at ullamcorper turpis gravida nec. Praesent eu ultrices nunc.</p>
-                                                </div>
-                                            </div>
-                                            <div class="right_about_bottom_cotent">
-                                                <!-- bar 3 -->
-                                                <div class="progress-bar4" data-percentage="92%">
-                                                    <h4 class="progress-title-holder">
-                                                        <span class="progress-number-wrapper">
-                                                            <span class="progress-number-mark">
-                                                                <span class="percent"></span>
-                                                                <span class="down-arrow"></span>
-                                                            </span>
-                                                        </span>
-                                                    </h4>
-                                                    <div class="progress-content-outter">
-                                                        <div class="progress-content"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>   
-
-                            </div>
-                        </div>
-                    </div>                    
-
-                </div>
-            </div>
-        </section>
-
-
-        <section id="pepper" class="pepper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="main_pepper text-center">
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="single_pepper">
-                                <h5>salt and pepper</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    In consectetur convallis nunc, at ullamcorper turpis 
-                                    gravida nec. Praesent eu ultrices nunc.</p>
-                                <a href="" class="btn btn-md">SUBSCRIBE</a>
-                            </div>
-                            <div class="single_pepper">
-                                <h5>salt and pepper</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    In consectetur convallis nunc, at ullamcorper turpis 
-                                    gravida nec. Praesent eu ultrices nunc.</p>
-                                <a href="" class="btn btn-md">SUBSCRIBE</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 no-padding">
-                            <div class="single_pepper_right">
-                                <img src="assets/images/pepper.jpg" alt="" /> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <section id="team" class="team">
-            <div class="container">
-                <div class="row">
-                    <div class="main_team sections">
-                        <div class="head_title text-center">
-                            <h2>OUR TEAM</h2>
-                            <div class="separator"></div>
-                            <p>Suspendisse ac nulla eros. Vestibulum elementum placerat erat ac maximus. 
-                                Aliquam quis nisi quis arcu dapibus ornare. Donec vel ex urna. 
-                                Ut in odio ultricies mauris fringilla placerat commodo in augue. </p>
-
-                        </div>
-      
-                        
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="main_team_content">  
-                                    <div class="single_team">
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                    <div class="single_team">
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6">
-                                            <div class="single_item">
-                                                <img src="assets/images/team2.jpg" alt="" />
-                                                <div class="single_team_overlay">
-                                                    <h4>Angelo Frigo</h4>
-                                                    <p>master chef</p>
-                                                    <div class="team_socail">
-                                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                                        <a href=""><i class="fa fa-google-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="newsletter" class="newsletter text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="main_newsletter sections">
-                        <div class="col-sm-12">
-                            <div class="single_newsletter_head">
-                                <h2>JOIN OUR NEWSLETTER</h2>
-                                <p>Suspendisse ac nulla eros. Vestibulum elementum placerat erat ac maximus. 
-                                    Aliquam quis nisi quis arcu dapibus ornare. Donec vel ex urna. Ut in odio ultricies
-                                    mauris fringilla placerat commodo in augue. </p>
-                            </div>
-
-                            <div class="single_sewsletter_content">
-                                <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="first name" required="">
-                                            <input type="submit" value="SUBSCRIBE" class="btn btn-primary"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="gellary" class="gellary">
-            <div class="container">
-                <div class="row">
-                    <div class="main_gellary sections">
-                        <div class="main_gellary_content">
-                            <div class="single_gellary">
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_gellary">
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_gellary_item">
-                                        <img src="assets/images/gl1.jpg" alt="" />
-                                        <div class="gellary_overlay">
-                                            <h4>INGREDIENTS</h4>
-                                            <p>ARE IMPORTANT <br />
-                                                FOR COOKING?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact sections">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="head_title text-center">
-                            <h2>CONTACT US VERY FAST!</h2>
-                            <div class="separator"></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="contact_contant">
-                                <div class="col-sm-6">
-                                    <div class="single_contant_left">
-                                        <form action="#" id="formid">
-                                            <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
-
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="name" placeholder="first name" required="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
-                                            </div>
-
-                                            <div class="text-center">
-                                                <input type="submit" value="SEND MESSAGE" class="btn btn-primary">
-                                            </div>
-                                            <!--</div>--> 
-                                        </form>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <div class="single_message_right">
-                                        <h4>About Us</h4>
-                                        <div class="separator4"></div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                            Ut iaculis et eros a porta. Cras lacinia consequat ante et pulvinar. 
-                                        </p>
-                                        <p>Morbi efficitur, arcu ut eleifend viverra, est lorem hendrerit arcu, 
-                                            vel finibus lectus quam sit amet mauris.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <div class="single_message_right_info">
-                                        <h4>Info</h4>
-                                        <div class="separator4"></div>
-                                        <ul>
-                                            <li><a href=""><i class="fa fa-envelope"></i> info@graphicsdrawer.com</a></li>
-                                            <li><a href=""><i class="fa fa-phone"></i> 0123 456 789 0112</a></li>
-                                            <li><a href=""><i class="fa fa-map-marker"></i> Greenplatz Ben 29, Germany 60435</a></li>
-                                            <li><a href=""><i class="fa fa-fax"></i> (0012) 654 356 445</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> <!-- End of messsage contant-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="map" class="map">  
-            <div class="ourmaps">
-                <div class="container">
-
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <section id="contact" class="footer_widget">
-            <div class="container">
-                <div class="row">
-                    <div class="main_widget">
-
-
-                        <div class="row">
-
-                            <div class="col-sm-4  col-xs-12">
-                                <div class="single_widget wow fadeIn" data-wow-duration="800ms">
-                                    <h4 class="footer_title">CONTACT</h4>
-                                    <div class="separator4"></div>
-                                    <ul>
-                                        <li><a href=""><i class="fa fa-envelope"></i> info@guitarchoose.com</a></li>
-                                        <li><a href=""><i class="fa fa-phone"></i> 0123 456 789 0112</a></li>
-                                        <li><a href=""><i class="fa fa-map-marker"></i> Greenplatz Ben 29, Germany 60435</a></li>
-                                        <li><a href=""><i class="fa fa-fax"></i> (0012) 654 356 445</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-xs-12">
-                                <div class="single_widget wow fadeIn" data-wow-duration="800ms">
-                                    <h4 class="footer_title">LATEST NEWS</h4>
-                                    <div class="separator4"></div>
-
-                                    <div class="footer_gellary">
-                                        <img src="assets/images/fg1.jpg" alt="" />
-                                        <img src="assets/images/fg2.jpg" alt="" />
-                                        <img src="assets/images/fg3.jpg" alt="" />
-                                        <img src="assets/images/fg4.jpg" alt="" />
-                                        <img src="assets/images/fg5.jpg" alt="" />
-                                        <img src="assets/images/fg6.jpg" alt="" />
-                                        <img src="assets/images/fg7.jpg" alt="" />
-                                        <img src="assets/images/fg8.jpg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-xs-12">
-                                <div class="single_widget wow fadeIn" data-wow-duration="800ms">
-                                    <div class="footer_logo">
-                                        <img src="assets/images/footerlogo.png" alt="" />
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in egestas lectus. 
-                                        Etiam tempor odio tellus, at bibendum neque faucibus quis. Sed vel facilisis elit. </p>
-                                    <p>Nullam fringilla pharetra diam non accumsan. Morbi eget aliquam mauris. 
-                                        Etiam vehicula efficitur mi.</p>
-
-
-                                    <a class="weblink" href="">www.cookingschool.com</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-        <footer id="footer" class="footer">
-            <div class="container">
-                <div class="main_footer">
-                    <div class="row">
-
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="copyright_text">
-                                <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="http://bootstrapthemes.co">Bootstrap Themes</a>2016. All Rights Reserved</p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="footer_socail">
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-rss"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
-
-        <!-- START SCROLL TO TOP  -->
-
-        <div class="scrollup">
-            <a href="#"><i class="fa fa-chevron-up"></i></a>
-        </div>
-
-        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
-
-        <script src="assets/js/jquery.easypiechart.min.js"></script>
-        <script src="assets/js/jquery.mixitup.min.js"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/css/skills/inview.min.js"></script>
-        <script src="assets/css/skills/progressbar.js"></script>
-        <script src="assets/css/skills/main.js"></script>
-        
-        <!--This is link only for gmaps-->
-        <script src="http://maps.google.com/maps/api/js"></script>
-        <script src="assets/js/gmaps.min.js"></script>
-        <script>
-            var map = new GMaps({
-                el: '.ourmaps',
-                scrollwheel: false,
-                lat: -12.043333,
-                lng: -77.028333
-            });
-        </script>
-
-
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-
-    </body>
+<?php require_once('../autoload.php');?>
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strata by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Strata</strong>, a super simple<br />
+					responsive site template freebie<br />
+					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Ipsum lorem dolor aliquam ante commodo<br />
+							magna sed accumsan arcu neque.</h2>
+						</header>
+						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>Recent Work</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+								<h3>Magna sed consequat tempus</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<h3>Ultricies lacinia interdum</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<h3>Tortor metus commodo</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+								<h3>Quam neque phasellus</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
+								<h3>Nunc enim commodo aliquet</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
+								<h3>Risus ornare lacinia</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							</article>
+						</div>
+						<ul class="actions">
+							<li><a href="#" class="button">Full Portfolio</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Get In Touch</h2>
+						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+						<div class="row">
+							<div class="col-8 col-12-small">
+								<form method="post" action="#">
+									<div class="row gtr-uniform gtr-50">
+										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+									</div>
+								</form>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</div>
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon fa-home"><span class="label">Address</span></h3>
+										1234 Somewhere Rd.<br />
+										Nashville, TN 00000<br />
+										United States
+									</li>
+									<li>
+										<h3 class="icon fa-mobile"><span class="label">Phone</span></h3>
+										000-000-0000
+									</li>
+									<li>
+										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+										<a href="#">hello@untitled.tld</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Four -->
+				<!--
+					<section id="four">
+						<h2>Elements</h2>
+
+						<section>
+							<h4>Text</h4>
+							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+							<hr />
+							<header>
+								<h4>Heading with a Subtitle</h4>
+								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+							</header>
+							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+							<header>
+								<h5>Heading with a Subtitle</h5>
+								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+							</header>
+							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+							<hr />
+							<h2>Heading Level 2</h2>
+							<h3>Heading Level 3</h3>
+							<h4>Heading Level 4</h4>
+							<h5>Heading Level 5</h5>
+							<h6>Heading Level 6</h6>
+							<hr />
+							<h5>Blockquote</h5>
+							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+							<h5>Preformatted</h5>
+							<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+						</section>
+
+						<section>
+							<h4>Lists</h4>
+							<div class="row">
+								<div class="col-6 col-12-xsmall">
+									<h5>Unordered</h5>
+									<ul>
+										<li>Dolor pulvinar etiam magna etiam.</li>
+										<li>Sagittis adipiscing lorem eleifend.</li>
+										<li>Felis enim feugiat dolore viverra.</li>
+									</ul>
+									<h5>Alternate</h5>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam magna etiam.</li>
+										<li>Sagittis adipiscing lorem eleifend.</li>
+										<li>Felis enim feugiat dolore viverra.</li>
+									</ul>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<h5>Ordered</h5>
+									<ol>
+										<li>Dolor pulvinar etiam magna etiam.</li>
+										<li>Etiam vel felis at lorem sed viverra.</li>
+										<li>Felis enim feugiat dolore viverra.</li>
+										<li>Dolor pulvinar etiam magna etiam.</li>
+										<li>Etiam vel felis at lorem sed viverra.</li>
+										<li>Felis enim feugiat dolore viverra.</li>
+									</ol>
+									<h5>Icons</h5>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+										<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+										<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<h5>Actions</h5>
+							<ul class="actions">
+								<li><a href="#" class="button primary">Default</a></li>
+								<li><a href="#" class="button">Default</a></li>
+							</ul>
+							<ul class="actions small">
+								<li><a href="#" class="button primary small">Small</a></li>
+								<li><a href="#" class="button small">Small</a></li>
+							</ul>
+							<div class="row">
+								<div class="col-6 col-12-small">
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</div>
+								<div class="col-6 col-12-small">
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary small">Small</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+								</div>
+								<div class="col-6 col-12-small">
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary fit">Default</a></li>
+										<li><a href="#" class="button fit">Default</a></li>
+									</ul>
+								</div>
+								<div class="col-6 col-12-small">
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary small fit">Small</a></li>
+										<li><a href="#" class="button small fit">Small</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+
+						<section>
+							<h4>Table</h4>
+							<h5>Default</h5>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Item One</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Two</td>
+											<td>Vis ac commodo adipiscing arcu aliquet.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Three</td>
+											<td> Morbi faucibus arcu accumsan lorem.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Four</td>
+											<td>Vitae integer tempus condimentum.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Five</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+
+							<h5>Alternate</h5>
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Item One</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Two</td>
+											<td>Vis ac commodo adipiscing arcu aliquet.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Three</td>
+											<td> Morbi faucibus arcu accumsan lorem.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Four</td>
+											<td>Vitae integer tempus condimentum.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Five</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</section>
+
+						<section>
+							<h4>Buttons</h4>
+							<ul class="actions">
+								<li><a href="#" class="button primary">Primary</a></li>
+								<li><a href="#" class="button">Default</a></li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#" class="button large">Large</a></li>
+								<li><a href="#" class="button">Default</a></li>
+								<li><a href="#" class="button small">Small</a></li>
+							</ul>
+							<ul class="actions fit">
+								<li><a href="#" class="button primary fit">Fit</a></li>
+								<li><a href="#" class="button fit">Fit</a></li>
+							</ul>
+							<ul class="actions fit small">
+								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+								<li><a href="#" class="button fit small">Fit + Small</a></li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#" class="button primary icon fa-download">Icon</a></li>
+								<li><a href="#" class="button icon fa-download">Icon</a></li>
+							</ul>
+							<ul class="actions">
+								<li><span class="button primary disabled">Primary</span></li>
+								<li><span class="button disabled">Default</span></li>
+							</ul>
+						</section>
+
+						<section>
+							<h4>Form</h4>
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-6 col-12-xsmall">
+										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<select name="demo-category" id="demo-category">
+											<option value="">- Category -</option>
+											<option value="1">Manufacturing</option>
+											<option value="1">Shipping</option>
+											<option value="1">Administration</option>
+											<option value="1">Human Resources</option>
+										</select>
+									</div>
+									<div class="col-4 col-12-small">
+										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+										<label for="demo-priority-low">Low Priority</label>
+									</div>
+									<div class="col-4 col-12-small">
+										<input type="radio" id="demo-priority-normal" name="demo-priority">
+										<label for="demo-priority-normal">Normal Priority</label>
+									</div>
+									<div class="col-4 col-12-small">
+										<input type="radio" id="demo-priority-high" name="demo-priority">
+										<label for="demo-priority-high">High Priority</label>
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="checkbox" id="demo-copy" name="demo-copy">
+										<label for="demo-copy">Email me a copy of this message</label>
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="checkbox" id="demo-human" name="demo-human" checked>
+										<label for="demo-human">I am a human and not a robot</label>
+									</div>
+									<div class="col-12">
+										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+
+						<section>
+							<h4>Image</h4>
+							<h5>Fit</h5>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+								</div>
+							</div>
+							<h5>Left &amp; Right</h5>
+							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+						</section>
+
+					</section>
+				-->
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>

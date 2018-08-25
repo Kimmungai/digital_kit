@@ -180,7 +180,7 @@
 							<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </li>
+							<li>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://biznesskit.com/">Digital Kit</a> </li>
 						</ul>
 					</footer>
 

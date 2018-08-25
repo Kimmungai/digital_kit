@@ -348,15 +348,18 @@ class LoginController extends Controller
             $user_first_name=$user_object['firstName']!= null ? $user_object['firstName']  : '';
             $user_last_name=$user_object['lastName']!= null ? $user_object['lastName']  : '';
             $user_designation=$user_object['headline']!= null ? $user_object['headline']  : '';
-            $tag_line_2=$user_designation != null && $user_address !=null ? $user_designation.' based in <span>'.$user_address.'</span>': 'Welcome to my website';
             $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
             $user_address=$user_object['location']['name']!= null ? $user_object['location']['name']  : '';
+            $tag_line_2=$user_designation != null && $user_address !=null ? $user_designation.' based in <span>'.$user_address.'</span>': 'Welcome to my website';
             $user_website=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
             $user_qr_url=$user_object['publicProfileUrl']!= null ? $user_object['publicProfileUrl']  : '';
             $user_bio=$user_object['industry']!= null ? 'I am in the '.$user_object['industry'].' industry'   : 'You can also find me in the following platforms.';
             $nickName=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
             $vision_statement=$nickName != null ? 'You can also call me '.$nickName:' I am an action oriented and ready to take on challenges!';
             $linkedin_link=$user_object['publicProfileUrl'] != null ? $user_object['publicProfileUrl']: '#';
+            $mission_statement=$user_object['industry'] != null ? 'I want to be a positive influencer in the'.$user_object['industry'].' industry by sharing my knowledge.':' my mission is to learn and understand my clients’ needs so that I can professionally serve them.
+
+';
             ##end variables####
             $avatar = file_get_contents($user_object['pictureUrls']['values'][0]);
 
@@ -374,6 +377,7 @@ class LoginController extends Controller
             $new_website->contact_receiving_email = $user_email;
             $new_website->about_story = $user_bio;
             $new_website->vision_statement = $vision_statement;
+            $new_website->mission_statement = $mission_statement;
             $new_website->linkedin_link = $linkedin_link;
             $new_website->save();
             return $new_website;
@@ -394,8 +398,9 @@ class LoginController extends Controller
             $friends_count=$user_object['friends_count']!= null ? 'I welcome you to join my list of '.$user_object['friends_count'].' friends on twitter.':'';
             $followers_count=$user_object['followers_count']!= null ? ' I do enjoy spreading positive influence. Currently I have '.$user_object['followers_count'].' followers on twitter.':'';
             $user_bio='I value friendship and open communication. '.$friends_count.$followers_count;
-            $status=$user_object['status']['text']!= null ? 'Here is my latest tweet "'.$user_object['status']['text'].'"' : '';
+            $status=$user_object['status']['text']!= null ? ' Here is my latest tweet: "'.$user_object['status']['text'].'"' : '';
             $vision_statement=$user_first_name != null ? 'My handle name is @'.$user_first_name.$status:' I believe Life ain\'t always beautiful but it\'s a beautiful ride.!';
+            $mission_statement=$user_object['statuses_count'] != null ? 'I am keen on creating and maintaining valuable relations online by sharing my thoughts and experiences. I have shared about '.$user_object['statuses_count'].' status updates so far.':' My mission is to make a difference in the lives of others by sharing my life experiences and knowledge.';
             ##end variables####
             $avatar = file_get_contents(str_replace('_normal','',$user_object->getAvatar()));
 
@@ -413,6 +418,7 @@ class LoginController extends Controller
             $new_website->twitter_link = $twitter_link;
             $new_website->about_story = $user_bio;
             $new_website->vision_statement = $vision_statement;
+            $new_website->mission_statement = $mission_statement;
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;

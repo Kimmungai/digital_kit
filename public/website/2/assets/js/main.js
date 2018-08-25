@@ -1,219 +1,117 @@
-"use strict";
+/*
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
+(function($) {
 
-jQuery(document).ready(function ($) {
+	var $window = $(window),
+		$body = $('body'),
+		$header = $('#header'),
+		$footer = $('#footer'),
+		$main = $('#main'),
+		settings = {
 
+			// Parallax background effect?
+				parallax: true,
 
-    /*---------------------------------------------*
-     * Mobile menu
-     ---------------------------------------------*/
-    $('#bs-example-navbar-collapse-1').find('a[href*=#]:not([href=#])').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: (target.offset().top - 40)
-                }, 1000);
-                if ($('.navbar-toggle').css('display') != 'none') {
-                    $(this).parents('.container').find(".navbar-toggle").trigger("click");
-                }
-                return false;
-            }
-        }
-    });
+			// Parallax factor (lower = more intense, higher = less intense).
+				parallaxFactor: 20
 
+		};
 
+	// Breakpoints.
+		breakpoints({
+			xlarge:  [ '1281px',  '1800px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ '481px',   '736px'  ],
+			xsmall:  [ null,      '480px'  ],
+		});
 
-    /*---------------------------------------------*
-     * STICKY scroll
-     ---------------------------------------------*/
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-    $.localScroll();
+	// Touch?
+		if (browser.mobile) {
 
+			// Turn on touch mode.
+				$body.addClass('is-touch');
 
+			// Height fix (mostly for iOS).
+				window.setTimeout(function() {
+					$window.scrollTop($window.scrollTop() + 1);
+				}, 0);
 
-    /*---------------------------------------------*
-     * WOW
-     ---------------------------------------------*/
+		}
 
-    var wow = new WOW({
-        mobile: false // trigger animations on mobile devices (default is true)
-    });
-    wow.init();
+	// Footer.
+		breakpoints.on('<=medium', function() {
+			$footer.insertAfter($main);
+		});
 
+		breakpoints.on('>medium', function() {
+			$footer.appendTo($header);
+		});
 
-    /*---------------------------------------------*
-     * Counter 
-     ---------------------------------------------*/
+	// Header.
 
-    $('.statistic-counter').counterUp({
-        delay: 10,
-        time: 2000
-    });
-    $('.statistic').counterUp({
-        delay: 10,
-        time: 2000
-    });
+		// Parallax background.
 
+			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
+				if (browser.name == 'ie'
+				||	browser.mobile)
+					settings.parallax = false;
 
+			if (settings.parallax) {
 
+				breakpoints.on('<=medium', function() {
 
+					$window.off('scroll.strata_parallax');
+					$header.css('background-position', '');
 
-    /* ---------------------------------------------------------------------
-     Carousel
-     ---------------------------------------------------------------------= */
+				});
 
-    $('.main_home_slider').owlCarousel({
-        responsiveClass: true,
-        autoplay: false,
-        items: 1,
-        loop: true,
-        dots: true,
-        nav: false,
-        navText: [
-            "<i class='lnr lnr-chevron-left'></i>",
-            "<i class='lnr lnr-chevron-right'></i>"
-        ],
-        autoplayHoverPause: true
+				breakpoints.on('>medium', function() {
 
-    });
+					$header.css('background-position', 'left 0px');
 
+					$window.on('scroll.strata_parallax', function() {
+						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
+					});
 
-    $('.main_team_content').owlCarousel({
-        responsiveClass: true,
-        autoplay: false,
-        items: 1,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: [
-            "<i class='lnr lnr-chevron-left'></i>",
-            "<i class='lnr lnr-chevron-right'></i>"
-        ],
-        autoplayHoverPause: true
+				});
 
-    });
+				$window.on('load', function() {
+					$window.triggerHandler('scroll');
+				});
 
+			}
 
-    $('.main_blog').owlCarousel({
-        responsiveClass: true,
-        autoplay: false,
-        items: 4,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: [
-            "<i class='lnr lnr-chevron-left'></i>",
-            "<i class='lnr lnr-chevron-right'></i>"
-        ],
-        autoplayHoverPause: true
+	// Main Sections: Two.
 
-    });
+		// Lightbox gallery.
+			$window.on('load', function() {
 
-    $('.main_gellary_content').owlCarousel({
-        responsiveClass: true,
-        autoplay: false,
-        items: 1,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: [
-            "<i class='lnr lnr-chevron-left'></i>",
-            "<i class='lnr lnr-chevron-right'></i>"
-        ],
-        autoplayHoverPause: true
+				$('#two').poptrox({
+					caption: function($a) { return $a.next('h3').text(); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: '.work-item a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+				});
 
-    });
+			});
 
-
-
-
-//	$('.chart').easyPieChart({
-//		animate: 2000,
-//           scaleColor: false,
-//            lineWidth: 10,
-//            lineCap: 'square',
-//            size: 130,
-//            trackColor: false,
-//           barColor: '#498af3',
-//            onStep: function (from, to, percent) {
-//                $(this.el).find('.percent').text(Math.round(percent));
-//            }
-//	});
-
-
-
-
-
-
-
-
-
-
-
-// main-menu-scroll
-
-    jQuery(window).scroll(function () {
-        var top = jQuery(document).scrollTop();
-        var height = 300;
-        //alert(batas);
-
-        if (top > height) {
-            jQuery('.navbar-fixed-top').addClass('menu-scroll');
-        } else {
-            jQuery('.navbar-fixed-top').removeClass('menu-scroll');
-        }
-    });
-
-// scroll Up
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 600) {
-            $('.scrollup').fadeIn('slow');
-        } else {
-            $('.scrollup').fadeOut('slow');
-        }
-    });
-    $('.scrollup').click(function () {
-        $("html, body").animate({scrollTop: 0}, 1000);
-        return false;
-    });
-
-
-
-//    $('#menu').slicknav();
-
-    $('#mixcontent').mixItUp({
-        animation: {
-            animateResizeContainer: false,
-            effects: 'fade rotateX(-45deg) translateY(-10%)'
-        }
-    });
-
-
-    $('.dropdown-menu').click(function (e) {
-        e.stopPropagation();
-    });
-
-
-    //End
-});
-
-
-
-
-$(document).on("scroll", function () {
-    if ($(document).scrollTop() > 120) {
-        $("nav").addClass("small");
-    } else {
-        $("nav").removeClass("small");
-    }
-});
-
-$(document).on('click','.navbar-collapse.in',function(e) {
-    if( $(e.target).is('a') ) {
-        $(this).collapse('hide');
-    }
-});
-
+})(jQuery);
