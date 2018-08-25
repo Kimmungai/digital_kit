@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></title>
+		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,6 +35,7 @@
 			background-size: cover;
 		}
 		</style>
+		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 	</head>
 	<body class="landing is-preload" style="opacity:0.8">
 
@@ -180,7 +181,7 @@
 							<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </li>
+							<li>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </li>
 						</ul>
 					</footer>
 

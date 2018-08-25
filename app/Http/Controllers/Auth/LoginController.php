@@ -275,7 +275,7 @@ class LoginController extends Controller
             $json = file_get_contents($repos_url, false, stream_context_create($opts));
             $repos = json_decode($json);
             $mission_statement=count($repos) ? 'As of now I have contributed to <strong>'.count($repos).'</strong> public repositories.' : 'Professionalism in my work is self evident.';
-            $vision_statement=$user_first_name!= null ? 'You can also call me '.$user_first_name : 'My Mantra is to keep moving forward';
+            $vision_statement=$user_first_name!= null ? 'You can also call me '.$user_first_name .'.': 'My Mantra is to keep moving forward.';
             $hireable=$user_object['hireable'] ? ' I am currently open to job offers.' : '';
             $speciality_sub_title="Some of my Public Repositories";
             if(isset($repos[0])){

@@ -7,15 +7,16 @@
 -->
 <html>
 	<head>
-		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></title>
+		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
+			<header id="header" style="background-image: url('images/overlay.png'), url('<?php echo $saved_data['bg_image']; ?>');">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="<?php echo $saved_data['main_image']; ?>" alt="<?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?>" /></a>
 					<h1><?php echo $saved_data['vision_statement']; ?></h1>
@@ -40,41 +41,34 @@
 				<!-- Two -->
 					<section id="two">
 						<h2><?php echo $saved_data['speciality_title']; ?></h2>
+						<p><?php echo $saved_data['speciality_sub_title']; ?></p>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a href="<?php echo $saved_data['speciality_1_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_1_img']; ?>" alt="" /></a>
+								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_1_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_1']; ?></a></h3>
+								<p><?php echo $saved_data['speciality_1_text']; ?></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a href="<?php echo $saved_data['speciality_2_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_2_img']; ?>" alt="" /></a>
+								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_2_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_2']; ?></a></h3>
+								<p><?php echo $saved_data['speciality_2_text']; ?></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a href="<?php echo $saved_data['speciality_3_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_3_img']; ?>" alt="" /></a>
+								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_3_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_3']; ?></a></h3>
+								<p><?php echo $saved_data['speciality_3_text']; ?></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a href="<?php echo $saved_data['speciality_4_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_4_img']; ?>" alt="" /></a>
+								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_4_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_4']; ?></a></h3>
+								<p><?php echo $saved_data['speciality_4_text']; ?></p>
 							</article>
 						</div>
+						<?php if($saved_data['resume_downloadable']){?>
 						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
+							<li><a href="<?php echo $saved_data['resume_download_link']; ?>" class="button">Resume <i class="icon fa-download"></i></a></li>
 						</ul>
+						<?php }?>
 					</section>
 
 				<!-- Three -->
@@ -127,7 +121,7 @@
 						<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://biznesskit.com/">Digital Kit</a></li>
+						<li>&copy; <?php echo date('Y',time())?> | All Rights Reserved | Designed & Developed by <a href="http://biznesskit.com/">Digital Kit</a></li>
 					</ul>
 				</div>
 			</footer>

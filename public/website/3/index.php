@@ -8,11 +8,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <title>Baktigoto - Responsive Resume & Portfolio HTML5 Template</title><!-- site title name -->
+        <title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title><!-- site title name -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon -->
-        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
         <!-- start style -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -55,7 +55,6 @@
                                         <li><a href="#home"  class="active">Home</a></li>
                                         <li><a href="#about"><?php echo $saved_data['about_title']; ?></a></li>
                                         <li><a href="#service"><?php echo $saved_data['speciality_title']; ?></a></li>
-                                        <li><a href="#portfolio"><?php echo $saved_data['portfolio_title']; ?></a></li>
                                         <li><a id="link" href="#contact"><?php echo $saved_data['contact_section_title']; ?></a></li>
                                     </ul><!-- end of /.ul -->
                                 </div><!-- end of /.navbar-collapse -->
@@ -138,7 +137,7 @@
             <section class="work-section smoth" id="service">
                 <div class="container">
                     <div class="row">
-                        <div class="section-title wow bounceInUp center animated">
+                        <div class="section-title portfolio-title wow bounceInUp center animated">
                             <h2><?php echo $saved_data['speciality_title']; ?></h2><!-- section title -->
                             <p><?php echo $saved_data['speciality_sub_title']; ?></p>
                         </div>
@@ -194,76 +193,6 @@
                 </div><!-- end of /.container -->
             </section><!-- end of working prosess /.section -->
 
-            <section class="portfolio-section" id="portfolio">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title portfolio-title wow bounceInUp center animated">
-                            <h2><?php echo $saved_data['portfolio_title']; ?></h2>
-                            <p><?php echo $saved_data['portfolio_sub_title']; ?></p>
-                        </div>
-                        <div class="big-demo go-wide" data-js-module="filtering-demo">
-                            <div class="portfolio-menu">
-                                <div class="filter-button-group button-group js-radio-button-group menu-list">
-                                    <ul class="filter_menu">
-                                        <li class="active" data-filter="*">All</li>
-                                        <li data-filter=".<?php echo $saved_data['portfolio_category_1']; ?>"><?php echo $saved_data['portfolio_category_1']; ?></li>
-                                        <li data-filter=".<?php echo $saved_data['portfolio_category_2']; ?>"><?php echo $saved_data['portfolio_category_2']; ?></li>
-                                        <li data-filter=".<?php echo $saved_data['portfolio_category_3']; ?>"><?php echo $saved_data['portfolio_category_3']; ?></li>
-                                        <li data-filter=".<?php echo $saved_data['portfolio_category_4']; ?>"><?php echo $saved_data['portfolio_category_4']; ?></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item gallery">
-                                <div class="single-portfolio <?php echo $saved_data['work_1_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_1_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_1_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_1']; ?>">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-portfolio <?php echo $saved_data['work_2_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="metalloid">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_2_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_2_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_2']; ?>">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-portfolio <?php echo $saved_data['work_3_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_3_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_3_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_3']; ?>">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-portfolio <?php echo $saved_data['work_4_category']; ?>  col-md-4 col-sm-6 col-xs-12" data-category="transition">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_4_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_4_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_4']; ?>">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="single-portfolio <?php echo $saved_data['work_5_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_5_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_5_image']; ?>" width="360" height="307" alt=" <?php echo $saved_data['work_5']; ?>">
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="single-portfolio <?php echo $saved_data['work_6_category']; ?> col-md-4 col-sm-6 col-xs-12" data-category="transition">
-                                    <div class="portfolio-single-item">
-                                        <a href="<?php echo $saved_data['work_6_image']; ?>" data-gal="prettyPhoto[gallery1]">
-                                            <img src="<?php echo $saved_data['work_6_image']; ?>" width="360" height="307" alt="<?php echo $saved_data['work_6']; ?>">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div><!-- end of /.row -->
-                </div><!-- end of /.container -->
-            </section><!-- end of /.portfolio section -->
             <section class="contact-section" id="contact">
                 <div class="container">
                     <div class="row">
@@ -302,7 +231,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>Copyright <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </p>
+                            <p>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </p>
                         </div><!-- coloumn -->
                     </div><!-- end of row -->
                 </div><!-- end of /. container -->
