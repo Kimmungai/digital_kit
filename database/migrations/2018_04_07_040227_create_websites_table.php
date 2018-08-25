@@ -41,7 +41,7 @@ class CreateWebsitesTable extends Migration
             $table->string('skill_3_level')->default('90');
             $table->string('skill_4')->default('organization');
             $table->string('skill_4_level')->default('98');
-            $table->string('vision_statement')->default('My mantra is "keep pushing forward" ');
+            $table->text('vision_statement')->default('My mantra is "keep pushing forward" ');
             $table->string('speciality_title')->default('What I do');
             $table->string('speciality_sub_title')->nullable();
             $table->string('speciality_1')->nullable();
@@ -60,7 +60,7 @@ class CreateWebsitesTable extends Migration
             $table->string('speciality_4_icon')->nullable();
             $table->text('speciality_4_text')->nullable();
             $table->text('speciality_4_url')->nullable();
-            $table->string('mission_statement')->default('Bringing joy to my clients is my mission');
+            $table->text('mission_statement')->default('Bringing joy to my clients is my mission');
             $table->string('portfolio_title')->default('some of my work');
             $table->string('portfolio_sub_title')->nullable();
             $table->string('portfolio_category_1')->nullable();
