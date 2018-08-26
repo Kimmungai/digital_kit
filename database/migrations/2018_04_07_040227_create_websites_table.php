@@ -16,7 +16,7 @@ class CreateWebsitesTable extends Migration
         Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
             $table->string('main_image');
-            $table->string('bg_image')->default('/img/portfolio-templates/bg.jpg');
+            $table->string('bg_image')->default(url('/img/portfolio-templates/bg.jpg'));
             $table->string('design')->default('1');
             $table->string('theme')->default('index.php');
             $table->string('first_name')->nullable();
@@ -49,22 +49,22 @@ class CreateWebsitesTable extends Migration
             $table->string('speciality_1_icon')->nullable();
             $table->text('speciality_1_text')->nullable();
             $table->text('speciality_1_url')->nullable();
-            $table->string('speciality_1_img')->default('/img/portfolio-templates/01.jpg');
+            $table->string('speciality_1_img')->default(url('/img/portfolio-templates/01.jpg'));
             $table->string('speciality_2')->nullable();
             $table->string('speciality_2_icon')->nullable();
             $table->text('speciality_2_text')->nullable();
             $table->text('speciality_2_url')->nullable();
-            $table->string('speciality_2_img')->default('/img/portfolio-templates/02.jpg');
+            $table->string('speciality_2_img')->default(url('/img/portfolio-templates/02.jpg'));
             $table->string('speciality_3')->nullable();
             $table->string('speciality_3_icon')->nullable();
             $table->text('speciality_3_text')->nullable();
             $table->text('speciality_3_url')->nullable();
-            $table->string('speciality_3_img')->default('/img/portfolio-templates/03.jpg');
+            $table->string('speciality_3_img')->default(url('/img/portfolio-templates/03.jpg'));
             $table->string('speciality_4')->nullable();
             $table->string('speciality_4_icon')->nullable();
             $table->text('speciality_4_text')->nullable();
             $table->text('speciality_4_url')->nullable();
-            $table->string('speciality_4_img')->default('/img/portfolio-templates/04.jpg');
+            $table->string('speciality_4_img')->default(url('/img/portfolio-templates/04.jpg'));
             $table->text('mission_statement')->nullable();
             $table->string('contact_section_title')->default('Drop me a message');
             $table->string('contact_receiving_email')->nullable();

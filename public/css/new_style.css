@@ -591,20 +591,16 @@ footer li a:hover{
   padding:0 10px !important;
 }
 .prev-link{
-  text-decoration: none;
-  color: inherit;
+
 }
 .prev-link:hover{
-  text-decoration: none;
-  color: inherit;
+
 }
 .prev-link:visited{
-  text-decoration: none;
-  color: inherit;
+
 }
 .prev-link:link{
-  text-decoration: none;
-  color: inherit;
+  
 }
 .pub-table td{
   word-break: break-all;

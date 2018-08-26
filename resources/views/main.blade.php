@@ -6,10 +6,10 @@
   <main ng-show="active_tool==1 && tool_A==true">
     <h1><i class="icn fas fa-globe-americas"></i> Your Website is Ready! <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><a class="prev-link" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
-      <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><span class="fas fa-globe-americas"></span> Publish</li>
-      <li class="list-inline-item" ng-click="edit_details=1"><span class="fa fa-edit"></span> Edit</li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-times"></span> Close</li>
+      <li class="list-inline-item"><a href="#" class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
+      <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
+      <li class="list-inline-item" ng-click="edit_details=1"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-times"></span> Close</a></li>
     </ul>
 
       <iframe  id="website-preview">
@@ -17,10 +17,10 @@
       </iframe>
 
     <ul class="list-inline text-center mt-2">
-      <li class="list-inline-item"><a class="prev-link" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
-      <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><span class="fas fa-globe-americas"></span> Publish</li>
-      <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
-      <li ng-click="active_tool=0" class="list-inline-item"><span class="fa fa-close"></span> Close</li>
+      <li class="list-inline-item"><a class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
+      <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
+      <li class="list-inline-item" ng-click="edit_details=2"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li ng-click="active_tool=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-close"></span> Close</a></li>
     </ul>
   </main>
   <main ng-show="active_tool==2 && tool_B==true">
