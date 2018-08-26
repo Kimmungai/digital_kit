@@ -15,6 +15,7 @@
   .biz-card{
    width:322px;
    margin: 0 auto;
+   background: #000;
   }
   .text-danger{
     color:#d9534f!important;
@@ -265,7 +266,7 @@
   <body>
     <div class="holder">
       <?php if($website->design==1){?>
-      <article class="dark-bg biz-card">
+      <article class="biz-card">
         <h2>{{$card->first_name}} <span  class="text-danger">{{$card->last_name}}</span></h2>
         <h3> {{$card->designation}}</h3>
         <div class="row">
