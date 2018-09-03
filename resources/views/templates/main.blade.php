@@ -12,6 +12,226 @@
     <script src="{{url('/js/angular.min.js')}}"></script>
   </head>
   <body ng-cloak>
+    <div class="new-edit-panel" ng-show="edit_details==1"><!--Edit form starts here-->
+      <div class="container">
+        <form>
+          <div class="row">
+            <h4>Basic Information</h4>
+            <div class="input-group input-group-icon">
+              <input type="file" />
+              <div class="input-icon"><i class="fa fa-image"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Headline 1"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Headline 2"/>
+              <div class="input-icon"><i class="fa fa-paragraph"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Self Description</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Section Title"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Sub Title"/>
+              <div class="input-icon"><i class="fa fa-paragraph"></i></div>
+            </div>
+            <div class="input-group">
+              <textarea placeholder="Description Text"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Vision & Mission</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="My Vision"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="My Mission"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Socia Media</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Linkedin"/>
+              <div class="input-icon"><i class="fa fa-facebook"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Github"/>
+              <div class="input-icon"><i class="fa fa-twitter"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="email" placeholder="Google plus"/>
+              <div class="input-icon"><i class="fa fa-google-plus"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="password" placeholder="Linkedin"/>
+              <div class="input-icon"><i class="fa fa-linkedin"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="password" placeholder="Instagram"/>
+              <div class="input-icon"><i class="fa fa-instagram"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Skills & Interests</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Section Title"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Skill 1"/>
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="number" placeholder="Level"/>
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Skill 2"/>
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="number" placeholder="Level"/>
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Skill 3"/>
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="number" placeholder="Level"/>
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Skill 4"/>
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="number" placeholder="Level"/>
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Portfolio</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Section Title"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Sub Title"/>
+              <div class="input-icon"><i class="fa fa-paragraph"></i></div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Portfolio 1"/>
+              </div>
+              <div class="col-half input-group-icon">
+                <select style="width:100%;">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea placeholder="Portfolio 1 Description"/></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Portfolio 2"/>
+              </div>
+              <div class="col-half input-group-icon">
+                <select style="width:100%;">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea placeholder="Portfolio 2 Description"/></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Portfolio 3"/>
+              </div>
+              <div class="col-half input-group-icon">
+                <select style="width:100%;">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea placeholder="Portfolio 3 Description"/></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" placeholder="Portfolio 4"/>
+              </div>
+              <div class="col-half input-group-icon">
+                <select style="width:100%;">
+                  <option value="fa-facebook">Book</option>
+                  <option value="fa-user">Person</option>
+                  <option value="fa-globe">Globe</option>
+                  <option value="fa-desktop">Computer</option>
+                  <option value="fa-mobile">Mobile</option>
+                  <option value="fa-home">Home</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea placeholder="Portfolio 4 Description"/></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <h4>Contact Form</h4>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Section Title"/>
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" placeholder="Recipient Email"/>
+              <div class="input-icon"><i class="fa fa-envelope"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group">
+              <input type="radio" name="gender" value="male" id="gender-male"/>
+              <label for="gender-male"><i class="fa fa-thumbs-up"></i> Done editing</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><!--Edit form ends here-->
     <div id="site-panel" class="container-fluid <?php if(is_null($user->password) || is_null($user->email)){echo 'blur-bg';} ?>">
       <div class="row">
         <header><!--start of header section-->
@@ -658,10 +878,11 @@
           </div>
         </form>
       </div>
-      
+
     <?php }?>
     <script src="{{url('/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url('/js/bootstrap.min.js')}}"></script>
     <script src="{{url('/js/ssi-uploader.min.js')}}"></script>
+    <script src="{{url('/js/main.js')}}"></script>
   </body>
 </html>

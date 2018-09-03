@@ -130,9 +130,9 @@ class LoginController extends Controller
           $new_user->provider_id = $user_object->getId();
           $new_user->save();
           $pub_details = new publishing_details;
-          $pub_details->website_url = 'https://www.'.str_replace(' ','',$new_user->name).'.me';
-          $pub_details->publishing_period = 'Yearly';
-          $pub_details->publishing_cost = '99.99';
+          $pub_details->website_url = 'www.'.str_replace(' ','',$new_user->name).'.me';
+          $pub_details->publishing_period = 'Monthly';
+          $pub_details->publishing_cost = '9.99';
           $pub_details->user_id = $new_user->id;
           $pub_details->save();
           $pay_details = new payment_details;

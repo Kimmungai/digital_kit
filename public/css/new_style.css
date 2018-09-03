@@ -772,3 +772,212 @@ main .biz-card-design-3 .dark-bg li{
   opacity: 1;
   cursor: default;
 }
+/*new edit form*/
+.new-edit-panel{
+  width:100%;
+  position:absolute;
+  z-index: 100000;
+}
+.new-edit-panel h4 {
+  color: #d9534f;
+}
+.new-edit-panel input,
+.new-edit-panel input[type="radio"] + label,
+.new-edit-panel input[type="checkbox"] + label:before,
+.new-edit-panel select option,
+.new-edit-panel select,
+.new-edit-panel textarea{
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.new-edit-panel input:focus {
+  outline: 0;
+  border-color: #f0ad4e;
+}
+.new-edit-panel input:focus + .input-icon i {
+  color: #d9534f;
+}
+.new-edit-panel input:focus + .input-icon:after {
+  border-right-color: #d9534f;
+}
+.new-edit-panel input[type="radio"] {
+  display: none;
+}
+.new-edit-panel input[type="radio"] + label,
+.new-edit-panel select {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  float: left;
+  border-radius: 0;
+}
+.new-edit-panel input[type="radio"] + label:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.new-edit-panel input[type="radio"] + label:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.new-edit-panel input[type="radio"] + label i {
+  padding-right: 0.4em;
+}
+.new-edit-panel input[type="radio"]:checked + label,
+.new-edit-panel input:checked + label:before,
+.new-edit-panel select:focus,
+.new-edit-panel select:active {
+  background-color: #d9534f;
+  color: #fff;
+  border-color: #f0ad4e;
+}
+.new-edit-panel input[type="checkbox"] {
+  display: none;
+}
+.new-edit-panel input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  padding-left: 1.6em;
+}
+.new-edit-panel input[type="checkbox"] + label:before {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  display: block;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  content: "";
+}
+.new-edit-panel input[type="checkbox"] + label:after {
+  position: absolute;
+  top: 0.45em;
+  left: 0.2em;
+  font-size: 0.8em;
+  color: #fff;
+  opacity: 0;
+  font-family: FontAwesome;
+  content: "\f00c";
+}
+.new-edit-panel input:checked + label:after {
+  opacity: 1;
+}
+.new-edit-panel select {
+  height: 3.4em;
+  line-height: 2;
+}
+.new-edit-panel select:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.new-edit-panel select:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.new-edit-panel select:focus,
+.new-edit-panel select:active {
+  outline: 0;
+}
+.new-edit-panel select option {
+  background-color: #d9534f;
+  color: #fff;
+}
+.new-edit-panel .input-group {
+  margin-bottom: 1em;
+  zoom: 1;
+}
+.new-edit-panel .input-group:before,
+.input-group:after {
+  content: "";
+  display: table;
+}
+.new-edit-panel .input-group:after {
+  clear: both;
+}
+.new-edit-panel .input-group-icon {
+  position: relative;
+}
+.new-edit-panel .input-group-icon input {
+  padding-left: 4.4em;
+}
+.new-edit-panel .input-group-icon .input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.4em;
+  height: 3.4em;
+  line-height: 3.4em;
+  text-align: center;
+  pointer-events: none;
+}
+.new-edit-panel .input-group-icon .input-icon:after {
+  position: absolute;
+  top: 0.6em;
+  bottom: 0.6em;
+  left: 3.4em;
+  display: block;
+  border-right: 1px solid #e5e5e5;
+  content: "";
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.new-edit-panel .input-group-icon .input-icon i {
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.new-edit-panel .container {
+  max-width: 38em;
+  padding: 1em 3em 2em 3em;
+  margin: 2em auto;
+  background-color: #fff;
+  border-radius: 4.2px;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+.new-edit-panel .row {
+  zoom: 1;
+}
+.new-edit-panel .row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.new-edit-panel .row:after {
+  clear: both;
+}
+.new-edit-panel .col-half {
+  padding-right: 10px;
+  float: left;
+  width: 50%;
+}
+.new-edit-panel .col-half:last-of-type {
+  padding-right: 0;
+}
+.new-edit-panel .col-third {
+  padding-right: 10px;
+  float: left;
+  width: 33.33333333%;
+}
+.new-edit-panel .col-third:last-of-type {
+  padding-right: 0;
+}
+@media only screen and (max-width: 540px) {
+  .new-edit-panel .col-half {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+/*end new edit form*/
