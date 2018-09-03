@@ -115,4 +115,8 @@ $(document).ready(function(){
     $('#passwordEmailPrompt').fadeOut('slow');
     $('#site-panel').removeClass('blur-bg');
   }
+  function blur_bg()
+  {
+    $('#site-panel').addClass('blur-bg');
+  }
 </script>

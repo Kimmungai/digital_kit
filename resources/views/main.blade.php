@@ -8,7 +8,7 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="#" class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
-      <li class="list-inline-item" ng-click="edit_details=1"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li class="list-inline-item" ng-click="edit_details=1" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-times"></span> Close</a></li>
     </ul>
 
@@ -19,7 +19,7 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
-      <li class="list-inline-item" ng-click="edit_details=2"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
       <li ng-click="active_tool=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-close"></span> Close</a></li>
     </ul>
   </main>

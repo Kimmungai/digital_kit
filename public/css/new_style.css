@@ -774,9 +774,10 @@ main .biz-card-design-3 .dark-bg li{
 }
 /*new edit form*/
 .new-edit-panel{
-  width:100%;
   position:absolute;
-  z-index: 100000;
+  z-index: 100;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .new-edit-panel h4 {
   color: #d9534f;
@@ -979,5 +980,40 @@ main .biz-card-design-3 .dark-bg li{
     width: 100%;
     padding-right: 0;
   }
+}
+#title-1,#title-2,#title-3,#title-4,#title-5,#title-6,#title-7{
+  width: 100%;
+  padding: 0.5em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  text-transform:uppercase;
+}
+#panel-2,#panel-3,#panel-4,#panel-5,#panel-6,#panel-7{
+  display: none;
+  width: 100%;
+}
+#panel-1{
+  width: 100%;
+}
+.new-edit-form dt,dd{
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+.new-edit-form dt{
+  width: 30%;
+  text-align: right;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.new-edit-form dd{
+  width: 70%;
 }
 /*end new edit form*/

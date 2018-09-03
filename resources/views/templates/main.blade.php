@@ -12,220 +12,353 @@
     <script src="{{url('/js/angular.min.js')}}"></script>
   </head>
   <body ng-cloak>
-    <div class="new-edit-panel" ng-show="edit_details==1"><!--Edit form starts here-->
+    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2"><!--Edit form starts here-->
       <div class="container">
-        <form>
-          <div class="row">
-            <h4>Basic Information</h4>
+        <form class="new-edit-form">
+          <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
+            <span class="fa fa-window-close" aria-hidden="true"></span>
+          </button>
+          <dl id="title-card-1" class="row" onclick="toggle('panel-card-1',this.id)">
+            <dd><h4>Basic Information</h4></dd>
+            <dt><i class="fa fa-chevron-circle-up"></i></dt>
+          </dl>
+          <div id="panel-card-1" class="row">
             <div class="input-group input-group-icon">
-              <input type="file" />
+              <div class="col-half">
+                <input type="text"  id="first_name" placeholder="First Name" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text" id="last_name" placeholder="Last Name" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <div class="col-half">
+                <input type="text" id="designation" placeholder="Designation" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-briefcase"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text" id="phone" placeholder="Phone No." ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-phone"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <div class="col-half">
+                <input type="email" id="email" placeholder="Email" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text"  id="address" placeholder="Address" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="website" placeholder="Website" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
+              <div class="input-icon"><i class="fa fa-globe-americas"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="qr_url" placeholder="Qr url" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
+              <div class="input-icon"><i class="fa fa-qrcode"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group" ng-click="edit_details=0" onclick="unblur_bg()">
+              <input type="radio" name="gender" value="male"/>
+              <label for="gender-male"><i class="fa fa-thumbs-up"></i> Done editing</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><!--Edit form ends here-->
+    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==1"><!--Edit form starts here-->
+      <div class="container">
+        <form class="new-edit-form">
+          <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
+            <span class="fa fa-window-close" aria-hidden="true"></span>
+          </button>
+          <dl id="title-1" class="row" onclick="toggle('panel-1',this.id)">
+            <dd><h4>Basic Information</h4></dd>
+            <dt><i class="fa fa-chevron-circle-up"></i></dt>
+          </dl>
+          <div id="panel-1" class="row">
+            <div class="input-group input-group-icon">
+              <div class="col-half">
+                <input type="text"  id="first_name" placeholder="First Name" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text" id="last_name" placeholder="Last Name" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <div class="col-half">
+                <input type="text" id="designation" placeholder="Designation" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-briefcase"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text" id="phone" placeholder="Phone No." ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-phone"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <div class="col-half">
+                <input type="email" id="email" placeholder="Email" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+              </div>
+              <div class="col-half">
+                <div class="input-group">
+                  <input type="text"  id="address" placeholder="Address" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
+                  <div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="file"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-image"></i></div>
             </div>
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Headline 1"/>
+              <input type="text" id="tag_line_1" placeholder="Headline 1" ng-model="client.tag_line_1" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-heading"></i></div>
             </div>
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Headline 2"/>
+              <input type="text" id="tag_line_2" placeholder="Headline 2" ng-model="client.tag_line_2" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-paragraph"></i></div>
             </div>
-          </div>
-          <div class="row">
-            <h4>Self Description</h4>
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Section Title"/>
+              <input type="text" id="website" placeholder="Website" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
+              <div class="input-icon"><i class="fa fa-globe-americas"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="qr_url" placeholder="Qr url" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
+              <div class="input-icon"><i class="fa fa-qrcode"></i></div>
+            </div>
+          </div>
+          <dl id="title-2" class="row" onclick="toggle('panel-2',this.id)">
+            <dd><h4>Self Description</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-2" class="row">
+            <div class="input-group input-group-icon">
+              <input type="text" id="about_title" placeholder="Section Title" ng-model="client.about_title" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-heading"></i></div>
             </div>
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Sub Title"/>
-              <div class="input-icon"><i class="fa fa-paragraph"></i></div>
-            </div>
-            <div class="input-group">
-              <textarea placeholder="Description Text"></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <h4>Vision & Mission</h4>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="My Vision"/>
-              <div class="input-icon"><i class="fa fa-heading"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="My Mission"/>
-              <div class="input-icon"><i class="fa fa-heading"></i></div>
-            </div>
-          </div>
-          <div class="row">
-            <h4>Socia Media</h4>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="Linkedin"/>
-              <div class="input-icon"><i class="fa fa-facebook"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="Github"/>
-              <div class="input-icon"><i class="fa fa-twitter"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="email" placeholder="Google plus"/>
-              <div class="input-icon"><i class="fa fa-google-plus"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="password" placeholder="Linkedin"/>
-              <div class="input-icon"><i class="fa fa-linkedin"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="password" placeholder="Instagram"/>
-              <div class="input-icon"><i class="fa fa-instagram"></i></div>
-            </div>
-          </div>
-          <div class="row">
-            <h4>Skills & Interests</h4>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="Section Title"/>
-              <div class="input-icon"><i class="fa fa-heading"></i></div>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Skill 1"/>
-              </div>
-              <div class="col-half">
-                <div class="input-group input-group-icon">
-                  <input type="number" placeholder="Level"/>
-                  <div class="input-icon"><i class="fa fa-percent"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Skill 2"/>
-              </div>
-              <div class="col-half">
-                <div class="input-group input-group-icon">
-                  <input type="number" placeholder="Level"/>
-                  <div class="input-icon"><i class="fa fa-percent"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Skill 3"/>
-              </div>
-              <div class="col-half">
-                <div class="input-group input-group-icon">
-                  <input type="number" placeholder="Level"/>
-                  <div class="input-icon"><i class="fa fa-percent"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Skill 4"/>
-              </div>
-              <div class="col-half">
-                <div class="input-group input-group-icon">
-                  <input type="number" placeholder="Level"/>
-                  <div class="input-icon"><i class="fa fa-percent"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <h4>Portfolio</h4>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="Section Title"/>
-              <div class="input-icon"><i class="fa fa-heading"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" placeholder="Sub Title"/>
+              <input type="text" id="about_story_title" placeholder="Sub Title" ng-model="client.about_story_title" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-paragraph"></i></div>
             </div>
             <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Portfolio 1"/>
-              </div>
-              <div class="col-half input-group-icon">
-                <select style="width:100%;">
-                  <option value="fa-facebook">Book</option>
-                  <option value="fa-user">Person</option>
-                  <option value="fa-globe">Globe</option>
-                  <option value="fa-desktop">Computer</option>
-                  <option value="fa-mobile">Mobile</option>
-                  <option value="fa-home">Home</option>
-                </select>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <textarea placeholder="Portfolio 1 Description"/></textarea>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Portfolio 2"/>
-              </div>
-              <div class="col-half input-group-icon">
-                <select style="width:100%;">
-                  <option value="fa-facebook">Book</option>
-                  <option value="fa-user">Person</option>
-                  <option value="fa-globe">Globe</option>
-                  <option value="fa-desktop">Computer</option>
-                  <option value="fa-mobile">Mobile</option>
-                  <option value="fa-home">Home</option>
-                </select>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <textarea placeholder="Portfolio 2 Description"/></textarea>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Portfolio 3"/>
-              </div>
-              <div class="col-half input-group-icon">
-                <select style="width:100%;">
-                  <option value="fa-facebook">Book</option>
-                  <option value="fa-user">Person</option>
-                  <option value="fa-globe">Globe</option>
-                  <option value="fa-desktop">Computer</option>
-                  <option value="fa-mobile">Mobile</option>
-                  <option value="fa-home">Home</option>
-                </select>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <textarea placeholder="Portfolio 3 Description"/></textarea>
-            </div>
-            <div class="input-group">
-              <div class="col-half">
-                <input type="text" placeholder="Portfolio 4"/>
-              </div>
-              <div class="col-half input-group-icon">
-                <select style="width:100%;">
-                  <option value="fa-facebook">Book</option>
-                  <option value="fa-user">Person</option>
-                  <option value="fa-globe">Globe</option>
-                  <option value="fa-desktop">Computer</option>
-                  <option value="fa-mobile">Mobile</option>
-                  <option value="fa-home">Home</option>
-                </select>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <textarea placeholder="Portfolio 4 Description"/></textarea>
+              <textarea  id="about_story" placeholder="Short bio.." ng-model="client.about_story" onchange="update_val(this.id,this.value)" rows="5"></textarea>
             </div>
           </div>
-          <div class="row">
-            <h4>Contact Form</h4>
+          <dl id="title-3" class="row" onclick="toggle('panel-3',this.id)">
+            <dd><h4>Vision & Mission</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-3" class="row">
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Section Title"/>
+              <input type="text"  id="vision_statement" placeholder="My Vision" ng-model="client.vision_statement" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-heading"></i></div>
             </div>
             <div class="input-group input-group-icon">
-              <input type="text" placeholder="Recipient Email"/>
+              <input type="text"  id="mission_statement" placeholder="My Mission" ng-model="client.mission_statement" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+          </div>
+          <dl id="title-4" class="row" onclick="toggle('panel-4',this.id)">
+            <dd><h4>Social Media</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-4" class="row">
+            <div class="input-group input-group-icon">
+              <input type="text" id="facebook_link" placeholder="My Facebook Account" ng-model="client.facebook_link" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fab fa-facebook-f"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="twitter_link" placeholder="My Twitter Account" ng-model="client.twitter_link" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fab fa-twitter"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="google_plus_link" placeholder="My Google plus Account" ng-model="client.google_plus_link" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fab fa-google-plus"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="linkedin_link" placeholder="My Linkedin Account" ng-model="client.linkedin_link" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fab fa-linkedin"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="instagram_link" placeholder="My Instagram Account" ng-model="client.instagram_link" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fab fa-instagram"></i></div>
+            </div>
+          </div>
+          <dl id="title-5" class="row" onclick="toggle('panel-5',this.id)">
+            <dd><h4>Skills & Interests</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-5" class="row">
+            <div class="input-group input-group-icon">
+              <input type="text"  id="skill_title" placeholder="Section Title" ng-model="client.skill_title" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" id="skill_1" placeholder="Skill 1" ng-model="client.skill_1" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="text" id="skill_1_level" placeholder="Level" ng-model="client.skill_1_level" onchange="update_val(this.id,this.value)">
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" id="skill_2" placeholder="Skill 2" ng-model="client.skill_2" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="text" id="skill_2_level" placeholder="Level" ng-model="client.skill_2_level" onchange="update_val(this.id,this.value)">
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text"  id="skill_3" placeholder="Skill 3" ng-model="client.skill_3" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="text" id="skill_3_level" placeholder="Level" ng-model="client.skill_3_level" onchange="update_val(this.id,this.value)">
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text"  id="skill_4" placeholder="Skill 4" ng-model="client.skill_4" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half">
+                <div class="input-group input-group-icon">
+                  <input type="text" id="skill_4_level" placeholder="Level" ng-model="client.skill_4_level" onchange="update_val(this.id,this.value)">
+                  <div class="input-icon"><i class="fa fa-percent"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <dl id="title-6" class="row" onclick="toggle('panel-6',this.id)">
+            <dd><h4>Portfolio</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-6" class="row">
+            <div class="input-group input-group-icon">
+              <input type="text"  id="speciality_title" placeholder="Section Title" ng-model="client.speciality_title" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text" id="speciality_sub_title" placeholder="Sub Title" ng-model="client.speciality_sub_title" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-paragraph"></i></div>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" id="speciality_1" placeholder="Portfolio 1" ng-model="client.speciality_1" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half input-group-icon">
+                <select id="speciality_1_icon" ng-model="client.speciality_1_icon" onchange="update_val(this.id,this.value)" style="width:100%;">
+                  <option value="fa-facebook">Book icon</option>
+                  <option value="fa-user">Person icon</option>
+                  <option value="fa-globe">Globe icon</option>
+                  <option value="fa-desktop">Computer icon</option>
+                  <option value="fa-mobile">Mobile icon</option>
+                  <option value="fa-home">Home icon</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea id="speciality_1_text" placeholder="Portfolio 1 Description" ng-model="client.speciality_1_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" id="speciality_2" placeholder="Portfolio 2" ng-model="client.speciality_2" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half input-group-icon">
+                <select id="speciality_2_icon" placeholder="" ng-model="client.speciality_2_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book icon</option>
+                  <option value="fa-user">Person icon</option>
+                  <option value="fa-globe">Globe icon</option>
+                  <option value="fa-desktop">Computer icon</option>
+                  <option value="fa-mobile">Mobile icon</option>
+                  <option value="fa-home">Home icon</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea id="speciality_2_text" placeholder="Portfolio 2 Description" ng-model="client.speciality_2_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text" id="speciality_3" ng-model="client.speciality_3" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half input-group-icon">
+                <select id="speciality_3_icon" placeholder="" ng-model="client.speciality_3_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book icon</option>
+                  <option value="fa-user">Person icon</option>
+                  <option value="fa-globe">Globe icon</option>
+                  <option value="fa-desktop">Computer icon</option>
+                  <option value="fa-mobile">Mobile icon</option>
+                  <option value="fa-home">Home icon</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea  id="speciality_3_text" placeholder="Portfolio 3 Description" ng-model="client.speciality_3_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+            <div class="input-group">
+              <div class="col-half">
+                <input type="text"  id="speciality_4" placeholder="Portfolio 4" ng-model="client.speciality_4" onchange="update_val(this.id,this.value)">
+              </div>
+              <div class="col-half input-group-icon">
+                <select id="speciality_4_icon" placeholder="" ng-model="client.speciality_4_icon" onchange="update_val(this.id,this.value)">
+                  <option value="fa-facebook">Book icon</option>
+                  <option value="fa-user">Person icon</option>
+                  <option value="fa-globe">Globe icon</option>
+                  <option value="fa-desktop">Computer icon</option>
+                  <option value="fa-mobile">Mobile icon</option>
+                  <option value="fa-home">Home icon</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group input-group-icon">
+              <textarea  id="speciality_4_text" placeholder="Portfolio 4 Description" ng-model="client.speciality_4_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+          </div>
+          <dl id="title-7" class="row" onclick="toggle('panel-7',this.id)">
+            <dd><h4>Contact Form</h4></dd>
+            <dt><i class="fa fa-chevron-circle-down"></i></dt>
+          </dl>
+          <div id="panel-7" class="row">
+            <div class="input-group input-group-icon">
+              <input type="text"  id="contact_section_title" placeholder="Section Title" ng-model="client.contact_section_title" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-heading"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <input type="text"  id="contact_receiving_email" placeholder="Send enquiries to" ng-model="client.contact_receiving_email" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-envelope"></i></div>
             </div>
           </div>
           <div class="row">
-            <div class="input-group">
-              <input type="radio" name="gender" value="male" id="gender-male"/>
+            <div class="input-group" ng-click="edit_details=0" onclick="unblur_bg()">
+              <input type="radio" name="gender" value="male"/>
               <label for="gender-male"><i class="fa fa-thumbs-up"></i> Done editing</label>
             </div>
           </div>
@@ -309,520 +442,6 @@
             </section><!--end cards shelf items-->
             </div>
             <hr ng-show="edit_details > 0">
-            <div class="panel"  ng-show="edit_details==2"><!--edit card panel starts here-->
-              <section  class="desk edit-panel">
-                <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
-                <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
-                <dl>
-                  <div class="field-title">Name</div>
-                  <dt>
-                    <input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
-                  </dt>
-                  <dd>
-                    <input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
-                  </dd>
-                </dl>
-               <dl>
-                 <div class="field-title">Designation</div>
-                 <input type="text" class="form-control" id="designation" placeholder="E.g. Aministrator" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-               <dl>
-                 <div class="field-title">Telephone</div>
-                 <input type="text" class="form-control" id="phone" placeholder="E.g. (+81)3156-8951" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-               <dl>
-                 <div class="field-title">Email</div>
-                 <input type="email" class="form-control" id="email" placeholder="peter@domain.com" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-               <dl>
-                 <div class="field-title">Address</div>
-                 <input type="text" class="form-control" id="address" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-               <dl>
-                 <div class="field-title">Website</div>
-                 <input type="text" class="form-control" id="website" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-               <dl class="mb-2">
-                 <div class="field-title">QR url</div>
-                 <input type="text" class="form-control" id="qr_url" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
-               </dl>
-              </section><!--end edit card panel starts here-->
-            </div>
-              <div class="panel"  ng-show="edit_details==1"><!--edit panel starts here-->
-                <section  class="desk edit-panel">
-                  <span class="close" ng-click="edit_details=0"><i class="fa fa-close" aria-hidden="true"></i></span>
-                  <h2><i class="fa fa-edit" aria-hidden="true"></i> Edit form</h2>
-                  <dl>
-                    <div class="field-title">Profile image</div>
-                      <button class="btn btn-sm btn-primary file-button" onclick="$('#main_image').click()">Choose file</button>
-                      <input type="file" class="no-display"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Theme</div>
-                    <select class="form-control" id="theme"  ng-model="client.theme" onchange="update_val(this.id,this.value)">
-                      <option value="index.php">Dark</option>
-                      <option value="index-2.php">Light</option>
-                    </select>
-                  </dl>
-                  <dl>
-                    <div class="field-title">Name</div>
-                    <dt><input type="text" class="form-control" id="first_name" placeholder="E.g. Peter" ng-model="client.first_name" onchange="update_val(this.id,this.value)"></dt>
-                    <dd><input type="text" class="form-control" id="last_name" placeholder="E.g. Smith" ng-model="client.last_name" onchange="update_val(this.id,this.value)"></dd>
-                  </dl>
-                  <dl>
-                    <div class="field-title">Tagline 1</div>
-                    <input type="text" class="form-control" id="tag_line_1" placeholder="E.g. Engineer" ng-model="client.tag_line_1" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Tagline 2</div>
-                    <input type="text" class="form-control" id="tag_line_2" placeholder="" ng-model="client.tag_line_2" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Social Accounts</div>
-                    <dt><span class="fa fa-facebook"></span></dt>
-                    <dd><input type="text" class="form-control" id="facebook_link" placeholder="Facebook" ng-model="client.facebook_link" onchange="update_val(this.id,this.value)"></dd>
-                    <dt><span class="fa fa-twitter"></span></dt>
-                    <dd><input type="text" class="form-control" id="twitter_link" placeholder="Twitter" ng-model="client.twitter_link" onchange="update_val(this.id,this.value)"></dd>
-                    <dt><span class="fa fa-google-plus"></span></dt>
-                    <dd><input type="text" class="form-control" id="google_plus_link" placeholder="Google plus" ng-model="client.google_plus_link" onchange="update_val(this.id,this.value)"></dd>
-                    <dt><span class="fa fa-linkedin"></span></dt>
-                    <dd><input type="text" class="form-control" id="linkedin_link" placeholder="linked in" ng-model="client.linkedin_link" onchange="update_val(this.id,this.value)"></dd>
-                    <dt><span class="fa fa-instagram"></span></dt>
-                    <dd><input type="text" class="form-control" id="instagram_link" placeholder="Instagram" ng-model="client.instagram_link" onchange="update_val(this.id,this.value)"></dd>
-                  </dl>
-                  <dl>
-                    <div class="field-title">About - title</div>
-                    <input type="text" class="form-control" id="about_title" placeholder="" ng-model="client.about_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">About - subtitle</div>
-                    <input type="text" class="form-control" id="about_story_title" placeholder="" ng-model="client.about_story_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">About</div>
-                    <textarea  class="form-control" id="about_story" placeholder="" ng-model="client.about_story" onchange="update_val(this.id,this.value)" rows="5"></textarea>
-                  </dl>
-                  <dl>
-                    <div class="field-title"></div>
-                    <dt>Attach cv?</dt>
-                    <dd>
-                      <select   id="resume_downloadable" class="form-control" ng-model="client.resume_downloadable" onchange="update_val(this.id,this.value)">
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                      </select>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <div class="field-title"></div>
-                    <dt>CV download link</dt>
-                    <dd>
-                      <input type="text" class="form-control" id="resume_download_link" placeholder="" ng-model="client.resume_download_link" onchange="update_val(this.id,this.value)">
-                    </dd>
-                  </dl>
-                  <dl>
-                    <div class="field-title">Skills - title</div>
-                    <input type="text"  class="form-control" id="skill_title" placeholder="Skills title" ng-model="client.skill_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <dt>
-                      Skill
-                    </dt>
-                    <dt>
-                      level (%)
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="skill_1" placeholder="Skill 1" ng-model="client.skill_1" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <input type="text" class="form-control" id="skill_1_level" placeholder="" ng-model="client.skill_1_level" onchange="update_val(this.id,this.value)">
-                    </dd>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="skill_2" placeholder="Skill 2" ng-model="client.skill_2" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <input type="text" class="form-control" id="skill_2_level" placeholder="" ng-model="client.skill_2_level" onchange="update_val(this.id,this.value)">
-                    </dd>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="skill_3" placeholder="Skill 3" ng-model="client.skill_3" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <input type="text" class="form-control" id="skill_3_level" placeholder="" ng-model="client.skill_3_level" onchange="update_val(this.id,this.value)">
-                    </dd>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="skill_4" placeholder="Skill 4" ng-model="client.skill_4" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <input type="text" class="form-control" id="skill_4_level" placeholder="" ng-model="client.skill_4_level" onchange="update_val(this.id,this.value)">
-                    </dd>
-                  </dl>
-                  <dl>
-                    <div class="field-title">Vision statement</div>
-                    <input type="text"  class="form-control" id="vision_statement" placeholder="Vision statement" ng-model="client.vision_statement" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Services - title</div>
-                    <input type="text"  class="form-control" id="speciality_title" placeholder="Services title" ng-model="client.speciality_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl><!--Speciality-->
-                    <div class="field-title">Service 1</div>
-                    <dt>
-                      Service
-                    </dt>
-                    <dt>
-                      Icon
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="speciality_1" placeholder="" ng-model="client.speciality_1" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <select  class="form-control" id="speciality_1_icon" placeholder="" ng-model="client.speciality_1_icon" onchange="update_val(this.id,this.value)">
-                        <option value="fa-facebook">Book</option>
-                        <option value="fa-user">Person</option>
-                        <option value="fa-globe">Globe</option>
-                        <option value="fa-desktop">Computer</option>
-                        <option value="fa-mobile">Mobile</option>
-                        <option value="fa-home">Home</option>
-                      </select>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="speciality_1_text" placeholder="" ng-model="client.speciality_1_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--end Speciality-->
-                  <dl><!--Speciality-->
-                    <div class="field-title">Service 2</div>
-                    <dt>
-                      Service
-                    </dt>
-                    <dt>
-                      Icon
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="speciality_2" placeholder="" ng-model="client.speciality_2" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <select  class="form-control" id="speciality_2_icon" placeholder="" ng-model="client.speciality_2_icon" onchange="update_val(this.id,this.value)">
-                        <option value="fa-facebook">Book</option>
-                        <option value="fa-user">Person</option>
-                        <option value="fa-globe">Globe</option>
-                        <option value="fa-desktop">Computer</option>
-                        <option value="fa-mobile">Mobile</option>
-                        <option value="fa-home">Home</option>
-                      </select>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="speciality_2_text" placeholder="" ng-model="client.speciality_2_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--end Speciality-->
-                  <dl><!--Speciality-->
-                    <div class="field-title">Service 3</div>
-                    <dt>
-                      Service
-                    </dt>
-                    <dt>
-                      Icon
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="speciality_3" placeholder="" ng-model="client.speciality_3" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <select  class="form-control" id="speciality_3_icon" placeholder="" ng-model="client.speciality_3_icon" onchange="update_val(this.id,this.value)">
-                        <option value="fa-facebook">Book</option>
-                        <option value="fa-user">Person</option>
-                        <option value="fa-globe">Globe</option>
-                        <option value="fa-desktop">Computer</option>
-                        <option value="fa-mobile">Mobile</option>
-                        <option value="fa-home">Home</option>
-                      </select>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="speciality_3_text" placeholder="" ng-model="client.speciality_3_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--end Speciality-->
-                  <dl><!--Speciality-->
-                    <div class="field-title">Service 4</div>
-                    <dt>
-                      Service
-                    </dt>
-                    <dt>
-                      Icon
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      <input type="text"  class="form-control" id="speciality_4" placeholder="" ng-model="client.speciality_4" onchange="update_val(this.id,this.value)">
-                    </dt>
-                    <dd>
-                      <select  class="form-control" id="speciality_4_icon" placeholder="" ng-model="client.speciality_4_icon" onchange="update_val(this.id,this.value)">
-                        <option value="fa-facebook">Book</option>
-                        <option value="fa-user">Person</option>
-                        <option value="fa-globe">Globe</option>
-                        <option value="fa-desktop">Computer</option>
-                        <option value="fa-mobile">Mobile</option>
-                        <option value="fa-home">Home</option>
-                      </select>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="speciality_4_text" placeholder="" ng-model="client.speciality_4_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--end Speciality-->
-                  <dl>
-                    <div class="field-title">Mission statement</div>
-                    <input type="text"  class="form-control" id="mission_statement" placeholder="Mission statement" ng-model="client.mission_statement" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Portfolio - title</div>
-                    <input type="text"  class="form-control" id="portfolio_title" placeholder="" ng-model="client.portfolio_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Portfolio - subtitle</div>
-                    <input type="text"  class="form-control" id="portfolio_sub_title" placeholder="" ng-model="client.portfolio_sub_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl>
-                    <div class="field-title">Portfolio - categories</div>
-                    <dt>Category 1</dt>
-                    <dt><input type="text"  class="form-control" id="portfolio_category_1" placeholder="" ng-model="client.portfolio_category_1" onchange="update_val(this.id,this.value)"></dt>
-                  </dl>
-                  <dl>
-                    <dt>Category 2</dt>
-                    <dt><input type="text"  class="form-control" id="portfolio_category_2" placeholder="" ng-model="client.portfolio_category_2" onchange="update_val(this.id,this.value)"></dt>
-                  </dl>
-                  <dl>
-                    <dt>Category 3</dt>
-                    <dt><input type="text"  class="form-control" id="portfolio_category_3" placeholder="" ng-model="client.portfolio_category_3" onchange="update_val(this.id,this.value)"></dt>
-                  </dl>
-                  <dl>
-                    <dt>Category 4</dt>
-                    <dt><input type="text"  class="form-control" id="portfolio_category_4" placeholder="" ng-model="client.portfolio_category_4" onchange="update_val(this.id,this.value)"></dt>
-                  </dl>
-                  <dl><!--portfolio-->
-                    <div class="field-title">1st Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_1" placeholder="" ng-model="client.work_1" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_1_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_1_image" name="work_1_image" placeholder="" ng-model="client.work_1_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_1_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_1_category" ng-model="client.work_1_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_1_text" placeholder="" ng-model="client.work_1_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl><!--portfolio-->
-                    <div class="field-title">2nd Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_2" placeholder="" ng-model="client.work_2" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_2_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_2_image" name="work_2_image" placeholder="" ng-model="client.work_2_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_2_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_2_category" ng-model="client.work_2_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_2_text" placeholder="" ng-model="client.work_2_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl><!--portfolio-->
-                    <div class="field-title">3rd Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_3" placeholder="" ng-model="client.work_3" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_3_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_3_image" name="work_3_image" placeholder="" ng-model="client.work_3_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_3_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_3_category" ng-model="client.work_3_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_3_text" placeholder="" ng-model="client.work_3_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl><!--portfolio-->
-                    <div class="field-title">4th Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_4" placeholder="" ng-model="client.work_4" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_4_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_4_image" name="work_4_image" placeholder="" ng-model="client.work_4_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_4_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_4_category" ng-model="client.work_4_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_4_text" placeholder="" ng-model="client.work_4_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl><!--portfolio-->
-                    <div class="field-title">5th Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_5" placeholder="" ng-model="client.work_5" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_5_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_5_image" name="work_5_image" placeholder="" ng-model="client.work_5_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_5_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_5_category" ng-model="client.work_5_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_5_text" placeholder="" ng-model="client.work_5_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl><!--portfolio-->
-                    <div class="field-title">6th Portfolio</div>
-                    <dt>
-                      Name
-                    </dt>
-                    <dt>
-                      <input type="text"  class="form-control" id="work_6" placeholder="" ng-model="client.work_6" onchange="update_val(this.id,this.value)">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Image
-                    </dt>
-                    <dt>
-                      <button class="btn btn-sm btn-primary" onclick="$('#work_6_image').click()">Choose file</button>
-                      <input type="file"  class="no-display" id="work_6_image" name="work_6_image" placeholder="" ng-model="client.work_6_image" onchange="update_val(this.id,this.value,100,100,'Website','portfolio','work_6_image')">
-                    </dt>
-                  </dl>
-                  <dl>
-                    <dt>
-                      Category
-                    </dt>
-                    <dt>
-                      <select class="form-control" id="work_6_category" ng-model="client.work_6_category" onchange="update_val(this.id,this.value)">
-                        <option><% client.portfolio_category_1 %></option>
-                        <option><% client.portfolio_category_2 %></option>
-                        <option><% client.portfolio_category_3 %></option>
-                        <option><% client.portfolio_category_4 %></option>
-                      </select>
-                    </dt>
-                  </dl>
-                  <dl>
-                    <textarea  class="form-control" id="work_6_text" placeholder="" ng-model="client.work_6_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
-                  </dl><!--portfolio end-->
-                  <dl>
-                    <div class="field-title">Contact - title</div>
-                    <input type="text"  class="form-control" id="contact_section_title" placeholder="" ng-model="client.contact_section_title" onchange="update_val(this.id,this.value)">
-                  </dl>
-                  <dl class="mb-2">
-                    <div class="field-title">Send enquiries to</div>
-                    <input type="text"  class="form-control" id="contact_receiving_email" placeholder="" ng-model="client.contact_receiving_email" onchange="update_val(this.id,this.value)">
-                  </dl>
-                </section>
-              </div><!--edit panel ends here-->
-              <button ng-show="edit_details > 0" ng-click="edit_details=0"  class="btn btn-sm mt-1 ml-1"><span class="fa fa-thumbs-up"></span> Done editing</button>
           </aside>
         </div>
         <div class="col-md-9 no-padding">
