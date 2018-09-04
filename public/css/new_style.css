@@ -779,7 +779,6 @@ main .biz-card-design-3 .dark-bg li{
   width: 100%;
 }
 .new-edit-panel h4 {
-  padding:1em 0;
   text-align: center;
 }
 .new-edit-panel h4, label {
@@ -999,15 +998,18 @@ main .biz-card-design-3 .dark-bg li{
 }
 #panel-2,#panel-3,#panel-4,#panel-5,#panel-6,#panel-7{
   display: none;
-  width: 100%;
+
 }
 #panel-1{
-  width: 100%;
+
 }
 .new-edit-form dt,dd{
   padding: 0;
   margin: 0;
   float: left;
+}
+.new-edit-form dl{
+  width: 100%;
 }
 .new-edit-form dt{
   width: 30%;
