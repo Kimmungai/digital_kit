@@ -14,66 +14,52 @@
   <body ng-cloak>
     <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2"><!--Edit form starts here-->
       <div class="container">
-        <form class="new-edit-form">
+        <form>
           <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
             <span class="fa fa-window-close" aria-hidden="true"></span>
           </button>
-          <dl id="title-card-1" class="row" onclick="toggle('panel-card-1',this.id)">
-            <dd><h4>Basic Information</h4></dd>
-            <dt><i class="fa fa-chevron-circle-up"></i></dt>
-          </dl>
-          <div id="panel-card-1" class="row">
-            <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="text"  id="first_name" placeholder="First Name" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text" id="last_name" placeholder="Last Name" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-user"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="text" id="designation" placeholder="Designation" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-briefcase"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text" id="phone" placeholder="Phone No." ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-phone"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="email" id="email" placeholder="Email" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-envelope"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text"  id="address" placeholder="Address" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" id="website" placeholder="Website" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
-              <div class="input-icon"><i class="fa fa-globe-americas"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" id="qr_url" placeholder="Qr url" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
-              <div class="input-icon"><i class="fa fa-qrcode"></i></div>
-            </div>
+          <h4>Card Details</h4>
+          <div class="form-group">
+            <label for="first_name"><i class="fa fa-user"></i> First name</label>
+            <input type="text" id="first_name" class="form-control form-control-lg"  placeholder="" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
           </div>
-          <div class="row">
-            <div class="input-group" ng-click="edit_details=0" onclick="unblur_bg()">
-              <input type="radio" name="gender" value="male"/>
-              <label for="gender-male"><i class="fa fa-thumbs-up"></i> Done editing</label>
-            </div>
+          <div class="form-group">
+            <label for="last_name"><i class="fa fa-user"></i> Last name</label>
+            <input type="text" id="last_name" class="form-control form-control-lg"  placeholder="" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
           </div>
+          <div class="form-group">
+            <label for="designation"><i class="fa fa-briefcase"></i> Designation</label>
+            <input type="text" id="designation" class="form-control form-control-lg"  placeholder="" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="phone"><i class="fa fa-mobile-alt"></i> Phone</label>
+            <input type="text" id="phone" class="form-control form-control-lg" placeholder="" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="email" id="email" class="form-control form-control-lg" placeholder="" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="address"><i class="fa fa-map-marker-alt"></i> Address</label>
+            <input type="text"  id="address" class="form-control form-control-lg" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="website"><i class="fa fa-globe-americas"></i> Website</label>
+            <input type="text" id="website" class="form-control form-control-lg" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="qr_url"><i class="fa fa-qrcode"></i> Qr url</label>
+            <input type="text" id="qr_url" class="form-control form-control-lg" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
+            <small class="form-text text-muted"></small>
+          </div>
+          <button type="submit" class="btn btn-primary" ng-click="edit_details=0" onclick="unblur_bg()"><i class="fa fa-thumbs-up"></i> Done</button>
         </form>
       </div>
     </div><!--Edit form ends here-->
@@ -89,43 +75,14 @@
           </dl>
           <div id="panel-1" class="row">
             <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="text"  id="first_name" placeholder="First Name" ng-model="card.first_name" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text" id="last_name" placeholder="Last Name" ng-model="card.last_name" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-user"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="text" id="designation" placeholder="Designation" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-briefcase"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text" id="phone" placeholder="Phone No." ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-phone"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
-              <div class="col-half">
-                <input type="email" id="email" placeholder="Email" ng-model="card.email" onchange="update_val(this.id,this.value,'','','Card')">
-                <div class="input-icon"><i class="fa fa-envelope"></i></div>
-              </div>
-              <div class="col-half">
-                <div class="input-group">
-                  <input type="text"  id="address" placeholder="Address" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
-                  <div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="input-group input-group-icon">
               <input type="file"  id="main_image" name="main_image" placeholder="" onchange="update_val(this.id,this.value)">
+              <div class="input-icon"><i class="fa fa-image"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+              <select id="theme" name="theme" onchange="update_val(this.id,this.value)">
+                <option value="index.php">Dark</option>
+                <option value="index-1.php">Light</option>
+              </select>
               <div class="input-icon"><i class="fa fa-image"></i></div>
             </div>
             <div class="input-group input-group-icon">
@@ -135,14 +92,6 @@
             <div class="input-group input-group-icon">
               <input type="text" id="tag_line_2" placeholder="Headline 2" ng-model="client.tag_line_2" onchange="update_val(this.id,this.value)">
               <div class="input-icon"><i class="fa fa-paragraph"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" id="website" placeholder="Website" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
-              <div class="input-icon"><i class="fa fa-globe-americas"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-              <input type="text" id="qr_url" placeholder="Qr url" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
-              <div class="input-icon"><i class="fa fa-qrcode"></i></div>
             </div>
           </div>
           <dl id="title-2" class="row" onclick="toggle('panel-2',this.id)">

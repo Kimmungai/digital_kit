@@ -776,11 +776,15 @@ main .biz-card-design-3 .dark-bg li{
 .new-edit-panel{
   position:absolute;
   z-index: 100;
-  left: 50%;
-  transform: translate(-50%, 0);
+  width: 100%;
 }
 .new-edit-panel h4 {
+  padding:1em 0;
+  text-align: center;
+}
+.new-edit-panel h4, label {
   color: #d9534f;
+  text-transform: uppercase;
 }
 .new-edit-panel input,
 .new-edit-panel input[type="radio"] + label,
@@ -789,8 +793,8 @@ main .biz-card-design-3 .dark-bg li{
 .new-edit-panel select,
 .new-edit-panel textarea{
   width: 100%;
-  padding: 1em;
-  line-height: 1.4;
+  /*padding: 1em;*/
+  /*line-height: 1.4;*/
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
@@ -814,7 +818,7 @@ main .biz-card-design-3 .dark-bg li{
   display: none;
 }
 .new-edit-panel input[type="radio"] + label,
-.new-edit-panel select {
+{
   display: inline-block;
   width: 50%;
   text-align: center;
@@ -834,8 +838,7 @@ main .biz-card-design-3 .dark-bg li{
 }
 .new-edit-panel input[type="radio"]:checked + label,
 .new-edit-panel input:checked + label:before,
-.new-edit-panel select:focus,
-.new-edit-panel select:active {
+ {
   background-color: #d9534f;
   color: #fff;
   border-color: #f0ad4e;
@@ -888,8 +891,7 @@ main .biz-card-design-3 .dark-bg li{
   outline: 0;
 }
 .new-edit-panel select option {
-  background-color: #d9534f;
-  color: #fff;
+
 }
 .new-edit-panel .input-group {
   margin-bottom: 1em;
@@ -897,8 +899,8 @@ main .biz-card-design-3 .dark-bg li{
 }
 .new-edit-panel .input-group:before,
 .input-group:after {
-  content: "";
-  display: table;
+  /*content: "";
+  display: table;*/
 }
 .new-edit-panel .input-group:after {
   clear: both;
@@ -906,14 +908,14 @@ main .biz-card-design-3 .dark-bg li{
 .new-edit-panel .input-group-icon {
   position: relative;
 }
-.new-edit-panel .input-group-icon input {
+/*.new-edit-panel .input-group-icon input {
   padding-left: 4.4em;
-}
+}*/
 .new-edit-panel .input-group-icon .input-icon {
   position: absolute;
   top: 0;
   left: 0;
-  width: 3.4em;
+  width: 4em;
   height: 3.4em;
   line-height: 3.4em;
   text-align: center;

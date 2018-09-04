@@ -19,7 +19,7 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
-      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
       <li ng-click="active_tool=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-close"></span> Close</a></li>
     </ul>
   </main>
@@ -27,7 +27,7 @@
     <h1><i class="icn fa fa-book"></i> Business Card Ready!<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="btn btn-primary btn-sm" href="{{url('/download-card')}}" target="_blank"><span class="fa fa-download"></span> Download</a></li>
-      <li class="list-inline-item" ng-click="edit_details=2"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-edit"></span> Edit</a></li>
+      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-edit"></span> Edit</a></li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-times"></span> Close</a></li>
     </ul>
     <article class="container biz-card dark-bg" ng-show="client.design==1">
@@ -97,7 +97,7 @@
     </article>
     <!--<ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="{{url('/download-card')}}" style="text-decoration:none;color:inherit;" target="_blank"><span class="fa fa-download"></span> Download</a></li>
-      <li class="list-inline-item" ng-click="edit_details=2"><span class="fa fa-edit"></span> Edit</li>
+      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><span class="fa fa-edit"></span> Edit</li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><span class="fa fa-times"></span> Close</li>
     </ul>-->
   </main>
