@@ -1010,6 +1010,7 @@ main .biz-card-design-3 .dark-bg li{
 }
 .new-edit-form dl{
   width: 100%;
+  overflow: hidden;
 }
 .new-edit-form dt{
   width: 30%;

@@ -231,7 +231,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://localhost.com/">Digital Kit</a> </p>
+                            <p>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://biznesskit.com/">Digital Kit</a> </p>
                         </div><!-- coloumn -->
                     </div><!-- end of row -->
                 </div><!-- end of /. container -->

@@ -69,7 +69,7 @@
           <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
             <span class="fa fa-window-close" aria-hidden="true"></span>
           </button>
-          <dl id="title-1" class="row" onclick="toggle('panel-1',this.id)">
+          <dl id="title-1" onclick="toggle('panel-1',this.id)">
             <dd><h4>Basic Information</h4></dd>
             <dt><i class="fa fa-chevron-circle-up"></i></dt>
           </dl>
@@ -99,7 +99,7 @@
               <small class="form-text text-muted"></small>
             </div>
           </div>
-          <dl id="title-2" class="row" onclick="toggle('panel-2',this.id)">
+          <dl id="title-2"  onclick="toggle('panel-2',this.id)">
             <dd><h4>Self Description</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -120,7 +120,7 @@
               <small class="form-text text-muted"></small>
             </div>
           </div>
-          <dl id="title-3" class="row" onclick="toggle('panel-3',this.id)">
+          <dl id="title-3" onclick="toggle('panel-3',this.id)">
             <dd><h4>Vision & Mission</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -135,7 +135,7 @@
               <input type="text"  id="mission_statement" class="form-control form-control-lg" placeholder="My Mission" ng-model="client.mission_statement" onchange="update_val(this.id,this.value)">
             </div>
           </div>
-          <dl id="title-4" class="row" onclick="toggle('panel-4',this.id)">
+          <dl id="title-4"  onclick="toggle('panel-4',this.id)">
             <dd><h4>Social Media</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -161,7 +161,7 @@
               <input type="text" id="instagram_link" class="form-control form-control-lg" placeholder="" ng-model="client.instagram_link" onchange="update_val(this.id,this.value)">
             </div>
           </div>
-          <dl id="title-5" class="row" onclick="toggle('panel-5',this.id)">
+          <dl id="title-5"  onclick="toggle('panel-5',this.id)">
             <dd><h4>Skills & Interests</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -211,7 +211,7 @@
               </div>
             </div>
           </div>
-          <dl id="title-6" class="row" onclick="toggle('panel-6',this.id)">
+          <dl id="title-6"  onclick="toggle('panel-6',this.id)">
             <dd><h4>Portfolio</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -309,7 +309,7 @@
               <textarea id="speciality_4_text" class="form-control form-control-lg" placeholder="Portfolio 4 Description" ng-model="client.speciality_4_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
             </div>
           </div>
-          <dl id="title-7" class="row" onclick="toggle('panel-7',this.id)">
+          <dl id="title-7"  onclick="toggle('panel-7',this.id)">
             <dd><h4>Contact Form</h4></dd>
             <dt><i class="fa fa-chevron-circle-down"></i></dt>
           </dl>
@@ -366,7 +366,7 @@
                </ul>
                 <ul class="shelves">
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
-                  <li ng-click="active_shelf=2">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option><option value="3">New</option></select></li>
+                  <li ng-click="active_shelf=2">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option><option value="3">New</option><option value="4">Silk</option></select></li>
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
