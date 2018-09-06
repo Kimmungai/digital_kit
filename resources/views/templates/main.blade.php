@@ -12,8 +12,57 @@
     <script src="{{url('/js/angular.min.js')}}"></script>
   </head>
   <body ng-cloak>
-    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2"><!--Edit form starts here-->
-      <div class="container">
+    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==10" ng-click="edit_details=0" onclick="unblur_bg()"><!--help form starts here-->
+      <div class="container" ng-click="$event.stopPropagation();">
+        <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
+          <span class="fa fa-window-close" aria-hidden="true"></span>
+        </button>
+        <h4>We are here to help!</h4>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <form id="help-form">
+              <div class="form-group">
+                <label for="help_name">Name*</label>
+                <input type="text" name="help_name" class="form-control" placeholder="Full Name" value="<% client.first_name %> <% client.last_name %>">
+              </div>
+              <div class="form-group">
+                <label for="help_email">Email*</label>
+                <input type="email" class="form-control" name="help_email" placeholder="Email Address" value="<% card.email %>">
+              </div>
+              <div class="form-group">
+                <label for="help_category">Category</label>
+                <select class="form-control" name="help_category">
+                  <option>Display Errors</option>
+                  <option>Billing</option>
+                  <option>Hosting</option>
+                  <option>General</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Message*</label>
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+            </form>
+            <button type="submit" class="btn btn-primary" ng-click="edit_details=0" onclick="unblur_bg()"><i class="fa fa-thumbs-up"></i> Done</button>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-dark text-white hidden-sm-down">
+              <img class="card-img img-responsive rounded" src="{{url('img/help-bg.jpg')}}"  style="width:100%;height:100%;filter:brightness(30%);">
+              <div class="card-img-overlay">
+                <h5 class="card-title"></h5>
+                <ul class="help-contact">
+                  <li><i class="fa fa-map-marker-alt"></i> <p>Nairobi, Kenya</p></li>
+                  <li><i class="fa fa-phone"></i> <p>025</p></li>
+                  <li><i class="fa fa-envelope"></i> <p>info@biznesskit.com</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--help form ends here-->
+    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2" ng-click="edit_details=0" onclick="unblur_bg()"><!--Edit form starts here-->
+      <div class="container" ng-click="$event.stopPropagation();">
         <form>
           <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
             <span class="fa fa-window-close" aria-hidden="true"></span>
@@ -63,8 +112,8 @@
         </form>
       </div>
     </div><!--Edit form ends here-->
-    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==1"><!--Edit form starts here-->
-      <div class="container">
+    <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==1" ng-click="edit_details=0" onclick="unblur_bg()"><!--Edit form starts here-->
+      <div class="container" ng-click="$event.stopPropagation();">
         <form class="new-edit-form">
           <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
             <span class="fa fa-window-close" aria-hidden="true"></span>
@@ -245,6 +294,10 @@
               <label for="speciality_1_text"><i class="fa fa-paragraph"></i> Portfolio 1 Description</label>
               <textarea id="speciality_1_text" class="form-control form-control-lg" placeholder="Portfolio 1 Description" ng-model="client.speciality_1_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
             </div>
+            <div class="form-group">
+              <label for="speciality_1_url"><i class="fa fa-link"></i> Portfolio 1 Url</label>
+              <input type="text" id="speciality_1_url" class="form-control form-control-lg" placeholder="" ng-model="client.speciality_1_url" onchange="update_val(this.id,this.value)">
+            </div>
             <div class="row">
               <div class="form-group col-md-8">
                 <label for="speciality_2"><i class="fa fa-briefcase"></i> Portfolio 2</label>
@@ -265,6 +318,10 @@
             <div class="form-group">
               <label for="speciality_2_text"><i class="fa fa-paragraph"></i> Portfolio 2 Description</label>
               <textarea id="speciality_2_text" class="form-control form-control-lg" placeholder="Portfolio 2 Description" ng-model="client.speciality_2_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="speciality_2_url"><i class="fa fa-link"></i> Portfolio 2 Url</label>
+              <input type="text" id="speciality_2_url" class="form-control form-control-lg" placeholder="" ng-model="client.speciality_2_url" onchange="update_val(this.id,this.value)">
             </div>
             <div class="row">
               <div class="form-group col-md-8">
@@ -287,6 +344,10 @@
               <label for="speciality_3_text"><i class="fa fa-paragraph"></i> Portfolio 3 Description</label>
               <textarea id="speciality_3_text" class="form-control form-control-lg" placeholder="Portfolio 3 Description" ng-model="client.speciality_3_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
             </div>
+            <div class="form-group">
+              <label for="speciality_3_url"><i class="fa fa-link"></i> Portfolio 3 Url</label>
+              <input type="text" id="speciality_3_url" class="form-control form-control-lg" placeholder="" ng-model="client.speciality_3_url" onchange="update_val(this.id,this.value)">
+            </div>
             <div class="row">
               <div class="form-group col-md-8">
                 <label for="speciality_4"><i class="fa fa-briefcase"></i> Portfolio 4</label>
@@ -307,6 +368,10 @@
             <div class="form-group">
               <label for="speciality_4_text"><i class="fa fa-paragraph"></i> Portfolio 4 Description</label>
               <textarea id="speciality_4_text" class="form-control form-control-lg" placeholder="Portfolio 4 Description" ng-model="client.speciality_4_text" onchange="update_val(this.id,this.value)" rows="7"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="speciality_4_url"><i class="fa fa-link"></i> Portfolio 4 Url</label>
+              <input type="text" id="speciality_4_url" class="form-control form-control-lg" placeholder="" ng-model="client.speciality_4_url" onchange="update_val(this.id,this.value)">
             </div>
           </div>
           <dl id="title-7"  onclick="toggle('panel-7',this.id)">
@@ -340,7 +405,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline account-nav">
-                      <li class="list-inline-item"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
+                      <li class="list-inline-item" ng-click="active_tool=7"><a href="#"><span class="fa fa-user"></span> <% client.first_name %> <% client.last_name %></a></li>
                       <li class="list-inline-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><a href="#"><span class="fa fa-unlink"></span> logout</a></li>
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           @csrf
@@ -370,7 +435,7 @@
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
-                  <li ng-click="active_shelf=6;edit_details=0"><a href="#"> Help</a></li>
+                  <li ng-click="active_shelf=6;edit_details=10" onclick="blur_bg()"><a href="#"> Help & Support</a></li>
                 </ul>
             </div>
             <div class="panel">

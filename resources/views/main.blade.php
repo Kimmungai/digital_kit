@@ -9,18 +9,26 @@
       <li class="list-inline-item"><a href="#" class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
       <li class="list-inline-item" ng-click="edit_details=1" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-times"></span> Close</a></li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item hidden-xs-down"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-times"></span> Close</a></li>
     </ul>
 
-      <iframe  id="website-preview">
+      <iframe  id="website-preview" class="hidden-xs-down">
         <p>Your browser does not support iframes.</p>
       </iframe>
+      <div class="card bg-dark text-white hidden-sm-up">
+        <img class="card-img img-thumbnail" src="<%client.main_image%>" style="filter: brightness(40%);"alt="Card image">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Congratulations <%client.first_name%>!</h5>
+          <p class="card-text">Your website has been created.</p>
+          <a class="btn btn-danger prev-link" target="_blank"><i class="fa fa-external-link-alt"></i> View website</a>
+        </div>
+      </div>
 
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
-      <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
-      <li ng-click="active_tool=0" class="list-inline-item"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-close"></span> Close</a></li>
+      <li class="list-inline-item" ng-click="edit_details=1" onclick="blur_bg()" onclick="blur_bg()"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span> Edit</a></li>
+      <li ng-click="active_tool=0" class="list-inline-item hidden-xs-down"><a href="#" class="btn btn-primary btn-sm"><span class="fa fa-close"></span> Close</a></li>
     </ul>
   </main>
   <main ng-show="active_tool==2 && tool_B==true">
@@ -28,9 +36,9 @@
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a class="btn btn-primary btn-sm" href="{{url('/download-card')}}" target="_blank"><span class="fa fa-download"></span> Download</a></li>
       <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-edit"></span> Edit</a></li>
-      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-times"></span> Close</a></li>
+      <li ng-click="active_tool=0;edit_details=0" class="list-inline-item hidden-xs-down"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-times"></span> Close</a></li>
     </ul>
-    <article class="container biz-card dark-bg" ng-show="client.design==1">
+    <article class="container biz-card dark-bg" ng-show="client.design==1 || client.design==4">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
       <h3><% card.designation%></h3>
       <div class="row no-padding">
@@ -56,14 +64,14 @@
           <dl>
             <dt>
               <ul>
-                <li><% card.phone%></li>
-                <li><% card.email%></li>
+                <li><i class="fa fa-phone"></i> <% card.phone%></li>
+                <li><i class="fa fa-envelope"></i> <% card.email%></li>
               </ul>
             </dt>
             <dd>
               <ul>
-                <li><% card.address%></li>
-                <li><% card.website %></li>
+                <li><i class="fa fa-map-marker-alt"></i> <% card.address%></li>
+                <li><i class="fa fa-link"></i> <% card.website %></li>
               </ul>
             </dd>
           </dl>
@@ -328,6 +336,71 @@
     <li class="list-inline-item"><a href="/" style="text-decoration:none;color:inherit;"><< home</a></li>
     <li ng-click="active_tool=5;edit_details=0" class="list-inline-item">< Back</li>
   </ul>
+  </main>
+  <main ng-show="active_tool==7">
+    <h1><i class="icn fas fa-user"></i> Profile <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+    <div class="container bootstrap snippet">
+    <div class="row">
+    	<div class="col-sm-3"><!--left col-->
+        <div class="text-center">
+          <img src="<%client.main_image%>" class="avatar img-circle img-thumbnail" alt="avatar">
+        </div></hr><br>
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="<% user_details.publishing_details.website_url %>"><% user_details.publishing_details.website_url  %></a></div>
+          </div>
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                          <label for="profile_name"><h4>Name</h4></label>
+                          <input type="text" class="form-control" name="profile_name" id="profile_first_name" placeholder="Full name" title="enter your name." value="<% user_details.name %>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                          <label for="profile_email"><h4>Email</h4></label>
+                            <input type="email" class="form-control" name="profile_email" id="profile_email" placeholder="Email" title="enter your email." value="<% card.email %>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                            <label for="profile_phone"><h4>Phone</h4></label>
+                            <input type="text" class="form-control" name="profile_phone" id="profile_phone" placeholder="enter phone" title="enter your phone number." value="<% card.phone %>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                            <label for="profile_password"><h4>Password</h4></label>
+                            <input type="password" class="form-control" name="profile_password" id="profile_password" placeholder="password" title="enter your password.">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                          <label for="profile_retype_password"><h4>Verify</h4></label>
+                            <input type="password" class="form-control" name="profile_retype_password" id="profile_retype_password" placeholder="Re-type password" title="enter your password again.">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                         <div class="col-xs-12">
+                            <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                         <div class="col-xs-12">
+                            <button class="btn btn-lg btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Delete my account</button>
+                          </div>
+                      </div>
+              	</form>
+             </div><!--/tab-pane-->
+          </div><!--/tab-pane-->
+        </div><!--/tab-content-->
+      </div><!--/col-9-->
+    </div><!--/row-->
   </main>
   <div id="wait" style="display:none;width:32px;height:32px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='{{url("/img/loading.gif")}}' width="64" height="64" /><br>Loading..</div>
 @endsection

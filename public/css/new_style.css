@@ -1021,4 +1021,10 @@ main .biz-card-design-3 .dark-bg li{
 .new-edit-form dd{
   width: 70%;
 }
+.help-contact{
+  list-style-type: none;margin:0;padding:0;
+}
+.help-contact p{
+  font-weight: bold;
+}
 /*end new edit form*/
