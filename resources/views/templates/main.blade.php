@@ -20,7 +20,7 @@
         <h4>We are here to help!</h4>
         <div class="row mt-3">
           <div class="col-md-6">
-            <form id="help-form">
+            <form id="help_form" method="post">
               <div class="form-group">
                 <label for="help_name">Name*</label>
                 <input type="text" name="help_name" class="form-control" placeholder="Full Name" value="<% client.first_name %> <% client.last_name %>">
@@ -40,10 +40,13 @@
               </div>
               <div class="form-group">
                 <label for="formGroupExampleInput2">Message*</label>
-                <textarea class="form-control" rows="5"></textarea>
+                <textarea name="help_message" class="form-control" rows="5"></textarea>
+              </div>
+              <div class="form-group">
+                <p id="help_alert" class="text-success d-none">Message sent! We will contact you shortly.</p>
               </div>
             </form>
-            <button type="submit" class="btn btn-primary" ng-click="edit_details=0" onclick="unblur_bg()"><i class="fa fa-thumbs-up"></i> Done</button>
+            <button type="btn" class="btn btn-primary"  onclick="submit_help()"><i class="fa fa-paper-plane"></i> Send</button>
           </div>
           <div class="col-md-6">
             <div class="card bg-dark text-white hidden-sm-down">

@@ -9,7 +9,8 @@ use App\publishing_details;
 use Intervention\Image\Facades\Image;
 use Auth;
 use Illuminate\Http\Request;
-use App\Mail\Published;
+use App\Mail\published;
+use App\Mail\help;
 use Illuminate\Support\Facades\Mail;
 
 class helpers extends Controller
@@ -48,6 +49,11 @@ class helpers extends Controller
       payment_details::where('user_id','=',Auth::id())->orderBy('id','Desc')->limit(1)->update([
         'acc_bal' => $bal,
       ]);
+      return;
+    }
+    public function help_form(Request $request)
+    {
+      Mail::to('kimpita9@gmail.com')->send(new Help($request));
       return;
     }
 }

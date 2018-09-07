@@ -175,6 +175,20 @@ class main extends Controller
         }
       }
     }
+    public function update_profile(Request $request)
+    {
+      $name=htmlspecialchars($request['profile_name']);
+      $email=htmlspecialchars($request['profile_email']);
+      $phone=htmlspecialchars($request['profile_phone']);
+      $password=Hash::make($request['profile_password']);
+      User::where('id','=',Auth::id())->update([
+        'name'=> $name,
+        'email'=>$email,
+        'phone'=>$phone,
+        'password'=>$password,
+      ]);
+      return '';
+    }
     /**
      * Remove the specified resource from storage.
      *

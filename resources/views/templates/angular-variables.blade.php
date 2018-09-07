@@ -12,7 +12,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.user_details = <?php echo $user; ?>;
 
     //variables
-    $scope.active_tool=1;
+    $scope.active_tool=7;
     $scope.active_shelf=1;
     $scope.my_tools=1;
     $scope.tool_A={{Auth::user()->tool_A}};
@@ -118,5 +118,36 @@ $(document).ready(function(){
   function blur_bg()
   {
     $('#site-panel').addClass('blur-bg');
+  }
+</script>
+<script>
+  function submit_help()
+  {
+    $.ajax({
+        type: 'post',
+        url: '{{url('/client-help')}}',
+        data: $('#help_form').serialize(),
+        success: function (data,status) {
+          $('#help_alert').removeClass('d-none');
+        }
+    });
+  }
+</script>
+<script>
+  function update_profile()
+  {
+    if($('#profile_retype_password').val()===$('#profile_password').val() &&  $('#profile_password').val().length !=0)
+    {
+      $.ajax({
+          type: 'post',
+          url: '{{url('/profile-update')}}',
+          data: $('#profile_form').serialize(),
+          success: function (data,status) { 
+            $('#profile_update_alert').removeClass('d-none');
+          }
+      });
+    }else{
+      alert("Passwords did not match. Please try again.")
+    }
   }
 </script>

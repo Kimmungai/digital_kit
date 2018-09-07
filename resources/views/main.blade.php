@@ -353,11 +353,11 @@
     	<div class="col-sm-9">
           <div class="tab-content">
             <div class="tab-pane active" id="home">
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" id="profile_form">
                       <div class="form-group">
                         <div class="col-xs-6">
                           <label for="profile_name"><h4>Name</h4></label>
-                          <input type="text" class="form-control" name="profile_name" id="profile_first_name" placeholder="Full name" title="enter your name." value="<% user_details.name %>">
+                          <input type="text" class="form-control" name="profile_name" id="profile_name" placeholder="Full name" title="enter your name." value="<% user_details.name %>">
                         </div>
                       </div>
                       <div class="form-group">
@@ -370,7 +370,7 @@
                       <div class="form-group">
                         <div class="col-xs-6">
                             <label for="profile_phone"><h4>Phone</h4></label>
-                            <input type="text" class="form-control" name="profile_phone" id="profile_phone" placeholder="enter phone" title="enter your phone number." value="<% card.phone %>">
+                            <input type="number" class="form-control" name="profile_phone" id="profile_phone" placeholder="enter phone" title="enter your phone number." value="<% card.phone %>">
                         </div>
                       </div>
                       <div class="form-group">
@@ -387,12 +387,15 @@
                       </div>
                       <div class="form-group">
                          <div class="col-xs-12">
-                            <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
+                            <button class="btn btn-lg btn-primary" type="btn" onclick="update_profile()"><i class="fa fa-save"></i> Update</button>
                           </div>
                       </div>
                       <div class="form-group">
+                        <p id="profile_update_alert" class="text-success d-none"><strong><i class="fa fa-thumbs-up"></i> Details saved!</strong></p>
+                      </div>
+                      <div class="form-group">
                          <div class="col-xs-12">
-                            <button class="btn btn-lg btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Delete my account</button>
+                            <button class="btn btn-lg btn-danger pull-right" type="btn"> Delete my account</button>
                           </div>
                       </div>
               	</form>
