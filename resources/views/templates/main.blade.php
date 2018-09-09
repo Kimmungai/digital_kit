@@ -421,6 +421,9 @@
         </header><!--end of header section-->
       </div>
       <div class="row">
+        <div class="col-md-9 no-padding">
+          @yield('main')
+        </div>
         <div class="col-md-3 no-padding">
           <aside >
             <div class="panel">
@@ -476,9 +479,7 @@
             <hr ng-show="edit_details > 0">
           </aside>
         </div>
-        <div class="col-md-9 no-padding">
-          @yield('main')
-        </div>
+
       </div>
       <div class="row">
         <footer class="bg-dark">

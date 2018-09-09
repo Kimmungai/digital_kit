@@ -18,7 +18,6 @@ Route::get('/payment-values-update', 'helpers@pluck_payment_details_value')->mid
 Route::post('/record-payment', 'helpers@record_payment')->middleware('auth');
 Route::post('/publish', 'helpers@publish')->middleware('auth');
 Route::post('/client-help', 'helpers@help_form')->middleware('auth');
-Route::post('/profile-update', 'main@update_profile')->middleware('auth');
 
 
 Auth::routes();

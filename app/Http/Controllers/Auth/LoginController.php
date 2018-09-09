@@ -100,11 +100,12 @@ class LoginController extends Controller
     }
     public function redirectToGithub()
     {
-        return Socialite::driver('github')->setScopes(['read:user', 'public_repo'])->redirect();
+        return Socialite::driver('github')->redirect();
     }
     public function handleGithubCallback()
     {
         $github_user = Socialite::driver('github')->user();
+        //print_r($github_user);die();
         $user=$this->userFindOrCreate($github_user);
         Auth::login($user,true);
         $this->cardFindOrCreate($github_user,Auth::id(),'github');

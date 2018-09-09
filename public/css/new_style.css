@@ -230,7 +230,7 @@ aside .edit-panel h2{
 main{
   background-color: #f2f2f0;
   border-top: 5px solid #df6260;
-  border-left: 1px solid #d4d5d0;
+  border-right: 1px solid #d4d5d0;
   overflow: hidden;
 }
 main h1{

@@ -15,7 +15,7 @@
       <iframe  id="website-preview" class="hidden-xs-down">
         <p>Your browser does not support iframes.</p>
       </iframe>
-      <div class="card bg-dark text-white hidden-sm-up">
+      <div class="card bg-dark text-white hidden-sm-up" style="width: 18rem;margin:0 auto;">
         <img class="card-img img-thumbnail" src="<%client.main_image%>" style="filter: brightness(40%);"alt="Card image">
         <div class="card-img-overlay">
           <h5 class="card-title">Congratulations <%client.first_name%>!</h5>
