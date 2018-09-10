@@ -38,7 +38,7 @@
       <li class="list-inline-item" ng-click="edit_details=2" onclick="blur_bg()"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-edit"></span> Edit</a></li>
       <li ng-click="active_tool=0;edit_details=0" class="list-inline-item hidden-xs-down"><a class="btn btn-primary btn-sm" href="#"><span class="fa fa-times"></span> Close</a></li>
     </ul>
-    <article class="container biz-card dark-bg" ng-show="client.design==1 || client.design==4">
+    <article class="container biz-card dark-bg" ng-show="card.card_design==1">
       <h2><% card.first_name%> <span  class="text-danger"><% card.last_name%></span></h2>
       <h3><% card.designation%></h3>
       <div class="row no-padding">
@@ -55,7 +55,7 @@
           </ul>
         </div>
     </article>
-    <article class="container biz-card-design-2" ng-show="client.design==2">
+    <article class="container biz-card-design-2" ng-show="card.card_design==2">
       <div class="panel">
         <div class="content">
           <h2><% card.first_name%> <% card.last_name%></h2>
@@ -79,7 +79,7 @@
         </div>
       </div>
     </article>
-    <article class="container biz-card-design-3" ng-show="client.design==3">
+    <article class="container biz-card-design-3" ng-show="card.card_design==3">
       <dl>
         <dt style="background-image:url('<% client.main_image%>')"></dt>
         <dd>

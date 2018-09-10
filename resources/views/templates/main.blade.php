@@ -437,7 +437,8 @@
                </ul>
                 <ul class="shelves">
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
-                  <li ng-click="active_shelf=2">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option><option value="3">New</option><option value="4">Silk</option></select></li>
+                  <li ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option><option value="3">New</option><option value="4">Silk</option></select></li>
+                  <li ng-click="active_shelf=3" ng-show="active_tool==2 && tool_B==true">Design: <select ng-model="card.card_design" id="card_design" onchange="update_val(this.id,this.value,'','','Card')"><option value="1">stylish</option><option value="2">classic</option><option value="3">elegant</option></select></li>
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
