@@ -18,6 +18,7 @@ class CreatePublishingDetailsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('website_url')->nullable();
             $table->string('publishing_period')->nullable();
+            $table->string('publishing_plan')->default('Starter ($4 p.m.)');
             $table->string('publishing_cost')->nullable();
             $table->timestamps();
         });

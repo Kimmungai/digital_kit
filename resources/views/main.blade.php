@@ -165,6 +165,9 @@
                 <th>Website Url</th><td class="text-lower"><p ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></p><input id="website_url" class="form-control text-lower" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
               </tr>
               <tr>
+                <th>Plan</th><td><p><% user_details.publishing_details.publishing_plan %></p></td><td><select id="publishing_plan" ng-model="user_details.publishing_details.publishing_plan" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Starter ($4 p.m.)</option><option>Silver ($9 p.m.)</option><option>Gold ($19 p.m.)</option></select></td>
+              </tr>
+              <tr>
                 <th>Billing cycle</th><td><p><% user_details.publishing_details.publishing_period %></p></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Monthly</option><option>Every 3 months</option><option>Every 6 months</option><option>Yearly</option><option>Every 3 years</option><option>Every 5 years</option></select></td>
               </tr>
               <tr ng-if="user_details.publishing_details.publishing_period==='Monthly'">

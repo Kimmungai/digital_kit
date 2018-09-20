@@ -79,6 +79,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  
 }
 
 [tabindex="-1"]:focus {
@@ -9999,4 +10000,3 @@ a.text-dark:focus {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
