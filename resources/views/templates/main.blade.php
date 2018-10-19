@@ -12,6 +12,22 @@
     <script src="{{url('/js/angular.min.js')}}"></script>
   </head>
   <body ng-cloak>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="1908267229501969">
+    </div>
+<!-- End Load Facebook SDK for JavaScript -->
     <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==10" ng-click="edit_details=0" onclick="unblur_bg()"><!--help form starts here-->
       <div class="container" ng-click="$event.stopPropagation();">
         <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">

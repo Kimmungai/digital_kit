@@ -1,138 +1,295 @@
 <?php require_once('../autoload.php');?>
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Header -->
-			<header id="header" style="background-image: url('images/overlay.png'), url('<?php echo $saved_data['bg_image']; ?>');">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="<?php echo $saved_data['main_image']; ?>" alt="<?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?>" /></a>
-					<h1><?php echo $saved_data['vision_statement']; ?></h1>
-				</div>
-			</header>
+  <head>
 
-		<!-- Main -->
-			<div id="main">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2><?php echo $saved_data['tag_line_1']; ?><br />
-							<?php echo $saved_data['tag_line_2']; ?></h2>
-						</header>
-						<p><?php echo $saved_data['mission_statement']; ?></p>
-						<!--<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>-->
-					</section>
+    <title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
 
-				<!-- Two -->
-					<section id="two">
-						<h2><?php echo $saved_data['speciality_title']; ?></h2>
-						<p><?php echo $saved_data['speciality_sub_title']; ?></p>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="<?php echo $saved_data['speciality_1_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_1_img']; ?>" alt="" /></a>
-								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_1_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_1']; ?></a></h3>
-								<p><?php echo $saved_data['speciality_1_text']; ?></p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="<?php echo $saved_data['speciality_2_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_2_img']; ?>" alt="" /></a>
-								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_2_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_2']; ?></a></h3>
-								<p><?php echo $saved_data['speciality_2_text']; ?></p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="<?php echo $saved_data['speciality_3_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_3_img']; ?>" alt="" /></a>
-								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_3_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_3']; ?></a></h3>
-								<p><?php echo $saved_data['speciality_3_text']; ?></p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="<?php echo $saved_data['speciality_4_img']; ?>" class="image fit thumb"><img src="<?php echo $saved_data['speciality_4_img']; ?>" alt="" /></a>
-								<h3><a href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank"><strong><i class="icon fa <?php echo $saved_data['speciality_4_icon']; ?>"> </i> </strong><?php echo $saved_data['speciality_4']; ?></a></h3>
-								<p><?php echo $saved_data['speciality_4_text']; ?></p>
-							</article>
-						</div>
-						<?php if($saved_data['resume_downloadable']){?>
-						<ul class="actions">
-							<li><a href="<?php echo $saved_data['resume_download_link']; ?>" class="button">Resume <i class="icon fa-download"></i></a></li>
-						</ul>
-						<?php }?>
-					</section>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-				<!-- Three -->
-					<section id="three">
-						<h2><?php echo $saved_data['contact_section_title']; ?></h2>
-						<p></p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<!--<ul class="labeled-icons">
-									<li>
-										<h3 class="icon fa-home"><span class="label">Address</span></h3>
-										1234 Somewhere Rd.<br />
-										Nashville, TN 00000<br />
-										United States
-									</li>
-									<li>
-										<h3 class="icon fa-mobile"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
-									</li>
-								</ul>-->
-							</div>
-						</div>
-					</section>
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
 
-			</div>
+  </head>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="<?php echo $saved_data['twitter_link']; ?>" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="<?php echo $saved_data['linkedin_link']; ?>" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="<?php echo $saved_data['facebook_link']; ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; <?php echo date('Y',time())?> | All Rights Reserved | Designed & Developed by <a href="http://biznesskit.com/">Digital Kit</a></li>
-					</ul>
-				</div>
-			</footer>
+  <body id="page-top">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none"><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<?php echo $saved_data['main_image']; ?>" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about"><?php echo $saved_data['about_title']; ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience"><?php echo $saved_data['speciality_title']; ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education"><?php echo $saved_data['contact_section_title']; ?></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-	</body>
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0"><?php echo $saved_data['first_name']; ?>
+            <span class="text-primary"><?php echo $saved_data['last_name']; ?></span>
+          </h1>
+          <div class="subheading mb-5"><?php echo $saved_data['tag_line_1']; ?>
+
+          </div>
+          <p class="lead mb-5"><?php echo $saved_data['about_story']; ?></p>
+          <div class="social-icons">
+            <a href="<?php echo $saved_data['linkedin_link']; ?>">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="<?php echo $saved_data['google_plus_link']; ?>">
+              <i class="fab fa-google-plus"></i>
+            </a>
+            <a href="<?php echo $saved_data['twitter_link']; ?>">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="<?php echo $saved_data['facebook_link']; ?>">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="<?php echo $saved_data['instagram_link']; ?>">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5"><?php echo $saved_data['speciality_title']; ?></h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0"><?php echo $saved_data['speciality_1']; ?></h3>
+              <div class="subheading mb-3"> </div>
+              <p><?php echo $saved_data['speciality_1_text']; ?></p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"> </span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Web Developer</h3>
+              <div class="subheading mb-3">Intelitec Solutions</div>
+              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">December 2011 - March 2013</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Junior Web Designer</h3>
+              <div class="subheading mb-3">Shout! Media Productions</div>
+              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">July 2010 - December 2011</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Web Design Intern</h3>
+              <div class="subheading mb-3">Shout! Media Productions</div>
+              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2008 - June 2010</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of Colorado Boulder</h3>
+              <div class="subheading mb-3">Bachelor of Science</div>
+              <div>Computer Science - Web Development Track</div>
+              <p>GPA: 3.23</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2006 - May 2010</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">James Buchanan High School</h3>
+              <div class="subheading mb-3">Technology Magnet Program</div>
+              <p>GPA: 3.56</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2002 - May 2006</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+          <h2 class="mb-5">Skills</h2>
+
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item">
+              <i class="fab fa-html5"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-css3-alt"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-js-square"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-angular"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-react"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-node-js"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-sass"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-less"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-wordpress"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-gulp"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-grunt"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-npm"></i>
+            </li>
+          </ul>
+
+          <div class="subheading mb-3">Workflow</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Mobile-First, Responsive Design</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Browser Testing &amp; Debugging</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Functional Teams</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Agile Development &amp; Scrum</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+          <h2 class="mb-5">Interests</h2>
+          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <div class="my-auto">
+          <h2 class="mb-5">Awards &amp; Certifications</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Google Analytics Certified Developer</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Mobile Web Specialist - Google Certification</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              2<sup>nd</sup>
+              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - James Buchanan High School - Hackathon 2006</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              3<sup>rd</sup>
+              Place - James Buchanan High School - Hackathon 2005</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
 </html>
