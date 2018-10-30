@@ -137,23 +137,13 @@
         </div>
         <div ng-show="publish_notes==1" class="card-body max-height-150">
           <h5 class="card-title">Important Notice</h5>
-          <p class="card-text text-left padding2">After clicking publish, it takes about <strong>24 hours</strong> before your site goes live. You will receive a confirmation email once your live.</p>
+          <p class="card-text text-left padding2">After clicking publish, it takes about <strong>24 hours</strong> before your site goes live. You will receive a confirmation email once your website is live.</p>
         </div>
-        <!--<div ng-show="publish_notes==2" class="card-body max-height-150">
-          <h5 class="card-title">Important things to Note</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        </div>-->
         <div ng-show="publish_notes==3" class="card-body max-height-150">
-          <h5 class="card-title">1. When will my website be live?</h5>
-          <p class="card-text">It typically takes 24 hours to publish a website after receiving the payment and request to publish.</p>
-          <!--<h5 class="card-title">2. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <h5 class="card-title">3. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <h5 class="card-title">4. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <h5 class="card-title">5. When will my website be live?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+          <h5 class="card-title text-left">1. When will my website be live?</h5>
+          <p class="card-tex text-left">It typically takes 24 hours to publish a website after receiving the payment. A confirmation email is sent to your registered email once the process is complete</p>
+          <h5 class="card-title text-left">2. Can I change my domain name after publishing?</h5>
+          <p class="card-text text-left">You have to send a request to domains@biznesskit.com to request a domain change after publishing the website. Please not a changing fee is charged.</p>
         </div>
       </div>
       <div class="card mt-3">

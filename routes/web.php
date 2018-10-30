@@ -18,6 +18,7 @@ Route::get('/payment-values-update', 'helpers@pluck_payment_details_value')->mid
 Route::post('/record-payment', 'helpers@record_payment')->middleware('auth');
 Route::post('/publish', 'helpers@publish')->middleware('auth');
 Route::post('/client-help', 'helpers@help_form')->middleware('auth');
+Route::post('/client-blog', 'helpers@blog_form')->middleware('auth');
 
 
 Auth::routes();
@@ -30,8 +31,7 @@ Route::get('login/twitter', 'Auth\LoginController@redirectToTwitter');
 Route::get('login/twitter/callback', 'Auth\LoginController@handleTwitterCallback');
 Route::get('login/linkedin', 'Auth\LoginController@redirectToLinkedin');
 Route::get('login/linkedin/callback', 'Auth\LoginController@handleLinkedinCallback');
-//Route::get('login/bitbucket', 'Auth\LoginController@redirectToBitbucket');
-//Route::get('login/bitbucket/callback', 'Auth\LoginController@handleBitbucketCallback');
+
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 Route::get('login/github', 'Auth\LoginController@redirectToGithub');

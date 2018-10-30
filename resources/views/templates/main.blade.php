@@ -38,11 +38,11 @@
           <div class="col-md-6">
             <form id="help_form" method="post">
               <div class="form-group">
-                <label for="help_name">Name*</label>
+                <label for="help_name">Name *</label>
                 <input type="text" name="help_name" class="form-control" placeholder="Full Name" value="<% client.first_name %> <% client.last_name %>">
               </div>
               <div class="form-group">
-                <label for="help_email">Email*</label>
+                <label for="help_email">Email *</label>
                 <input type="email" class="form-control" name="help_email" placeholder="Email Address" value="<% card.email %>">
               </div>
               <div class="form-group">
@@ -55,7 +55,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="formGroupExampleInput2">Message*</label>
+                <label for="formGroupExampleInput2">Message *</label>
                 <textarea name="help_message" class="form-control" rows="5"></textarea>
               </div>
               <div class="form-group">
@@ -80,6 +80,41 @@
         </div>
       </div>
     </div><!--help form ends here-->
+    <div id="blog-panel" class="new-edit-panel" ng-show="edit_details==11" ng-click="edit_details=0" onclick="unblur_bg()"><!--help form starts here-->
+      <div class="container" ng-click="$event.stopPropagation();">
+        <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
+          <span class="fa fa-window-close" aria-hidden="true"></span>
+        </button>
+        <h4>Post a new message</h4>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <form id="blog_form" method="post">
+              <div class="form-group">
+                <label for="help_name">Title *</label>
+                <input type="text" name="blog_title" class="form-control" placeholder="Title" >
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Message *</label>
+                <textarea name="blog_content" class="form-control" rows="15"></textarea>
+              </div>
+              <div id="blog-social-icons" class="form-group d-none">
+                <label for="help_name">Share on</label>
+                <div class="blog-social-icons" >
+                  <!--<a href="#"><i class="fab fa-facebook-square fb-icon"></i></a>-->
+                  <a id="twitter-share-btn" target="_blank"><i class="fab fa-twitter-square twitter-icon"></i></a>
+                  <!--<i class="fab fa-instagram ig-icon"></i>
+                  <i class="fab fa-linkedin linkedin-icon"></i>-->
+                </div>
+              </div>
+              <div class="form-group">
+                <p id="blog_alert" class="text-success d-none">Your message has been posted!.</p>
+              </div>
+            </form>
+            <button type="btn" class="btn btn-primary"  onclick="submit_blog()"><i class="fa fa-globe"></i> Post</button>
+          </div>
+        </div>
+      </div>
+    </div><!--blog form ends here-->
     <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2" ng-click="edit_details=0" onclick="unblur_bg()"><!--Edit form starts here-->
       <div class="container" ng-click="$event.stopPropagation();">
         <form>
@@ -449,7 +484,8 @@
                   <li ng-class="active_shelf==3 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#"><i class="fa fa-book"></i></a></li>
                   <li ng-class="active_shelf==4 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#"><i class="fa fa-file"></i></a></li>
                   <li ng-class="active_shelf==5 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                  <li ng-class="active_shelf==6 ? 'active' : 'inactive'" ng-click="active_shelf=6;edit_details=0"><a href="#"><i class="fa fa-question"></i></a></li>
+                  <li ng-class="active_shelf==7 ? 'active' : 'inactive'" ng-click="active_shelf=7;edit_details=0"><a href="#"><i class="fa fa-edit"></i></a></li>
+                  <li ng-class="active_shelf==6 ? 'active' : 'inactive'" ng-click="active_shelf=6;edit_details=0"><a href="#"><i class="fa 	fa-question-circle"></i></a></li>
                </ul>
                 <ul class="shelves">
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
@@ -458,6 +494,7 @@
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
+                  <li ng-click="active_shelf=7;edit_details=11" onclick="blur_bg()"><a href="#"> Blog</a></li>
                   <li ng-click="active_shelf=6;edit_details=10" onclick="blur_bg()"><a href="#"> Help & Support</a></li>
                 </ul>
             </div>

@@ -415,3 +415,25 @@
 .blur-bg{
   opacity: 0.5;
 }
+.blog-social-icons{
+  font-size: 30px;
+}
+.blog-social-icons i{
+  padding: 2px;
+}
+.fb-icon:hover{
+  color: #3B5998;
+  cursor: pointer;
+}
+.twitter-icon:hover{
+  color: #1DA1F2;
+  cursor: pointer;
+}
+.ig-icon:hover{
+  color: #fbad50;
+  cursor: pointer;
+}
+.linkedin-icon:hover{
+  color: #0077B5;
+  cursor: pointer;
+}

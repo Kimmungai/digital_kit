@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Website extends Model
+class Blog extends Model
 {
   public function user()
   {

@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 class downloads extends Controller
 {
-  public function card($user_id=1)
+  public function card()
   {
     $website= Website::where('id','=',Auth::id())->first();
     $card = Card::where('id','=',Auth::id())->first();

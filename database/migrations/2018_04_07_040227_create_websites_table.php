@@ -15,6 +15,7 @@ class CreateWebsitesTable extends Migration
     {
         Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
             $table->string('main_image');
             $table->string('bg_image')->default('https://biznesskit.com/engine/img/portfolio-templates/bg.jpg');
             $table->string('design')->default('1');

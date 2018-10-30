@@ -163,6 +163,7 @@ class LoginController extends Controller
             ##end variables####
 
             $new_card = new card;
+            $new_card->user_id =$user_id;
             $new_card->first_name = $user_name;
             //$new_card->last_name = $user_object->getNickname();
             $new_card->designation = 'Administrator';
@@ -186,6 +187,7 @@ class LoginController extends Controller
             ##end variables####
 
             $new_card = new card;
+            $new_card->user_id =$user_id;
             $new_card->first_name = $user_first_name;
             $new_card->last_name = $user_last_name;
             $new_card->designation = $user_designation;
@@ -209,6 +211,7 @@ class LoginController extends Controller
             ##end variables####
 
             $new_card = new card;
+            $new_card->user_id =$user_id;
             $new_card->first_name = $user_first_name;
             $new_card->last_name = $user_last_name;
             $new_card->designation = $user_designation;
@@ -231,6 +234,7 @@ class LoginController extends Controller
             $user_qr_url=$user_object['url'] ? $user_object['url'] != null : '';*/
             ##end variables####
             $new_card = new card;
+            $new_card->user_id =$user_id;
             $new_card->first_name = $user_first_name;
             $new_card->last_name =$user_last_name;
             $new_card->designation = $user_designation;
@@ -315,6 +319,7 @@ class LoginController extends Controller
             $new_website = new Website;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
+            $new_website->user_id = $user_id;
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = 'Hi, I am <span>'.$user_name.'</span>';
             $new_website->tag_line_2 = $tag_line_2;
@@ -370,6 +375,7 @@ class LoginController extends Controller
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
+            $new_website->user_id = $user_id;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
@@ -411,6 +417,7 @@ class LoginController extends Controller
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
+            $new_website->user_id = $user_id;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
@@ -444,6 +451,7 @@ class LoginController extends Controller
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
             $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
+            $new_website->user_id = $user_id;
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;

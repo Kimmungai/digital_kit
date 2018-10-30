@@ -19,7 +19,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.tool_B={{Auth::user()->tool_B}};
     $scope.tool_C={{Auth::user()->tool_C}};
     $scope.tool_D={{Auth::user()->tool_D}};
-    $scope.edit_details=0;
+    $scope.edit_details=11;
     $scope.edit_publish_url=1;
     $scope.publish_notes =1;
     //if($scope.user_details.publishing_details.publishing_period==='1 years'){$scope.publishing_cost='99';}
@@ -129,6 +129,19 @@ $(document).ready(function(){
         data: $('#help_form').serialize(),
         success: function (data,status) {
           $('#help_alert').removeClass('d-none');
+        }
+    });
+  }
+  function submit_blog()
+  {
+    $.ajax({
+        type: 'post',
+        url: '{{url('/client-blog')}}',
+        data: $('#blog_form').serialize(),
+        success: function (data,status) {
+          $('#blog_alert').removeClass('d-none');
+          $('#twitter-share-btn').attr('href','https://twitter.com/intent/tweet?text='+data+'');
+          $('#blog-social-icons').removeClass('d-none');
         }
     });
   }

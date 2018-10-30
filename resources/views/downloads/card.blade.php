@@ -13,7 +13,7 @@
     position:absolute;top:25%;
   }
   .biz-card{
-   width:322px;
+   width:338px;
    margin: 0 auto;
    background: #000;
   }
@@ -39,7 +39,7 @@
   }
   .row{
     width: 100%;
-    height: 60px;
+    overflow: hidden;
   }
   .container{
     width: 100%;
@@ -50,7 +50,7 @@
     background-color: #fff;
     margin: 0  5px;
     float: left;
-    margin-top: -25px;
+    /*margin-top: -25px;*/
   }
   .qr img{
     width: 100%;
@@ -60,7 +60,7 @@
     width: 39px;
     height: 18px;
     background-color: #fff;
-    margin:0px 1px 0 0;
+    margin:25px 1px 0 0;
     float: left;
   }
   .bar2{
@@ -265,27 +265,29 @@
   </head>
   <body>
     <div class="holder">
-      <?php if($website->design==1){?>
+      <?php if($card->card_design==1){?>
       <article class="biz-card">
         <h2>{{$card->first_name}} <span  class="text-danger">{{$card->last_name}}</span></h2>
         <h3> {{$card->designation}}</h3>
         <div class="row">
           <div class="container">
             <div class="bar2 bg-danger"></div>
-            <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data={{$card->qr_url}}" /></div>
+            <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data='{{$card->qr_url}}'" /></div>
             <div class="bar1"></div>
           </div>
         </div>
-        <div class="card-details">
-          <ul>
-            <li> Phone: {{$card->phone}}</li>
-            <li> Email: {{$card->email}}</li>
-            <li> Address: {{$card->address}}</li>
-            <li> Website: {{$card->website}}</li>
-          </ul>
+        <div class="row">
+          <div class="card-details">
+            <ul>
+              <li> Phone: {{$card->phone}}</li>
+              <li> Email: {{$card->email}}</li>
+              <li> Address: {{$card->address}}</li>
+              <li> Website: {{$card->website}}</li>
+            </ul>
+          </div>
         </div>
       </article>
-      <?php }elseif($website->design==2){?>
+      <?php }elseif($card->card_design==2){?>
         <article class="container biz-card-design-2">
           <div class="panel">
             <div class="content">
@@ -309,7 +311,7 @@
             </div>
           </div>
         </article>
-      <?php }elseif($website->design==3){?>
+      <?php }elseif($card->card_design==3){?>
         <article class="container biz-card-design-3">
           <dl>
             <dt><img src="{{$website->main_image}}"/></dt>
@@ -324,7 +326,7 @@
                   </ul>
                 </div>
                 <div class="dd">
-                  <div class="code"><img src="https://api.qrserver.com/v1/create-qr-code/?data={{$card->qr_url}}" /></div>
+                  <div class="code"><img src="https://api.qrserver.com/v1/create-qr-code/?data='{{$card->qr_url}}'" /></div>
                 </div>
               </div>
               <div class="dark-bg">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Website;
 use App\Card;
 use App\User;
+use App\Blog;
 use App\payment_details;
 use App\publishing_details;
 use Intervention\Image\Facades\Image;
@@ -55,5 +56,16 @@ class helpers extends Controller
     {
       Mail::to('kimpita9@gmail.com')->send(new Help($request));
       return;
+    }
+    public function blog_form(Request $request)
+    {
+      $title=$request->input('blog_title');
+      $content=$request->input('blog_content');
+      $new_blog=new Blog;
+      $new_blog->user_id=Auth::id();
+      $new_blog->title=$title;
+      $new_blog->content=$content;
+      $new_blog->save();
+      return $new_blog->content;
     }
 }
