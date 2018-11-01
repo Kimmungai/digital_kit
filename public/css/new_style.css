@@ -551,16 +551,16 @@ footer li a:hover{
  content: 'Web';
 }
 .desk .B a:before{
- content: 'B';
+ content: 'C';
 }
 .desk .B a:after{
  content: 'Card';
 }
 .desk .C a:before{
- content: 'C';
+ content: 'B';
 }
 .desk .C a:after{
- content: 'CV';
+ content: 'Blog';
 }
 .desk .D a:before{
  content: 'D';

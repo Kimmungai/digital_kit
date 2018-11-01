@@ -80,41 +80,7 @@
         </div>
       </div>
     </div><!--help form ends here-->
-    <div id="blog-panel" class="new-edit-panel" ng-show="edit_details==11" ng-click="edit_details=0" onclick="unblur_bg()"><!--help form starts here-->
-      <div class="container" ng-click="$event.stopPropagation();">
-        <button type="button" class="close mb-2" aria-label="Close" ng-click="edit_details=0" onclick="unblur_bg()">
-          <span class="fa fa-window-close" aria-hidden="true"></span>
-        </button>
-        <h4>Post a new message</h4>
-        <div class="row mt-3">
-          <div class="col-md-12">
-            <form id="blog_form" method="post">
-              <div class="form-group">
-                <label for="help_name">Title *</label>
-                <input type="text" name="blog_title" class="form-control" placeholder="Title" >
-              </div>
-              <div class="form-group">
-                <label for="formGroupExampleInput2">Message *</label>
-                <textarea name="blog_content" class="form-control" rows="15"></textarea>
-              </div>
-              <div id="blog-social-icons" class="form-group d-none">
-                <label for="help_name">Share on</label>
-                <div class="blog-social-icons" >
-                  <!--<a href="#"><i class="fab fa-facebook-square fb-icon"></i></a>-->
-                  <a id="twitter-share-btn" target="_blank"><i class="fab fa-twitter-square twitter-icon"></i></a>
-                  <!--<i class="fab fa-instagram ig-icon"></i>
-                  <i class="fab fa-linkedin linkedin-icon"></i>-->
-                </div>
-              </div>
-              <div class="form-group">
-                <p id="blog_alert" class="text-success d-none">Your message has been posted!.</p>
-              </div>
-            </form>
-            <button type="btn" class="btn btn-primary"  onclick="submit_blog()"><i class="fa fa-globe"></i> Post</button>
-          </div>
-        </div>
-      </div>
-    </div><!--blog form ends here-->
+
     <div id="new-edit-panel" class="new-edit-panel" ng-show="edit_details==2" ng-click="edit_details=0" onclick="unblur_bg()"><!--Edit form starts here-->
       <div class="container" ng-click="$event.stopPropagation();">
         <form>
@@ -480,21 +446,32 @@
             <div class="panel">
                <ul class="shelf-icons">
                   <li ng-class="active_shelf==1 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#"><i class="fas fa-globe-americas"></i></a></li>
-                  <li ng-class="active_shelf==2 ? 'active' : 'inactive'" ng-click="active_shelf=2"><a href="#"><i class="fa fa-bullseye"></i></a></li>
+                  <li ng-class="active_shelf==2 ? 'active' : 'inactive'" ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true || active_tool==2 && tool_B==true"><a href="#"><i class="fa fa-bullseye"></i></a></li>
+                  <li ng-class="active_shelf==4 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#"><i class="fa fa-comment"></i></a></li>
                   <li ng-class="active_shelf==3 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#"><i class="fa fa-book"></i></a></li>
-                  <li ng-class="active_shelf==4 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#"><i class="fa fa-file"></i></a></li>
                   <li ng-class="active_shelf==5 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                  <li ng-class="active_shelf==7 ? 'active' : 'inactive'" ng-click="active_shelf=7;edit_details=0"><a href="#"><i class="fa fa-edit"></i></a></li>
+                  <!--<li ng-class="active_shelf==7 ? 'active' : 'inactive'" ng-click="active_shelf=7;edit_details=0"><a href="#"><i class="fa fa-edit"></i></a></li>-->
                   <li ng-class="active_shelf==6 ? 'active' : 'inactive'" ng-click="active_shelf=6;edit_details=0"><a href="#"><i class="fa 	fa-question-circle"></i></a></li>
                </ul>
                 <ul class="shelves">
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
-                  <li ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true">Design: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)"><option value="1">expo</option><option value="2">Magic</option><option value="3">New</option><option value="4">Silk</option></select></li>
+                  <li ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true">Theme: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)">
+                    <option value="1">expo</option>
+                    <option value="2">Magic</option>
+                    <option value="3">New</option>
+                    <option value="4">Silk</option>
+                    <option value="5">Silk</option>
+                    <option value="6">Silk</option>
+                    <option value="7">Silk</option>
+                    <option value="8">Silk</option>
+                    <option value="9">Silk</option>
+                    <option value="10">Silk</option>
+                  </select></li>
                   <li ng-click="active_shelf=3" ng-show="active_tool==2 && tool_B==true">Design: <select ng-model="card.card_design" id="card_design" onchange="update_val(this.id,this.value,'','','Card')"><option value="1">stylish</option><option value="2">classic</option><option value="3">elegant</option></select></li>
+                  <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Blog</a></li>
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
-                  <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Curriculum Vitae</a></li>
                   <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
-                  <li ng-click="active_shelf=7;edit_details=11" onclick="blur_bg()"><a href="#"> Blog</a></li>
+                  <!--<li ng-click="active_shelf=7;edit_details=11" onclick="blur_bg()"><a href="#"> Blog</a></li>-->
                   <li ng-click="active_shelf=6;edit_details=10" onclick="blur_bg()"><a href="#"> Help & Support</a></li>
                 </ul>
             </div>
@@ -502,6 +479,7 @@
               <section class="tools">
                 <ul>
                   <li><input id="tool_A"  type="checkbox"  ng-model="tool_A"  ng-click="active_shelf=1;active_tool=1;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Website</li>
+                  <li><input id="tool_C"  type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Blog</li>
                   <li><input id="tool_B"  type="checkbox" ng-model="tool_B" ng-click="active_shelf=3;active_tool=2;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Card</li>
                   <!--<li><input type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3"/> Cv</li>
                   <li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>-->
@@ -522,7 +500,7 @@
               </ul>
               <ul class="mb3">
                 <li ng-show="tool_C==1"  ng-class="active_tool==3 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
-                  <a href="#"><i class="fa fa-file" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
                 </li>
                 <li ng-show="tool_D==1"  ng-class="active_tool==4 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
                   <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i></a>

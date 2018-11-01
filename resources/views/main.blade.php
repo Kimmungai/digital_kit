@@ -110,7 +110,36 @@
     </ul>-->
   </main>
   <main ng-show="active_tool==3">
-    <h2>cvs</h2>
+    <h1><i class="icn fa fa-comment"></i> Post a new message<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <form id="blog_form" method="post">
+              <div class="form-group">
+                <label for="help_name">Title *</label>
+                <input type="text" name="blog_title" class="form-control" placeholder="Title" >
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Message *</label>
+                <textarea name="blog_content" class="form-control" rows="15"></textarea>
+              </div>
+              <div id="blog-social-icons" class="form-group d-none">
+                <label for="help_name">Share on</label>
+                <div class="blog-social-icons" >
+                  <!--<a href="#"><i class="fab fa-facebook-square fb-icon"></i></a>-->
+                  <a id="twitter-share-btn" target="_blank"><i class="fab fa-twitter-square twitter-icon"></i></a>
+                  <!--<i class="fab fa-instagram ig-icon"></i>
+                  <i class="fab fa-linkedin linkedin-icon"></i>-->
+                </div>
+              </div>
+              <div class="form-group">
+                <p id="blog_alert" class="text-success d-none">Your message has been posted!.</p>
+              </div>
+            </form>
+            <button type="btn" class="btn btn-primary"  onclick="submit_blog()"><i class="fa fa-globe"></i> Post</button>
+          </div>
+        </div>
+      </div>
   </main>
   <main ng-show="active_tool==4">
     <h2>letters</h2>

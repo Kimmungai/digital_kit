@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('provider_id')->nullable();
             $table->string('tool_A')->default('true');
             $table->string('tool_B')->default('false');
-            $table->string('tool_C')->default('false');
+            $table->string('tool_C')->default('true');
             $table->string('tool_D')->default('false');
             $table->rememberToken();
             $table->timestamps();
