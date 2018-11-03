@@ -268,6 +268,49 @@
     <!-- ====== //Service Section ====== -->
 
     <!-- ====== Call to Action Area ====== -->
+
+    <section class="section-padding pb-70 bg-img fact-counter" id="counter" style="background-image: url(assets/images/fan-fact-bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <h2 style="color:#fff;"><?php echo $saved_data['vision_statement']; ?></h2>
+            </div>
+        </div>
+    </section>
+    <!-- ====== // Call to Action Area ====== -->
+    <!-- ====== Blog Section ====== -->
+    <section id="service" class="section-padding pb-70 service-area bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Bulletin Board</h2>
+                        <p>Latest News</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+
+            <div class="row">
+              <?php foreach($posts as $post) {?>
+                <!-- Single Service -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <h2><?php echo $post[2]; ?>d</h2>
+                        <p><?php echo $post[3]; ?></p>
+                        <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank">view</a>
+                    </div>
+                </div>
+                <!-- //Single Service -->
+                <?php  }?>
+            </div>
+
+        </div>
+    </section>
+    <!-- ====== //Service Section ====== -->
     <section class="section-padding call-to-action-aria bg-secondary">
         <div class="container">
             <div class="row">
@@ -279,7 +322,7 @@
                     <div class="cta-button">
                         <div class="d-table">
                             <div class="d-table-cell">
-                                <a href="#contact" class="button">Contact me</a>
+                                <a href="#contact" class="button">Donate</a>
                             </div>
                         </div>
                     </div>
@@ -287,8 +330,6 @@
             </div>
         </div>
     </section>
-    <!-- ====== // Call to Action Area ====== -->
-
     <!-- ====== Contact Area ====== -->
     <section id="contact" class="section-padding contact-section bg-light">
         <div class="container">

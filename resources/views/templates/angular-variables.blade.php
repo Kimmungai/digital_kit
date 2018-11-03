@@ -10,6 +10,7 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.client = <?php echo $website; ?>;
     $scope.card = <?php echo $card; ?>;
     $scope.user_details = <?php echo $user; ?>;
+    $scope.user_model = <?php echo Auth::user(); ?>;
 
     //variables
     $scope.active_tool=1;

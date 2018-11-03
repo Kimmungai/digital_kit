@@ -1,3 +1,4 @@
+<?php require_once('../autoload.php');?>
 <!DOCTYPE HTML>
 <!--
 	Landed by HTML5 UP
@@ -17,10 +18,10 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1 id="logo"><a href="index.html">Landed</a></h1>
+					<h1 id="logo"><a href="index.html"><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<!--<li><a href="index.html">Home</a></li>
 							<li>
 								<a href="#">Layouts</a>
 								<ul>
@@ -37,9 +38,11 @@
 										</ul>
 									</li>
 								</ul>
-							</li>
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
+							</li>-->
+							<li><a href="#">Home</a></li>
+							<li><a href="#one"><?php echo $saved_data['about_title']; ?></a></li>
+							<li><a href="#three"><?php echo $saved_data['speciality_title']; ?></a></li>
+							<li><a href="#cta"><?php echo $saved_data['contact_section_title']; ?></a></li>
 						</ul>
 					</nav>
 				</header>
@@ -48,18 +51,17 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h2>The future has landed</h2>
-							<p>And there are no hoverboards or flying cars.<br />
-							Just apps. Lots of mother flipping apps.</p>
+							<h2><?php echo $saved_data['tag_line_1']; ?></h2>
+							<p><?php echo $saved_data['tag_line_2']; ?></p>
 						</header>
-						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+						<span class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					</div>
 					<a href="#one" class="goto-next scrolly">Next</a>
 				</section>
 
 			<!-- One -->
 				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+					<span class="image fit main"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					<div class="content">
 						<div class="container">
 							<div class="row">
@@ -91,7 +93,7 @@
 
 			<!-- Two -->
 				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<span class="image fit main"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Interdum amet non magna accumsan</h2>
@@ -99,7 +101,7 @@
 						</header>
 						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
 						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
+							<li><a href="#" class="button">Support Me</a></li>
 						</ul>
 					</div>
 					<a href="#three" class="goto-next scrolly">Next</a>
@@ -107,15 +109,60 @@
 
 			<!-- Three -->
 				<section id="three" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<span class="image fit main bottom"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Interdum felis blandit praesent sed augue</h2>
 							<p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
 						</header>
 						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+						<!-- Skill Area -->
+						<div id="skills" class="skill-area">
+
+								<!-- Single skill -->
+								<div class="kill">
+										<div class="skillbar" data-percent="<?php echo $saved_data['skill_1_level']; ?>%">
+												<div class="skillbar-title"><span><?php echo $saved_data['skill_1']; ?></span></div>
+												<div class="skillbar-bar"></div>
+												<div class="skill-bar-percent"><?php echo $saved_data['skill_1_level']; ?>%</div>
+										</div>
+								</div>
+								<!-- //Single skill -->
+
+								<!-- Single skill -->
+								<div class="kill">
+										<div class="skillbar" data-percent="<?php echo $saved_data['skill_2_level']; ?>%">
+												<div class="skillbar-title"><span><?php echo $saved_data['skill_2']; ?></span></div>
+												<div class="skillbar-bar"></div>
+												<div class="skill-bar-percent"><?php echo $saved_data['skill_2_level']; ?>%</div>
+										</div>
+								</div>
+								<!-- //Single skill -->
+
+								<!-- Single skill -->
+								<div class="single-skill">
+										<div class="skillbar" data-percent="<?php echo $saved_data['skill_3_level']; ?>%">
+												<div class="skillbar-title"><span><?php echo $saved_data['skill_3']; ?></span></div>
+												<div class="skillbar-bar"></div>
+												<div class="skill-bar-percent"><?php echo $saved_data['skill_3_level']; ?>%</div>
+										</div>
+								</div>
+								<!-- //Single skill -->
+
+								<!-- Single skill -->
+								<div class="single-skill">
+										<div class="skillbar" data-percent="<?php echo $saved_data['skill_4_level']; ?>%">
+												<div class="skillbar-title"><span><?php echo $saved_data['skill_4']; ?></span></div>
+												<div class="skillbar-bar"></div>
+												<div class="skill-bar-percent"><?php echo $saved_data['skill_4_level']; ?>%</div>
+										</div>
+								</div>
+								<!-- //Single skill -->
+
+						</div>
+						<!-- //Skill Area -->
 						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
+							<li><a href="#" class="button">Check out my bulletin board</a></li>
 						</ul>
 					</div>
 					<a href="#four" class="goto-next scrolly">Next</a>
@@ -125,46 +172,23 @@
 				<section id="four" class="wrapper style1 special fade-up">
 					<div class="container">
 						<header class="major">
-							<h2>Accumsan sed tempus adipiscing blandit</h2>
-							<p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+							<h2>Bulletin Board</h2>
+							<p>Latest News</p>
 						</header>
 						<div class="box alt">
 							<div class="row gtr-uniform">
+								<?php foreach($posts as $post) {?>
 								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-area-chart"></span>
-									<h3>Ipsum sed commodo</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+									<span class="icon alt major fa-globe"></span>
+									<a href="#"><h3><?php echo $post[2];?></h3>
+									<p><?php echo $post[3];?></p></a>
 								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-comment"></span>
-									<h3>Eleifend lorem ornare</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-flask"></span>
-									<h3>Cubilia cep lobortis</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-paper-plane"></span>
-									<h3>Non semper interdum</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-file"></span>
-									<h3>Odio laoreet accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-lock"></span>
-									<h3>Massa arcu accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
+							 <?php } ?>
 							</div>
 						</div>
 						<footer class="major">
 							<ul class="actions special">
-								<li><a href="#" class="button">Magna sed feugiat</a></li>
+								<li><a href="#" class="button"><?php echo $saved_data['contact_section_title']; ?></a></li>
 							</ul>
 						</footer>
 					</div>
@@ -174,13 +198,15 @@
 				<section id="five" class="wrapper style2 special fade">
 					<div class="container">
 						<header>
-							<h2>Magna faucibus lorem diam</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+							<h2><?php echo $saved_data['contact_section_title']; ?></h2>
+							<p>Looking forward to hearing from you!</p>
 						</header>
 						<form method="post" action="#" class="cta">
 							<div class="row gtr-uniform gtr-50">
-								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+								<div class="col-12 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your Name" /></div>
+								<div class="col-12 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+								<div class="col-12 col-12-xsmall"><textarea name="message" id="message" placeholder="Your Message" /></textarea></div>
+								<div class="col-4 col-12-xsmall"><input type="submit" value="Send" class="fit primary" /></div>
 							</div>
 						</form>
 					</div>

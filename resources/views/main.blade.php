@@ -110,6 +110,35 @@
     </ul>-->
   </main>
   <main ng-show="active_tool==3">
+    <h1><i class="icn fa fa-comment"></i> Blog Posts<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                 <h5 class="card-title border-bottom pb-3">Create New Post </h5>
+                 <a href="#" class="btn btn-sm btn-danger float-right" ng-click="active_tool=20;active_shelf=4;">New <i class="fas fa-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          @foreach(Auth::user()->blog->reverse() as $post)
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="Card image cap">
+              <div class="card-body">
+                 <h5 class="card-title border-bottom pb-3">{{$post->title}} <a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a></h5>
+                 <p class="card-text">{{$post->content}}</p>
+                 <a href="#" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+  </main>
+  <main ng-show="active_tool==20">
     <h1><i class="icn fa fa-comment"></i> Post a new message<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
       <div class="container">
         <div class="row mt-3">

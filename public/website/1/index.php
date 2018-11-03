@@ -110,6 +110,8 @@
 						</div>
 					</section>
 
+
+
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
@@ -117,13 +119,33 @@
 								<h2><?php echo $saved_data['vision_statement']; ?></h2>
 							</div>
 						</section>
+						<!-- Blog -->
+							<section id="three" class="wrapper style3 special">
+								<div class="inner">
+									<header class="major">
+										<h2>Bulletin Board </h2>
+										<!--<p><?php echo $saved_data['speciality_sub_title']; ?></p>-->
+									</header>
+									<ul class="features">
+										<?php foreach($posts as $post) {?>
+										<li class="icon fa-globe">
+											<h3><?php echo $post[2]; ?></h3>
+											<p><?php echo $post[3]; ?></p>
+										</li>
+										<?php  } ?>
+									</ul>
+								</div>
+							</section>
 						<section class="spotlight">
 							<div class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></div><div class="content">
 								<h2><?php echo $saved_data['about_story_title']; ?></h2>
 								<p><?php echo $saved_data['mission_statement']; ?></p>
+								<a href="#" class="button fit primary">Donate</a>
 							</div>
 						</section>
 					</section>
+
+
 
 				<!-- Three -->
 					<section id="three" class="wrapper style3 special">

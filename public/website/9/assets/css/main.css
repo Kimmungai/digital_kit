@@ -6,7 +6,51 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+/* skill*/
+.skillbar {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    background: #eee;
+    height: 35px;
+    -webkit-transition-property: width, background-color;
+    transition-property: width, background-color;
+}
 
+.skillbar-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    font-size: 14px;
+    color: #ffffff;
+    background: #000;
+}
+
+.skillbar-title span {
+    display: block;
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.skillbar-bar {
+    height: 35px;
+    width: 0px;
+    background-color: #ffc900;
+}
+
+.skill-bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+}
+
+/*end skill*/
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,

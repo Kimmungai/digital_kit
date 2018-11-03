@@ -82,14 +82,7 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	html {
-		background-color: #313a3d;
-		background-attachment: fixed,						fixed;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-		background-position: top left,					center center;
-		background-repeat: repeat,						none;
-		background-size: auto,						cover;
-	}
+	
 
 	html.is-preload *, html.is-preload *:before, html.is-preload *:after {
 		-moz-animation: none !important;

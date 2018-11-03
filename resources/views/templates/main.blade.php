@@ -457,15 +457,15 @@
                   <li ng-click="active_shelf=1;active_tool=1;edit_details=0" ng-show="tool_A==true"><a href="#">Website</a></li>
                   <li ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true">Theme: <select ng-model="client.design" id="design" onchange="update_val(this.id,this.value)">
                     <option value="1">expo</option>
-                    <option value="2">Magic</option>
-                    <option value="3">New</option>
+                    <!--<option value="2">Magic</option>
+                    <option value="3">New</option>-->
                     <option value="4">Silk</option>
-                    <option value="5">Silk</option>
+                    <!--<option value="5">Silk</option>
                     <option value="6">Silk</option>
-                    <option value="7">Silk</option>
-                    <option value="8">Silk</option>
-                    <option value="9">Silk</option>
-                    <option value="10">Silk</option>
+                    <option value="7">Silk</option>-->
+                    <option value="8">Magic</option>
+                    <option value="9">Fancy</option>
+                    <!--<option value="10">Silk</option>-->
                   </select></li>
                   <li ng-click="active_shelf=3" ng-show="active_tool==2 && tool_B==true">Design: <select ng-model="card.card_design" id="card_design" onchange="update_val(this.id,this.value,'','','Card')"><option value="1">stylish</option><option value="2">classic</option><option value="3">elegant</option></select></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Blog</a></li>
@@ -494,12 +494,12 @@
                 <li ng-show="tool_A==1" ng-class="active_tool==1 || active_tool==5 || active_tool==6 ? 'active' : 'inactive'" ng-click="active_shelf=1;active_tool=1;edit_details=0" class="A">
                   <a href="#"><i class="fa fa-globe-americas" aria-hidden="true"></i></a>
                 </li>
-                <li ng-show="tool_B==1"  ng-class="active_tool==2 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">
+                <li ng-show="tool_B==1"  ng-class="active_tool==2  ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" class="B">
                   <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
                 </li>
               </ul>
               <ul class="mb3">
-                <li ng-show="tool_C==1"  ng-class="active_tool==3 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
+                <li ng-show="tool_C==1"  ng-class="active_tool==3 || active_tool==20 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
                   <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
                 </li>
                 <li ng-show="tool_D==1"  ng-class="active_tool==4 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
