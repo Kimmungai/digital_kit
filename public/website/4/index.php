@@ -299,8 +299,8 @@
                         <div class="service-icon">
                             <i class="fa fa-globe"></i>
                         </div>
-                        <h2><?php echo $post[2]; ?>d</h2>
-                        <p><?php echo $post[3]; ?></p>
+                        <h2><?php echo $post['title']; ?>d</h2>
+                        <p><?php echo $post['content']; ?></p>
                         <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank">view</a>
                     </div>
                 </div>

@@ -180,8 +180,8 @@
 								<?php foreach($posts as $post) {?>
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<span class="icon alt major fa-globe"></span>
-									<a href="#"><h3><?php echo $post[2];?></h3>
-									<p><?php echo $post[3];?></p></a>
+									<a href="#"><h3><?php echo $post['title'];?></h3>
+									<p><?php echo $post['content'];?></p></a>
 								</section>
 							 <?php } ?>
 							</div>

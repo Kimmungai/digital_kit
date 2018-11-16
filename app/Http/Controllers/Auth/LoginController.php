@@ -11,6 +11,7 @@ use App\publishing_details;
 use App\payment_details;
 use App\Card;
 use App\Website;
+use App\Data\Data;
 use File;
 use Intervention\Image\Facades\Image;
 class LoginController extends Controller
@@ -250,6 +251,7 @@ class LoginController extends Controller
     public function websiteFindOrCreate($user_object,$user_id,$provider)
     {
         $checkWebsite = Website::where('id',$user_id)->first();
+        $data=new Data();
         if($checkWebsite)
         {
           return $checkWebsite;
@@ -320,9 +322,10 @@ class LoginController extends Controller
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->user_id = $user_id;
+
             //$new_website->last_name = $user_object->getName();
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_name.'</span>';
-            $new_website->tag_line_2 = $tag_line_2;
+            $new_website->tag_line_1 = $data->tag_line_1($user_name);
+            $new_website->tag_line_2 = $data->tag_line_2($user_company, $user_location);
             $new_website->about_story = $user_bio;
             $new_website->mission_statement = $mission_statement;
             $new_website->vision_statement = $vision_statement.$hireable;
@@ -379,8 +382,8 @@ class LoginController extends Controller
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.' '.$user_last_name.'</span>';
-            $new_website->tag_line_2 = $tag_line_2;
+            $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
+            $new_website->tag_line_2 = $data->tag_line_2($user_designation, $user_address);
             $new_website->contact_receiving_email = $user_email;
             $new_website->about_story = $user_bio;
             $new_website->vision_statement = $vision_statement;
@@ -421,8 +424,8 @@ class LoginController extends Controller
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.'</span>';
-            $new_website->tag_line_2 = $user_designation != null ? $user_designation : $tag_line_2;
+            $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
+            $new_website->tag_line_2 = $data->tag_line_2('Artist', $user_address);
             $new_website->twitter_link = $twitter_link;
             $new_website->about_story = $user_bio;
             $new_website->vision_statement = $vision_statement;
@@ -439,6 +442,7 @@ class LoginController extends Controller
             $user_last_name=$user_object->getNickname()!= null ? $user_object->getNickname()  : '';
             $user_designation='Administrator';
             $user_email=$user_object->getEmail()!= null ? $user_object->getEmail()  : '';
+            $user_address='';
             /*$user_address=$user_object['location'] ? $user_object['location'] != null : '';
             $user_website=$user_object['url'] ? $user_object['url'] != null : '';
             $user_qr_url=$user_object['url'] ? $user_object['url'] != null : '';*/
@@ -455,8 +459,8 @@ class LoginController extends Controller
             $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
-            $new_website->tag_line_1 = 'Hi, I am <span>'.$user_first_name.'</span>';
-            $new_website->tag_line_2 = 'An administrator based in <span>'.$user_first_name.'</span>';
+            $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
+            $new_website->tag_line_2 = $data->tag_line_2($user_designation, $user_address);
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;

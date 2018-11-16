@@ -5,12 +5,12 @@ app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');
 });
-app.controller('Ctrl', function($scope, $http) {
+app.controller('Ctrl', function($scope, $http, $filter) {
 
     $scope.client = <?php echo $website; ?>;
     $scope.card = <?php echo $card; ?>;
     $scope.user_details = <?php echo $user; ?>;
-    $scope.user_model = <?php echo Auth::user(); ?>;
+    $scope.posts = <?php echo Auth::user()->blog->reverse(); ?>;
 
     //variables
     $scope.active_tool=1;
@@ -25,8 +25,31 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.publish_notes =1;
     //if($scope.user_details.publishing_details.publishing_period==='1 years'){$scope.publishing_cost='99';}
     //if($scope.user_details.publishing_details.publishing_period==='2 years'){$scope.publishing_cost='179';}
-    //if($scope.user_details.publishing_details.publishing_period==='3 years'){$scope.publishing_cost='249';}
+    //if($scope.user_details.publishing_details.publishing_period==='3 years'){$scope.publishing_cost='249';}]
+    $scope.currentPage = 0;
+    $scope.pageSize = 3;
+    $scope.all_posts = [];
+    $scope.q = '';
+    $scope.getData = function () {
+      // needed for the pagination calc
+      // https://docs.angularjs.org/api/ng/filter/filter
+      return $filter('filter')($scope.all_posts, $scope.q)
+       }
+       $scope.numberOfPages=function(){
+           return Math.ceil($scope.getData().length/$scope.pageSize);
+       }
+
+       for (var i=0; i<{{count(Auth::user()->blog)}}; i++) {
+           $scope.all_posts.push($scope.posts[i]);
+       }
   });
+  app.filter('startFrom', function() {
+      return function(input, start) {
+          start = +start; //parse to int
+          return input.slice(start);
+      }
+  });
+
 </script>
 <script>
   //jquery ajax

@@ -57,6 +57,11 @@ class helpers extends Controller
       Mail::to('kimpita9@gmail.com')->send(new Help($request));
       return;
     }
+    public function blog($blog_id='')
+    {
+      $blog=Blog::where('id',$blog_id)->first();
+      return view('blog',compact('blog'));
+    }
     public function blog_form(Request $request)
     {
       $title=$request->input('blog_title');

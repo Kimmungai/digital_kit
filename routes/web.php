@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'main@index')->middleware('auth')->name('home');
+Route::get('/blog/{blog_id}', 'helpers@blog')->middleware('auth')->name('blog');
 Route::get('/client', 'main@show')->middleware('auth');
 Route::post('/client-update', 'main@update')->middleware('auth');
 Route::get('/download-card', 'downloads@card')->middleware('auth');

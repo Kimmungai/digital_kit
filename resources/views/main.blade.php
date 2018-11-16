@@ -4,7 +4,7 @@
     <h2>No active tool</h2>
   </main>
   <main ng-show="active_tool==1 && tool_A==true">
-    <h1><i class="icn fas fa-globe-americas"></i> Your Website is Ready! <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+    <h1><i class="icn fas fa-globe-americas"></i> Welcome <%client.first_name%> <%client.last_name%> to your Website! <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
     <ul class="list-inline text-center mt-2">
       <li class="list-inline-item"><a href="#" class="prev-link btn btn-primary btn-sm" target="_blank"><span class="fa fa-eye"></span> Preview</a></li>
       <li class="list-inline-item" ng-click="active_tool=5;edit_details=0"><a href="#" class="btn btn-primary btn-sm"><span class="fas fa-globe-americas"></span> Publish</a></li>
@@ -123,18 +123,35 @@
           </div>
         </div>
         <div class="row mt-3">
-          @foreach(Auth::user()->blog->reverse() as $post)
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" ng-repeat="post in all_posts | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
             <div class="card">
               <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="Card image cap">
               <div class="card-body">
-                 <h5 class="card-title border-bottom pb-3">{{$post->title}} <a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a></h5>
-                 <p class="card-text">{{$post->content}}</p>
-                 <a href="#" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                 <h5 class="card-title border-bottom pb-3"><% post.title %> <a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a></h5>
+                 <p class="card-text"><% post.content %></p>
+                 <a href="{{url('/')}}/blog/<% post.id %>" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>
               </div>
             </div>
           </div>
-          @endforeach
+
+        </div>
+        <div class="row">
+          <nav aria-label="...">
+            <ul class="pagination pull-right">
+              <li class="page-item" ng-hide="currentPage == 0" ng-click="currentPage=currentPage-1">
+                <span class="page-link">Previous</span>
+              </li>
+              <li class="page-item active">
+                <span class="page-link">
+                  <%currentPage+1%>/<%numberOfPages()%>
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
+              <li class="page-item" ng-hide="currentPage >= getData().length/pageSize - 1">
+                <a class="page-link" href="#" ng-click="currentPage=currentPage+1">Next</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
   </main>
@@ -213,28 +230,64 @@
                 <th>Website Url</th><td class="text-lower"><p ng-show="edit_publish_url==1"><% user_details.publishing_details.website_url %></p><input id="website_url" class="form-control text-lower" type="text" ng-show="edit_publish_url==2" ng-model="user_details.publishing_details.website_url" onchange="update_val(this.id,this.value,'','','publishing_details')" autofocus/></td><td><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==1" ng-click="edit_publish_url=2"><span class="fa fa-edit"></span> Edit</a><a class="btn btn-primary btn-sm" href="#" ng-show="edit_publish_url==2" ng-click="edit_publish_url=1"><span class="fa fa-thumbs-up"></span> done</a></td>
               </tr>
               <tr>
-                <th>Plan</th><td><p><% user_details.publishing_details.publishing_plan %></p></td><td><select id="publishing_plan" ng-model="user_details.publishing_details.publishing_plan" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Starter ($4 p.m.)</option><option>Silver ($9 p.m.)</option><option>Gold ($19 p.m.)</option></select></td>
+                <th>Plan</th><td><p><% user_details.publishing_details.publishing_plan %></p></td><td><select id="publishing_plan" ng-model="user_details.publishing_details.publishing_plan" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Starter ($9.99 p.m.)</option><option>Silver ($19.99 p.m.)</option><option>Gold ($29.00 p.m.)</option></select></td>
               </tr>
               <tr>
                 <th>Billing cycle</th><td><p><% user_details.publishing_details.publishing_period %></p></td><td><select id="publishing_period" ng-model="user_details.publishing_details.publishing_period" onchange="update_val(this.id,this.value,'','','publishing_details')"><option>Monthly</option><option>Every 3 months</option><option>Every 6 months</option><option>Yearly</option><option>Every 3 years</option><option>Every 5 years</option></select></td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Monthly'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$9.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge nyau</p></td><td>$9.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 months'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$29.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge mburi</p></td><td>$19.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Every 6 months'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$59.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge nogo</p></td><td>$29.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Yearly'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$99.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$28.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 years'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$179.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$56.99</td>
               </tr>
-              <tr ng-if="user_details.publishing_details.publishing_period==='Every 5 years'">
-                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$249.99</td>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$85.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$53.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$107.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$161.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$101.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$256.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$305.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$269.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$539.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$809.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$389.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$779.99</td>
+              </tr>
+              <tr ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'">
+                <th>Cost</th><td><p>Hosting fees, support and service charge</p></td><td>$1,169.99</td>
               </tr>
             </tbody>
           </table>
@@ -256,12 +309,26 @@
                 <td>
                   <div class="row">
                     <div class="col-sm-2">
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly'" type="text" value="9.99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months'" type="text" value="29.99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months'" type="text" value="59.99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Yearly'" type="text" value="99.99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 years'" type="text" value="179.99" />
-                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 5 years'" type="text" value="249.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="9.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="28.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="53.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="101.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="269.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="389.99" />
+
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="19.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="56.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="107.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="256.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="539.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Silver ($19.99 p.m.)'" type="text" value="779.99" />
+
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="29.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="85.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="161.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Yearly' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="305.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 years' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="809.99" />
+                      <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 5 years' && user_details.publishing_details.publishing_plan==='Gold ($29.00 p.m.)'" type="text" value="1169.99" />
                     </div>
                     <div class="col-sm-3"><div class="btn" id="pay-btn"></div></div>
                   </div>

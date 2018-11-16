@@ -110,8 +110,8 @@
 								<?php foreach($posts as $post) {?>
 								<li>
 									<span class="icon major fa-globe"></span>
-									<h3><?php echo $post[2]?></h3>
-									<p><?php echo $post[3]?></p>
+									<h3><?php echo $post['title']?></h3>
+									<p><?php echo $post['content']?></p>
 								</li>
 							<?php } ?>
 							</ul>
