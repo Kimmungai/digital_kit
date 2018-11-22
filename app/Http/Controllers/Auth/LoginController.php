@@ -432,8 +432,8 @@ class LoginController extends Controller
             $friends_count=$user_object['friends_count']!= null ? 'I welcome you to join my list of '.$user_object['friends_count'].' friends on twitter.':'';
             $followers_count=$user_object['followers_count']!= null ? ' I do enjoy spreading positive influence. Currently I have '.$user_object['followers_count'].' followers on twitter.':'';
             $user_bio='I value friendship and open communication. '.$friends_count.$followers_count;
-            $status=$user_object['status']['text']!= null ? ' Here is my latest tweet: "'.$user_object['status']['text'].'"' : '';
-            $vision_statement=$user_first_name != null ? 'My handle name is @'.$user_first_name.$status:' I believe Life ain\'t always beautiful but it\'s a beautiful ride.!';
+            //$status=$user_object['status']['text']!= null ? ' Here is my latest tweet: "'.$user_object['status']['text'].'"' : '';
+            $vision_statement=$user_first_name != null ? 'My handle name is @'.$user_first_name :' I believe Life ain\'t always beautiful but it\'s a beautiful ride.!';
             $mission_statement=$user_object['statuses_count'] != null ? 'I am keen on creating and maintaining valuable relations online by sharing my thoughts and experiences. I have shared about '.$user_object['statuses_count'].' status updates so far.':' My mission is to make a difference in the lives of others by sharing my life experiences and knowledge.';
             ##end variables####
             $avatar = file_get_contents(str_replace('_normal','',$user_object->getAvatar()));

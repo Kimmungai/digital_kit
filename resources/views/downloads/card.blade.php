@@ -315,7 +315,7 @@
           </div>
         </article>
       <?php }elseif($card->card_design==3){?>
-        <article class="container biz-card-design-3">
+        <article class="biz-card-design-3">
           <dl>
             <dt><img src="{{$website->main_image}}"/></dt>
             <dd>
