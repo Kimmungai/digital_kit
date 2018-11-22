@@ -35,26 +35,34 @@
 			background-size: cover;
 		}
 		</style>
+		<style>
+		* {box-sizing: border-box}
+
+		.skill-container {
+		  width: 100%;
+		  background-color: #ddd;
+		}
+
+		.skills {
+		  text-align: right;
+		  padding: 6px;
+		  color: white;
+		}
+
+		.skill_1 {width: <?php echo $saved_data['skill_1_level'];?>%; background-color: #4CAF50;}
+		.skill_2 {width: <?php echo $saved_data['skill_2_level'];?>%; background-color: #2196F3;}
+		.skill_3 {width: <?php echo $saved_data['skill_3_level'];?>%; background-color: #f44336;}
+		.skill_4 {width: <?php echo $saved_data['skill_4_level'];?>%; background-color: #808080;}
+		.spotlight p{
+			text-align: left;
+			padding: 0;
+			margin: 0.5em 0;
+		}
+		</style>
 		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 	</head>
 	<body class="landing is-preload" style="opacity:0.8">
 
-		<!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat"
-      attribution=setup_tool
-      page_id="1908267229501969">
-    </div>
-<!-- End Load Facebook SDK for JavaScript -->
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
@@ -68,7 +76,7 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="#">Home</a></li>
+											<!--<li><a href="#">Home</a></li>-->
 											<li><a href="#one"><?php echo $saved_data['about_title']; ?></a></li>
 											<li><a href="#three"><?php echo $saved_data['speciality_title']; ?></a></li>
 											<li><a href="#cta"><?php echo $saved_data['contact_section_title']; ?></a></li>
@@ -116,10 +124,13 @@
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></div><div class="content">
-								<h2><?php echo $saved_data['vision_statement']; ?></h2>
+								<h2><?php echo $saved_data['about_story_title']; ?></h2>
+								<p><?php echo $saved_data['vision_statement']; ?></p>
+								<p><?php echo $saved_data['mission_statement']; ?></p>
 							</div>
 						</section>
 						<!-- Blog -->
+						<?php if(count($posts)){ ?>
 							<section id="three" class="wrapper style3 special">
 								<div class="inner">
 									<header class="major">
@@ -136,11 +147,28 @@
 									</ul>
 								</div>
 							</section>
+						<?php }?>
 						<section class="spotlight">
 							<div class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></div><div class="content">
-								<h2><?php echo $saved_data['about_story_title']; ?></h2>
-								<p><?php echo $saved_data['mission_statement']; ?></p>
-								<a href="#" class="button fit primary">Donate</a>
+								<h2><?php echo $saved_data['skill_title']; ?></h2>
+								<!--<p><?php echo $saved_data['mission_statement']; ?></p>
+								<a href="#" class="button fit primary">Donate</a>-->
+								<p><?php echo $saved_data['skill_1']; ?></p>
+								<div class="skill-container">
+								  <div class="skills skill_1"><?php echo $saved_data['skill_1_level']; ?>%</div>
+								</div>
+								<p><?php echo $saved_data['skill_2']; ?></p>
+								<div class="skill-container">
+								  <div class="skills skill_2"><?php echo $saved_data['skill_2_level']; ?>%</div>
+								</div>
+								<p><?php echo $saved_data['skill_3']; ?></p>
+								<div class="skill-container">
+								  <div class="skills skill_3"><?php echo $saved_data['skill_3_level']; ?>%</div>
+								</div>
+								<p><?php echo $saved_data['skill_4']; ?></p>
+								<div class="skill-container">
+								  <div class="skills skill_4"><?php echo $saved_data['skill_4_level']; ?>%</div>
+								</div>
 							</div>
 						</section>
 					</section>

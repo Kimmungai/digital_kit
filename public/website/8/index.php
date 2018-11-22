@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Highlights by HTML5 UP</title>
+		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -21,6 +21,31 @@
 			background-size: auto,						cover;
 		}
 		</style>
+		<style>
+		* {box-sizing: border-box}
+
+		.skill-container {
+		  width: 100%;
+		  background-color: #ddd;
+		}
+
+		.skills {
+		  text-align: right;
+		  padding: 6px;
+		  color: white;
+		}
+
+		.skill_1 {width: <?php echo $saved_data['skill_1_level'];?>%; background-color: #808080;}
+		.skill_2 {width: <?php echo $saved_data['skill_2_level'];?>%; background-color: #808080;}
+		.skill_3 {width: <?php echo $saved_data['skill_3_level'];?>%; background-color: #808080;}
+		.skill_4 {width: <?php echo $saved_data['skill_4_level'];?>%; background-color: #808080;}
+		.skills-sec p{
+			text-align: left;
+			padding: 0;
+			margin: 0;
+		}
+		</style>
+		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 	</head>
 	<body class="is-preload">
 
@@ -43,9 +68,30 @@
 					<span class="image fit primary"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					<div class="content">
 						<header class="major">
-							<h2>Who I am</h2>
+							<h2><?php echo $saved_data['about_title']; ?></h2>
 						</header>
-						<p>Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum.</p>
+						<p><?php echo $saved_data['about_story']; ?></p>
+						<p><?php echo $saved_data['skill_title']; ?></p>
+						<!--skills-->
+						<div class="skills-sec">
+							<p><?php echo $saved_data['skill_1']; ?></p>
+							<div class="skill-container">
+								<div class="skills skill_1"><?php echo $saved_data['skill_1_level']; ?>%</div>
+							</div>
+							<p><?php echo $saved_data['skill_2']; ?></p>
+							<div class="skill-container">
+								<div class="skills skill_2"><?php echo $saved_data['skill_2_level']; ?>%</div>
+							</div>
+							<p><?php echo $saved_data['skill_3']; ?></p>
+							<div class="skill-container">
+								<div class="skills skill_3"><?php echo $saved_data['skill_3_level']; ?>%</div>
+							</div>
+							<p><?php echo $saved_data['skill_4']; ?></p>
+							<div class="skill-container">
+								<div class="skills skill_4"><?php echo $saved_data['skill_4_level']; ?>%</div>
+							</div>
+						</div>
+						<!--end skills-->
 					</div>
 					<a href="#two" class="goto-next scrolly">Next</a>
 				</div>
@@ -57,25 +103,29 @@
 					<span class="image fit primary"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					<div class="content">
 						<header class="major">
-							<h2>Stuff I do</h2>
+							<h2><?php echo $saved_data['speciality_title']; ?></h2>
 						</header>
-						<p>Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate.</p>
+						<!--<p>Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate.</p>-->
 						<ul class="icons-grid">
 							<li>
-								<span class="icon major fa-camera-retro"></span>
-								<h3>Magna Etiam</h3>
+								<span class="icon major <?php echo $saved_data['speciality_1_icon']; ?>"></span>
+								<h3><?php echo $saved_data['speciality_1']; ?></h3>
+								<p><?php echo $saved_data['speciality_1_text']; ?></p>
 							</li>
 							<li>
-								<span class="icon major fa-pencil"></span>
-								<h3>Lorem Ipsum</h3>
+								<span class="icon major <?php echo $saved_data['speciality_2_icon']; ?>"></span>
+								<h3><?php echo $saved_data['speciality_2']; ?></h3>
+								<p><?php echo $saved_data['speciality_2_text']; ?></p>
 							</li>
 							<li>
-								<span class="icon major fa-code"></span>
-								<h3>Nulla Tempus</h3>
+								<span class="icon major <?php echo $saved_data['speciality_3_icon']; ?>"></span>
+								<h3><?php echo $saved_data['speciality_3']; ?></h3>
+								<p><?php echo $saved_data['speciality_3_text']; ?></p>
 							</li>
 							<li>
-								<span class="icon major fa-coffee"></span>
-								<h3>Sed Feugiat</h3>
+								<span class="icon major <?php echo $saved_data['speciality_4_icon']; ?>"></span>
+								<h3><?php echo $saved_data['speciality_4']; ?></h3>
+								<p><?php echo $saved_data['speciality_4_text']; ?></p>
 							</li>
 						</ul>
 					</div>
@@ -91,21 +141,27 @@
 						<header class="major">
 							<h2>One more thing</h2>
 						</header>
-						<p>Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum.</p>
-						<input type="button" value="Donate" class="primary">
+						<p><?php echo $saved_data['vision_statement']; ?></p>
+						<p><?php echo $saved_data['mission_statement']; ?></p>
+						<!--<input type="button" value="Donate" class="primary">-->
 					</div>
-					<a href="#footer" class="goto-next scrolly">Next</a>
+					<?php if(count($posts)){ ?>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				  <?php }else{ ?>
+						<a href="#footer" class="goto-next scrolly">Next</a>
+					<?php } ?>
 				</div>
 			</section>
 			<!-- Two -->
-				<section id="two" class="main special">
+			<?php if(count($posts)){ ?>
+				<section id="four" class="main special">
 					<div class="container">
 						<span class="image fit primary"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 						<div class="content">
 							<header class="major">
 								<h2>Bulletin board</h2>
 							</header>
-							<p>Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate.</p>
+							<p>Latest News</p>
 							<ul class="icons-grid">
 								<?php foreach($posts as $post) {?>
 								<li>
@@ -116,15 +172,15 @@
 							<?php } ?>
 							</ul>
 						</div>
-						<a href="#three" class="goto-next scrolly">Next</a>
+						<a href="#footer" class="goto-next scrolly">Next</a>
 					</div>
 				</section>
-
+			<?php }?>
 		<!-- Footer -->
 			<section id="footer">
 				<div class="container">
 					<header class="major">
-						<h2>Get in touch</h2>
+						<h2><?php echo $saved_data['contact_section_title']; ?></h2>
 					</header>
 					<form method="post" action="#">
 						<div class="row gtr-uniform">
@@ -141,14 +197,14 @@
 				</div>
 				<footer>
 					<ul class="icons">
-						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon alt fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="<?php echo $saved_data['twitter_link']; ?>" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="<?php echo $saved_data['facebook_link']; ?>" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="<?php echo $saved_data['linkedin_link']; ?>" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="<?php echo $saved_data['google_plus_link']; ?>" class="icon alt fa-google-plus"><span class="label">Google plus</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<li>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://biznesskit.com/">Digital Kit</a></li>
 					</ul>
 				</footer>
 			</section>

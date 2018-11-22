@@ -7,6 +7,7 @@
     <link  href="{{url('/css/new_style.css')}}" rel="stylesheet">
     <link  href="{{url('/css/website.css')}}" rel="stylesheet">
     <link href="{{url('/css/ssi-uploader.min.css')}}" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="{{url('/img/favicon.png')}}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>biznessKit</title>
     <script src="{{url('/js/angular.min.js')}}"></script>
@@ -100,12 +101,12 @@
           </div>
           <div class="form-group">
             <label for="designation"><i class="fa fa-briefcase"></i> Designation</label>
-            <input type="text" id="designation" class="form-control form-control-lg"  placeholder="" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')">
+            <input type="text" id="designation" class="form-control form-control-lg"  placeholder="" ng-model="card.designation" onchange="update_val(this.id,this.value,'','','Card')" maxlength="20">
             <small class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="phone"><i class="fa fa-mobile-alt"></i> Phone</label>
-            <input type="text" id="phone" class="form-control form-control-lg" placeholder="" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')">
+            <input type="text" id="phone" class="form-control form-control-lg" placeholder="" ng-model="card.phone" onchange="update_val(this.id,this.value,'','','Card')" maxlength="12">
             <small class="form-text text-muted"></small>
           </div>
           <div class="form-group">
@@ -115,17 +116,17 @@
           </div>
           <div class="form-group">
             <label for="address"><i class="fa fa-map-marker-alt"></i> Address</label>
-            <input type="text"  id="address" class="form-control form-control-lg" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')">
+            <input type="text"  id="address" class="form-control form-control-lg" placeholder="" ng-model="card.address" onchange="update_val(this.id,this.value,'','','Card')" maxlength="25">
             <small class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="website"><i class="fa fa-globe-americas"></i> Website</label>
-            <input type="text" id="website" class="form-control form-control-lg" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')">
+            <input type="text" id="website" class="form-control form-control-lg" placeholder="" ng-model="card.website" onchange="update_val(this.id,this.value,'','','Card')" maxlength="25">
             <small class="form-text text-muted"></small>
           </div>
           <div class="form-group">
             <label for="qr_url"><i class="fa fa-qrcode"></i> Qr url</label>
-            <input type="text" id="qr_url" class="form-control form-control-lg" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')">
+            <input type="text" id="qr_url" class="form-control form-control-lg" placeholder="" ng-model="card.qr_url" onchange="update_val(this.id,this.value,'','','Card')" maxlength="25">
             <small class="form-text text-muted"></small>
           </div>
           <button type="submit" class="btn btn-primary" ng-click="edit_details=0" onclick="unblur_bg()"><i class="fa fa-thumbs-up"></i> Done</button>
@@ -153,10 +154,10 @@
               <label for="theme"><i class="fa fa-image"></i> Theme</label>
               <select id="theme" name="theme" class="form-control form-control-lg" onchange="update_val(this.id,this.value)">
                 <option value="index.php">Dark</option>
-                <option value="index-2.php">Light</option>
+                <!--<option value="index-2.php">Light</option>-->
               </select>
               <small class="form-text text-muted"></small>
-            </div>
+            </div>-->
             <div class="form-group">
               <label for="tag_line_1"><i class="fa fa-paragraph"></i> Headline 1</label>
               <input type="text" id="tag_line_1" class="form-control form-control-lg" placeholder="Headline 1" ng-model="client.tag_line_1" onchange="update_val(this.id,this.value)">
@@ -301,6 +302,7 @@
               <div class="form-group col-md-4">
                 <label for="speciality_1_icon"><i class="fa fa-flag"></i> Icon</label>
                 <select id="speciality_1_icon" class="form-control form-control-lg" ng-model="client.speciality_1_icon" onchange="update_val(this.id,this.value)" style="width:100%;">
+                  <option value="fa-microphone">Microphone icon</option>
                   <option value="fa-facebook">Book icon</option>
                   <option value="fa-user">Person icon</option>
                   <option value="fa-globe">Globe icon</option>
@@ -326,6 +328,7 @@
               <div class="form-group col-md-4">
                 <label for="speciality_2_icon"><i class="fa fa-flag"></i> Icon</label>
                 <select id="speciality_2_icon" class="form-control form-control-lg" ng-model="client.speciality_2_icon" onchange="update_val(this.id,this.value)" style="width:100%;">
+                  <option value="fa-microphone">Microphone icon</option>
                   <option value="fa-facebook">Book icon</option>
                   <option value="fa-user">Person icon</option>
                   <option value="fa-globe">Globe icon</option>
@@ -351,6 +354,7 @@
               <div class="form-group col-md-4">
                 <label for="speciality_3_icon"><i class="fa fa-flag"></i> Icon</label>
                 <select id="speciality_3_icon" class="form-control form-control-lg" ng-model="client.speciality_3_icon" onchange="update_val(this.id,this.value)" style="width:100%;">
+                  <option value="fa-microphone">Microphone icon</option>
                   <option value="fa-facebook">Book icon</option>
                   <option value="fa-user">Person icon</option>
                   <option value="fa-globe">Globe icon</option>
@@ -376,6 +380,7 @@
               <div class="form-group col-md-4">
                 <label for="speciality_4_icon"><i class="fa fa-flag"></i> Icon</label>
                 <select id="speciality_4_icon" class="form-control form-control-lg" ng-model="client.speciality_4_icon" onchange="update_val(this.id,this.value)" style="width:100%;">
+                  <option value="fa-microphone">Microphone icon</option>
                   <option value="fa-facebook">Book icon</option>
                   <option value="fa-user">Person icon</option>
                   <option value="fa-globe">Globe icon</option>
@@ -525,10 +530,10 @@
               <div class="col-md-4">
                 <h2>Lets stay connected</h2>
                 <ul>
-                  <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                  <li><a href="#"><span class="fab fa-twitter-square"></span></a></li>
-                  <li><a href="#"><span class="fab fa-linkedin-square"></span></a></li>
-                  <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                  <li><a href="https://www.facebook.com/biznesskits/"><span class="fab fa-facebook-square"></span></a></li>
+                  <li><a href="https://twitter.com/BiznessKit"><span class="fab fa-twitter-square"></span></a></li>
+                  <li><a href="https://www.linkedin.com/company/biznesskit/"><span class="fab fa-linkedin-square"></span></a></li>
+                  <li><a href="https://www.instagram.com/kimanip40/"><span class="fab fa-instagram"></span></a></li>
                 </ul>
               </div>
             </div>

@@ -125,11 +125,11 @@
         <div class="row mt-3">
           <div class="col-md-4 mb-3" ng-repeat="post in all_posts | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
             <div class="card">
-              <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="Card image cap">
+              <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="<% post.content %>">
               <div class="card-body">
-                 <h5 class="card-title border-bottom pb-3"><% post.title %> <a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a></h5>
+                 <h5 class="card-title border-bottom pb-3"><% post.title %> <!--<a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a>--></h5>
                  <p class="card-text"><% post.content %></p>
-                 <a href="{{url('/')}}/blog/<% post.id %>" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                 <!--<a href="{{url('/')}}/blog/<% post.id %>" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>-->
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@
       </div>
       <div class="card mt-3">
         <h5 class="card-header dark-bg text-warning">Publishing details</h5>
-        <div class="card-body">
+        <div class="card-body table-responsive">
           <table class="table table-hover table-bordered pub-table">
             <tbody>
               <tr>
@@ -308,7 +308,7 @@
                 <th>Top up ($)</th>
                 <td>
                   <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-md-4">
                       <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Monthly' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="9.99" />
                       <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 3 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="28.99" />
                       <input class="form-control" type="number" id="pub_cost" ng-if="user_details.publishing_details.publishing_period==='Every 6 months' && user_details.publishing_details.publishing_plan==='Starter ($9.99 p.m.)'" type="text" value="53.99" />

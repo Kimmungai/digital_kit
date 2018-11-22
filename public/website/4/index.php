@@ -52,7 +52,7 @@
 
                 <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                        <!--<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>-->
                         <li class="nav-item"><a class="nav-link" href="#about"><?php echo $saved_data['about_title']; ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="#service"><?php echo $saved_data['speciality_title']; ?></a></li>
                         <li class="nav-item"><a class="nav-link pr0" href="#contact"><?php echo $saved_data['contact_section_title']; ?></a></li>
@@ -126,8 +126,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content">
-                        <h2><?php echo $saved_data['tag_line_1']; ?></h2>
-                        <h4><?php echo $saved_data['tag_line_2']; ?></h4>
+                        <h2><?php //echo $saved_data['tag_line_1']; ?></h2>
+                        <h4><?php //echo $saved_data['tag_line_2']; ?></h4>
                         <p><?php echo $saved_data['about_story']; ?></p>
 
                         <h5><?php echo $saved_data['skill_title']; ?></h5>
@@ -221,7 +221,9 @@
                         </div>
                         <h2><?php echo $saved_data['speciality_1']; ?></h2>
                         <p><?php echo $saved_data['speciality_1_text']; ?></p>
+                        <?php if($user['provider']==='github'){?>
                         <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank">view</a>
+                        <?php }?>
                     </div>
                 </div>
                 <!-- //Single Service -->
@@ -233,7 +235,9 @@
                         </div>
                         <h2><?php echo $saved_data['speciality_2']; ?></h2>
                         <p><?php echo $saved_data['speciality_2_text']; ?></p>
+                        <?php if($user['provider']==='github'){?>
                         <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_2_url']; ?>" target="_blank">view</a>
+                        <?php }?>
                     </div>
                 </div>
                 <!-- //Single Service -->
@@ -245,7 +249,9 @@
                         </div>
                         <h2><?php echo $saved_data['speciality_3']; ?></h2>
                         <p><?php echo $saved_data['speciality_3_text']; ?></p>
+                        <?php if($user['provider']==='github'){?>
                         <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_3_url']; ?>" target="_blank">view</a>
+                        <?php }?>
                     </div>
                 </div>
                 <!-- //Single Service -->
@@ -257,7 +263,9 @@
                         </div>
                         <h2><?php echo $saved_data['speciality_4']; ?></h2>
                         <p><?php echo $saved_data['speciality_4_text']; ?></p>
+                        <?php if($user['provider']==='github'){?>
                         <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_4_url']; ?>" target="_blank">view</a>
+                        <?php }?>
                     </div>
                 </div>
                 <!-- //Single Service -->
@@ -268,16 +276,9 @@
     <!-- ====== //Service Section ====== -->
 
     <!-- ====== Call to Action Area ====== -->
-
-    <section class="section-padding pb-70 bg-img fact-counter" id="counter" style="background-image: url(assets/images/fan-fact-bg.jpg)">
-        <div class="container">
-            <div class="row">
-                <h2 style="color:#fff;"><?php echo $saved_data['vision_statement']; ?></h2>
-            </div>
-        </div>
-    </section>
     <!-- ====== // Call to Action Area ====== -->
     <!-- ====== Blog Section ====== -->
+    <?php if(count($posts)){ ?>
     <section id="service" class="section-padding pb-70 service-area bg-light">
         <div class="container">
             <!-- Section Title -->
@@ -301,7 +302,9 @@
                         </div>
                         <h2><?php echo $post['title']; ?>d</h2>
                         <p><?php echo $post['content']; ?></p>
-                        <a class="btn btn-primary btn-sm" href="<?php echo $saved_data['speciality_1_url']; ?>" target="_blank">view</a>
+
+                        <a class="btn btn-primary btn-sm" href="#" target="_blank">view</a>
+
                     </div>
                 </div>
                 <!-- //Single Service -->
@@ -310,6 +313,7 @@
 
         </div>
     </section>
+  <?php }?>
     <!-- ====== //Service Section ====== -->
     <section class="section-padding call-to-action-aria bg-secondary">
         <div class="container">
@@ -318,7 +322,7 @@
                     <h2><?php echo $saved_data['mission_statement']; ?></h2>
                     <p></p>
                 </div>
-                <div class="col-lg-3">
+                <!--<div class="col-lg-3">
                     <div class="cta-button">
                         <div class="d-table">
                             <div class="d-table-cell">
@@ -326,7 +330,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>

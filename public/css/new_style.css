@@ -270,18 +270,18 @@ main .biz-card h3{
   text-transform: uppercase;
 }
 main .qr{
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto 0 auto;
 }
 main .bar1{
-  width: 64px;
+  width: 59px;
   height: 18px;
   background-color: #fff;
   margin:36px 1px 0 0;
 }
 main .bar2{
-  width: 275px;
+  width: 260px;
   height: 18px;
   margin: 36px 0 0 1px;
 }
@@ -603,7 +603,7 @@ footer li a:hover{
 
 }
 .pub-table td{
-  word-break: break-all;
+
 }
 main .biz-card-design-2{
   width: 440px;
@@ -647,13 +647,13 @@ main .biz-card-design-2 .content dl{
 }
 main .biz-card-design-2 .content dt{
   margin: 0;
-  width: 50%;
+  width: 40%;
   padding: 0;
   float: left;
 }
 main .biz-card-design-2 .content dd{
   margin: 0;
-  width: 50%;
+  width: 60%;
   padding: 0;
   float: right;
 }
@@ -664,21 +664,21 @@ main .biz-card-design-2 .content dt ul{
 }
 main .biz-card-design-2 .content dt li{
   margin: 0;
-  padding: 0;
+  padding: 3px 0;
   list-style-type: none;
   opacity: 1;
   cursor: default;
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 main .biz-card-design-2 .content dd li{
   margin: 0;
-  padding: 0;
+  padding: 3px 0;
   list-style-type: none;
   opacity: 1;
   cursor: default;
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 main .biz-card-design-3{
   width: 440px;
@@ -736,8 +736,8 @@ main .biz-card-design-3 .info dt li{
   cursor: default;
 }
 main .biz-card-design-3 .info dd{
-  height: 80px;
-  width:80px;
+  height: 100px;
+  width:100px;
   margin: 0;
   padding: 0;
   float: right;

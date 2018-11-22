@@ -14,7 +14,7 @@
   }
   .biz-card{
    width:338px;
-   margin: 0 auto;
+   margin: 0;
    background: #000;
   }
   .text-danger{
@@ -43,14 +43,15 @@
   }
   .container{
     width: 100%;
+    height: 80px;
   }
   .qr{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background-color: #fff;
     margin: 0  5px;
     float: left;
-    /*margin-top: -25px;*/
+    margin-top: -25px;
   }
   .qr img{
     width: 100%;
@@ -60,7 +61,7 @@
     width: 39px;
     height: 18px;
     background-color: #fff;
-    margin:25px 1px 0 0;
+    margin:0 1px 0 0;
     float: left;
   }
   .bar2{
@@ -130,7 +131,7 @@
   }
   .biz-card-design-2 .content dt{
     margin: 0;
-    width: 50%;
+    width: 40%;
     padding: 0px;
     float: left;
     text-overflow: ellipsis;
@@ -139,7 +140,7 @@
   }
   .biz-card-design-2 .content dd{
     margin: 0;
-    width: 50%;
+    width: 60%;
     padding: 0;
     float: left;
     text-align: left;
@@ -165,7 +166,7 @@
     opacity: 1;
     cursor: default;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 10px;
   }
   .biz-card-design-3{
     font-family: sans-serif;
@@ -186,7 +187,7 @@
     float: left;
   }
   .biz-card-design-3 dt img{
-    object-fit:contain!important;
+    object-fit:scale-down!important;
     object-position: center!important;
     height: 100%;
     width: 100%;
@@ -233,7 +234,7 @@
   }
   .biz-card-design-3 .dd{
     height: 115px;
-    width:40%;
+    width:115px;
     margin: 0;
     padding: 0;
     float: right;
@@ -266,6 +267,7 @@
   <body>
     <div class="holder">
       <?php if($card->card_design==1){?>
+
       <article class="biz-card">
         <h2>{{$card->first_name}} <span  class="text-danger">{{$card->last_name}}</span></h2>
         <h3> {{$card->designation}}</h3>
@@ -287,8 +289,9 @@
           </div>
         </div>
       </article>
+
       <?php }elseif($card->card_design==2){?>
-        <article class="container biz-card-design-2">
+        <article class="biz-card-design-2">
           <div class="panel">
             <div class="content">
               <h2>{{$card->first_name}} {{$card->last_name}}</h2>
@@ -297,14 +300,14 @@
               <dl>
                 <dt>
                   <ul>
-                    <li>{{$card->phone}}</li>
-                    <li>{{$card->email}}</li>
+                    <li><i class="fa fa-phone"></i> {{$card->phone}}</li>
+                    <li><i class="fa fa-envelope"></i> {{$card->email}}</li>
                   </ul>
                 </dt>
                 <dt>
                   <ul>
-                    <li>{{$card->address}}</li>
-                    <li>{{$card->website}}</li>
+                    <li><i class="fa fa-map-marker-alt"></i> {{$card->address}}</li>
+                    <li><i class="fa fa-link"></i> {{$card->website}}</li>
                   </ul>
               </dt>
             </dl>

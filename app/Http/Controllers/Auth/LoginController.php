@@ -53,7 +53,7 @@ class LoginController extends Controller
     {
         $facebook_user = Socialite::driver('facebook')->user();
         //print_r($facebook_user);die();
-        $user=$this->userFindOrCreate($facebook_user);
+        $user=$this->userFindOrCreate($facebook_user,'facebook');
         Auth::login($user,true);
         $this->cardFindOrCreate($facebook_user,Auth::id(),'facebook');
         $this->websiteFindOrCreate($facebook_user,Auth::id(),'facebook');
@@ -67,7 +67,7 @@ class LoginController extends Controller
     {
         $twitter_user = Socialite::driver('twitter')->user();
         //print_r($twitter_user); die();
-        $user=$this->userFindOrCreate($twitter_user);
+        $user=$this->userFindOrCreate($twitter_user,'twitter');
         Auth::login($user,true);
         $this->cardFindOrCreate($twitter_user,Auth::id(),'twitter');
         $this->websiteFindOrCreate($twitter_user,Auth::id(),'twitter');
@@ -83,7 +83,7 @@ class LoginController extends Controller
         // $user->token;
         //print_r($linkedin_user);
         //echo $linkedin_user['publicProfileUrl'];die();
-        $user=$this->userFindOrCreate($linkedin_user);
+        $user=$this->userFindOrCreate($linkedin_user,'linkedin');
         Auth::login($user,true);
         $this->cardFindOrCreate($linkedin_user,Auth::id(),'linkedin');
         $this->websiteFindOrCreate($linkedin_user,Auth::id(),'linkedin');
@@ -107,13 +107,13 @@ class LoginController extends Controller
     {
         $github_user = Socialite::driver('github')->user();
         //print_r($github_user);die();
-        $user=$this->userFindOrCreate($github_user);
+        $user=$this->userFindOrCreate($github_user, 'github');
         Auth::login($user,true);
         $this->cardFindOrCreate($github_user,Auth::id(),'github');
         $this->websiteFindOrCreate($github_user,Auth::id(),'github');
         return redirect($this->redirectTo);
     }
-    public function userFindOrCreate($user_object)
+    public function userFindOrCreate($user_object,$provider)
     {
         $checkUser = User::where('provider_id',$user_object->getId())->first();
         if($checkUser)
@@ -130,6 +130,7 @@ class LoginController extends Controller
           $new_user->name = $user_name;
           $new_user->email = $user_email;
           $new_user->provider_id = $user_object->getId();
+          $new_user->provider = $provider;
           $new_user->save();
           $pub_details = new publishing_details;
           $pub_details->website_url = 'www.'.str_replace(' ','',$new_user->name).'.me';
@@ -317,18 +318,21 @@ class LoginController extends Controller
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
-            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
+            //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->user_id = $user_id;
 
             //$new_website->last_name = $user_object->getName();
             $new_website->tag_line_1 = $data->tag_line_1($user_name);
             $new_website->tag_line_2 = $data->tag_line_2($user_company, $user_location);
-            $new_website->about_story = $user_bio;
-            $new_website->mission_statement = $mission_statement;
-            $new_website->vision_statement = $vision_statement.$hireable;
+            $new_website->about_story = $data->about_story($user_name);
+            $new_website->about_title = $data->about_title($user_name);
+            $new_website->mission_statement = $data->mission();
+            $new_website->vision_statement = $data->vision($user_location);
+            $new_website->speciality_title=$data->speciality_title($user_location);
             $new_website->speciality_1 = isset($speciality_1) ? $speciality_1.$language_1 : '';
             $new_website->speciality_1_icon = isset($icon_1) ? $icon_1: '';
             $new_website->speciality_1_text = isset($speciality_1_text) ? $speciality_1_text: '';
@@ -346,6 +350,10 @@ class LoginController extends Controller
             $new_website->speciality_4_text = isset($speciality_4_text) ? $speciality_4_text: '';
             $new_website->speciality_4_url = isset($speciality_4_url) ? $speciality_4_url: '';
             $new_website->speciality_sub_title = $speciality_sub_title;
+            $new_website->skill_1 = $data->skill()[0];
+            $new_website->skill_2 = $data->skill()[1];
+            $new_website->skill_3 = $data->skill()[2];
+            $new_website->skill_4 = $data->skill()[3];
             $new_website->contact_receiving_email = $user_email;
             $new_website->save();
             return $new_website;
@@ -376,19 +384,35 @@ class LoginController extends Controller
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
-            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
             $new_website->tag_line_2 = $data->tag_line_2($user_designation, $user_address);
             $new_website->contact_receiving_email = $user_email;
-            $new_website->about_story = $user_bio;
-            $new_website->vision_statement = $vision_statement;
-            $new_website->mission_statement = $mission_statement;
+            //$new_website->about_story = $user_bio;
+            $new_website->about_story = $data->about_story($user_first_name);
+            $new_website->about_title = $data->about_title($user_first_name);
+            $new_website->vision_statement = $data->vision($user_address);
+            $new_website->mission_statement = $data->mission();
             $new_website->linkedin_link = $linkedin_link;
+            $new_website->skill_1 = $data->skill()[0];
+            $new_website->skill_2 = $data->skill()[1];
+            $new_website->skill_3 = $data->skill()[2];
+            $new_website->skill_4 = $data->skill()[3];
+            $new_website->speciality_1=$data->skill()[0];
+            $new_website->speciality_1_text=$data->speciality($user_address)[0];
+            $new_website->speciality_2=$data->skill()[1];
+            $new_website->speciality_2_text=$data->speciality($user_address)[1];
+            $new_website->speciality_3=$data->skill()[2];
+            $new_website->speciality_3_text=$data->speciality($user_address)[2];
+            $new_website->speciality_4=$data->skill()[3];
+            $new_website->speciality_4_text=$data->speciality($user_address)[3];
+            $new_website->speciality_title=$data->speciality_title($user_address);
             $new_website->save();
             return $new_website;
           }
@@ -418,19 +442,35 @@ class LoginController extends Controller
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
-            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
+            //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
             $new_website->tag_line_2 = $data->tag_line_2('Artist', $user_address);
             $new_website->twitter_link = $twitter_link;
-            $new_website->about_story = $user_bio;
-            $new_website->vision_statement = $vision_statement;
-            $new_website->mission_statement = $mission_statement;
+            //$new_website->about_story = $user_bio;
+            $new_website->about_story = $data->about_story($user_first_name);
+            $new_website->about_title = $data->about_title($user_first_name);
+            $new_website->vision_statement = $data->vision($user_address);
+            $new_website->mission_statement = $data->mission();
             $new_website->contact_receiving_email = $user_email;
+            $new_website->skill_1 = $data->skill()[0];
+            $new_website->skill_2 = $data->skill()[1];
+            $new_website->skill_3 = $data->skill()[2];
+            $new_website->skill_4 = $data->skill()[3];
+            $new_website->speciality_1=$data->skill()[0];
+            $new_website->speciality_1_text=$data->speciality($user_address)[0];
+            $new_website->speciality_2=$data->skill()[1];
+            $new_website->speciality_2_text=$data->speciality($user_address)[1];
+            $new_website->speciality_3=$data->skill()[2];
+            $new_website->speciality_3_text=$data->speciality($user_address)[2];
+            $new_website->speciality_4=$data->skill()[3];
+            $new_website->speciality_4_text=$data->speciality($user_address)[3];
+            $new_website->speciality_title=$data->speciality_title($user_address);
             $new_website->save();
             return $new_website;
           }
@@ -453,15 +493,33 @@ class LoginController extends Controller
                 mkdir('img/'.$user_id.'/profile', 0777, true);
             }
             File::put('img/'.$user_id.'/profile/main_image_original.jpg',$avatar);
-            $img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
+            $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
             $new_website->tag_line_2 = $data->tag_line_2($user_designation, $user_address);
+            $new_website->about_story = $data->about_story($user_first_name);
+            $new_website->about_title = $data->about_title($user_first_name);
+            $new_website->vision_statement = $data->vision($user_address);
+            $new_website->mission_statement = $data->mission();
             $new_website->contact_receiving_email = $user_email;
+            $new_website->skill_1 = $data->skill()[0];
+            $new_website->skill_2 = $data->skill()[1];
+            $new_website->skill_3 = $data->skill()[2];
+            $new_website->skill_4 = $data->skill()[3];
+            $new_website->speciality_1=$data->skill()[0];
+            $new_website->speciality_1_text=$data->speciality($user_address)[0];
+            $new_website->speciality_2=$data->skill()[1];
+            $new_website->speciality_2_text=$data->speciality($user_address)[1];
+            $new_website->speciality_3=$data->skill()[2];
+            $new_website->speciality_3_text=$data->speciality($user_address)[2];
+            $new_website->speciality_4=$data->skill()[3];
+            $new_website->speciality_4_text=$data->speciality($user_address)[3];
+            $new_website->speciality_title=$data->speciality_title($user_address);
             $new_website->save();
             return $new_website;
           }
