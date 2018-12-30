@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => 'google',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,6 +46,13 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+        ],
+        'main_google' => [
+          'driver' => 'google',
+          'clientId' => env('MAIN_GOOGLE_DRIVE_CLIENT_ID'),
+          'clientSecret' => env('MAIN_GOOGLE_DRIVE_CLIENT_SECRET'),
+          'refreshToken' => env('MAIN_GOOGLE_DRIVE_REFRESH_TOKEN'),
+          'folderId' => env('MAIN_GOOGLE_DRIVE_FOLDER_ID'),
         ],
 
         'public' => [

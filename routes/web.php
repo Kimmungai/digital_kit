@@ -20,6 +20,7 @@ Route::post('/record-payment', 'helpers@record_payment')->middleware('auth');
 Route::post('/publish', 'helpers@publish')->middleware('auth');
 Route::post('/client-help', 'helpers@help_form')->middleware('auth');
 Route::post('/client-blog', 'helpers@blog_form')->middleware('auth');
+Route::post('/client-song', 'helpers@song_form')->middleware('auth');
 
 
 Auth::routes();

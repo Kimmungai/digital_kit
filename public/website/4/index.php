@@ -12,13 +12,16 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
 
     <!-- ====== ALL CSS ====== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/lightbox.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/music.css">
+    <link rel="stylesheet" href="assets/css/prod-player.css" />
     <link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 
 </head>
@@ -47,15 +50,19 @@
                 <!-- // Logo -->
 
                 <!-- Mobile Menu -->
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"><span><i class="fa fa-bars"></i></span></button>
                 <!-- Mobile Menu -->
 
                 <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <!--<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>-->
+
                         <li class="nav-item"><a class="nav-link" href="#about"><?php echo $saved_data['about_title']; ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="#service"><?php echo $saved_data['speciality_title']; ?></a></li>
                         <li class="nav-item"><a class="nav-link pr0" href="#contact"><?php echo $saved_data['contact_section_title']; ?></a></li>
+                        <li class="nav-item"><a class="nav-link pr0" href="http://localhost:8000/website/shop.php?id=<?php echo $_GET['id'];?>">My E-Store</a></li>
+                        <!--<li class="nav-item"><a class="nav-link" href="#" >Cart <span class="fa fa-shopping-cart"></span><span class="badge text-danger">(3)</span></a></li>-->
                     </ul>
                 </div>
             </div>
@@ -69,11 +76,96 @@
         <!-- Hero Area Content -->
         <div class="container">
             <div class="hero-content h-100">
+
                 <div class="d-table">
                     <div class="d-table-cell">
                         <h2 class="text-uppercase"><?php echo $saved_data['tag_line_1']; ?></h2>
                         <h3 class="text-uppercase"><span class="typed"></span></h3>
                         <p><?php echo $saved_data['tag_line_2']; ?></p>
+                        <!--featured music-->
+
+                          <div class="wrap">
+
+                            <div class="player paused">
+
+                              <div class="progress-bar">
+                                <div class="runner"></div>
+                              </div>
+                              <div class="album-art">
+                                <div class="cover"></div>
+                              </div>
+
+                              <div class="description">
+                                <div class="title">Something from nothing  </div>
+                                <div class="sub-title">by Foo Fighters, Sonic highways</div>
+                              </div>
+
+                              <div class="visualizer">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                              </div>
+
+                              <div class="play-button">
+                                <div class="lp-background"></div>
+                                <i class="mdi mdi-play"></i>
+                                <i class="mdi mdi-pause"></i>
+                              </div>
+
+                              <div class="time-indicator">
+                                <i class="mdi mdi-clock"></i>
+                                <span class="time">03:39</span>
+                              </div>
+
+
+                            </div>
+
+                          </div>
+                        <!--featured music-->
                         <a href="#about" class="button smooth-scroll">Learn More</a>
                     </div>
                 </div>
@@ -82,20 +174,23 @@
         <!-- // Hero Area Content -->
         <!-- Hero Area Slider -->
         <div class="hero-area-slids owl-carousel">
+
             <div class="single-slider">
                 <!-- Single Background -->
                 <div class="slider-bg" style="background-image: url(<?php echo $saved_data['main_image']; ?>)"></div>
                 <!-- // Single Background -->
             </div>
-            <div class="single-slider">
-                <!-- Single Background -->
+            <!--<div class="single-slider">
+                 Single Background
                 <div class="slider-bg" style="background-image: url(<?php echo $saved_data['main_image']; ?>)"></div>
-                <!-- // Single Background -->
-            </div>
+                 // Single Background
+            </div>-->
         </div>
         <!-- // Hero Area Slider -->
     </div>
     <!-- ====== //Hero Area ====== -->
+
+
 
     <!-- ====== About Area ====== -->
     <section id="about" class="section-padding about-area bg-light">
@@ -412,6 +507,11 @@
     <script src="assets/js/skill.bar.js"></script>
     <script src="assets/js/fact.counter.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.min.js'></script>
+    <script src="assets/js/music.js"></script>
+    <script src="assets/js/prod-player.js"></script>
 <script>
 //Wow Animation
 new WOW().init();

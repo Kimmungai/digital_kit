@@ -11,6 +11,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/music.css">
+		<link rel="stylesheet" href="assets/css/prod-player.css" />
 		<style type="text/css">
 		html {
 			background-color: #313a3d;
@@ -54,7 +56,97 @@
 				<header class="major">
 					<h1><?php echo $saved_data['tag_line_1']; ?></h1>
 					<p><?php echo $saved_data['tag_line_2']; ?></a></p>
+
 				</header>
+				<!--featured music-->
+
+					<div class="wrap">
+
+						<div class="player paused">
+
+							<div class="progress-bar">
+								<div class="runner"></div>
+							</div>
+							<div class="album-art">
+								<div class="cover" style="background:url(<?php echo $saved_data['main_image']; ?>) center no-repeat;"></div>
+							</div>
+
+							<div class="description">
+								<div class="title">Something from nothing  </div>
+								<div class="sub-title">by Foo Fighters, Sonic highways</div>
+							</div>
+
+							<div class="visualizer">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+
+							<div class="play-button">
+								<div class="lp-background"></div>
+								<i class="mdi mdi-play"></i>
+								<i class="mdi mdi-pause"></i>
+							</div>
+
+							<div class="time-indicator">
+								<i class="mdi mdi-clock"></i>
+								<span class="time">03:39</span>
+							</div>
+
+
+						</div>
+
+					</div>
+
+						<ul style="margin-top:5px;">
+							<li><a href="http://localhost:8000/website/shop.php?id=<?php echo $_GET['id'];?>" class="button primary">My Music</a></li>
+						</ul>
+
+				<!--featured music-->
 				<div class="container">
 					<ul class="actions special">
 						<li><a href="#one" class="button primary scrolly">Begin</a></li>
@@ -217,6 +309,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+	    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+	    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.min.js'></script>
+	    <script src="assets/js/music.js"></script>
+			<script src="assets/js/prod-player.js"></script>
 
 	</body>
 </html>

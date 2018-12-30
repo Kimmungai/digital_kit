@@ -147,6 +147,7 @@ $(document).ready(function(){
 <script>
   function submit_help()
   {
+    event.preventDefault();
     $.ajax({
         type: 'post',
         url: '{{url('/client-help')}}',
@@ -158,6 +159,7 @@ $(document).ready(function(){
   }
   function submit_blog()
   {
+    event.preventDefault();
     $.ajax({
         type: 'post',
         url: '{{url('/client-blog')}}',
@@ -168,6 +170,85 @@ $(document).ready(function(){
           $('#blog-social-icons').removeClass('d-none');
         }
     });
+  }
+  function submit_song()
+  {
+    event.preventDefault();
+    var form = $('#song_form')[0];
+    //data = new FormData();
+    //data.append($('#song_form').serialize());
+    //data.append('music-file', $('#music-file')[0].files[0]);
+    //data.append('song-title', 'field');
+    var data = new FormData(form);
+    /*$.ajax({
+        type: 'post',
+        enctype: 'multipart/form-data',
+        url: '{{url('/client-song')}}',
+        data: data,
+        contentType: false,
+        processData:false,
+        success: function(data)
+          {
+            alert('success'+data)
+          },
+          error: function()
+          {
+            alert('chigau'+data)
+          }
+    });*/
+    $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "{{url('/client-song')}}",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                $("#song-tool").click();
+                alert( data);
+                //$("#btnSubmit").prop("disabled", false);
+
+            },
+            error: function (e) {
+
+                //$("#result").text(e.responseText);
+                alert(e);
+                //$("#btnSubmit").prop("disabled", false);
+
+            }
+        });
+
+  }
+  function upload_file(field,model,dir)
+  {
+    if($('#'+field).attr('type') === 'file')
+    {
+      var formData = new FormData();
+      formData.append(field, $('#'+field)[0].files[0]);
+      formData.append('field', field);
+      formData.append('model', model);
+      formData.append('dir', dir);
+
+      if($('#'+field)[0].files[0].size > 1000000){alert('The file is too big. Max 1MB');return 0;}
+      $.ajax({
+          url: "{{url('/client-update')}}",
+          type: "POST",
+          data:  formData,
+          contentType: false,
+          processData:false,
+          success: function(data)
+            {
+              //alert('success'+data)
+            },
+            error: function()
+            {
+              //alert('chigau'+data)
+            }
+        });
+    }
   }
 </script>
 <script>

@@ -11,6 +11,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/prod-player.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 		<style>
@@ -50,6 +51,7 @@
 							<li><a href="#two" class="scrolly"><?php echo $saved_data['about_title']; ?></a></li>
 							<li><a href="#four" class="scrolly"><?php echo $saved_data['speciality_title']; ?></a></li>
 							<li><a href="#six" class="scrolly"><?php echo $saved_data['contact_section_title']; ?></a></li>
+							<li><a href="http://localhost:8000/website/shop.php?id=<?php echo $_GET['id'];?>">My E-Store</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -60,7 +62,92 @@
 						<header>
 							<h2><?php echo $saved_data['tag_line_1']; ?></h2>
 							<p></p>
+							<!--featured music-->
+
+								<div class="wrap">
+
+									<div class="player paused">
+
+										<div class="progress-bar">
+											<div class="runner"></div>
+										</div>
+										<div class="album-art">
+											<div class="cover" style="background:url(<?php echo $saved_data['main_image']; ?>) center no-repeat;"></div>
+										</div>
+
+										<div class="description">
+											<div class="title">Something from nothing  </div>
+											<div class="sub-title">by Foo Fighters, Sonic highways</div>
+										</div>
+
+										<div class="visualizer">
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+										</div>
+
+										<div class="play-button">
+											<div class="lp-background"></div>
+											<i class="mdi mdi-play"></i>
+											<i class="mdi mdi-pause"></i>
+										</div>
+
+										<div class="time-indicator">
+											<i class="mdi mdi-clock"></i>
+											<span class="time">03:39</span>
+										</div>
+
+
+									</div>
+
+								</div>
+							<!--featured music-->
 						</header>
+
 						<span class="image"><img src="<?php echo $saved_data['main_image']; ?>" alt="" /></span>
 					</div>
 					<a href="#one" class="goto-next scrolly">Next</a>
@@ -71,6 +158,7 @@
 					<span class="image fit main"><img src="images/piano.jpg" alt="" /></span>
 					<div class="content">
 						<div class="container">
+
 							<div class="row">
 								<div class="col-4 col-12-medium">
 									<header>
@@ -258,6 +346,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/prod-player.js"></script>
 
 	</body>
 </html>

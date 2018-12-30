@@ -321,7 +321,7 @@ class LoginController extends Controller
             $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
             //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->user_id = $user_id;
 
@@ -388,7 +388,7 @@ class LoginController extends Controller
             $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
@@ -446,7 +446,7 @@ class LoginController extends Controller
             //$img = Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->crop(494, 668)->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);
@@ -497,7 +497,7 @@ class LoginController extends Controller
             $img =Image::make('img/'.$user_id.'/profile/main_image_original.jpg')->orientate()->save('img/'.$user_id.'/profile/main_image.jpg');
             $new_website = new Website;
             $new_website->user_id = $user_id;
-            $new_website->main_image = url('img/'.$user_id.'/profile/main_image.jpg');
+            $new_website->main_image = url('img/'.$user_id.'/profile/main_image_original.jpg');
             $new_website->first_name = $user_first_name;
             $new_website->last_name = $user_last_name;
             $new_website->tag_line_1 = $data->tag_line_1($user_first_name);

@@ -566,7 +566,7 @@ footer li a:hover{
  content: 'D';
 }
 .desk .D a:after{
- content: 'Letter';
+ content: 'Songs';
 }
 .desk .E a:before{
  content: 'E';
@@ -1287,4 +1287,28 @@ main .biz-card-design-3 .dark-bg li{
     display: inline-block;
     width: 100%;
   }
+}
+.action-btn{
+  height: 100px;
+  line-height: 100px;
+  width: 100px;
+  position: absolute;
+  top:20%;
+  left: 35%;
+  font-size: 4em;
+  text-align: center;
+}
+.action-btn i{
+  opacity: 0.7;
+}
+.action-btn i:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+.song-form-image{
+  height: 200px;
+  background-size: cover;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  background-position: center;
 }

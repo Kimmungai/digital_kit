@@ -1,15 +1,15 @@
-<?php require_once('../autoload.php');?>
+<?php require_once('../autoload.php');include_once('../db.php');
+$data = new Database("127.0.0.1","root","root","personal");
+$music=$data->get_table('user_items','id','DESC',4);?>
 <!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?> | <?php echo $saved_data['tag_line_2']; ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/music.css" />
+		<link rel="stylesheet" href="assets/css/prod-player.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style type="text/css">
@@ -58,6 +58,7 @@
 			padding: 0;
 			margin: 0.5em 0;
 		}
+		#player-container:before, #player-container:after { background-image: url('<?php echo $saved_data['main_image']; ?>');}
 		</style>
 		<link rel="icon" type="image/png" href="<?php echo $saved_data['main_image']; ?>" />
 	</head>
@@ -72,21 +73,52 @@
 						<h1><a href="index.html"><?php echo $saved_data['first_name']; ?> <?php echo $saved_data['last_name']; ?></a></h1>
 						<nav id="nav">
 							<ul>
+								<!--<li onmouseover="addCss('.music-shopping-cart','display','block')" onclick="addCss('.music-shopping-cart','display','block')"><a href="shop.php?id=<?php echo $_GET['id'];?>" ><span class="fa fa-shopping-cart" style="font-size:1.3em;font-weight:bold;"></span><span id="items-in-cart" class="badge"></span></a></li>-->
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
 											<!--<li><a href="#">Home</a></li>-->
-											<li><a href="#one"><?php echo $saved_data['about_title']; ?></a></li>
-											<li><a href="#three"><?php echo $saved_data['speciality_title']; ?></a></li>
-											<li><a href="#cta"><?php echo $saved_data['contact_section_title']; ?></a></li>
+											<li><a href="index.php?id=<?php echo $_GET['id'];?>#one"><?php echo $saved_data['about_title']; ?></a></li>
+											<li><a href="index.php?id=<?php echo $_GET['id'];?>#three"><?php echo $saved_data['speciality_title']; ?></a></li>
+											<li><a href="index.php?id=<?php echo $_GET['id'];?>#cta"><?php echo $saved_data['contact_section_title']; ?></a></li>
+											<li><a href="http://localhost:8000/website/shop.php?id=<?php echo $_GET['id'];?>">My E-Store</a></li>
 										</ul>
 									</div>
 								</li>
 							</ul>
 						</nav>
 					</header>
+					<!--<section class="music-shopping-cart" >
+						<p class="close fl-right" onclick="addCss('.music-shopping-cart','display','none')">close: <span class="badge bagde-pill badge-danger">X</span></p>
+						<h2>Shopping Cart Contents </h2>
+						<form id="music-shopping-cart-form" action="http://localhost:8000/website/1/check-out.php" method="POST">
+							<table class="table" id="music-shopping-cart-list">
+							  <thead class="thead-dark">
+							    <tr>-->
+							      <!--<th scope="col">#</th>-->
+							      <!--<th scope="col">Item</th>
+							      <th scope="col">Price ($)</th>
+							      <th scope="col">Remove</th>
+							    </tr>
+							  </thead>
+							  <tbody>
 
+							  </tbody>
+						</table>
+						<table class="table">
+						  <thead class="thead-light">
+						    <tr>
+						      <th scope="col">Total</th>
+						      <th id="music-cart-total" scope="col">$0.00</th>
+									<input name="user" type="hidden" value="<?php echo $_GET['id'];?>"/>
+									<input name="amount" id="music-cart-total-input" type="hidden"/>
+						    </tr>
+						  </thead>
+						</table>
+					<button type="submit" class="btn btn-lg btn-danger pull-right">Check out</button>
+					</form>
+				</section>-->
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
@@ -98,9 +130,61 @@
 								</ul>
 							<?php }?>
 						</div>
+
 						<a href="#one" class="more scrolly">Learn More</a>
 					</section>
+					<?php if(count($music)): ?>
+					<!--featured music-->
 
+
+
+  <section id="player-container">
+		<h3 class="song-title text-center">song title</h3>
+    <div id="timeBar">
+      <div id="timePos">
+
+      </div>
+    </div>
+
+    <div id="Bg-panel">
+			<p class="song-title"><a href="#">song title</a></p>
+    </div>
+
+
+    <div id="form">
+
+      <div id="circ">
+        <div id="introPlay" class="playButton"> </div>
+
+        <div id="volumeBar" class="">
+          <div id="knob"></div>
+        </div>
+        <div id="fastForward"> </div>
+        <div id="rewind"> </div>
+        <div id="Xit" class="">+</div>
+
+      </div>
+
+    </div>
+
+    <!--<div class="measure"></div>-->
+
+    <div id="eqWave">
+      <div class="eqBar" id="Bar1"></div>
+      <div class="eqBar" id="Bar2"></div>
+      <div class="eqBar" id="Bar3"></div>
+      <div class="eqBar" id="Bar4"></div>
+      <div class="eqBar" id="Bar5"></div>
+      <div class="eqBar" id="Bar6"></div>
+
+    </div>
+
+  </section>
+
+
+
+					<!--featured music-->
+				<?php endif; ?>
 				<!-- One -->
 					<section id="one" class="wrapper style1 special">
 						<div class="inner">
@@ -211,24 +295,24 @@
 								<p>Looking forward to hearing from you!</p>
 							</header>
 							<ul class="actions stacked">
-								<div class="card">
-									<div class="card-body">
+								<div class="cta-card">
+									<div class="cta-card-body">
 										<form>
-										  <div class="form-group">
+										  <div class="cta-form-group">
 										    <label for="formGroupExampleInput">Your Name</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput">
+										    <input type="text" class="cta-form-control" id="formGroupExampleInput">
 										  </div>
-											<div class="form-group">
+											<div class="cta-form-group">
 										    <label for="formGroupExampleInput">Your Email</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput">
+										    <input type="text" class="cta-form-control" id="formGroupExampleInput">
 										  </div>
-										  <div class="form-group">
+										  <div class="cta-form-group">
 										    <label for="formGroupExampleInput2">Your Website</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput2">
+										    <input type="text" class="cta-form-control" id="formGroupExampleInput2">
 										  </div>
-											<div class="form-group">
+											<div class="cta-form-group">
 										    <label for="formGroupExampleInput2">Your Message</label>
-										    <textarea class="form-control"></textarea>
+										    <textarea class="cta-form-control"></textarea>
 										  </div>
 										</form>
 									</div>
@@ -243,9 +327,9 @@
 						<ul class="icons">
 							<li><a href="<?php echo $saved_data['facebook_link']; ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							<li><a href="<?php echo $saved_data['twitter_link']; ?>" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="<?php echo $saved_data['google_plus_link']; ?>" class="icon fa-google-plus"><span class="label">Instagram</span></a></li>
-							<li><a href="<?php echo $saved_data['linkedin_link']; ?>" class="icon fa-linkedin"><span class="label">Dribbble</span></a></li>
-							<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Email</span></a></li>
+							<li><a href="<?php echo $saved_data['google_plus_link']; ?>" class="icon fa-google-plus"><span class="label">Google</span></a></li>
+							<li><a href="<?php echo $saved_data['linkedin_link']; ?>" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="<?php echo $saved_data['instagram_link']; ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						</ul>
 						<ul class="copyright">
 							<li>&copy; <?php echo date('Y',time())?>   | All Rights Reserved |  Designed & Developed by  <a href="http://biznesskit.com/">Digital Kit</a> </li>
@@ -262,6 +346,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+			<script src='https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.min.js'></script>
+			<script src="assets/js/music.js"></script>
+			<script src="assets/js/prod-player.js"></script>
+			<script src="assets/js/cart.js"></script>
 			<script>
 				function openLink(url) {
 				    window.open(url, "_self");

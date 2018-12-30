@@ -129,6 +129,8 @@
               <div class="card-body">
                  <h5 class="card-title border-bottom pb-3"><% post.title %> <!--<a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a>--></h5>
                  <p class="card-text"><% post.content %></p>
+                 <a href="#" class="btn btn-sm btn-warning" ng-click=""><i class="fas fa-edit"></i> Edit</a>
+                 <a href="#" class="btn btn-sm btn-danger float-right" ng-click=""><i class="fas fa-trash-alt"></i> Delete</a>
                  <!--<a href="{{url('/')}}/blog/<% post.id %>" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>-->
               </div>
             </div>
@@ -188,7 +190,86 @@
       </div>
   </main>
   <main ng-show="active_tool==4">
-    <h2>letters</h2>
+    <h1><i class="icn fa fa-music"></i> Upload music to your website<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+
+    <div class="container">
+
+      <div class="row mt-3">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+               <h5 class="card-title border-bottom pb-3">Upload New song </h5>
+               <a href="#" class="btn btn-sm btn-danger float-right" ng-click="active_tool=21;active_shelf=5;">New <i class="fas fa-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="col-md-4 mb-3" ng-repeat="post in all_posts | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+          <div class="card">
+            <img class="card-img-top" src="//placeimg.com/280/180/tech" alt="<% post.content %>">
+            <div class="card-img-overlay">
+              <div class="action-btn text-danger">
+                <i class="fa fa-play"></i>
+              </div>
+            </div>
+            <div class="card-body">
+               <h5 class="card-title border-bottom pb-3">dawa ya rwendo <!--<a href="#" class="float-right btn btn-sm btn-info d-inline-flex share"><i class="fas fa-share-alt"></i></a>--></h5>
+               <p class="card-text">nogo</p>
+               <a href="#" class="btn btn-sm btn-warning" ng-click=""><i class="fas fa-edit"></i> Edit</a>
+               <a href="#" class="btn btn-sm btn-danger float-right" ng-click=""><i class="fas fa-trash-alt"></i> Delete</a>
+               <!--<a href="{{url('/')}}/blog/<% post.id %>" class="btn btn-sm btn-info float-right">Read more <i class="fas fa-angle-double-right"></i></a>-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </main>
+  <main ng-show="active_tool==21">
+    <h1><i class="icn fa fa-music"></i> Upload music to your website<span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 d-none d-sm-block">
+          <div class="song-form-image" style="background-image:url({{url('/css/guitar.jpg')}})">
+
+          </div>
+        </div>
+        <div class="col-md-8">
+          <form id="song_form" method="POST" enctype="multipart/form-data">
+            <h2>Song details</h2>
+            <div class="form-group">
+              <label for="music-file">Music File</label>
+              <input name="music-file" type="file" class="form-control" id="music-file" placeholder="" >
+            </div>
+            <div class="form-group">
+              <label for="song-title">Song Title</label>
+              <input name="song-title" type="text" class="form-control" id="song-title" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="song-price">Price</label>
+              <input name="song-price" type="text" class="form-control" id="song-price" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="song-description">Description</label>
+              <textarea name="song-description" class="form-control" id="song-description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="song-cover-image">Cover Image</label>
+              <input name="song-cover-image" type="file" class="form-control" id="song-cover-image" placeholder="">
+            </div>
+            <a href="#" class="btn btn-lg btn-warning" onclick="submit_song()"><i class="fas fa-file-upload"></i> Upload</a>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
   </main>
   <main ng-show="active_tool==5">
     <h1><i class="icn fas fa-globe-americas"></i> Publish Website <span class="tag pull-right text-muted hidden-xs-down"><i class="fa fa-dashboard"></i></span></h1>

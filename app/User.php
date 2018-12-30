@@ -46,4 +46,12 @@ class User extends Authenticatable
     {
       return $this->hasOne('App\Website');
     }
+    public function user_sales()
+    {
+      return $this->hasMany('App\UserSales');
+    }
+    public function user_items()
+    {
+      return $this->hasMany('App\UserItems');
+    }
 }

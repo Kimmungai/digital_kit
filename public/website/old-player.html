@@ -1,0 +1,158 @@
+<section>
+
+  <div class="featured-music">
+    <!--<div class="apple-stuff"><i class="fa fa-wifi">
+        div class="date">12:00 AM</div></i><i class="fa fa-battery-3 battery"></i>
+      </div>-->
+    <div class="picture-section">
+      <h3 class="song"><?php echo $music[0]['item_name']; ?></h3>
+      <div id="band" class="band" style="background: url(<?php echo $music[0]['item_image_url']; ?>) no-repeat top center;">
+        <div class="overlay"></div>
+        <!--<div class="cart-buttons">
+          <button class="btn btn-success">buy ($1.22)</button>
+        </div>-->
+      </div>
+    </div>
+    <div class="slider"></div>
+    <div class="time"></div>
+    <div class="song-title">
+      <div id="cart-btn-group">
+        <a href="#" id="cart-btn" class="btn btn-danger btn-sm" onclick="add_to_cart(this.dataset.id)" data-id="1">buy ($1.22) <i class="fa fa-cart-plus"></i></a>
+      </div>
+      <!--<div class="artist"><a href="#" style="text-decoration:none;"><span>All songs</span> <span class="fa fa-list"></span></a> <a id="1" href="#" onclick="add_to_cart(this.id)" ><span>Buy<span class="song-price" style="color:#fff;">($0.50)</span></span> <span class="fa fa-cart-plus"></span></a></div>-->
+      <div class="song"><?php echo $music[0]['item_name']; ?></div>
+      <div class="artist"><a href="shop.php?id=<?php echo $_GET['id'];?>">View all songs</a></div>
+    </div>
+    <div class="playlist-controls">
+      <div class="circle"></div>
+      <div class="play-song"><i class="fa fa-play" id="play"></i></div>
+    </div>
+    <div class="song-list">
+      <div class="line"></div>
+      <div class="line two"></div>
+      <div class="line three"></div>
+      <div class="line four"></div>
+      <table>
+        <?php $count=1;foreach ($music as $song ) {?>
+        <tr id="track-<?php echo $count;?>" data-title="<?php echo $song['item_name']; ?>" data-song="<?php echo $song['item_name']; ?>" data-url="<?php echo $song['item_full_url']; ?>" data-price="<?php echo $song['item_price']; ?>">
+          <td class="num"><?php echo $count; ?></td>
+          <td class="title"><?php echo $song['item_name']; ?></td>
+          <td class="length">$<?php echo $song['item_price']; ?></td>
+        </tr>
+       <?php  $count++;} ?>
+       <!--<tr id="track-2" data-title="Mburi" data-song="Mburi" data-url="horse.ogg" data-price="0.32">
+          <td class="num">2</td>
+          <td class="title">Horse 2</td>
+          <td class="length">$0.32</td>
+        </tr>
+        <tr id="track-3" data-title="Nogo" data-song="Nogo" data-url="horse.ogg" data-price="0.2">
+          <td class="num">3</td>
+          <td class="title">Horse 3</td>
+          <td class="length">$0.2</td>
+        </tr>
+        <tr id="track-4" data-title="Seji" data-song="Seji" data-url="horse.ogg" data-price="0.2">
+          <td class="num">4</td>
+          <td class="title">Horse 4</td>
+          <td class="length">$0.2</td>
+        </tr>-->
+      </table>
+
+      <div class="social"><small>Share: <span class="fa fa-share-alt"></span></small> <a href="https://twitter.com/McGreenBeats" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/mattcgreenberg" target="_blank"><i class="fa fa-linkedin"></i></a><a href="http://codepen.io/mattgreenberg/" target="_blank"><i class="fa fa-codepen">  </i></a></div>
+    </div>
+    <!--<div class="volume"><i class="fa fa-volume-off" id="volume-off"></i><i class="fa fa-volume-up" id="volume-up"></i>
+      <div class="slider-volume"></div>
+    </div>-->
+    <div class="slide-up"><i class="fa fa-chevron-up"></i></div>
+  </div>
+
+</section>
+
+
+
+<section class="featured-music">
+  <div class="container">
+  <!-- CAROUSEL -->
+  <div class="carousel">
+
+    <!-- SLIDES -->
+    <div class="slides">
+      <div class="items">
+        <div class="item"><div class="image" style="background-image:url(<?php echo $saved_data['main_image']; ?>)"></div> <p class="artist">Dawa ya rwendo</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/bruno.png)"></div> <p class="artist">BRUNO MARS</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/calvin.png)"></div> <p class="artist">CALVIN HARRIS</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/onerep.png)"></div> <p class="artist">ONE REPUBLIC</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/ellie.png)"></div> <p class="artist">ELLIE GOULDING</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/thomston.png)"></div> <p class="artist">THOMSTON</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/halsey.png)"></div> <p class="artist">HALSEY</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+        <div class="item"><div class="image" style="background-image:url(http://audeficheux.com/projects/carousel/src/medias/frances.png)"></div> <p class="artist">FRANCES</p><p class="track"><a href="#" class="btn btn-danger btn-sm">Buy now <span class="fa fa-cart-arrow-down"></span></a></p></div>
+      </div>
+    </div>
+
+    <!-- SIBLINGS (PREVIOUS - NEXT) -->
+    <div class="siblings">
+      <a href="#" class="sibling prev"></a>
+      <a href="#" class="play"></a>
+      <a href="#" class="sibling next"></a>
+    </div>
+
+    <div class="seek-bar">
+              <div class="progress-bar"></div>
+          </div>
+
+  </div>
+
+
+
+  <div class="choice">
+    <div class="title">
+      <p>SONGS</p>
+    </div>
+    <div class="tracks">
+      <div class="track 1">
+        <div class="number">1</div>
+        <div class="name"><p>Selah Sue</p><p class="song">Feel</p></div>
+        <div class="speakers"></div>
+      </div>
+      <div class="track 2">
+        <div class="number">2</div>
+        <div class="name"><p>Bruno Mars</p><p class="song">Runaway Baby</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 3">
+        <div class="number">3</div>
+        <div class="name"><p>Calvin Harris</p><p class="song">Sweet Nothing</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 4">
+        <div class="number">4</div>
+        <div class="name"><p>One Republic</p><p class="song">Preacher</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 5">
+        <div class="number">5</div>
+        <div class="name"><p>Ellie Goulding</p><p class="song">Starry Eyed</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 6">
+        <div class="number">6</div>
+        <div class="name"><p>Thomston</p><p class="song">Brain Dead</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 7">
+        <div class="number">7</div>
+        <div class="name"><p>Halsey</p><p class="song">New Americana</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+      <div class="track 8">
+        <div class="number">8</div>
+        <div class="name"><p>Frances</p><p class="song">Grow</p></div>
+        <div class="speakers unseen"></div>
+      </div>
+    </div>
+  </div>
+
+  <audio class="music"><source src="http://audeficheux.com/projects/carousel/src/medias/0.mp3" type="audio/mpeg"> Your browser doesn't support video API</audio>
+
+</div>
+
+</section>

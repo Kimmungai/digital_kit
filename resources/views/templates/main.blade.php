@@ -454,7 +454,7 @@
                   <li ng-class="active_shelf==2 ? 'active' : 'inactive'" ng-click="active_shelf=2" ng-show="active_tool==1 && tool_A==true || active_tool==2 && tool_B==true"><a href="#"><i class="fa fa-bullseye"></i></a></li>
                   <li ng-class="active_shelf==4 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#"><i class="fa fa-comment"></i></a></li>
                   <li ng-class="active_shelf==3 ? 'active' : 'inactive'" ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#"><i class="fa fa-book"></i></a></li>
-                  <li ng-class="active_shelf==5 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                  <li ng-class="active_shelf==5 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#"><i class="fa fa-music"></i></a></li>
                   <!--<li ng-class="active_shelf==7 ? 'active' : 'inactive'" ng-click="active_shelf=7;edit_details=0"><a href="#"><i class="fa fa-edit"></i></a></li>-->
                   <li ng-class="active_shelf==6 ? 'active' : 'inactive'" ng-click="active_shelf=6;edit_details=0"><a href="#"><i class="fa 	fa-question-circle"></i></a></li>
                </ul>
@@ -475,7 +475,7 @@
                   <li ng-click="active_shelf=3" ng-show="active_tool==2 && tool_B==true">Design: <select ng-model="card.card_design" id="card_design" onchange="update_val(this.id,this.value,'','','Card')"><option value="1">stylish</option><option value="2">classic</option><option value="3">elegant</option></select></li>
                   <li ng-click="active_shelf=4;active_tool=3;edit_details=0" ng-show="tool_C==true"><a href="#">Blog</a></li>
                   <li ng-click="active_shelf=3;active_tool=2;edit_details=0" ng-show="tool_B==true"><a href="#">Business Card</a></li>
-                  <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Letter</a></li>
+                  <li ng-click="active_shelf=5;active_tool=4;edit_details=0" ng-show="tool_D==true"><a href="#">Songs</a></li>
                   <!--<li ng-click="active_shelf=7;edit_details=11" onclick="blur_bg()"><a href="#"> Blog</a></li>-->
                   <li ng-click="active_shelf=6;edit_details=10" onclick="blur_bg()"><a href="#"> Help & Support</a></li>
                 </ul>
@@ -486,8 +486,8 @@
                   <li><input id="tool_A"  type="checkbox"  ng-model="tool_A"  ng-click="active_shelf=1;active_tool=1;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Website</li>
                   <li><input id="tool_C"  type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Blog</li>
                   <li><input id="tool_B"  type="checkbox" ng-model="tool_B" ng-click="active_shelf=3;active_tool=2;edit_details=0" onchange="update_val(this.id,this.value,'','','User')" /> Card</li>
-                  <!--<li><input type="checkbox" ng-model="tool_C" ng-click="active_shelf=4;active_tool=3"/> Cv</li>
-                  <li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>-->
+                  <li><input id="tool_D" type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4" onchange="update_val(this.id,this.value,'','','User')"/> Songs</li>
+                  <!--<li><input type="checkbox" ng-model="tool_D" ng-click="active_shelf=5;active_tool=4"/> Letter</li>-->
                 </ul>
               </section>
             </div>
@@ -507,8 +507,8 @@
                 <li ng-show="tool_C==1"  ng-class="active_tool==3 || active_tool==20 ? 'active' : 'inactive'" ng-click="active_shelf=4;active_tool=3;edit_details=0" class="C">
                   <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
                 </li>
-                <li ng-show="tool_D==1"  ng-class="active_tool==4 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
-                  <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
+                <li id="song-tool" ng-show="tool_D==1"  ng-class="active_tool==4 || active_tool==21 ? 'active' : 'inactive'" ng-click="active_shelf=5;active_tool=4;edit_details=0" class="D">
+                  <a href="#"><i class="fa fa-music" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </section><!--end cards shelf items-->
